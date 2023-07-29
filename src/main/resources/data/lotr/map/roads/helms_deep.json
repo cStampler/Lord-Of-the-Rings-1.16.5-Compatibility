@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.helms_deep",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:deeping_coomb"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:helms_deep"
+    }
+  ]
+}

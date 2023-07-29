@@ -1,0 +1,53 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "leaf": "lotr:block/lettuce_stage1",
+        "particle": "#leaf"
+    },
+    "elements": [
+        {
+            "name": "leafInner_west",
+            "from": [ 7, 0, 0 ],
+            "to": [ 7, 8, 16 ],
+            "shade": false,
+            "rotation": { "origin": [ 7, 0, 8 ], "axis": "z", "angle": 22.5 },
+            "faces": {
+                "east": { "texture": "#leaf", "uv": [ 0, 8, 16, 16 ] },
+                "west": { "texture": "#leaf", "uv": [ 0, 0, 16, 8 ], "rotation": 180 }
+                     }
+        },
+        {
+            "name": "leafInner_north",
+            "from": [ 0, 0, 7 ],
+            "to": [ 16, 8, 7 ],
+            "shade": false,
+            "rotation": { "origin": [ 8, 0, 7 ], "axis": "x", "angle": -22.5 },
+            "faces": {
+                "north": { "texture": "#leaf", "uv": [ 0, 0, 16, 8 ], "rotation": 180 },
+                "south": { "texture": "#leaf", "uv": [ 0, 8, 16, 16 ] }
+                     }
+        },
+        {
+            "name": "leafInner_east",
+            "from": [ 9, 0, 0 ],
+            "to": [ 9, 8, 16 ],
+            "shade": false,
+            "rotation": { "origin": [ 9, 0, 8 ], "axis": "z", "angle": -22.5 },
+            "faces": {
+                "east": { "texture": "#leaf", "uv": [ 0, 0, 16, 8 ], "rotation": 180 },
+                "west": { "texture": "#leaf", "uv": [ 0, 8, 16, 16 ] }
+                     }
+        },
+        {
+            "name": "leafInner_south",
+            "from": [ 0, 0, 9 ],
+            "to": [ 16, 8, 9 ],
+            "shade": false,
+            "rotation": { "origin": [ 8, 0, 9 ], "axis": "x", "angle": 22.5 },
+            "faces": {
+                "north": { "texture": "#leaf", "uv": [ 0, 8, 16, 16 ] },
+                "south": { "texture": "#leaf", "uv": [ 0, 0, 16, 8 ], "rotation": 180 }
+                     }
+        }
+    ]
+}

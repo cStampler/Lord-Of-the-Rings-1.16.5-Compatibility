@@ -1,0 +1,41 @@
+{
+  "ambientocclusion": false,
+  "parent": "block/leaves",
+  "elements": [
+		{
+            "name": "block",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#all", "uv": [ 0, 0, 16, 16 ] },
+                "east": { "texture": "#all", "uv": [ 0, 0, 16, 16 ] },
+                "south": { "texture": "#all", "uv": [ 0, 0, 16, 16 ] },
+                "west": { "texture": "#all", "uv": [ 0, 0, 16, 16 ] },
+                "up": { "texture": "#all", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#all", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "sprouts1",
+            "from": [ 0, -16, 8 ], 
+            "shade": false,
+            "to": [ 16, 0, 8 ], 
+            "rotation": { "origin": [ 8, 0, 8 ], "axis": "y", "angle": 45.0 },
+            "faces": {
+                "north": { "texture": "#sprouts", "uv": [ 0, 0, 16, 16 ], "cullface": "down" },
+                "south": { "texture": "#sprouts", "uv": [ 0, 0, 16, 16 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "sprouts2",
+            "from": [ 0, -16, 8 ], 
+            "to": [ 16, 0, 8 ], 
+            "rotation": { "origin": [ 8, 0, 8 ], "axis": "y", "angle": -45.0 },
+            "shade": false,
+            "faces": {
+                "north": { "texture": "#sprouts", "uv": [ 0, 0, 16, 16 ], "cullface": "down" },
+                "south": { "texture": "#sprouts", "uv": [ 0, 0, 16, 16 ], "cullface": "down" }
+            }
+        }
+    ]
+}

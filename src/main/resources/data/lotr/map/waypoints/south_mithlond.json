@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.south_mithlond",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.south_mithlond.lore",
+    "translate": true
+  },
+  "x": 679,
+  "z": 729,
+  "travel_region": "lotr:lindon",
+  "faction": "lotr:high_elves"
+}

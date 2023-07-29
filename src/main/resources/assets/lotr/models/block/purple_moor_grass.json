@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/tinted_cross_overlay",
+    "textures": {
+        "cross": "lotr:block/purple_moor_grass",
+        "overlay": "lotr:block/purple_moor_grass_overlay"
+    }
+}

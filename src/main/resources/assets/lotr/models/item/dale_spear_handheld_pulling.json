@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/handheld_spear_pulling",
+        "textures": {
+        "layer0": "lotr:item/dale_spear_large"
+    }
+}

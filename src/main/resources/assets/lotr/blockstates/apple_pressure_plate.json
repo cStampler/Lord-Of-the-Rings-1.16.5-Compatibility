@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "lotr:block/apple_pressure_plate" },
+        "powered=true": { "model": "lotr:block/apple_pressure_plate_down" }
+    }
+}

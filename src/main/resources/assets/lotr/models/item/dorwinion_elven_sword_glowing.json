@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+        "textures": {
+        "layer0": "lotr:item/dorwinion_elven_sword_glowing"
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "lotr": "lotr-transformer-general.js",
+	"lotr-dimensions": "lotr-transformer-dimensions.js",
+	"lotr-biomes": "lotr-transformer-biomes.js"
+}

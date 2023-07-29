@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.withered_heath",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.withered_heath.lore",
+    "translate": true
+  },
+  "x": 1441,
+  "z": 556,
+  "travel_region": "lotr:northlands",
+  "faction": ""
+}

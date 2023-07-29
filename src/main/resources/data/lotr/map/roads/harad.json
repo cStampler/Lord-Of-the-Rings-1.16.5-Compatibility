@@ -1,0 +1,63 @@
+{
+  "name": {
+    "text": "road.lotr.harad",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:black_gate"
+    },
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:black_gate",
+      "x_offset": -8,
+      "z_offset": 1
+    },
+    {
+      "type": "coords",
+      "x": 1447,
+      "z": 1151
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:crossroads_of_the_fallen_king"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:crossings_of_poros"
+    },
+    {
+      "type": "coords",
+      "x": 1429,
+      "z": 1394
+    },
+    {
+      "type": "coords",
+      "x": 1408,
+      "z": 1432
+    },
+    {
+      "type": "coords",
+      "x": 1428,
+      "z": 1470
+    },
+    {
+      "type": "coords",
+      "x": 1435,
+      "z": 1526
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:crossings_of_harnen"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:an_batina"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ijdi_ilel"
+    }
+  ]
+}

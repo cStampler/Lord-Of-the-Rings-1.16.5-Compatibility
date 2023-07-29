@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.khand",
+    "translate": true
+  },
+  "x": 1940,
+  "z": 1420,
+  "scale": 4.0,
+  "angle": 5,
+  "min_zoom": -3.5,
+  "max_zoom": 0.5
+}

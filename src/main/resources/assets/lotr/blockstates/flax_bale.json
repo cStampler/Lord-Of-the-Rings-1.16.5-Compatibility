@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up": { "model": "lotr:block/flax_bale" },
+        "facing=down": { "model": "lotr:block/flax_bale", "x": 180 },
+        "facing=east": { "model": "lotr:block/flax_bale", "y": 90, "x": 90 },
+        "facing=south": { "model": "lotr:block/flax_bale", "y": 180, "x": 90 },
+        "facing=west": { "model": "lotr:block/flax_bale", "y": 270, "x": 90 },
+        "facing=north": { "model": "lotr:block/flax_bale", "y": 0, "x": 90 }
+    }
+}

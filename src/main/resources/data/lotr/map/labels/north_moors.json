@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.north_moors",
+    "translate": true
+  },
+  "x": 805,
+  "z": 690,
+  "scale": 1.0,
+  "angle": -5,
+  "min_zoom": -2.5,
+  "max_zoom": 2.5
+}

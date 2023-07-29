@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/stalactite_all",
+    "textures": {
+        "all": "block/granite"
+    }
+}

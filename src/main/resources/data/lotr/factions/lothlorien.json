@@ -1,0 +1,66 @@
+{
+  "name": {
+    "text": "faction.lotr.lothlorien",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.lothlorien.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 13,
+  "color": "EFD158",
+  "map_square": {
+    "x": 1230,
+    "z": 900,
+    "radius": 75
+  },
+  "types": [ "lotr:free_people", "lotr:elf" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "warden",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "warrior",
+      "alignment": 200
+    },
+    {
+      "name": "herald",
+      "alignment": 500
+    },
+    {
+      "name": "captain",
+      "alignment": 1000
+    },
+    {
+      "name": "noble",
+      "alignment": 2000
+    },
+    {
+      "name": "lord",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:caras_galadhon",
+		"radius": 100
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:lothlorien", "lotr:lothlorien_eaves" ]
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "lotr:block/flame_of_harad_bottom"
+    }
+}

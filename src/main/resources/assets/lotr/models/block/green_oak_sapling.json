@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "lotr:block/green_oak_sapling"
+    }
+}

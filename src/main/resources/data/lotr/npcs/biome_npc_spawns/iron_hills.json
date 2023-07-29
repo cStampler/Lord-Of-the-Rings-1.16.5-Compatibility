@@ -1,0 +1,15 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:durins_folk",
+      "base_weight": 500,
+      "lists": [
+        {
+          "list": "lotr:dwarves",
+          "weight": 10
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.5
+}

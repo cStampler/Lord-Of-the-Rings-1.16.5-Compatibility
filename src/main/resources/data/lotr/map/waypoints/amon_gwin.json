@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.amon_gwin",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.amon_gwin.lore",
+    "translate": true
+  },
+  "x": 1733,
+  "z": 950,
+  "travel_region": "lotr:dorwinion",
+  "faction": ""
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/wall_inventory",
+    "textures": {
+        "wall": "lotr:block/cyan_clay_tiling"
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": {
+    "text": "road.lotr.rivendell",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ford_of_bruinen"
+    },
+    {
+      "type": "coords",
+      "x": 1169,
+      "z": 722
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:rivendell"
+    }
+  ]
+}

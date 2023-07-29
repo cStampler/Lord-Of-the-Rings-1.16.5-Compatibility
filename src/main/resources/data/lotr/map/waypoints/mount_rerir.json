@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_rerir",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_rerir.lore",
+    "translate": true
+  },
+  "x": 592,
+  "z": 525,
+  "travel_region": "lotr:blue_mountains",
+  "faction": ""
+}

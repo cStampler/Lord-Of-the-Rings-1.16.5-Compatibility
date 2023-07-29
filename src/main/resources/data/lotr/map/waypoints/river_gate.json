@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.river_gate",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.river_gate.lore",
+    "translate": true
+  },
+  "x": 1474,
+  "z": 696,
+  "travel_region": "lotr:wilderland",
+  "faction": ""
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.old_ford",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.old_ford.lore",
+    "translate": true
+  },
+  "x": 1284,
+  "z": 702,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

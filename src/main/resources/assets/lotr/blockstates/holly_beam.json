@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "lotr:block/holly_beam" },
+        "axis=z":  { "model": "lotr:block/holly_beam", "x": 90 },
+        "axis=x":  { "model": "lotr:block/holly_beam", "x": 90, "y": 90 }
+    }
+}

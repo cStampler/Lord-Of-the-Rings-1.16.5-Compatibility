@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:blackroot_vale"
+  },
+  "x": 1150,
+  "z": 1225,
+  "scale": 1.0,
+  "angle": -25,
+  "min_zoom": -1.5,
+  "max_zoom": 2.5
+}

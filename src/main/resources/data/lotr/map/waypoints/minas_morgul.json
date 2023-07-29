@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.minas_morgul",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.minas_morgul.lore",
+    "translate": true
+  },
+  "x": 1461,
+  "z": 1239,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

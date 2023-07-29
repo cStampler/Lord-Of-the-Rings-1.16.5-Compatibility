@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/maple_log",
+        "top": "lotr:block/maple_log",
+        "side": "lotr:block/maple_log"
+    }
+}

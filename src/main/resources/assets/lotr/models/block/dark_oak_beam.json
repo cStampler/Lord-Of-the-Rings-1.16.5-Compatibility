@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/dark_oak_beam_top",
+        "side": "lotr:block/dark_oak_beam"
+    }
+}

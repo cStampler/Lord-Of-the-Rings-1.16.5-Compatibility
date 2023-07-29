@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "lotr:block/charred_log",
+        "top": "lotr:block/charred_log",
+        "side": "lotr:block/charred_log"
+    }
+}

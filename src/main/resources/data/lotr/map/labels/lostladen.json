@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:lostladen"
+  },
+  "x": 1685,
+  "z": 1470,
+  "scale": 2.0,
+  "angle": -5,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.woldhall",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.woldhall.lore",
+    "translate": true
+  },
+  "x": 1285,
+  "z": 1015,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

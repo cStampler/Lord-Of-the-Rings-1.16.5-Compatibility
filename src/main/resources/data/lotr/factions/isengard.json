@@ -1,0 +1,71 @@
+{
+  "name": {
+    "text": "faction.lotr.isengard",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.isengard.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 15,
+  "color": "333833",
+  "map_square": {
+    "x": 1110,
+    "z": 1070,
+    "radius": 50
+  },
+  "types": [ "lotr:orc" ],
+  "ranks": [
+    {
+      "name": "thrall",
+      "alignment": 10
+    },
+    {
+      "name": "snaga",
+      "alignment": 50
+    },
+    {
+      "name": "soldier",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "treefeller",
+      "alignment": 200
+    },
+    {
+      "name": "berserker",
+      "alignment": 500
+    },
+    {
+      "name": "corporal",
+      "alignment": 1000
+    },
+    {
+      "name": "hand",
+      "alignment": 1500
+    },
+    {
+      "name": "captain",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:isengard",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:edoras",
+		"radius": 50
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:nan_curunir" ]
+}

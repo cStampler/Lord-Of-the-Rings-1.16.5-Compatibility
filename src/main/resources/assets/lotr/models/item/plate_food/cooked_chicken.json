@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/plate_food/template_chicken",
+	"textures": {
+		"all": "lotr:item/cooked_chicken_plate"
+	}
+}

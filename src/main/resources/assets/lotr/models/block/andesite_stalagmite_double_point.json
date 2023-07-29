@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/stalagmite_double_point_all",
+    "textures": {
+        "all": "block/andesite"
+    }
+}

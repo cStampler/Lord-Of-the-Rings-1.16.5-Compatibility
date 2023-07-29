@@ -1,0 +1,71 @@
+{
+  "name": {
+    "text": "faction.lotr.dorwinion",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.dorwinion.subtitle",
+    "translate": true
+  },
+  "region": "lotr:rhun",
+  "ordering": 1,
+  "color": "6D3068",
+  "map_square": {
+    "x": 1750,
+    "z": 900,
+    "radius": 100
+  },
+  "types": [ "lotr:free_people", "lotr:man", "lotr:elf" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "vinehand",
+      "alignment": 50
+    },
+    {
+      "name": "merchant",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "guard",
+      "alignment": 200
+    },
+    {
+      "name": "captain",
+      "alignment": 500
+    },
+    {
+      "name": "master",
+      "alignment": 1000
+    },
+    {
+      "name": "chief",
+      "alignment": 1500
+    },
+    {
+      "name": "lord",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:vintner_court",
+		"radius": 175
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bardhaven",
+		"radius": 30
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:dorwinion", "lotr:emyn_winion" ]
+}

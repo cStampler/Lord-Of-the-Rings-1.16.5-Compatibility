@@ -1,0 +1,19 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:near_harad",
+      "base_weight": 100,
+      "lists": [
+        {
+          "list": "lotr:harnedhrim",
+          "weight": 10
+        },
+        {
+          "list": "lotr:harnennor_warriors",
+          "weight": 10
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.33
+}

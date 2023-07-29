@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+        "textures": {
+        "layer0": "lotr:block/flowery_grass",
+        "layer1": "lotr:block/flowery_grass_overlay"
+    }
+}

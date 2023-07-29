@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:old_forest"
+  },
+  "x": 875,
+  "z": 745,
+  "scale": 0.5,
+  "angle": -5,
+  "min_zoom": -0.5,
+  "max_zoom": 2.5
+}

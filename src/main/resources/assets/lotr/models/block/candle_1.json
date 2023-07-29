@@ -1,0 +1,53 @@
+{
+    "textures": {
+        "candle": "lotr:block/candle",
+        "particle": "#candle"
+    },
+    "elements": [
+        {
+            "name": "base",
+            "from": [ 6.5, 0, 6.5 ],
+            "to": [ 9.5, 8, 9.5 ],
+            "faces": {
+                "north": { "texture": "#candle", "uv": [ 0, 8, 3, 16 ] },
+                "east": { "texture": "#candle", "uv": [ 0, 8, 3, 16 ] },
+                "south": { "texture": "#candle", "uv": [ 0, 8, 3, 16 ] },
+                "west": { "texture": "#candle", "uv": [ 0, 8, 3, 16 ] },
+                "down": { "texture": "#candle", "uv": [ 0, 4, 3, 7 ] }
+                     }
+        },
+        {
+            "name": "wax",
+            "from": [ 6, 4.5, 6 ],
+            "to": [ 10, 8.5, 10 ],
+            "faces": {
+                "north": { "texture": "#candle", "uv": [ 3, 4, 7, 8 ] },
+                "east": { "texture": "#candle", "uv": [ 3, 4, 7, 8 ] },
+                "south": { "texture": "#candle", "uv": [ 3, 4, 7, 8 ] },
+                "west": { "texture": "#candle", "uv": [ 3, 4, 7, 8 ] },
+                "up": { "texture": "#candle", "uv": [ 3, 0, 7, 4 ] }
+                     }
+        },
+        {
+            "name": "string1",
+            "from": [ 8, 7.5, 7.5 ],
+            "to": [ 8, 10.5, 8.5 ],
+            "shade": false,
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45.0 },
+            "faces": {
+                "east": { "texture": "#candle", "uv": [ 1, 1, 2, 4 ] },
+                "west": { "texture": "#candle", "uv": [ 1, 1, 2, 4 ] }
+                     }
+        },
+        {
+            "name": "string2",
+            "from": [ 8, 7.5, 7.5 ],
+            "to": [ 8, 10.5, 8.5 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": -45.0 },
+            "faces": {
+                "east": { "texture": "#candle", "uv": [ 1, 1, 2, 4 ] },
+                "west": { "texture": "#candle", "uv": [ 1, 1, 2, 4 ] }
+                     }
+        }
+    ]
+}

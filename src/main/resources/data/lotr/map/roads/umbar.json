@@ -1,0 +1,28 @@
+{
+  "name": {
+    "text": "road.lotr.umbar",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:umbar"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:gate_of_umbar"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ain_an_ahar"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:gardens_of_beruthiel"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ajtiaz_an_ahar"
+    }
+  ]
+}

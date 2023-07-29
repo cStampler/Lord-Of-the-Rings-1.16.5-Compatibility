@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.westemnet",
+    "translate": true
+  },
+  "x": 1180,
+  "z": 1080,
+  "scale": 1.5,
+  "angle": 10,
+  "min_zoom": -1.5,
+  "max_zoom": 1.5
+}

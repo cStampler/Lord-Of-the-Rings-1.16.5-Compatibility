@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.erelas",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.erelas.lore",
+    "translate": true
+  },
+  "x": 1367,
+  "z": 1222,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

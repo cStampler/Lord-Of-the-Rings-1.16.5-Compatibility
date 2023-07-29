@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:orc_torch",
+    "lotr:blue_mallorn_torch",
+    "lotr:green_mallorn_torch",
+    "lotr:gold_mallorn_torch",
+    "lotr:silver_mallorn_torch",
+    "lotr:high_elven_torch",
+    "lotr:dwarven_torch",
+    "lotr:blubber_torch"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": {
+    "text": "faction.lotr.dale",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.dale.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 11,
+  "color": "CE875F",
+  "map_square": {
+    "x": 1530,
+    "z": 670,
+    "radius": 100
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "soldier",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "herald",
+      "alignment": 200
+    },
+    {
+      "name": "captain",
+      "alignment": 500
+    },
+    {
+      "name": "marshal",
+      "alignment": 1000
+    },
+    {
+      "name": "lord",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:great_dalish_crossroads",
+		"radius": 125
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:dale", "lotr:northern_dale" ]
+}

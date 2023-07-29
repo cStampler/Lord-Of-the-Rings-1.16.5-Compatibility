@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:eregion"
+  },
+  "x": 1125,
+  "z": 845,
+  "scale": 1.0,
+  "angle": -50,
+  "min_zoom": -2.5,
+  "max_zoom": 2.5
+}

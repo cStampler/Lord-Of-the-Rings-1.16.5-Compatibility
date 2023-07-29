@@ -1,0 +1,82 @@
+{
+  "name": {
+    "text": "faction.lotr.half_trolls",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.half_trolls.subtitle",
+    "translate": true
+  },
+  "region": "lotr:harad",
+  "ordering": 4,
+  "color": "9E8373",
+  "map_square": {
+    "x": 1900,
+    "z": 2500,
+    "radius": 200
+  },
+  "types": [ "lotr:man", "lotr:troll" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "scavenger",
+      "alignment": 50
+    },
+    {
+      "name": "kin",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "warrior",
+      "alignment": 200
+    },
+    {
+      "name": "raider",
+      "alignment": 500
+    },
+    {
+      "name": "warlord",
+      "alignment": 1000
+    },
+    {
+      "name": "chieftain",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:tol_torog",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:sereghir",
+		"radius": 200
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:hardorogost",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:crossings_of_poros",
+		"radius": 50
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bridge_of_haraduin",
+		"radius": 100
+	  }
+	]
+  },
+  "speechbank_home_biomes": []
+}

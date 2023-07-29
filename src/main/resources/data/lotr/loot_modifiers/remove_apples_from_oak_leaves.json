@@ -1,0 +1,8 @@
+{
+  "type": "lotr:remove_apples_from_oak_leaves",
+  "conditions": [],
+  "target_blocks": [
+    "minecraft:oak_leaves",
+    "minecraft:dark_oak_leaves"
+  ]
+}

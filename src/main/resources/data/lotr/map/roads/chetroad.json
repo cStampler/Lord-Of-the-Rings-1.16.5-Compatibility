@@ -1,0 +1,26 @@
+{
+  "name": {
+    "text": "road.lotr.chetroad",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:staddle",
+      "x_offset": 0,
+      "z_offset": 5
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:staddle"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:combe"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:archet"
+    }
+  ]
+}

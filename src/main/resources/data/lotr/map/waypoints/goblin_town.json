@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.goblin_town",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.goblin_town.lore",
+    "translate": true
+  },
+  "x": 1220,
+  "z": 696,
+  "travel_region": "lotr:misty_mountains",
+  "faction": "lotr:northern_orcs"
+}

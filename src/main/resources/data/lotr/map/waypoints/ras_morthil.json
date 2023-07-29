@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ras_morthil",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ras_morthil.lore",
+    "translate": true
+  },
+  "x": 845,
+  "z": 1332,
+  "travel_region": "lotr:white_mountains",
+  "faction": ""
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/wattle_and_daub_pillar_face",
+        "side": "lotr:block/wattle_and_daub_pillar_bottom"
+    }
+}

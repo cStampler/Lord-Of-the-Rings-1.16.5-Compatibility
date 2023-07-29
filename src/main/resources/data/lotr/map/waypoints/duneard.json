@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.duneard",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.duneard.lore",
+    "translate": true
+  },
+  "x": 1073,
+  "z": 946,
+  "travel_region": "lotr:dunland",
+  "faction": "lotr:dunland"
+}

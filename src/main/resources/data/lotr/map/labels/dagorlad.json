@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:dagorlad"
+  },
+  "x": 1470,
+  "z": 1110,
+  "scale": 1.5,
+  "angle": 5,
+  "min_zoom": -1.5,
+  "max_zoom": 1.5
+}

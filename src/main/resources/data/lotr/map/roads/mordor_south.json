@@ -1,0 +1,36 @@
+{
+  "name": {
+    "text": "road.lotr.mordor_south",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:black_gate",
+      "x_offset": 0,
+      "z_offset": 5
+    },
+    {
+      "type": "coords",
+      "x": 1486,
+      "z": 1150
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:carach_angren"
+    },
+    {
+      "type": "coords",
+      "x": 1504,
+      "z": 1178
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:barad_dur"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:thorband"
+    }
+  ]
+}

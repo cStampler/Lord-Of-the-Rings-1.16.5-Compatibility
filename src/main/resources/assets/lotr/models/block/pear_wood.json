@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/pear_log",
+        "side": "lotr:block/pear_log"
+    }
+}

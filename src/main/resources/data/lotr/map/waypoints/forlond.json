@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.forlond",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.forlond.lore",
+    "translate": true
+  },
+  "x": 526,
+  "z": 718,
+  "travel_region": "lotr:lindon",
+  "faction": "lotr:high_elves"
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.gath_azrazain",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.gath_azrazain.lore",
+    "translate": true
+  },
+  "x": 1245,
+  "z": 1582,
+  "travel_region": "lotr:southron_coasts",
+  "faction": "lotr:near_harad"
+}

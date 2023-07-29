@@ -1,0 +1,25 @@
+{
+  "name": {
+    "text": "road.lotr.wold",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:edoras"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:entwade"
+    },
+    {
+      "type": "coords",
+      "x": 1260,
+      "z": 1060
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:woldhall"
+    }
+  ]
+}

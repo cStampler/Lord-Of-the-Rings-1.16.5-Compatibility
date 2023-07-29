@@ -1,0 +1,8 @@
+{
+    "parent": "lotr:block/template_hollow_beam_slab",
+    "textures": {
+        "top": "lotr:block/rotten_beam_top",
+        "side": "lotr:block/rotten_beam",
+        "inside": "lotr:block/stripped_rotten_log"
+    }
+}

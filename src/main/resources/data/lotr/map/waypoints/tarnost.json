@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tarnost",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tarnost.lore",
+    "translate": true
+  },
+  "x": 1240,
+  "z": 1295,
+  "travel_region": "lotr:dor_en_ernil",
+  "faction": ""
+}

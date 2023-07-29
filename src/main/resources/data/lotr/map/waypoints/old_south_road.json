@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.old_south_road",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.old_south_road.lore",
+    "translate": true
+  },
+  "x": 1025,
+  "z": 1050,
+  "travel_region": "lotr:enedwaith",
+  "faction": ""
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.greenholm",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.greenholm.lore",
+    "translate": true
+  },
+  "x": 762,
+  "z": 745,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

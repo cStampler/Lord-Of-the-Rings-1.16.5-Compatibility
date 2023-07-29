@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.woodhall",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.woodhall.lore",
+    "translate": true
+  },
+  "x": 841,
+  "z": 739,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

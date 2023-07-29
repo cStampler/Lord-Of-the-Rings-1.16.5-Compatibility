@@ -1,0 +1,15 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:blue_mountains",
+      "base_weight": 600,
+      "lists": [
+        {
+          "list": "lotr:blue_mountains_dwarves",
+          "weight": 10
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.5
+}

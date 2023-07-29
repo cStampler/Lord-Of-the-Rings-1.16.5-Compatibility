@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mirulond",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mirulond.lore",
+    "translate": true
+  },
+  "x": 1784,
+  "z": 863,
+  "travel_region": "lotr:dorwinion",
+  "faction": ""
+}

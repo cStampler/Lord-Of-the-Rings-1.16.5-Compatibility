@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.firwold",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.firwold.lore",
+    "translate": true
+  },
+  "x": 1070,
+  "z": 1027,
+  "travel_region": "lotr:dunland",
+  "faction": "lotr:dunland"
+}

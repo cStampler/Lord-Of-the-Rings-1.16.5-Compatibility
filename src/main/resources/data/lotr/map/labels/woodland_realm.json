@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:woodland_realm"
+  },
+  "x": 1385,
+  "z": 620,
+  "scale": 1.0,
+  "angle": -5,
+  "min_zoom": -1.5,
+  "max_zoom": 2.5
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/jungle_beam_top",
+        "top": "lotr:block/jungle_beam_top",
+        "side": "lotr:block/jungle_beam"
+    }
+}

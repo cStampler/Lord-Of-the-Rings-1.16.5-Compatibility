@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "type=single": [
+            { "model": "lotr:block/hanging_web_single_1" },
+            { "model": "lotr:block/hanging_web_single_2" },
+            { "model": "lotr:block/hanging_web_single_3" }
+        ],
+        "type=double_top": { "model": "lotr:block/hanging_web_double_top" },
+        "type=double_bottom": { "model": "lotr:block/hanging_web_double_bottom" }
+    }
+}

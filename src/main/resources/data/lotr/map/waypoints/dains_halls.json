@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dains_halls",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dains_halls.lore",
+    "translate": true
+  },
+  "x": 1262,
+  "z": 554,
+  "travel_region": "lotr:grey_mountains",
+  "faction": ""
+}

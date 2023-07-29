@@ -1,0 +1,68 @@
+{
+  "name": {
+    "text": "road.lotr.elven_way",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:west_gate"
+    },
+    {
+      "type": "coords",
+      "x": 1133,
+      "z": 867
+    },
+    {
+      "type": "coords",
+      "x": 1124,
+      "z": 868
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ost_in_edhil"
+    },
+    {
+      "type": "coords",
+      "x": 1073,
+      "z": 864
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:old_elven_way"
+    },
+    {
+      "type": "coords",
+      "x": 1002,
+      "z": 849
+    },
+    {
+      "type": "coords",
+      "x": 992,
+      "z": 860
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:tharbad"
+    },
+    {
+      "type": "coords",
+      "x": 959,
+      "z": 889
+    },
+    {
+      "type": "coords",
+      "x": 926,
+      "z": 913
+    },
+    {
+      "type": "coords",
+      "x": 902,
+      "z": 942
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:lond_daer"
+    }
+  ]
+}

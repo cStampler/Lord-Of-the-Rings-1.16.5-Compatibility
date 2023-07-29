@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/template_herb",
+    "textures": {
+        "stem": "lotr:block/wild_pipeweed",
+        "leaf" : "lotr:block/pipeweed_crop_stage3"
+    }
+}

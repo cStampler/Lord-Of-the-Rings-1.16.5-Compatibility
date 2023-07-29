@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.forest_gate",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.forest_gate.lore",
+    "translate": true
+  },
+  "x": 1303,
+  "z": 655,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

@@ -1,0 +1,35 @@
+{
+  "multipart": [
+    {
+      "when": { "facing": "north" },
+      "apply": { "model": "lotr:block/keg" }
+    },
+    {
+      "when": { "facing": "south" },
+      "apply": { "model": "lotr:block/keg", "y": 180 }
+    },
+    {
+      "when": { "facing": "west" },
+      "apply": { "model": "lotr:block/keg", "y": 270 }
+    },
+    {
+      "when": { "facing": "east" },
+      "apply": { "model": "lotr:block/keg", "y": 90 }
+    },
+    {
+      "when": { "up": "true", "facing": "north" },
+      "apply": { "model": "lotr:block/keg_stand" }
+    },
+    {
+      "when": { "up": "true", "facing": "south" },
+      "apply": { "model": "lotr:block/keg_stand", "y": 180 }
+    },
+    {
+      "when": { "up": "true", "facing": "west" },
+      "apply": { "model": "lotr:block/keg_stand", "y": 270 }
+    },
+    { "when": { "up": "true", "facing": "east" },
+      "apply": { "model": "lotr:block/keg_stand", "y": 90 }
+    }
+  ]
+}

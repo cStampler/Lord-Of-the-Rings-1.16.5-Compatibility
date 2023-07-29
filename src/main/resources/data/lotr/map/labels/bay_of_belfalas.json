@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.bay_of_belfalas",
+    "translate": true
+  },
+  "x": 1050,
+  "z": 1450,
+  "scale": 4.0,
+  "angle": 0,
+  "min_zoom": -4.5,
+  "max_zoom": 1.5
+}

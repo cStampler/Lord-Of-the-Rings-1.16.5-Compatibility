@@ -1,0 +1,55 @@
+{
+  "name": {
+    "text": "faction.lotr.fangorn",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.fangorn.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 16,
+  "color": "49B752",
+  "map_square": {
+    "x": 1200,
+    "z": 1000,
+    "radius": 75
+  },
+  "types": [ "lotr:free_people", "lotr:tree" ],
+  "ranks": [
+    {
+      "name": "newcomer",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "treeherd",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "master",
+      "alignment": 250
+    },
+    {
+      "name": "elder",
+      "alignment": 500
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": true,
+	"areas": [
+	  {
+	    "type": "coords",
+		"x": 1180,
+		"z": 1005,
+		"radius": 70
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:fangorn" ]
+}

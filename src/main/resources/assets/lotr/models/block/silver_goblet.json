@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_goblet",
+	"textures": {
+		"goblet": "lotr:block/silver_goblet"
+	}
+}

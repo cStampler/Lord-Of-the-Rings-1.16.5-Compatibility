@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "top": "lotr:block/alloy_forge_top",
+        "bottom": "lotr:block/alloy_forge_bottom",
+        "front": "lotr:block/alloy_forge_front_on",
+        "side": "lotr:block/alloy_forge_side"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.scary",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.scary.lore",
+    "translate": true
+  },
+  "x": 840,
+  "z": 713,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

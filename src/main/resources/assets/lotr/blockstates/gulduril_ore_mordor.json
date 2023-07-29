@@ -1,0 +1,9 @@
+{
+    "variants": {
+		"":	[
+            { "model": "lotr:block/gulduril_ore_mordor_1" },
+            { "model": "lotr:block/gulduril_ore_mordor_2" },
+            { "model": "lotr:block/gulduril_ore_mordor_3" }
+        ]
+	}
+}

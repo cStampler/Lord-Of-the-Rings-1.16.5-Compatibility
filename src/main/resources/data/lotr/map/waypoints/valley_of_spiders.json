@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.valley_of_spiders",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.valley_of_spiders.lore",
+    "translate": true
+  },
+  "x": 1512,
+  "z": 1400,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

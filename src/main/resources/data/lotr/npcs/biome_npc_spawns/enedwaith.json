@@ -1,0 +1,19 @@
+{
+  "faction_spawn_lists": [
+    {
+	  "faction": "lotr:dunland",
+	  "base_weight": 100,
+	  "lists": [
+	    {
+		  "list": "lotr:dunlendings",
+		  "weight": 1
+		},
+		{
+          "list": "lotr:dunlending_warriors",
+          "weight": 1
+        }
+	  ]
+	}
+  ],
+  "npc_density": 0.001
+}

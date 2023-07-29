@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.harlindon",
+    "translate": true
+  },
+  "x": 580,
+  "z": 825,
+  "scale": 2.0,
+  "angle": 15,
+  "min_zoom": -1.5,
+  "max_zoom": 2.5
+}

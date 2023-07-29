@@ -1,0 +1,28 @@
+{
+    "variants": {
+        "clovers=1": [
+            { "model": "lotr:block/clover" },
+            { "model": "lotr:block/clover", "y": 90 },
+            { "model": "lotr:block/clover", "y": 180 },
+            { "model": "lotr:block/clover", "y": 270 }
+        ],
+        "clovers=2": [
+            { "model": "lotr:block/clovers_2" },
+            { "model": "lotr:block/clovers_2", "y": 90 },
+            { "model": "lotr:block/clovers_2", "y": 180 },
+            { "model": "lotr:block/clovers_2", "y": 270 }
+        ],
+        "clovers=3": [
+            { "model": "lotr:block/clovers_3" },
+            { "model": "lotr:block/clovers_3", "y": 90 },
+            { "model": "lotr:block/clovers_3", "y": 180 },
+            { "model": "lotr:block/clovers_3", "y": 270 }
+        ],
+        "clovers=4": [
+            { "model": "lotr:block/clovers_4" },
+            { "model": "lotr:block/clovers_4", "y": 90 },
+            { "model": "lotr:block/clovers_4", "y": 180 },
+            { "model": "lotr:block/clovers_4", "y": 270 }
+        ]
+    }
+}

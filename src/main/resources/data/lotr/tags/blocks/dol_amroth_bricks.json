@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:dol_amroth_brick",
+    "lotr:dol_amroth_brick_slab",
+    "lotr:dol_amroth_brick_stairs",
+    "lotr:mossy_dol_amroth_brick",
+    "lotr:mossy_dol_amroth_brick_slab",
+    "lotr:mossy_dol_amroth_brick_stairs",
+    "lotr:cracked_dol_amroth_brick",
+    "lotr:cracked_dol_amroth_brick_slab",
+    "lotr:cracked_dol_amroth_brick_stairs"
+  ]
+}

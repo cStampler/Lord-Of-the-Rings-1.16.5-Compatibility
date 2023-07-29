@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dol_guldur",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dol_guldur.lore",
+    "translate": true
+  },
+  "x": 1339,
+  "z": 894,
+  "travel_region": "lotr:mirkwood",
+  "faction": "lotr:dol_guldur"
+}

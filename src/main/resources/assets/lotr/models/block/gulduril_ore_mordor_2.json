@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/gulduril_ore_mordor_2",
+        "side": "lotr:block/gulduril_ore_mordor_side_2"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.aldburg",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.aldburg.lore",
+    "translate": true
+  },
+  "x": 1223,
+  "z": 1178,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.annuminas",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:annuminas"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:fornost"
+    }
+  ]
+}

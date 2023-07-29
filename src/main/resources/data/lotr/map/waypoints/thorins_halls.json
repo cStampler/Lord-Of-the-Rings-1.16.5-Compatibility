@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.thorins_halls",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.thorins_halls.lore",
+    "translate": true
+  },
+  "x": 641,
+  "z": 671,
+  "travel_region": "lotr:blue_mountains",
+  "faction": "lotr:blue_mountains"
+}

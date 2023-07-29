@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/plate_food/template_full_bowl",
+    "textures": {
+        "all": "lotr:item/rabbit_stew_plate"
+    }
+}

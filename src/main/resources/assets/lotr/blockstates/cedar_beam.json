@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "lotr:block/cedar_beam" },
+        "axis=z":   { "model": "lotr:block/cedar_beam", "x": 90 },
+        "axis=x":   { "model": "lotr:block/cedar_beam", "x": 90, "y": 90 }
+    }
+}

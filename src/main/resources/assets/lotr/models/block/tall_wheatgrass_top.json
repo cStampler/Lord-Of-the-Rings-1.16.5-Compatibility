@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/tinted_cross_overlay",
+    "textures": {
+        "cross": "lotr:block/tall_wheatgrass_top",
+        "overlay": "lotr:block/tall_wheatgrass_top_overlay"
+    }
+}

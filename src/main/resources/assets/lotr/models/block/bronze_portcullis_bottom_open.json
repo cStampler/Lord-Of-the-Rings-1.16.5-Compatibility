@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_portcullis_bottom_open",
+    "textures": {
+        "all": "lotr:block/bronze_portcullis"
+    }
+}

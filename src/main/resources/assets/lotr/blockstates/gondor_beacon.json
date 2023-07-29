@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "fully_lit=false": { "model": "lotr:block/gondor_beacon" },
+        "fully_lit=true": { "model": "lotr:block/gondor_beacon_lit" }
+    }
+}

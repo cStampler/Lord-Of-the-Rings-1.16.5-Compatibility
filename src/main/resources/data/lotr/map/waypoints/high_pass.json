@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.high_pass",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.high_pass.lore",
+    "translate": true
+  },
+  "x": 1222,
+  "z": 706,
+  "travel_region": "lotr:misty_mountains",
+  "faction": ""
+}

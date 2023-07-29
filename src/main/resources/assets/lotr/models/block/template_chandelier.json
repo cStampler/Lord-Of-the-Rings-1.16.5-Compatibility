@@ -1,0 +1,164 @@
+{
+    "__comment": "Made for the LOTR MC mod",
+    "textures": {
+        "chandelier_chain": "lotr:block/chandelier_chain",
+        "particle": "#chandelier"
+    },
+    "elements": [
+        {
+            "name": "arms1",
+            "from": [ 0, 0, 8 ],
+            "to": [ 16, 5, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45.0 },
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 0, 11, 16, 16 ] },
+                "south": { "texture": "#chandelier", "uv": [ 0, 11, 16, 16 ] }
+            }
+        },
+        {
+            "name": "arms2",
+            "from": [ 0, 0, 8 ],
+            "to": [ 16, 5, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": -45.0 },
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 0, 11, 16, 16 ] },
+                "south": { "texture": "#chandelier", "uv": [ 0, 11, 16, 16 ] }
+            }
+        },
+        {
+            "name": "base",
+            "from": [ 6, 5, 6 ],
+            "to": [ 10, 7, 10 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 0, 0, 4, 2 ] },
+                "east": { "texture": "#chandelier", "uv": [ 0, 0, 4, 2 ] },
+                "south": { "texture": "#chandelier", "uv": [ 0, 0, 4, 2 ] },
+                "west": { "texture": "#chandelier", "uv": [ 0, 0, 4, 2 ] },
+                "up": { "texture": "#chandelier", "uv": [ 0, 0, 4, 4 ] },
+                "down": { "texture": "#chandelier", "uv": [ 0, 0, 4, 4 ] }
+            }
+        },
+        {
+            "name": "chain1",
+            "from": [ 6.5, 7, 8 ],
+            "to": [ 9.5, 16, 8 ],
+            "shade": false,
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45.0 },
+            "faces": {
+                "north": { "texture": "#chandelier_chain", "uv": [ 0, 5, 3, 14 ] },
+                "south": { "texture": "#chandelier_chain", "uv": [ 0, 5, 3, 14 ] }
+            }
+        },
+        {
+            "name": "chain2",
+            "from": [ 6.5, 7, 8 ],
+            "to": [ 9.5, 16, 8 ],
+            "shade": false,
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": -45.0 },
+            "faces": {
+                "north": { "texture": "#chandelier_chain", "uv": [ 0, 2, 3, 11 ] },
+                "south": { "texture": "#chandelier_chain", "uv": [ 0, 2, 3, 11 ] }
+            }
+        },
+        {
+            "name": "candleBaseNW",
+            "from": [ 2, 5, 2 ],
+            "to": [ 5, 6, 5 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ], "rotation": 180 },
+                "east": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "south": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "west": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ] },
+                "up": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ] },
+                "down": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ], "rotation": 270 }
+            }
+        },
+        {
+            "name": "candleNW",
+            "from": [ 3, 6, 3 ],
+            "to": [ 4, 10, 4 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "east": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "south": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "west": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "up": { "texture": "#chandelier", "uv": [ 6, 0, 7, 1 ] }
+            }
+        },
+        {
+            "name": "candleBaseSW",
+            "from": [ 2, 5, 11 ],
+            "to": [ 5, 6, 14 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ], "rotation": 180 },
+                "east": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "south": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "west": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ] },
+                "up": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ] },
+                "down": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ], "rotation": 270 }
+            }
+        },
+        {
+            "name": "candleSW",
+            "from": [ 3, 6, 12 ],
+            "to": [ 4, 10, 13 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "east": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "south": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "west": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "up": { "texture": "#chandelier", "uv": [ 6, 0, 7, 1 ] }
+            }
+        },
+        {
+            "name": "candleBaseSE",
+            "from": [ 11, 5, 11 ],
+            "to": [ 14, 6, 14 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ], "rotation": 180 },
+                "east": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "south": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "west": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ] },
+                "up": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ] },
+                "down": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ], "rotation": 270 }
+            }
+        },
+        {
+            "name": "candleSE",
+            "from": [ 12, 6, 12 ],
+            "to": [ 13, 10, 13 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "east": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "south": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "west": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "up": { "texture": "#chandelier", "uv": [ 6, 0, 7, 1 ] }
+            }
+        },
+        {
+            "name": "candleBaseNE",
+            "from": [ 11, 5, 2 ],
+            "to": [ 14, 6, 5 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ], "rotation": 180 },
+                "east": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "south": { "texture": "#chandelier", "uv": [ 8, 2, 11, 3 ] },
+                "west": { "texture": "#chandelier", "uv": [ 8, 0, 11, 1 ] },
+                "up": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ] },
+                "down": { "texture": "#chandelier", "uv": [ 8, 0, 11, 3 ], "rotation": 270 }
+            }
+        },
+        {
+            "name": "candleNE",
+            "from": [ 12, 6, 3 ],
+            "to": [ 13, 10, 4 ],
+            "faces": {
+                "north": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "east": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "south": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "west": { "texture": "#chandelier", "uv": [ 6, 0, 7, 4 ] },
+                "up": { "texture": "#chandelier", "uv": [ 6, 0, 7, 1 ] }
+            }
+        }
+    ]
+}

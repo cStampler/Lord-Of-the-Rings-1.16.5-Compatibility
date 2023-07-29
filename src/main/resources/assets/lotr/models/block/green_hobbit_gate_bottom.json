@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_gate_bottom",
+    "textures": {
+        "all": "lotr:block/green_hobbit_gate"
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:high_elves",
+  "speechbank": "lotr:high_elves/lindon/elf",
+  "kill_bonus": 1
+}

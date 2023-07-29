@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.hay_gate",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.hay_gate.lore",
+    "translate": true
+  },
+  "x": 856,
+  "z": 728,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

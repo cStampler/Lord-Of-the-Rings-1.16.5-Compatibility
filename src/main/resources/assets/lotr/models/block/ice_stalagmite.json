@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/stalagmite_all",
+    "textures": {
+        "all": "block/packed_ice"
+    }
+}

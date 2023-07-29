@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mornost",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mornost.lore",
+    "translate": true
+  },
+  "x": 1558,
+  "z": 1286,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

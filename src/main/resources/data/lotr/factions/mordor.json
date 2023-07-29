@@ -1,0 +1,66 @@
+{
+  "name": {
+    "text": "faction.lotr.mordor",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.mordor.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 19,
+  "color": "351F1F",
+  "map_square": {
+    "x": 1620,
+    "z": 1290,
+    "radius": 225
+  },
+  "types": [ "lotr:orc" ],
+  "ranks": [
+    {
+      "name": "thrall",
+      "alignment": 10
+    },
+    {
+      "name": "snaga",
+      "alignment": 50
+    },
+    {
+      "name": "brigand",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "slavedriver",
+      "alignment": 200
+    },
+    {
+      "name": "despoiler",
+      "alignment": 500
+    },
+    {
+      "name": "captain",
+      "alignment": 1000
+    },
+    {
+      "name": "lieutenant",
+      "alignment": 1500
+    },
+    {
+      "name": "commander",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:barad_dur",
+		"radius": 500
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:mordor", "lotr:mordor_mountains", "lotr:nurn", "lotr:gorgoroth", "lotr:eastern_desolation", "lotr:morgul_vale" ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.forsaken_inn",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.forsaken_inn.lore",
+    "translate": true
+  },
+  "x": 950,
+  "z": 743,
+  "travel_region": "lotr:breeland",
+  "faction": ""
+}

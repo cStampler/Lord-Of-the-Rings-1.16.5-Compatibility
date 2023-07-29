@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/rotten_log",
+        "side": "lotr:block/rotten_log"
+    }
+}

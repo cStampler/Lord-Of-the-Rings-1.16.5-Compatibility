@@ -1,0 +1,67 @@
+{
+    "variants": {
+        "axis=y,type=bottom": [
+            { "model": "lotr:block/snowy_angmar_brick_slab_1" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_2" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_3" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_4" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_5" }
+        ],
+        "axis=y,type=top": [
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_1" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_2" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_3" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_4" },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_5" }
+        ],
+        "axis=y,type=double": [
+            { "model": "lotr:block/snowy_angmar_brick_1" },
+            { "model": "lotr:block/snowy_angmar_brick_2" },
+            { "model": "lotr:block/snowy_angmar_brick_3" },
+            { "model": "lotr:block/snowy_angmar_brick_4" },
+            { "model": "lotr:block/snowy_angmar_brick_5" }
+        ],
+        "axis=z,type=bottom": [
+            { "model": "lotr:block/snowy_angmar_brick_slab_1", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_2", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_3", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_4", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_5", "x": 270, "uvlock": true }
+        ],
+        "axis=z,type=top": [
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_1", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_2", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_3", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_4", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_5", "x": 270, "uvlock": true }
+        ],
+        "axis=z,type=double": [
+            { "model": "lotr:block/snowy_angmar_brick_1", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_2", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_3", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_4", "x": 270, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_5", "x": 270, "uvlock": true }
+        ],
+        "axis=x,type=bottom": [
+            { "model": "lotr:block/snowy_angmar_brick_slab_1", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_2", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_3", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_4", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_5", "x": 90, "y": 90, "uvlock": true }
+        ],
+        "axis=x,type=top": [
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_1", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_2", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_3", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_4", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_slab_top_5", "x": 90, "y": 90, "uvlock": true }
+        ],
+        "axis=x,type=double": [
+            { "model": "lotr:block/snowy_angmar_brick_1", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_2", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_3", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_4", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/snowy_angmar_brick_5", "x": 90, "y": 90, "uvlock": true }
+        ]
+    }
+}

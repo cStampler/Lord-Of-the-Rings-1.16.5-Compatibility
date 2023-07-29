@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.trolls_cave",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.trolls_cave.lore",
+    "translate": true
+  },
+  "x": 1130,
+  "z": 703,
+  "travel_region": "lotr:trollshaws",
+  "faction": ""
+}

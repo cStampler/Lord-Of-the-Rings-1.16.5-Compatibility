@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.little_delving",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.little_delving.lore",
+    "translate": true
+  },
+  "x": 785,
+  "z": 718,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

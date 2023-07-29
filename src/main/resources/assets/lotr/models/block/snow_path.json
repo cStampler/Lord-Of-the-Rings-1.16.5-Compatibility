@@ -1,0 +1,9 @@
+{  
+    "parent": "lotr:block/template_path",
+    "textures": {
+        "particle": "#bottom",
+        "top": "lotr:block/snow_path_top",
+        "side": "lotr:block/snow_path_side",
+        "bottom": "block/snow"
+    }
+}

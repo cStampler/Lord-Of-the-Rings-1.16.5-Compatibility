@@ -1,0 +1,9 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "lotr:block/wattle_and_daub",
+	"particle": "lotr:block/wattle_and_daub_pillar"
+    },
+    "loader": "lotr:connected_textures",
+    "block_connection_type": "connected_wattle"
+}

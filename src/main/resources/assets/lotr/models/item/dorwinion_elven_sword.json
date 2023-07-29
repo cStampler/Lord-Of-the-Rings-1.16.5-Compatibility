@@ -1,0 +1,14 @@
+{
+    "parent": "item/handheld",
+        "textures": {
+        "layer0": "lotr:item/dorwinion_elven_sword"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "lotr:elven_glow": 1
+            },
+            "model": "lotr:item/dorwinion_elven_sword_glowing"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dimrill_dale",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dimrill_dale.lore",
+    "translate": true
+  },
+  "x": 1177,
+  "z": 864,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.treebeards_hill",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.treebeards_hill.lore",
+    "translate": true
+  },
+  "x": 1200,
+  "z": 1030,
+  "travel_region": "lotr:fangorn",
+  "faction": "lotr:fangorn"
+}

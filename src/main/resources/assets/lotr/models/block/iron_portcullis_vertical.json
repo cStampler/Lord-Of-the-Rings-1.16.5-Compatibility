@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_portcullis_vertical",
+    "textures": {
+        "all": "lotr:block/iron_portcullis"
+    }
+}

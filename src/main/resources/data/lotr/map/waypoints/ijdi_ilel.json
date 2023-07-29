@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ijdi_ilel",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ijdi_ilel.lore",
+    "translate": true
+  },
+  "x": 1563,
+  "z": 1611,
+  "travel_region": "lotr:harad_desert",
+  "faction": ""
+}

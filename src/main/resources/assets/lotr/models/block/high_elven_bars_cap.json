@@ -1,0 +1,8 @@
+{
+	"parent": "block/iron_bars_cap",
+    "textures": {
+        "particle": "lotr:block/high_elven_bars",
+        "bars": "lotr:block/high_elven_bars",
+        "edge": "lotr:block/high_elven_bars"
+    }
+}

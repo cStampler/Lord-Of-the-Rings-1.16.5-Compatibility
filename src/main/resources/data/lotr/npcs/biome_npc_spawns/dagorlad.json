@@ -1,0 +1,15 @@
+{
+  "faction_spawn_lists": [
+    {
+	  "faction": "lotr:mordor",
+	  "base_weight": 100,
+	  "lists": [
+	    {
+		  "list": "lotr:mordor_orcs",
+		  "weight": 10
+		}
+	  ]
+	}
+  ],
+  "npc_density": 0.2
+}

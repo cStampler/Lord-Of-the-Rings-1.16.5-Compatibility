@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ugri_zadin",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ugri_zadin.lore",
+    "translate": true
+  },
+  "x": 1566,
+  "z": 1482,
+  "travel_region": "lotr:harnennor",
+  "faction": "lotr:near_harad"
+}

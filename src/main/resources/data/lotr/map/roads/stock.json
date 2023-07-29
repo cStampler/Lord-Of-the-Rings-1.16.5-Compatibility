@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.stock",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:tuckborough"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:stock"
+    }
+  ]
+}

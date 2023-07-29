@@ -1,0 +1,25 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"front": "lotr:block/wooden_portcullis",
+		"side": "lotr:block/wooden_portcullis_side",
+		"bottom": "lotr:block/wooden_portcullis_bottom",
+		"particle": "#front"
+	},
+	"elements": [
+		{
+			"name": "east",
+			"from": [13, 12, 5],
+			"to": [16, 16, 11],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [6, 0, 10, 3], "rotation": 270, "texture": "#side"},
+				"east": {"uv": [6, 5, 10, 11], "rotation": 90, "texture": "#side", "cullface": "east"},
+				"south": {"uv": [13, 6, 16, 10], "texture": "#bottom"},
+				"west": {"uv": [6, 5, 10, 11], "rotation": 270, "texture": "#side"},
+				"up": {"uv": [13, 5, 16, 11], "texture": "#front"},
+				"down": {"uv": [0, 5, 3, 11], "rotation": 180, "texture": "#front"}
+			}
+		}
+	]
+}

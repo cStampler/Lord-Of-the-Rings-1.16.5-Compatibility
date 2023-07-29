@@ -1,0 +1,9 @@
+{
+  "__comment": "Last frame is duplicated to avoid a bug in the game's particle animation system",
+  "textures": [
+    "lotr:glitter_0",
+    "lotr:glitter_1",
+    "lotr:glitter_2",
+    "lotr:glitter_2"
+  ]
+}

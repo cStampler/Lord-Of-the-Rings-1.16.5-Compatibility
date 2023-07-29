@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.oatbarton",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:oatbarton"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:frogmorton"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:druwaith_iaur"
+  },
+  "x": 925,
+  "z": 1180,
+  "scale": 1.5,
+  "angle": -30,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

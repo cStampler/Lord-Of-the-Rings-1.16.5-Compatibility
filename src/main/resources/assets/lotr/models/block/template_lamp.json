@@ -1,0 +1,43 @@
+{
+	"textures": {
+		"particle": "#lamp"
+	},
+	"elements": [
+		{
+			"name": "lamp",
+			"from": [5, 0, 5],
+			"to": [11, 2, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"faces": {
+				"north": {"uv": [5, 7, 11, 9], "texture": "#lamp"},
+				"east": {"uv": [5, 7, 11, 9], "texture": "#lamp"},
+				"south": {"uv": [5, 7, 11, 9], "texture": "#lamp"},
+				"west": {"uv": [5, 7, 11, 9], "texture": "#lamp"},
+				"up": {"uv": [5, 1, 11, 7], "texture": "#lamp"},
+				"down": {"uv": [5, 9, 11, 15], "texture": "#lamp"}
+			}
+		},
+		{
+			"name": "fire",
+			"from": [4, 2, 8],
+			"to": [12, 16, 8],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"north": {"uv": [4, 2, 12, 16], "texture": "#fire"},
+				"south": {"uv": [4, 2, 12, 16], "texture": "#fire"}
+			}
+		},
+		{
+			"name": "fire",
+			"from": [4, 2, 8],
+			"to": [12, 16, 8],
+            "shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"north": {"uv": [4, 2, 12, 16], "texture": "#fire"},
+				"south": {"uv": [4, 2, 12, 16], "texture": "#fire"}
+			}
+		}
+	]
+}

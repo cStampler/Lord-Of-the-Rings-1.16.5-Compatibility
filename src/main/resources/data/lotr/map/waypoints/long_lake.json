@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.long_lake",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.long_lake.lore",
+    "translate": true
+  },
+  "x": 1461,
+  "z": 632,
+  "travel_region": "lotr:dale",
+  "faction": "lotr:dale"
+}

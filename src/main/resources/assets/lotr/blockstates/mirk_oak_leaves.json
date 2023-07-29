@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "down=true": { "model": "lotr:block/mirk_oak_leaves" },
+        "down=false": [
+            { "model": "lotr:block/mirk_oak_leaves_sprouts_1" },
+            { "model": "lotr:block/mirk_oak_leaves_sprouts_2" },
+            { "model": "lotr:block/mirk_oak_leaves_sprouts_3" },
+            { "model": "lotr:block/mirk_oak_leaves" }
+        ]
+    }
+}

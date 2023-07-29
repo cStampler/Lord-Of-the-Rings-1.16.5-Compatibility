@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.west_gate",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.west_gate.lore",
+    "translate": true
+  },
+  "x": 1134,
+  "z": 873,
+  "travel_region": "lotr:eregion",
+  "faction": ""
+}

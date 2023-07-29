@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.withywindle_valley",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.withywindle_valley.lore",
+    "translate": true
+  },
+  "x": 881,
+  "z": 749,
+  "travel_region": "lotr:old_forest",
+  "faction": ""
+}

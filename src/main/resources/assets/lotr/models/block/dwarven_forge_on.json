@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "top": "lotr:block/dwarven_forge_top",
+        "bottom": "lotr:block/dwarven_forge_bottom",
+        "front": "lotr:block/dwarven_forge_front_on",
+        "side": "lotr:block/dwarven_forge_side"
+    }
+}

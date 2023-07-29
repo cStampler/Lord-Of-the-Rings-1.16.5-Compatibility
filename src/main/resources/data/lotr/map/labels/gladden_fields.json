@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:gladden_fields"
+  },
+  "x": 1290,
+  "z": 775,
+  "scale": 1.0,
+  "angle": -3,
+  "min_zoom": -0.5,
+  "max_zoom": 2.5
+}

@@ -1,0 +1,92 @@
+{
+  "name": {
+    "text": "faction.lotr.hobbits",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.hobbits.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 1,
+  "color": "59CE4E",
+  "map_square": {
+    "x": 830,
+    "z": 745,
+    "radius": 100
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "hayward",
+      "alignment": 250
+    },
+    {
+      "name": "bounder",
+      "alignment": 500
+    },
+    {
+      "name": "shirriff",
+      "alignment": 1000
+    },
+    {
+      "name": "chief_shirriff",
+      "alignment": 2000
+    },
+    {
+      "name": "thain",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": true,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bywater",
+		"radius": 40
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bucklebury",
+		"radius": 15
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:haysend",
+		"radius": 10
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:michel_delving",
+		"radius": 35
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:greenholm",
+		"radius": 10
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:longbottom",
+		"radius": 30
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bree",
+		"radius": 15
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:shire", "lotr:shire_woodlands", "lotr:shire_moors", "lotr:white_downs", "lotr:shire_marshes" ]
+}

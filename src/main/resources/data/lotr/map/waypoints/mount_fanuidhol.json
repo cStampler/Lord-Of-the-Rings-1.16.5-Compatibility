@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_fanuidhol",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_fanuidhol.lore",
+    "translate": true
+  },
+  "x": 1191,
+  "z": 854,
+  "travel_region": "lotr:misty_mountains",
+  "faction": ""
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.bywater",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.bywater.lore",
+    "translate": true
+  },
+  "x": 820,
+  "z": 730,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

@@ -1,0 +1,8 @@
+{
+  "name": {
+    "text": "factionregion.lotr.westlands",
+    "translate": true
+  },
+  "dimension": "lotr:middle_earth",
+  "ordering": 1
+}

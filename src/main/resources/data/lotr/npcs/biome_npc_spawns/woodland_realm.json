@@ -1,0 +1,20 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:woodland_realm",
+      "base_weight": 100,
+      "lists": [
+        {
+          "list": "lotr:wood_elves",
+          "weight": 10
+        },
+        {
+          "list": "lotr:wood_elf_warriors",
+          "weight": 3
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.33,
+  "conquest_gain_rate": 0.2
+}

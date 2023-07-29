@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "lotr:block/fir_leaves"
+    }
+}

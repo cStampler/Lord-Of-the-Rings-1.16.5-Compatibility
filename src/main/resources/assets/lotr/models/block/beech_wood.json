@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/beech_log",
+        "side": "lotr:block/beech_log"
+    }
+}

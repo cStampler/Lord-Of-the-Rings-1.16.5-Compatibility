@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.deephallow",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.deephallow.lore",
+    "translate": true
+  },
+  "x": 850,
+  "z": 749,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

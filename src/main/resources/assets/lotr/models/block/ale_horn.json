@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_ale_horn",
+    "textures": {
+        "all": "lotr:block/ale_horn"
+    }
+}

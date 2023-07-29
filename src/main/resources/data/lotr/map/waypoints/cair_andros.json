@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.cair_andros",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.cair_andros.lore",
+    "translate": true
+  },
+  "x": 1427,
+  "z": 1207,
+  "travel_region": "lotr:anorien",
+  "faction": "lotr:gondor"
+}

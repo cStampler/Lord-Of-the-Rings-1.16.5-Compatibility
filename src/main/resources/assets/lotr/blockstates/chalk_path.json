@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/chalk_path" },
+            { "model": "lotr:block/chalk_path", "y": 90 },
+            { "model": "lotr:block/chalk_path", "y": 180 },
+            { "model": "lotr:block/chalk_path", "y": 270 }
+        ]
+    }
+}

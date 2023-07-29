@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "lotr:block/dark_oak_beam" },
+        "axis=z":   { "model": "lotr:block/dark_oak_beam", "x": 90 },
+        "axis=x":   { "model": "lotr:block/dark_oak_beam", "x": 90, "y": 90 }
+    }
+}

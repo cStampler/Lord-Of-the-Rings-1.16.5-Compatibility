@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:ithilien"
+  },
+  "x": 1440,
+  "z": 1320,
+  "scale": 2.0,
+  "angle": -80,
+  "min_zoom": -2.5,
+  "max_zoom": 2.5
+}

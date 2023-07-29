@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.derndingle",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.derndingle.lore",
+    "translate": true
+  },
+  "x": 1163,
+  "z": 1030,
+  "travel_region": "lotr:fangorn",
+  "faction": "lotr:fangorn"
+}

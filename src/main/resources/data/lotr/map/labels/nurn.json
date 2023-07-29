@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:nurn"
+  },
+  "x": 1660,
+  "z": 1310,
+  "scale": 5.0,
+  "angle": -25,
+  "min_zoom": -0.5,
+  "max_zoom": 1.5
+}

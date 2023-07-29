@@ -1,0 +1,79 @@
+{
+  "name": {
+    "text": "faction.lotr.northern_orcs",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.northern_orcs.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 6,
+  "color": "966C54",
+  "map_square": {
+    "x": 1160,
+    "z": 670,
+    "radius": 150
+  },
+  "types": [ "lotr:orc", "lotr:troll" ],
+  "ranks": [
+    {
+      "name": "thrall",
+      "alignment": 10
+    },
+    {
+      "name": "snaga",
+      "alignment": 50
+    },
+    {
+      "name": "raider",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "ravager",
+      "alignment": 200
+    },
+    {
+      "name": "scourge",
+      "alignment": 500
+    },
+    {
+      "name": "warlord",
+      "alignment": 1000
+    },
+    {
+      "name": "chieftain",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:mount_gundabad",
+		"radius": 200
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:mount_gram",
+		"radius": 200
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:goblin_town",
+		"radius": 150
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:mount_caradhras",
+		"radius": 100
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:misty_mountains", "lotr:trollshaws", "lotr:lone_lands", "lotr:eregion", "lotr:grey_mountains", "lotr:vales_of_anduin",
+    "lotr:anduin_hills", "lotr:misty_mountains_foothills", "lotr:grey_mountains_foothills", "lotr:lone_lands_hills", "lotr:coldfells", "lotr:ettenmoors",
+    "lotr:northern_wilderland" ]
+}

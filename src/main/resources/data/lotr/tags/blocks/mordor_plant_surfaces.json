@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:mordor_rock",
+    "lotr:mordor_dirt",
+    "lotr:mordor_gravel",
+    "minecraft:basalt"
+  ]
+}

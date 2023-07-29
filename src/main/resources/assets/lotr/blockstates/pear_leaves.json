@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/pear_leaves", "weight": 9 },
+            { "model": "lotr:block/pear_leaves_flowers_1", "weight": 3 },
+            { "model": "lotr:block/pear_leaves_flowers_2", "weight": 3 },
+            { "model": "lotr:block/pear_leaves_flowers_3", "weight": 1 }
+        ]
+    }
+}

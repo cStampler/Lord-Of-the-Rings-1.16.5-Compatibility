@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.bardhaven",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.bardhaven.lore",
+    "translate": true
+  },
+  "x": 1657,
+  "z": 768,
+  "travel_region": "lotr:dale",
+  "faction": ""
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mouths_of_isen",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mouths_of_isen.lore",
+    "translate": true
+  },
+  "x": 871,
+  "z": 1127,
+  "travel_region": "lotr:enedwaith",
+  "faction": ""
+}

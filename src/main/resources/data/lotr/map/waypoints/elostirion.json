@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.elostirion",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.elostirion.lore",
+    "translate": true
+  },
+  "x": 710,
+  "z": 742,
+  "travel_region": "lotr:eriador",
+  "faction": "lotr:high_elves"
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_lettuce",
+    "textures": {
+        "leaf": "lotr:block/lettuce_stage2"
+    }
+}

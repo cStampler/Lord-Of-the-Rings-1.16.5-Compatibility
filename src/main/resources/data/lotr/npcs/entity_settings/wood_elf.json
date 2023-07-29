@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:woodland_realm",
+  "speechbank": "lotr:woodland_realm/elf",
+  "kill_bonus": 1
+}

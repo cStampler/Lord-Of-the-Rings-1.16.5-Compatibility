@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.osgiliath_west",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:minas_tirith"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:west_osgiliath"
+    }
+  ]
+}

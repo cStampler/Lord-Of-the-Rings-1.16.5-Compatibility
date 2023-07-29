@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.wulfburg",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.wulfburg.lore",
+    "translate": true
+  },
+  "x": 1077,
+  "z": 1098,
+  "travel_region": "lotr:dunland",
+  "faction": ""
+}

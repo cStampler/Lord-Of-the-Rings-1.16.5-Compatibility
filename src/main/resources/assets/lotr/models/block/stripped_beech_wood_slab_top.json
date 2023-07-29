@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/stripped_beech_log",
+        "top": "lotr:block/stripped_beech_log",
+        "side": "lotr:block/stripped_beech_log"
+    }
+}

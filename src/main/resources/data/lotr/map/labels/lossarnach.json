@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:lossarnach"
+  },
+  "x": 1380,
+  "z": 1275,
+  "scale": 0.75,
+  "angle": -10,
+  "min_zoom": -1.5,
+  "max_zoom": 2.5
+}

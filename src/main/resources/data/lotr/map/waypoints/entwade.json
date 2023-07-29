@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.entwade",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.entwade.lore",
+    "translate": true
+  },
+  "x": 1239,
+  "z": 1104,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

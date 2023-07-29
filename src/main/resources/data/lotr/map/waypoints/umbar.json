@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.umbar",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.umbar.lore",
+    "translate": true
+  },
+  "x": 1214,
+  "z": 1689,
+  "travel_region": "lotr:umbar",
+  "faction": "lotr:near_harad"
+}

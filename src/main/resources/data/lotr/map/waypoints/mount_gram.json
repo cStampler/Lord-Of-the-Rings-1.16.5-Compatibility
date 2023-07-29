@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_gram",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_gram.lore",
+    "translate": true
+  },
+  "x": 1106,
+  "z": 589,
+  "travel_region": "lotr:misty_mountains",
+  "faction": "lotr:northern_orcs"
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:mordor",
+    "lotr:mordor_mountains",
+    "lotr:gorgoroth",
+    "lotr:eastern_desolation",
+    "lotr:morgul_vale"
+  ]
+}

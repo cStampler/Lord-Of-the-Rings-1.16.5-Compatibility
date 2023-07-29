@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "lotr:block/mordor_crafting_table" }
+    }
+}

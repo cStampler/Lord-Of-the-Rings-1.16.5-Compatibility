@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:shire",
+    "lotr:shire_woodlands",
+    "lotr:shire_moors",
+    "lotr:white_downs",
+    "lotr:shire_marshes"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_methedras",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_methedras.lore",
+    "translate": true
+  },
+  "x": 1111,
+  "z": 1031,
+  "travel_region": "lotr:misty_mountains",
+  "faction": ""
+}

@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:lamedon"
+  },
+  "x": 1260,
+  "z": 1240,
+  "scale": 1.5,
+  "angle": 5,
+  "min_zoom": -1.5,
+  "max_zoom": 2.5
+}

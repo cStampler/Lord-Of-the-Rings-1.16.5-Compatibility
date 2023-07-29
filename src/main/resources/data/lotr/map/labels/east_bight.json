@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.east_bight",
+    "translate": true
+  },
+  "x": 1465,
+  "z": 830,
+  "scale": 1.5,
+  "angle": 10,
+  "min_zoom": -2.0,
+  "max_zoom": 2.0
+}

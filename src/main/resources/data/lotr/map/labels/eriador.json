@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:eriador"
+  },
+  "x": 900,
+  "z": 750,
+  "scale": 10.0,
+  "angle": -15,
+  "min_zoom": -4.5,
+  "max_zoom": -1.5
+}

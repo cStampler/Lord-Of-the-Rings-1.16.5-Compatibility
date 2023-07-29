@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.belegost",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.belegost.lore",
+    "translate": true
+  },
+  "x": 622,
+  "z": 600,
+  "travel_region": "lotr:blue_mountains",
+  "faction": ""
+}

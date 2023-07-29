@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "lotr:block/gondor_cobblebrick",
+        "top": "lotr:block/gondor_cobblebrick",
+        "side": "lotr:block/gondor_cobblebrick"
+    }
+}

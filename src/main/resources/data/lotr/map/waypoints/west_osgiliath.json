@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.west_osgiliath",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.west_osgiliath.lore",
+    "translate": true
+  },
+  "x": 1428,
+  "z": 1246,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

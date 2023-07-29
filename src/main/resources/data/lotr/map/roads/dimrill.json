@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.dimrill",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:dimrill_dale"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:house_of_nimrodel"
+    }
+  ]
+}

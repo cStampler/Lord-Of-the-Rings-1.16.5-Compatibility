@@ -1,0 +1,64 @@
+{
+  "name": {
+    "text": "road.lotr.north_south",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:little_delving"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:waymeet"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:longbottom"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:sarn_ford"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:greenway_crossroads"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:tharbad"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:old_south_road"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:fords_of_isen"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:deeping_coomb"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:grimslade"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:edoras"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:aldburg"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:mering_stream"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:amon_din"
+    }
+  ]
+}

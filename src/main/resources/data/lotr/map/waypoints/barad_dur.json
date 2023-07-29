@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.barad_dur",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.barad_dur.lore",
+    "translate": true
+  },
+  "x": 1573,
+  "z": 1196,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

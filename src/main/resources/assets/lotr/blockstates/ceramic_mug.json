@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lotr:block/ceramic_mug" },
+        "facing=south": { "model": "lotr:block/ceramic_mug", "y": 180 },
+        "facing=west":  { "model": "lotr:block/ceramic_mug", "y": 270 },
+        "facing=east":  { "model": "lotr:block/ceramic_mug", "y": 90 }
+    }
+}

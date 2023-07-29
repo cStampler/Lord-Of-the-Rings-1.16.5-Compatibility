@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#lotr:mallorn_logs",
+    "lotr:mallorn_log_slab",
+    "lotr:mallorn_wood_slab",
+    "lotr:stripped_mallorn_log_slab",
+    "lotr:stripped_mallorn_wood_slab",
+    "lotr:mallorn_wood_stairs",
+    "lotr:stripped_mallorn_wood_stairs",
+    "lotr:mallorn_branch",
+    "lotr:stripped_mallorn_branch"
+  ]
+}

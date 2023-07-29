@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:northlands",
+    "lotr:northlands_forest",
+    "lotr:dense_northlands_forest",
+    "lotr:snowy_northlands",
+    "lotr:snowy_northlands_forest",
+    "lotr:dense_snowy_northlands_forest"
+  ]
+}

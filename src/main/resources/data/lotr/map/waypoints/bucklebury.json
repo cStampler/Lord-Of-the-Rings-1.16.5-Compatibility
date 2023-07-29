@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.bucklebury",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.bucklebury.lore",
+    "translate": true
+  },
+  "x": 857,
+  "z": 734,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

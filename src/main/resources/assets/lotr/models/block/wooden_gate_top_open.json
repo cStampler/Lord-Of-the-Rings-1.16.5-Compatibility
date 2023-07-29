@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/template_sided_gate_top_open",
+    "textures": {
+        "face": "lotr:block/wooden_gate",
+        "side": "lotr:block/wooden_gate_side"
+    }
+}

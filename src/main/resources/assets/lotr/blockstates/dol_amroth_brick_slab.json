@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "axis=y,type=bottom": { "model": "lotr:block/dol_amroth_brick_slab" },
+        "axis=y,type=top": { "model": "lotr:block/dol_amroth_brick_slab_top" },
+        "axis=y,type=double": { "model": "lotr:block/dol_amroth_brick_top" },
+        "axis=z,type=bottom": { "model": "lotr:block/dol_amroth_brick_slab_sideways", "uvlock": true },
+        "axis=z,type=top": { "model": "lotr:block/dol_amroth_brick_slab_sideways_top", "uvlock": true },
+        "axis=z,type=double": { "model": "lotr:block/dol_amroth_brick_top", "uvlock": true },
+        "axis=x,type=bottom": { "model": "lotr:block/dol_amroth_brick_slab_sideways", "y": 270, "uvlock": true },
+        "axis=x,type=top": { "model": "lotr:block/dol_amroth_brick_slab_sideways_top", "y": 270, "uvlock": true },
+        "axis=x,type=double": { "model": "lotr:block/dol_amroth_brick_top", "uvlock": true }
+    }
+}

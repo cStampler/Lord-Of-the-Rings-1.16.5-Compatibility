@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/handheld_spear",
+        "textures": {
+        "layer0": "lotr:item/lindon_spear_large_glowing"
+    }
+}

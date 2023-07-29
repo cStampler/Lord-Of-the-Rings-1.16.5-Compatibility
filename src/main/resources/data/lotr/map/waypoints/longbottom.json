@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.longbottom",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.longbottom.lore",
+    "translate": true
+  },
+  "x": 820,
+  "z": 765,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

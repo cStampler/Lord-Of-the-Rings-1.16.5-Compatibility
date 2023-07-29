@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "lotr:block/larch_pressure_plate" },
+        "powered=true": { "model": "lotr:block/larch_pressure_plate_down" }
+    }
+}

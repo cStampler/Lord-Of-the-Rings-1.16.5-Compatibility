@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:nurn",
+    "lotr:nurnen",
+    "lotr:nurn_marshes"
+  ]
+}

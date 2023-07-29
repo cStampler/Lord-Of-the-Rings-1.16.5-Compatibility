@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/handheld_large",
+        "textures": {
+        "layer0": "lotr:item/troll_bone_large"
+    }
+}

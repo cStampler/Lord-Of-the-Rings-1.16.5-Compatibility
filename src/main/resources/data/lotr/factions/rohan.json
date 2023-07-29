@@ -1,0 +1,67 @@
+{
+  "name": {
+    "text": "faction.lotr.rohan",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.rohan.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 17,
+  "color": "358727",
+  "map_square": {
+    "x": 1230,
+    "z": 1090,
+    "radius": 150
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "footman",
+      "alignment": 50
+    },
+    {
+      "name": "atarms",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "esquire",
+      "alignment": 250
+    },
+    {
+      "name": "rider",
+      "alignment": 500
+    },
+    {
+      "name": "captain",
+      "alignment": 1000
+    },
+    {
+      "name": "marshal",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:entwade",
+		"radius": 150
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:isengard",
+		"radius": 100
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:rohan", "lotr:wold" ]
+}

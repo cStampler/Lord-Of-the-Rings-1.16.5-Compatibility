@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:tower_hills"
+  },
+  "x": 720,
+  "z": 750,
+  "scale": 0.5,
+  "angle": 5,
+  "min_zoom": -0.5,
+  "max_zoom": 2.5
+}

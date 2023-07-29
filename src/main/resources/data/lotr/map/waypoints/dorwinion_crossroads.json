@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dorwinion_crossroads",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dorwinion_crossroads.lore",
+    "translate": true
+  },
+  "x": 1680,
+  "z": 882,
+  "travel_region": "lotr:wilderland",
+  "faction": ""
+}

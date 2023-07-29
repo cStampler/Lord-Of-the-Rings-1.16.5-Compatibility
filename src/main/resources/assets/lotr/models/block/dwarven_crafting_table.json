@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "#north",
+        "down": "lotr:block/dwarven_brick",
+        "up": "lotr:block/dwarven_crafting_table_top",
+        "north": "lotr:block/dwarven_crafting_table_front",
+        "east": "lotr:block/dwarven_crafting_table_side",
+        "south": "lotr:block/dwarven_crafting_table_front",
+        "west": "lotr:block/dwarven_crafting_table_side"
+    }
+}

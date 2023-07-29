@@ -1,0 +1,39 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:isengard",
+      "base_weight": 65,
+      "lists": [
+        {
+          "list": "lotr:uruk_hai",
+          "weight": 30
+        },
+        {
+          "list": "lotr:isengard_snagas",
+          "weight": 25
+        },
+        {
+          "list": "lotr:isengard_wargs",
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "faction": "lotr:dunland",
+      "base_weight": 30,
+      "lists": [
+        {
+          "list": "lotr:dunlendings",
+          "weight": 10
+        },
+        {
+          "list": "lotr:dunlending_warriors",
+          "weight": 10
+        }
+      ]
+    }
+  ],
+  "npc_density": 1.0,
+  "allow_darkness_spawns_in_daytime": true,
+  "conquest_gain_rate": 0.2
+}

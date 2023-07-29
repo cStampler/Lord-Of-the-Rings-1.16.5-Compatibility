@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.annuminas",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.annuminas.lore",
+    "translate": true
+  },
+  "x": 814,
+  "z": 661,
+  "travel_region": "lotr:eriador",
+  "faction": ""
+}

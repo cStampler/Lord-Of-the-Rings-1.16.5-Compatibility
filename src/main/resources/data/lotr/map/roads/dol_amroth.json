@@ -1,0 +1,35 @@
+{
+  "name": {
+    "text": "road.lotr.dol_amroth",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "coords",
+      "x": 1266,
+      "z": 1291
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:tarnost"
+    },
+    {
+      "type": "coords",
+      "x": 1213,
+      "z": 1297
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:edhellond"
+    },
+    {
+      "type": "coords",
+      "x": 1185,
+      "z": 1325
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:dol_amroth"
+    }
+  ]
+}

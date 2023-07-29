@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.isengard",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:fords_of_isen"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:isengard"
+    }
+  ]
+}

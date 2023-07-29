@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:copper_block",
+    "lotr:tin_block",
+    "lotr:silver_block",
+    "lotr:mithril_block",
+    "lotr:bronze_block",
+    "lotr:orc_steel_block",
+    "lotr:durnor_block",
+    "lotr:dwarven_steel_block",
+    "lotr:elven_steel_block",
+    "lotr:edhelvir_block",
+    "lotr:gulduril_block",
+    "lotr:uruk_steel_block"
+  ]
+}

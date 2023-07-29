@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:mordor"
+  },
+  "x": 1650,
+  "z": 1280,
+  "scale": 8.0,
+  "angle": -20,
+  "min_zoom": -4.5,
+  "max_zoom": -0.5
+}

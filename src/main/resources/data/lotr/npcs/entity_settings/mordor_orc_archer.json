@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:mordor",
+  "speechbank": "lotr:mordor/orc",
+  "kill_bonus": 1
+}

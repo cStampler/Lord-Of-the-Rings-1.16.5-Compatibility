@@ -1,0 +1,26 @@
+{
+  "northern": {
+    "cold_water_z": 417.5,
+    "warm_water_z": 1980,
+    "ice_start_z": 500,
+    "ice_full_z": 260,
+    "sandy_start_z": 1000,
+    "sandy_full_z": 1650,
+    "coral_start_z": 1250,
+    "coral_full_z": 1730
+  },
+  "southern": {
+    "cold_water_z": 4982.5,
+    "warm_water_z": 3420,
+    "ice_start_z": 4900,
+    "ice_full_z": 5140,
+    "sandy_start_z": 4400,
+    "sandy_full_z": 3750,
+    "coral_start_z": 4150,
+    "coral_full_z": 3670
+  },
+  
+  "__equator_z_for_reference": 2700,
+
+  "__comment": "values are in terms of pixel positions on the map image (NOT relative to the world origin)"
+}

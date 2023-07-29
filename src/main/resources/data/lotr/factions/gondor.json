@@ -1,0 +1,92 @@
+{
+  "name": {
+    "text": "faction.lotr.gondor",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.gondor.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 18,
+  "color": "F9F9F9",
+  "map_square": {
+    "x": 1170,
+    "z": 1300,
+    "radius": 300
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "atarms",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "soldier",
+      "alignment": 200
+    },
+    {
+      "name": "knight",
+      "alignment": 500
+    },
+    {
+      "name": "champion",
+      "alignment": 1000
+    },
+    {
+      "name": "captain",
+      "alignment": 1500
+    },
+    {
+      "name": "lord",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:minas_tirith",
+		"radius": 200
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:edhellond",
+		"radius": 125
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:hirluins_halls",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:crossings_of_poros",
+		"radius": 150
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:crossings_of_harnen",
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:umbar",
+		"radius": 150
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:anorien", "lotr:dor_en_ernil", "lotr:emyn_en_ernil", "lotr:lossarnach", "lotr:lebennin", "lotr:pelargir", 
+    "lotr:lamedon", "lotr:lamedon_hills", "lotr:blackroot_vale", "lotr:pinnath_gelin", "lotr:anfalas", "lotr:further_gondor", "lotr:ethir_anduin" ]
+}

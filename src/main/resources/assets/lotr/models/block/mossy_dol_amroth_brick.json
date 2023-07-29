@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/mossy_dol_amroth_brick_face",
+        "side": "lotr:block/mossy_dol_amroth_brick"
+    }
+}

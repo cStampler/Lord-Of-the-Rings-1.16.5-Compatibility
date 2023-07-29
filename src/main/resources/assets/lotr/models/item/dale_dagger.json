@@ -1,0 +1,14 @@
+{
+    "parent": "lotr:item/handheld_dagger",
+    "textures": {
+        "layer0": "lotr:item/dale_dagger"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "lotr:sneaking": 1
+            },
+            "model": "lotr:item/dale_dagger_sneaking"
+        }
+    ]
+}

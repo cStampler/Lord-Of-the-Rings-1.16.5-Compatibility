@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:rohan"
+  },
+  "x": 1240,
+  "z": 1080,
+  "scale": 5.0,
+  "angle": -10,
+  "min_zoom": -4.5,
+  "max_zoom": -0.5
+}

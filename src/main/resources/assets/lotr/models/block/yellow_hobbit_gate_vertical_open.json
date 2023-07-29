@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_gate_vertical_open",
+    "textures": {
+        "all": "lotr:block/yellow_hobbit_gate"
+    }
+}

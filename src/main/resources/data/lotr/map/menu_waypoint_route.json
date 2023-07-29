@@ -1,0 +1,45 @@
+{
+  "waypoint_route": [
+    "lotr:hobbiton",
+    "lotr:brandywine_bridge",
+    "lotr:bucklebury",
+    "lotr:withywindle_valley",
+    "lotr:bree",
+    "lotr:weathertop",
+    "lotr:rivendell",
+    "lotr:west_gate",
+    "lotr:dimrill_dale",
+    "lotr:cerin_amroth",
+    "lotr:caras_galadhon",
+    "lotr:north_undeep",
+    "lotr:south_undeep",
+    "lotr:argonath",
+    "lotr:rauros",
+
+    "lotr:edoras",
+    "lotr:helms_deep",
+    "lotr:isengard",
+    "lotr:dunharrow",
+    "lotr:erech",
+    "lotr:minas_tirith",
+    "lotr:minas_morgul",
+    "lotr:mount_doom",
+    "lotr:black_gate",
+
+    "lotr:old_rhovanion",
+    "lotr:running_ford",
+    "lotr:dale",
+    "lotr:thranduils_halls",
+    "lotr:enchanted_river",
+    "lotr:forest_gate",
+    "lotr:beorns_hall",
+    "lotr:eagles_eyrie",
+    "lotr:goblin_town",
+
+    "lotr:mount_gram",
+    "lotr:fornost",
+    "lotr:annuminas",
+    "lotr:north_mithlond",
+    "lotr:elostirion"
+  ]
+}

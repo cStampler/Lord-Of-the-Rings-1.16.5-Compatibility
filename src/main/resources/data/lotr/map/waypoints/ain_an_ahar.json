@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ain_an_ahar",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ain_an_ahar.lore",
+    "translate": true
+  },
+  "x": 1265,
+  "z": 1737,
+  "travel_region": "lotr:southron_coasts",
+  "faction": "lotr:near_harad"
+}

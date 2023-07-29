@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lotr:block/ale_horn" },
+        "facing=south": { "model": "lotr:block/ale_horn", "y": 180 },
+        "facing=west":  { "model": "lotr:block/ale_horn", "y": 270 },
+        "facing=east":  { "model": "lotr:block/ale_horn", "y": 90 }
+    }
+}

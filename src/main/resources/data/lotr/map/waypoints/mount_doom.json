@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_doom",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_doom.lore",
+    "translate": true
+  },
+  "x": 1533,
+  "z": 1204,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

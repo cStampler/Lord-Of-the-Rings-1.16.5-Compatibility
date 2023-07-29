@@ -1,0 +1,20 @@
+{
+  "name": {
+    "text": "road.lotr.great_east",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:bree",
+      "x_offset": -0.375,
+      "z_offset": -2.476
+    },
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:bree",
+      "x_offset": 2,
+      "z_offset": -1.5
+    }
+  ]
+}

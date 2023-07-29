@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:blue_mountains"
+  },
+  "x": 625,
+  "z": 620,
+  "scale": 3.0,
+  "angle": 80,
+  "min_zoom": -3.5,
+  "max_zoom": 0.5
+}

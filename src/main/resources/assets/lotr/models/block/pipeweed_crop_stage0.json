@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "lotr:block/pipeweed_crop_stage0"
+    }
+}

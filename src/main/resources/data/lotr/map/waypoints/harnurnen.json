@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.harnurnen",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.harnurnen.lore",
+    "translate": true
+  },
+  "x": 1718,
+  "z": 1369,
+  "travel_region": "lotr:nurn",
+  "faction": "lotr:mordor"
+}

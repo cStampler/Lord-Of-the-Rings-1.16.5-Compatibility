@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:mirkwood"
+  },
+  "x": 1400,
+  "z": 730,
+  "scale": 3.0,
+  "angle": -2,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

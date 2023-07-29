@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.enchanted_river",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.enchanted_river.lore",
+    "translate": true
+  },
+  "x": 1396,
+  "z": 650,
+  "travel_region": "lotr:mirkwood",
+  "faction": ""
+}

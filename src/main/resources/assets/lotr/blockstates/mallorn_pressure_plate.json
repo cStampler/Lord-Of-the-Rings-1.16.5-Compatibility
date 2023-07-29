@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "lotr:block/mallorn_pressure_plate" },
+        "powered=true": { "model": "lotr:block/mallorn_pressure_plate_down" }
+    }
+}

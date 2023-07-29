@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/fernsprout" },
+            { "model": "lotr:block/fernsprout", "y": 90 },
+            { "model": "lotr:block/fernsprout", "y": 180 },
+            { "model": "lotr:block/fernsprout", "y": 270 }
+        ]
+    }
+}

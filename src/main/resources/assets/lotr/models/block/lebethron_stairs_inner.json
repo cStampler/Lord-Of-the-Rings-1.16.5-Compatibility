@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "lotr:block/lebethron_planks",
+        "top": "lotr:block/lebethron_planks",
+        "side": "lotr:block/lebethron_planks"
+    }
+}

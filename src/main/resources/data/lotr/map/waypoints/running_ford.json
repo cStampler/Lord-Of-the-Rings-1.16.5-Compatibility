@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.running_ford",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.running_ford.lore",
+    "translate": true
+  },
+  "x": 1534,
+  "z": 749,
+  "travel_region": "lotr:dale",
+  "faction": ""
+}

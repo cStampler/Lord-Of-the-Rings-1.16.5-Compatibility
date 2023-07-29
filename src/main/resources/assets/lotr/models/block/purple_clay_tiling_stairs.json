@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "lotr:block/purple_clay_tiling",
+        "top": "lotr:block/purple_clay_tiling",
+        "side": "lotr:block/purple_clay_tiling"
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": {
+    "text": "road.lotr.nogrod_mithlond",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:nogrod"
+    },
+    {
+      "type": "coords",
+      "x": 654,
+      "z": 650
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:north_mithlond"
+    }
+  ]
+}

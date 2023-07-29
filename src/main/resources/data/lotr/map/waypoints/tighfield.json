@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tighfield",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tighfield.lore",
+    "translate": true
+  },
+  "x": 778,
+  "z": 712,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

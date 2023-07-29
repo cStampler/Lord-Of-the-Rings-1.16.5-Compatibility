@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=lower": { "model": "lotr:block/flame_of_harad_bottom" },
+        "half=upper":    { "model": "lotr:block/flame_of_harad_top" }
+    }
+}

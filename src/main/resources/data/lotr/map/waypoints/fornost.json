@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.fornost",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.fornost.lore",
+    "translate": true
+  },
+  "x": 897,
+  "z": 652,
+  "travel_region": "lotr:eriador",
+  "faction": ""
+}

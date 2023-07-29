@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=lower": { "model": "lotr:block/tall_wheatgrass_bottom" },
+        "half=upper": { "model": "lotr:block/tall_wheatgrass_top" }
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.edoras",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.edoras.lore",
+    "translate": true
+  },
+  "x": 1190,
+  "z": 1148,
+  "travel_region": "lotr:rohan",
+  "faction": "lotr:rohan"
+}

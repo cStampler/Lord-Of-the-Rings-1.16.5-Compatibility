@@ -1,0 +1,8 @@
+{
+  "name": {
+    "text": "factionregion.lotr.rhun",
+    "translate": true
+  },
+  "dimension": "lotr:middle_earth",
+  "ordering": 2
+}

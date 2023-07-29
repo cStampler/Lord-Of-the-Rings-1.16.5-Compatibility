@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.gate_of_umbar",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.gate_of_umbar.lore",
+    "translate": true
+  },
+  "x": 1252,
+  "z": 1698,
+  "travel_region": "lotr:umbar",
+  "faction": ""
+}

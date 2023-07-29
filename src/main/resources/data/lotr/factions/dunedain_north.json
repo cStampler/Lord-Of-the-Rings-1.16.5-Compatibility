@@ -1,0 +1,107 @@
+{
+  "name": {
+    "text": "faction.lotr.dunedain_north",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.dunedain_north.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 3,
+  "color": "3A5642",
+  "map_square": {
+    "x": 1070,
+    "z": 760,
+    "radius": 150
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "friend",
+      "alignment": 10
+    },
+    {
+      "name": "warden",
+      "alignment": 50
+    },
+    {
+      "name": "ranger",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "ohtar",
+      "alignment": 200
+    },
+    {
+      "name": "roquen",
+      "alignment": 500
+    },
+    {
+      "name": "champion",
+      "alignment": 1000
+    },
+    {
+      "name": "captain",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bywater",
+		"radius": 110
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:sarn_ford",
+		"radius": 60
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:last_bridge",
+		"radius": 110
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bree",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:annuminas",
+		"radius": 50
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:fornost",
+		"radius": 50
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:mount_gram",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:carn_dum",
+		"radius": 60
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:greenway_crossroads",
+		"radius": 60
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:tharbad",
+		"radius": 50
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:eriador", "lotr:lone_lands", "lotr:eriador_downs", "lotr:lone_lands_hills", "lotr:minhiriath", "lotr:tower_hills" ]
+}

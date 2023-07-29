@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tolfalas",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tolfalas.lore",
+    "translate": true
+  },
+  "x": 1240,
+  "z": 1414,
+  "travel_region": "lotr:tolfalas",
+  "faction": ""
+}

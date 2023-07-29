@@ -1,0 +1,19 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:near_harad",
+      "base_weight": 100,
+      "lists": [
+        {
+          "list": "lotr:coast_southrons",
+          "weight": 20
+        },
+        {
+          "list": "lotr:coast_southron_warriors",
+          "weight": 15
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.33
+}

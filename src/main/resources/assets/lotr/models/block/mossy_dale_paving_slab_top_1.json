@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/mossy_dale_paving_1",
+        "top": "lotr:block/mossy_dale_paving_1",
+        "side": "lotr:block/mossy_dale_paving_1"
+    }
+}

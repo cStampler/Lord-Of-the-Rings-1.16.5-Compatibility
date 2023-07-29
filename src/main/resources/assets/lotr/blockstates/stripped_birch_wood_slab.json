@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "axis=y,type=bottom": { "model": "lotr:block/stripped_birch_wood_slab" },
+        "axis=y,type=top": { "model": "lotr:block/stripped_birch_wood_slab_top" },
+        "axis=y,type=double": { "model": "block/stripped_birch_wood" },
+        "axis=z,type=bottom": { "model": "lotr:block/stripped_birch_wood_slab", "x": 270 },
+        "axis=z,type=top": { "model": "lotr:block/stripped_birch_wood_slab_top", "x": 270 },
+        "axis=z,type=double": { "model": "block/stripped_birch_wood", "x": 270 },
+        "axis=x,type=bottom": { "model": "lotr:block/stripped_birch_wood_slab", "x": 90, "y": 90 },
+        "axis=x,type=top": { "model": "lotr:block/stripped_birch_wood_slab_top", "x": 90, "y": 90 },
+        "axis=x,type=double": { "model": "block/stripped_birch_wood", "x": 90, "y": 90 }
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:emyn_muil"
+  },
+  "x": 1360,
+  "z": 1100,
+  "scale": 1.5,
+  "angle": -12,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

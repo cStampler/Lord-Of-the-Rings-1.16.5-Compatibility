@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tol_morwen",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tol_morwen.lore",
+    "translate": true
+  },
+  "x": 87,
+  "z": 698,
+  "travel_region": "lotr:western_isles",
+  "faction": ""
+}

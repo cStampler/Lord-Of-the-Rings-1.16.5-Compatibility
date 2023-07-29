@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.gate_of_herumor",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.gate_of_herumor.lore",
+    "translate": true
+  },
+  "x": 1097,
+  "z": 1721,
+  "travel_region": "lotr:umbar",
+  "faction": "lotr:near_harad"
+}

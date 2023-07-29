@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "lotr:block/flax_bale_bottom",
+        "top": "lotr:block/flax_bale_top",
+        "side": "lotr:block/flax_bale"
+    }
+}

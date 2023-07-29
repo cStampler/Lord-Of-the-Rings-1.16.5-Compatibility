@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:gorgoroth"
+  },
+  "x": 1580,
+  "z": 1220,
+  "scale": 2.0,
+  "angle": -15,
+  "min_zoom": -1.5,
+  "max_zoom": 1.5
+}

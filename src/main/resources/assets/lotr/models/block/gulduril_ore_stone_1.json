@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "lotr:block/gulduril_ore_stone_1"
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "__comment": "Last frame is duplicated to avoid a bug in the game's particle animation system",
+  "textures": [
+    "lotr:npc_exclamation_0",
+    "lotr:npc_exclamation_1",
+    "lotr:npc_exclamation_1"
+  ]
+}

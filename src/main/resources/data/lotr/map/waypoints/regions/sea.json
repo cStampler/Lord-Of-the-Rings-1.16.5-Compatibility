@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:sea",
+    "lotr:island",
+    "lotr:beach",
+    "lotr:white_beach"
+  ]
+}

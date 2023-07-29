@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "bites=0": { "model": "lotr:block/apple_crumble" },
+        "bites=1": { "model": "lotr:block/apple_crumble_slice1" },
+        "bites=2": { "model": "lotr:block/apple_crumble_slice2" },
+        "bites=3": { "model": "lotr:block/apple_crumble_slice3" },
+        "bites=4": { "model": "lotr:block/apple_crumble_slice4" },
+        "bites=5": { "model": "lotr:block/apple_crumble_slice5" },
+        "bites=6": { "model": "lotr:block/apple_crumble_slice6" }
+    }
+}

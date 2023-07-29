@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.haysend",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.haysend.lore",
+    "translate": true
+  },
+  "x": 858,
+  "z": 747,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

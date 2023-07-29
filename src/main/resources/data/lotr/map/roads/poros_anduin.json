@@ -1,0 +1,17 @@
+{
+  "name": {
+    "text": "road.lotr.poros_anduin",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "coords",
+      "x": 1397,
+      "z": 1355
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:crossings_of_poros"
+    }
+  ]
+}

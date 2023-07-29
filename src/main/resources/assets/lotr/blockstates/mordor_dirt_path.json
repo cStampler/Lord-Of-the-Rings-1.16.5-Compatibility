@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/mordor_dirt_path" },
+            { "model": "lotr:block/mordor_dirt_path", "y": 90 },
+            { "model": "lotr:block/mordor_dirt_path", "y": 180 },
+            { "model": "lotr:block/mordor_dirt_path", "y": 270 }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/mordor_moss" },
+            { "model": "lotr:block/mordor_moss", "y": 90 },
+            { "model": "lotr:block/mordor_moss", "y": 180 },
+            { "model": "lotr:block/mordor_moss", "y": 270 }
+        ]
+    }
+}

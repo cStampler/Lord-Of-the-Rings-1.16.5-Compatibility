@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.crossings_of_poros",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.crossings_of_poros.lore",
+    "translate": true
+  },
+  "x": 1442,
+  "z": 1370,
+  "travel_region": "lotr:ithilien",
+  "faction": ""
+}

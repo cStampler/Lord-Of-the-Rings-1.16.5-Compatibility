@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:dorwinion"
+  },
+  "x": 1730,
+  "z": 890,
+  "scale": 2.0,
+  "angle": -10,
+  "min_zoom": -2.5,
+  "max_zoom": 2.5
+}

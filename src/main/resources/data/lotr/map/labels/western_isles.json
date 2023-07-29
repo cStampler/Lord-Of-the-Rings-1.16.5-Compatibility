@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:western_isles"
+  },
+  "x": 290,
+  "z": 620,
+  "scale": 4.0,
+  "angle": -20,
+  "min_zoom": -4.5,
+  "max_zoom": 1.5
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.greenway_crossroads",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.greenway_crossroads.lore",
+    "translate": true
+  },
+  "x": 920,
+  "z": 810,
+  "travel_region": "lotr:eriador",
+  "faction": ""
+}

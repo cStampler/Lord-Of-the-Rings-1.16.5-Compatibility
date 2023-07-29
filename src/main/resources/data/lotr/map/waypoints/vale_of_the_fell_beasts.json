@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.vale_of_the_fell_beasts",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.vale_of_the_fell_beasts.lore",
+    "translate": true
+  },
+  "x": 1754,
+  "z": 1164,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

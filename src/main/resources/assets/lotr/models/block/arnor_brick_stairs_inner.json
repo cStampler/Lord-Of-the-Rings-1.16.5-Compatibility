@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "lotr:block/arnor_brick",
+        "top": "lotr:block/arnor_brick",
+        "side": "lotr:block/arnor_brick"
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:lothlorien",
+      "base_weight": 100,
+      "lists": [
+        {
+          "list": "lotr:galadhrim_elves",
+          "weight": 10
+        },
+        {
+          "list": "lotr:galadhrim_warriors",
+          "weight": 2
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.5,
+  "conquest_gain_rate": 0.2
+}

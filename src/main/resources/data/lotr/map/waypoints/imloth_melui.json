@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.imloth_melui",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.imloth_melui.lore",
+    "translate": true
+  },
+  "x": 1397,
+  "z": 1254,
+  "travel_region": "lotr:lossarnach",
+  "faction": ""
+}

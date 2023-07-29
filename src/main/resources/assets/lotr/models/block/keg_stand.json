@@ -1,0 +1,33 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"stand": "lotr:block/keg_top",
+		"particle": "lotr:block/keg_side"
+	},
+	"elements": [
+		{
+			"name": "leg_left",
+			"from": [4, 12, 4],
+			"to": [5, 17, 12],
+			"faces": {
+				"north": {"uv": [5, 4, 4, 9], "texture": "#stand"},
+				"east": {"uv": [4, 4, 12, 9], "texture": "#stand"},
+				"south": {"uv": [12, 4, 11, 9], "texture": "#stand"},
+				"west": {"uv": [4, 4, 12, 9], "texture": "#stand"},
+				"up": {"uv": [4, 4, 12, 5], "rotation": 90, "texture": "#stand"}
+			}
+		},
+		{
+			"name": "leg_right",
+			"from": [11, 12, 4],
+			"to": [12, 17, 12],
+			"faces": {
+				"north": {"uv": [5, 4, 4, 9], "texture": "#stand"},
+				"east": {"uv": [4, 4, 12, 9], "texture": "#stand"},
+				"south": {"uv": [12, 4, 11, 9], "texture": "#stand"},
+				"west": {"uv": [4, 4, 12, 9], "texture": "#stand"},
+				"up": {"uv": [4, 4, 12, 5], "rotation": 90, "texture": "#stand"}
+			}
+		}
+	]
+}

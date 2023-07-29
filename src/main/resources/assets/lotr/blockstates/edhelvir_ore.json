@@ -1,0 +1,9 @@
+{
+    "variants": {
+		"":	[
+            { "model": "lotr:block/edhelvir_ore_1" },
+            { "model": "lotr:block/edhelvir_ore_2" },
+            { "model": "lotr:block/edhelvir_ore_3" }
+        ]
+	}
+}

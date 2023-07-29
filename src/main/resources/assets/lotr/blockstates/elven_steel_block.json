@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "lotr:block/elven_steel_block" }
+    }
+}

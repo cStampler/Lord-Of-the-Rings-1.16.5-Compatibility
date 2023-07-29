@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.vintner_court",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.vintner_court.lore",
+    "translate": true
+  },
+  "x": 1758,
+  "z": 939,
+  "travel_region": "lotr:dorwinion",
+  "faction": "lotr:dorwinion"
+}

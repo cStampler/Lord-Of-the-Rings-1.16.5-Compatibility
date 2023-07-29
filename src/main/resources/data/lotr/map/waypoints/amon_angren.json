@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.amon_angren",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.amon_angren.lore",
+    "translate": true
+  },
+  "x": 1663,
+  "z": 1245,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

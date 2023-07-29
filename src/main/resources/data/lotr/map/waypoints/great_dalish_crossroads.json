@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.great_dalish_crossroads",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.great_dalish_crossroads.lore",
+    "translate": true
+  },
+  "x": 1567,
+  "z": 680,
+  "travel_region": "lotr:dale",
+  "faction": ""
+}

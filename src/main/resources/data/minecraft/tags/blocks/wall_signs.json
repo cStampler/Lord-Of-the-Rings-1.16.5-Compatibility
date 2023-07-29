@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:pine_wall_sign",
+    "lotr:mallorn_wall_sign",
+    "lotr:mirk_oak_wall_sign",
+    "lotr:charred_wall_sign",
+    "lotr:apple_wall_sign",
+    "lotr:pear_wall_sign",
+    "lotr:cherry_wall_sign",
+    "lotr:lebethron_wall_sign",
+    "lotr:beech_wall_sign",
+    "lotr:maple_wall_sign",
+    "lotr:aspen_wall_sign",
+    "lotr:lairelosse_wall_sign",
+    "lotr:cedar_wall_sign",
+    "lotr:fir_wall_sign",
+    "lotr:larch_wall_sign",
+    "lotr:holly_wall_sign",
+    "lotr:green_oak_wall_sign",
+    "lotr:cypress_sign",
+    "lotr:rotten_sign",
+    "lotr:culumalda_sign"
+  ]
+}

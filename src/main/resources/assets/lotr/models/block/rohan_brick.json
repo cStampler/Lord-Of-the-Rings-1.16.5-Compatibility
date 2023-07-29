@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/rohan_brick",
+        "side": "lotr:block/rohan_brick_side"
+    }
+}

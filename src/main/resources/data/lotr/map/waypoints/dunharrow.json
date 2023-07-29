@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dunharrow",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dunharrow.lore",
+    "translate": true
+  },
+  "x": 1175,
+  "z": 1154,
+  "travel_region": "lotr:white_mountains",
+  "faction": ""
+}

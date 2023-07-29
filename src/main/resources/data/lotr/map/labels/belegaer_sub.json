@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.belegaer_sub",
+    "translate": true
+  },
+  "x": 250,
+  "z": 1220,
+  "scale": 6.0,
+  "angle": 0,
+  "min_zoom": -6.0,
+  "max_zoom": -1.0
+}

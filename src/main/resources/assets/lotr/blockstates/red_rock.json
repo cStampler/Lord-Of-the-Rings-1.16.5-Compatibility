@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/red_rock" },
+            { "model": "lotr:block/red_rock_mirrored" },
+            { "model": "lotr:block/red_rock", "y": 180 },
+            { "model": "lotr:block/red_rock_mirrored", "y": 180 }
+        ]
+    }
+}

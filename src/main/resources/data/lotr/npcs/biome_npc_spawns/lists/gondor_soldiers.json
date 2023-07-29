@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "mixed_entity_types": [
+        { "entity_type": "lotr:gondor_soldier", "weight": 10 },
+        { "entity_type": "lotr:gondor_archer", "weight": 5 }
+      ],
+      "weight": 10,
+      "min_count": 2,
+      "max_count": 12
+    }
+  ]
+}

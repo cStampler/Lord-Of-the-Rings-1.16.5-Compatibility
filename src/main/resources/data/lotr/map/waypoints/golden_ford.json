@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.golden_ford",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.golden_ford.lore",
+    "translate": true
+  },
+  "x": 1776,
+  "z": 986,
+  "travel_region": "lotr:dorwinion",
+  "faction": ""
+}

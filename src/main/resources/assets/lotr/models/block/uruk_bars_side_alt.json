@@ -1,0 +1,64 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"spike": "lotr:block/uruk_bars_spike",
+		"bars": "lotr:block/uruk_bars",
+		"particle": "#bars",
+		"edge": "lotr:block/uruk_bars_edge"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 8],
+			"to": [8, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 8, 16], "texture": "#bars"},
+				"west": {"uv": [8, 0, 0, 16], "texture": "#bars"}
+			}
+		},
+		{
+			"from": [7, 0, 9],
+			"to": [9, 16, 16],
+			"faces": {
+				"south": {"uv": [7, 0, 9, 16], "texture": "#edge", "cullface": "south"},
+				"up": {"uv": [7, 9, 9, 16], "texture": "#edge"},
+				"down":  { "uv": [ 7, 16, 9, 9 ], "texture": "#edge" }
+			}
+		},
+		{
+			"from": [7, 0.001, 9],
+			"to": [9, 0.001, 16],
+			"faces": {
+				"up": {"uv": [7, 9, 9, 16], "texture": "#edge"},
+				"down":  { "uv": [ 7, 16, 9, 9 ], "texture": "#edge" }
+			}
+		},
+		{
+			"from": [7, 15.999, 9],
+			"to": [9, 15.999, 16],
+			"faces": {
+				"up": {"uv": [7, 9, 9, 16], "texture": "#edge"},
+				"down":  { "uv": [ 7, 16, 9, 9 ], "texture": "#edge" }
+			}
+		},
+		{
+			"from": [5, 1, 8],
+			"to": [11, 17, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 9, 8]},
+			"shade": false,
+			"faces": {
+				"north": {"uv": [5, 0, 11, 16], "texture": "#spike", "cullface": "up"},
+				"south": {"uv": [5, 0, 11, 16], "texture": "#spike", "cullface": "up"}
+			}
+		},
+		{
+			"from": [5, 1, 8],
+			"to": [11, 17, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 9, 8]},
+			"shade": false,
+			"faces": {
+				"north": {"uv": [5, 0, 11, 16], "texture": "#spike", "cullface": "up"},
+				"south": {"uv": [5, 0, 11, 16], "texture": "#spike", "cullface": "up"}
+			}
+		}
+	]
+}

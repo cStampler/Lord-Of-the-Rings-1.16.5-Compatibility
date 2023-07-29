@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.harlond",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.harlond.lore",
+    "translate": true
+  },
+  "x": 605,
+  "z": 783,
+  "travel_region": "lotr:lindon",
+  "faction": "lotr:high_elves"
+}

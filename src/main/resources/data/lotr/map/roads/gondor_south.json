@@ -1,0 +1,55 @@
+{
+  "name": {
+    "text": "road.lotr.gondor_south",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:minas_tirith"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:crossings_of_erui"
+    },
+    {
+      "type": "coords",
+      "x": 1408,
+      "z": 1291
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:pelargir"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:linhir"
+    },
+    {
+      "type": "coords",
+      "x": 1279,
+      "z": 1311
+    },
+    {
+      "type": "coords",
+      "x": 1266,
+      "z": 1291
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ethring"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:calembel"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:tarlangs_neck"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:erech"
+    }
+  ]
+}

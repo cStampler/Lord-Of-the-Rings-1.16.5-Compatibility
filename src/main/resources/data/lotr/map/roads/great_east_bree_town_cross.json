@@ -1,0 +1,21 @@
+{
+  "name": {
+    "text": "road.lotr.great_east",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:bree",
+      "x_offset": 2,
+      "z_offset": -1.5
+    },
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:bree",
+      "x_offset": 2,
+      "z_offset": 1.5
+    }
+  ],
+  "__comment": "temporary road to stand-in until village generation"
+}

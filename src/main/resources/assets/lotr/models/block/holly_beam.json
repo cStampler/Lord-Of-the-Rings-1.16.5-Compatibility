@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/holly_beam_top",
+        "side": "lotr:block/holly_beam"
+    }
+}

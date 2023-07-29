@@ -1,0 +1,9 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "particle": "#side",
+        "side": "lotr:block/mordor_dirt_side",
+	    "up": "lotr:block/mordor_dirt",
+	    "down": "lotr:block/mordor_dirt"
+    }
+}

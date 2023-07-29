@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.field_of_celebrant",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.field_of_celebrant.lore",
+    "translate": true
+  },
+  "x": 1281,
+  "z": 960,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lotr:block/orc_steel_block" },
+        "facing=south": { "model": "lotr:block/orc_steel_block", "y": 180 },
+        "facing=west":  { "model": "lotr:block/orc_steel_block", "y": 270 },
+        "facing=east":  { "model": "lotr:block/orc_steel_block", "y": 90 }
+    }
+}

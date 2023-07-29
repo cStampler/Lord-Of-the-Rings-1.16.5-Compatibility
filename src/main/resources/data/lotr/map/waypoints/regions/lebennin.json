@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:lebennin",
+    "lotr:pelargir",
+    "lotr:ethir_anduin"
+  ]
+}

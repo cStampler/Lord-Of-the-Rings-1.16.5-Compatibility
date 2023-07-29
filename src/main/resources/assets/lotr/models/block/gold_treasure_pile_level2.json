@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/template_treasure_pile_level2",
+    "textures": {
+        "end": "lotr:block/gold_treasure_pile_top",
+        "side": "lotr:block/gold_treasure_pile_side"
+    }
+}

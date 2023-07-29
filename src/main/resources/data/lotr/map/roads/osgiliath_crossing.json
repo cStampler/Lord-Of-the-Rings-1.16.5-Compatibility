@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.osgiliath_crossing",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:west_osgiliath"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:east_osgiliath"
+    }
+  ]
+}

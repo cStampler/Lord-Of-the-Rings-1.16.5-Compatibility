@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.nogrod",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.nogrod.lore",
+    "translate": true
+  },
+  "x": 626,
+  "z": 636,
+  "travel_region": "lotr:blue_mountains",
+  "faction": ""
+}

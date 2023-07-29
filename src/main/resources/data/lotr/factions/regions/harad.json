@@ -1,0 +1,8 @@
+{
+  "name": {
+    "text": "factionregion.lotr.harad",
+    "translate": true
+  },
+  "dimension": "lotr:middle_earth",
+  "ordering": 3
+}

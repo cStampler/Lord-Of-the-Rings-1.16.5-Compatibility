@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.caras_galadhon",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.caras_galadhon.lore",
+    "translate": true
+  },
+  "x": 1242,
+  "z": 902,
+  "travel_region": "lotr:lothlorien",
+  "faction": "lotr:lothlorien"
+}

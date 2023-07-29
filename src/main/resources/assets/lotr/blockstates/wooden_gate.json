@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "facing=up,open=false": { "model": "lotr:block/wooden_gate_top" },
+        "facing=up,open=true": { "model": "lotr:block/wooden_gate_top_open" },
+        "facing=down,open=false": { "model": "lotr:block/wooden_gate_bottom" },
+        "facing=down,open=true": { "model": "lotr:block/wooden_gate_bottom_open" },
+        "facing=north,open=false": { "model": "lotr:block/wooden_gate_vertical" },
+        "facing=north,open=true": { "model": "lotr:block/wooden_gate_vertical_open" },
+        "facing=south,open=false": { "model": "lotr:block/wooden_gate_vertical", "y": 180 },
+        "facing=south,open=true": { "model": "lotr:block/wooden_gate_vertical_open", "y": 180 },
+        "facing=west,open=false": { "model": "lotr:block/wooden_gate_vertical", "y": 270 },
+        "facing=west,open=true": { "model": "lotr:block/wooden_gate_vertical_open", "y": 270 },
+        "facing=east,open=false": { "model": "lotr:block/wooden_gate_vertical", "y": 90 },
+        "facing=east,open=true": { "model": "lotr:block/wooden_gate_vertical_open", "y": 90 }
+    }
+}

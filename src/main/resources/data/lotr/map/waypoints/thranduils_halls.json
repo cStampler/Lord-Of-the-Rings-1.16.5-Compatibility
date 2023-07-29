@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.thranduils_halls",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.thranduils_halls.lore",
+    "translate": true
+  },
+  "x": 1420,
+  "z": 633,
+  "travel_region": "lotr:woodland_realm",
+  "faction": "lotr:woodland_realm"
+}

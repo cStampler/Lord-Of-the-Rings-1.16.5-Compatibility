@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+        "textures": {
+        "layer0": "lotr:block/tall_wheatgrass_top",
+        "layer1": "lotr:block/tall_wheatgrass_top_overlay"
+    }
+}

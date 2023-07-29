@@ -1,0 +1,8 @@
+{
+	"parent": "block/iron_bars_cap",
+    "textures": {
+        "particle": "lotr:block/wicker_bars",
+        "bars": "lotr:block/wicker_bars",
+        "edge": "lotr:block/wicker_bars"
+    }
+}

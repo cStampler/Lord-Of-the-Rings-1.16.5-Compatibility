@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "lit=false": { "model": "lotr:block/hearth_block" },
+        "lit=true": { "model": "lotr:block/hearth_block_lit" }
+    }
+}

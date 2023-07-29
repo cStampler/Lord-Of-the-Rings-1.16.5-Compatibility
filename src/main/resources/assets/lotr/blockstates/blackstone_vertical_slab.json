@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "axis=z,type=bottom": { "model": "lotr:block/blackstone_slab_sideways", "uvlock": true },
+        "axis=z,type=top": { "model": "lotr:block/blackstone_slab_sideways_top", "uvlock": true },
+        "axis=z,type=double": { "model": "block/blackstone" },
+        "axis=x,type=bottom": { "model": "lotr:block/blackstone_slab_sideways", "y": 270, "uvlock": true },
+        "axis=x,type=top": { "model": "lotr:block/blackstone_slab_sideways_top", "y": 270, "uvlock": true },
+        "axis=x,type=double": { "model": "block/blackstone" }
+    }
+}

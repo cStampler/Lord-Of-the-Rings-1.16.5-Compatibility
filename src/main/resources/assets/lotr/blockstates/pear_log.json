@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "lotr:block/pear_log" },
+        "axis=z":   { "model": "lotr:block/pear_log", "x": 90 },
+        "axis=x":   { "model": "lotr:block/pear_log", "x": 90, "y": 90 }
+    }
+}

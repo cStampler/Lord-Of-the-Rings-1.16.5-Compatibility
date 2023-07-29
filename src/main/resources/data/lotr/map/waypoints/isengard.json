@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.isengard",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.isengard.lore",
+    "translate": true
+  },
+  "x": 1102,
+  "z": 1061.5,
+  "travel_region": "lotr:nan_curunir",
+  "faction": "lotr:isengard"
+}

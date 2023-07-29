@@ -1,0 +1,20 @@
+{
+  "name": {
+    "text": "road.lotr.dale_port",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:dale"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:great_dalish_crossroads"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:bardhaven"
+    }
+  ]
+}

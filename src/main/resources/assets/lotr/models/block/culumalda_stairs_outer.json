@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "lotr:block/culumalda_planks",
+        "top": "lotr:block/culumalda_planks",
+        "side": "lotr:block/culumalda_planks"
+    }
+}

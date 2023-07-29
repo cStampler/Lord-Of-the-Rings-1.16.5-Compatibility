@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.redwater_ford",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.redwater_ford.lore",
+    "translate": true
+  },
+  "x": 1651,
+  "z": 690,
+  "travel_region": "lotr:dale",
+  "faction": ""
+}

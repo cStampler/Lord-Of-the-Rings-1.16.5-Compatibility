@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.crossings_of_lithnen",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.crossings_of_lithnen.lore",
+    "translate": true
+  },
+  "x": 1539,
+  "z": 1545,
+  "travel_region": "lotr:harnennor",
+  "faction": "lotr:near_harad"
+}

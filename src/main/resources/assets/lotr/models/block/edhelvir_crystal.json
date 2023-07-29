@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_crystal_cluster",
+    "textures": {
+        "crystal": "lotr:block/edhelvir_crystal"
+    }
+}

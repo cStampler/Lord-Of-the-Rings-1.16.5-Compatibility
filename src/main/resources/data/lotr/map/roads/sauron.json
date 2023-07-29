@@ -1,0 +1,38 @@
+{
+  "name": {
+    "text": "road.lotr.sauron",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:minas_morgul"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:mount_doom"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:barad_dur"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:seregost"
+    },
+    {
+      "type": "coords",
+      "x": 1742,
+      "z": 1209
+    },
+    {
+      "type": "coords",
+      "x": 1809,
+      "z": 1172
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:eastern_guard"
+    }
+  ]
+}

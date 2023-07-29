@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/white_sandstone_top",
+        "side": "lotr:block/chiseled_white_sandstone"
+    }
+}

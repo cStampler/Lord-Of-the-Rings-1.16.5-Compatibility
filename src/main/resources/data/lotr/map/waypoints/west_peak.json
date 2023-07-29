@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.west_peak",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.west_peak.lore",
+    "translate": true
+  },
+  "x": 1588,
+  "z": 608,
+  "travel_region": "lotr:iron_hills",
+  "faction": ""
+}

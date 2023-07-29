@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "type=stalactite":  { "model": "lotr:block/stalactite" },
+        "type=stalagmite":  { "model": "lotr:block/stalagmite" },
+        "type=stalactite_double_base":  { "model": "lotr:block/stalactite_double_base" },
+        "type=stalactite_double_point":  { "model": "lotr:block/stalactite_double_point" },
+        "type=stalagmite_double_base":  { "model": "lotr:block/stalagmite_double_base" },
+        "type=stalagmite_double_point":  { "model": "lotr:block/stalagmite_double_point" }
+    }
+}

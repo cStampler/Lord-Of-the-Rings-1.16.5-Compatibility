@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_gundabad",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_gundabad.lore",
+    "translate": true
+  },
+  "x": 1195,
+  "z": 592,
+  "travel_region": "lotr:misty_mountains",
+  "faction": "lotr:northern_orcs"
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/template_herb",
+    "textures": {
+        "stem": "lotr:block/athelas",
+        "leaf" : "lotr:block/athelas_leaf"
+    }
+}

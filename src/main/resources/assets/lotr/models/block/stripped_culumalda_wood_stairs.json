@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "lotr:block/stripped_culumalda_log",
+        "top": "lotr:block/stripped_culumalda_log",
+        "side": "lotr:block/stripped_culumalda_log"
+    }
+}

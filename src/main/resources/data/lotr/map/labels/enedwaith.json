@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:enedwaith"
+  },
+  "x": 950,
+  "z": 1020,
+  "scale": 4.0,
+  "angle": -50,
+  "min_zoom": -4.5,
+  "max_zoom": 0.5
+}

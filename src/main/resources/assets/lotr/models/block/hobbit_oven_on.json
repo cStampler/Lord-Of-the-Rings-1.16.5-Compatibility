@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "top": "lotr:block/hobbit_oven_top",
+        "bottom": "lotr:block/hobbit_oven_bottom",
+        "front": "lotr:block/hobbit_oven_front_on",
+        "side": "lotr:block/hobbit_oven_side"
+    }
+}

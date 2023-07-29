@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.sea_of_rhun",
+    "translate": true
+  },
+  "x": 1830,
+  "z": 930,
+  "scale": 1.5,
+  "angle": -5,
+  "min_zoom": -3.5,
+  "max_zoom": 1.5
+}

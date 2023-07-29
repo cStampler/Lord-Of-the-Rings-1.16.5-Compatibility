@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:near_harad",
+  "speechbank": "lotr:near_harad/harnennor/warrior",
+  "kill_bonus": 2
+}

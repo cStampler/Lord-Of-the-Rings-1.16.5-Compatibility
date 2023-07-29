@@ -1,0 +1,8 @@
+{
+    "parent": "lotr:block/sideways_slab",
+    "textures": {
+        "bottom": "lotr:block/dol_amroth_brick_face",
+        "top": "lotr:block/dol_amroth_brick_face",
+        "side": "lotr:block/dol_amroth_brick_top"
+    }
+}

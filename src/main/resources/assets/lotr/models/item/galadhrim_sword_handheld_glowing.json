@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/handheld_large",
+        "textures": {
+        "layer0": "lotr:item/galadhrim_sword_large_glowing"
+    }
+}

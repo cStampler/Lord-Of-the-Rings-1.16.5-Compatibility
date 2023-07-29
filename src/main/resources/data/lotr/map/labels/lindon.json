@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:lindon"
+  },
+  "x": 570,
+  "z": 750,
+  "scale": 8.0,
+  "angle": 70,
+  "min_zoom": -5.5,
+  "max_zoom": -0.5
+}

@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:dunland",
+  "speechbank": "lotr:dunland/dunlending",
+  "kill_bonus": 2
+}

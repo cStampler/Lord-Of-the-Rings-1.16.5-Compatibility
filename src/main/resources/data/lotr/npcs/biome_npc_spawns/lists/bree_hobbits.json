@@ -1,0 +1,10 @@
+{
+  "entries": [
+    {
+      "entity_type": "lotr:bree_hobbit",
+      "weight": 10,
+      "min_count": 2,
+      "max_count": 6
+    }
+  ]
+}

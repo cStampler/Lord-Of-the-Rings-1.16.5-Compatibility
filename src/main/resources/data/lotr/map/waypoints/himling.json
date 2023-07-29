@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.himling",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.himling.lore",
+    "translate": true
+  },
+  "x": 485,
+  "z": 523,
+  "travel_region": "lotr:western_isles",
+  "faction": ""
+}

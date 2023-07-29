@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.cirith_ungol",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.cirith_ungol.lore",
+    "translate": true
+  },
+  "x": 1479,
+  "z": 1225,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

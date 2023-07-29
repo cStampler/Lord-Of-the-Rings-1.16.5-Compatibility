@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.eilenach",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.eilenach.lore",
+    "translate": true
+  },
+  "x": 1402,
+  "z": 1228,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

@@ -1,0 +1,72 @@
+{
+  "name": {
+    "text": "faction.lotr.angmar",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.angmar.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 7,
+  "color": "779177",
+  "map_square": {
+    "x": 1080,
+    "z": 600,
+    "radius": 125
+  },
+  "types": [ "lotr:man" ],
+  "ranks": [
+    {
+      "name": "thrall",
+      "alignment": 10
+    },
+    {
+      "name": "servant",
+      "alignment": 50
+    },
+    {
+      "name": "kinsman",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "warrior",
+      "alignment": 200
+    },
+    {
+      "name": "champion",
+      "alignment": 500
+    },
+    {
+      "name": "warlord",
+      "alignment": 1000
+    },
+    {
+      "name": "chieftain",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:carn_dum",
+		"radius": 85
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:mount_gram",
+		"radius": 125
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:trolls_cave",
+		"radius": 50
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:angmar", "lotr:angmar_mountains", "lotr:coldfells", "lotr:ettenmoors" ]
+}

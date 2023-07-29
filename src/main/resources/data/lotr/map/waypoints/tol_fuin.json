@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tol_fuin",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tol_fuin.lore",
+    "translate": true
+  },
+  "x": 357,
+  "z": 542,
+  "travel_region": "lotr:western_isles",
+  "faction": ""
+}

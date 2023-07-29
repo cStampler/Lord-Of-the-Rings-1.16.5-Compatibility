@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_celebdil",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_celebdil.lore",
+    "translate": true
+  },
+  "x": 1158,
+  "z": 864,
+  "travel_region": "lotr:misty_mountains",
+  "faction": ""
+}

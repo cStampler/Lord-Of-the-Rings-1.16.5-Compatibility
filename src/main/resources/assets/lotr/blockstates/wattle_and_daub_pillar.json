@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=y,above=false,below=false":  { "model": "lotr:block/wattle_and_daub_pillar" },
+        "axis=y,above=false,below=true":  { "model": "lotr:block/wattle_and_daub_pillar_top" },
+        "axis=y,above=true,below=false":  { "model": "lotr:block/wattle_and_daub_pillar_bottom" },
+        "axis=y,above=true,below=true":  { "model": "lotr:block/wattle_and_daub_pillar_middle" },
+        "axis=z,above=false,below=false":  { "model": "lotr:block/wattle_and_daub_pillar_horizontal"},
+        "axis=z,above=false,below=true":  { "model": "lotr:block/wattle_and_daub_pillar_right"},
+        "axis=z,above=true,below=false":  { "model": "lotr:block/wattle_and_daub_pillar_left"},
+        "axis=z,above=true,below=true":  { "model": "lotr:block/wattle_and_daub_pillar_center"},
+        "axis=x,above=false,below=false":  { "model": "lotr:block/wattle_and_daub_pillar_horizontal_inv", "y": 90 },
+        "axis=x,above=false,below=true":  { "model": "lotr:block/wattle_and_daub_pillar_right_inv", "y": 90 },
+        "axis=x,above=true,below=false":  { "model": "lotr:block/wattle_and_daub_pillar_left_inv", "y": 90 },
+        "axis=x,above=true,below=true":  { "model": "lotr:block/wattle_and_daub_pillar_center_inv", "y": 90 }
+    }
+}

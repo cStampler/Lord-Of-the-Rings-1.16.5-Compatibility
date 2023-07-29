@@ -1,0 +1,210 @@
+{
+    "parent": "lotr:item/template_smoking_pipe",
+    "textures": {
+        "all": "lotr:item/smoking_pipe"
+    },
+    "overrides": [
+		{
+			"predicate": {
+				"lotr:pipe_color": 1
+			},
+			"model": "lotr:item/smoking_pipe_orange"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 2
+			},
+			"model": "lotr:item/smoking_pipe_magenta"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 3
+			},
+			"model": "lotr:item/smoking_pipe_light_blue"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 4
+			},
+			"model": "lotr:item/smoking_pipe_yellow"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 5
+			},
+			"model": "lotr:item/smoking_pipe_lime"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 6
+			},
+			"model": "lotr:item/smoking_pipe_pink"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 7
+			},
+			"model": "lotr:item/smoking_pipe_gray"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 8
+			},
+			"model": "lotr:item/smoking_pipe_light_gray"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 9
+			},
+			"model": "lotr:item/smoking_pipe_cyan"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 10
+			},
+			"model": "lotr:item/smoking_pipe_purple"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 11
+			},
+			"model": "lotr:item/smoking_pipe_blue"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 12
+			},
+			"model": "lotr:item/smoking_pipe_brown"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 13
+			},
+			"model": "lotr:item/smoking_pipe_green"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 14
+			},
+			"model": "lotr:item/smoking_pipe_red"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 15
+			},
+			"model": "lotr:item/smoking_pipe_black"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 0,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 1,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_orange_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 2,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_magenta_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 3,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_light_blue_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 4,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_yellow_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 5,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_lime_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 6,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_pink_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 7,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_gray_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 8,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_light_gray_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 9,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_cyan_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 10,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_purple_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 11
+,				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_blue_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 12,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_brown_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 13,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_green_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 14,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_red_magic"
+		},
+		{
+			"predicate": {
+				"lotr:pipe_color": 15,
+				"lotr:pipe_is_magic": 1
+			},
+			"model": "lotr:item/smoking_pipe_black_magic"
+		}
+	]
+}

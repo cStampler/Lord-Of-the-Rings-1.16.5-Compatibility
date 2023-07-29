@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "lotr:block/uruk_brick",
+        "top": "lotr:block/uruk_brick",
+        "side": "lotr:block/uruk_brick"
+    }
+}

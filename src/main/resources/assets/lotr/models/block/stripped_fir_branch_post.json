@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_branch_post",
+    "textures": {
+        "branch": "lotr:block/stripped_fir_log"
+    }
+}

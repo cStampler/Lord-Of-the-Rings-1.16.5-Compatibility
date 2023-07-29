@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.carn_dum",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.carn_dum.lore",
+    "translate": true
+  },
+  "x": 1010,
+  "z": 503,
+  "travel_region": "lotr:angmar",
+  "faction": "lotr:angmar"
+}

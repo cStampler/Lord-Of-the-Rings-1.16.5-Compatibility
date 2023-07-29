@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:angmar"
+  },
+  "x": 1080,
+  "z": 550,
+  "scale": 4.0,
+  "angle": 17,
+  "min_zoom": -2.5,
+  "max_zoom": 0.5
+}

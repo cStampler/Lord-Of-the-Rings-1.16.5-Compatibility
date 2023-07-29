@@ -1,0 +1,7 @@
+{
+    "parent": "block/ladder",
+    "textures": {
+        "particle": "lotr:block/mallorn_ladder",
+        "texture": "lotr:block/mallorn_ladder"
+    }
+}

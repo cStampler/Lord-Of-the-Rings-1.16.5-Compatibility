@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.east_osgiliath",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.east_osgiliath.lore",
+    "translate": true
+  },
+  "x": 1435,
+  "z": 1246,
+  "travel_region": "lotr:ithilien",
+  "faction": ""
+}

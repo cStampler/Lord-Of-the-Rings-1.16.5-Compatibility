@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.henneth_annun",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.henneth_annun.lore",
+    "translate": true
+  },
+  "x": 1443,
+  "z": 1192,
+  "travel_region": "lotr:ithilien",
+  "faction": "lotr:gondor"
+}

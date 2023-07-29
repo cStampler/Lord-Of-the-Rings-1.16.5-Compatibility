@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.rauros",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.rauros.lore",
+    "translate": true
+  },
+  "x": 1345,
+  "z": 1130,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

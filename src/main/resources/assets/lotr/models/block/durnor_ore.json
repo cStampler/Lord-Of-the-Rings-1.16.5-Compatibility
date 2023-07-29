@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/durnor_ore",
+        "side": "lotr:block/durnor_ore_side"
+    }
+}

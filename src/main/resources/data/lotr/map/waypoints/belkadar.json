@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.belkadar",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.belkadar.lore",
+    "translate": true
+  },
+  "x": 1343,
+  "z": 1561,
+  "travel_region": "lotr:harnennor",
+  "faction": "lotr:near_harad"
+}

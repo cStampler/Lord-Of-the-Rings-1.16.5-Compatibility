@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.thorband",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.thorband.lore",
+    "translate": true
+  },
+  "x": 1642,
+  "z": 1352,
+  "travel_region": "lotr:nurn",
+  "faction": "lotr:mordor"
+}

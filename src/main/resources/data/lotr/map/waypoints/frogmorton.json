@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.frogmorton",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.frogmorton.lore",
+    "translate": true
+  },
+  "x": 831,
+  "z": 728,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

@@ -1,0 +1,29 @@
+{
+  "name": {
+    "text": "road.lotr.dale_south",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "coords",
+      "x": 1354,
+      "z": 966
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:old_rhovanion"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:running_ford"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:great_dalish_crossroads"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:west_peak"
+    }
+  ]
+}

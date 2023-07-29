@@ -1,0 +1,29 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:northern_orcs",
+      "base_weight": 33,
+      "lists": [
+        {
+          "list": "lotr:gundabad_orcs",
+          "weight": 10
+        },
+        {
+          "list": "lotr:gundabad_wargs",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "faction": "lotr:mordor",
+      "base_weight": 33,
+      "lists": [
+        {
+          "list": "lotr:mordor_orcs",
+          "weight": 10
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.2
+}

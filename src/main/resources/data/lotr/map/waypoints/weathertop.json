@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.weathertop",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.weathertop.lore",
+    "translate": true
+  },
+  "x": 998,
+  "z": 723,
+  "travel_region": "lotr:lone_lands",
+  "faction": ""
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "lotr:block/ice_brick",
+        "top": "lotr:block/ice_brick",
+        "side": "lotr:block/ice_brick"
+    }
+}

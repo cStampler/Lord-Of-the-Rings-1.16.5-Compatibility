@@ -1,0 +1,21 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:mordor",
+      "base_weight": 100,
+      "lists": [
+        {
+          "list": "lotr:mordor_orcs",
+          "weight": 30
+        },
+        {
+          "list": "lotr:mordor_wargs",
+          "weight": 20
+        }
+      ]
+    }
+  ],
+  "npc_density": 1.0,
+  "allow_darkness_spawns_in_daytime": true,
+  "conquest_gain_rate": 0.5
+}

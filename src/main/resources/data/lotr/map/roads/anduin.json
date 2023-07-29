@@ -1,0 +1,41 @@
+{
+  "name": {
+    "text": "road.lotr.anduin",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:black_gate"
+    },
+    {
+      "type": "coords",
+      "x": 1428,
+      "z": 1066
+    },
+    {
+      "type": "coords",
+      "x": 1354,
+      "z": 966
+    },
+    {
+      "type": "coords",
+      "x": 1285,
+      "z": 905
+    },
+    {
+      "type": "coords",
+      "x": 1325,
+      "z": 820
+    },
+    {
+      "type": "coords",
+      "x": 1318,
+      "z": 735
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:forest_gate"
+    }
+  ]
+}

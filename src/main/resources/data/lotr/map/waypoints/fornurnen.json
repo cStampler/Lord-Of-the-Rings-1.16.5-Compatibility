@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.fornurnen",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.fornurnen.lore",
+    "translate": true
+  },
+  "x": 1696,
+  "z": 1324,
+  "travel_region": "lotr:nurn",
+  "faction": "lotr:mordor"
+}

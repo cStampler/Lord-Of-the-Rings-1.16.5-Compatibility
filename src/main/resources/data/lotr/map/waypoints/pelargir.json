@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.pelargir",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.pelargir.lore",
+    "translate": true
+  },
+  "x": 1390,
+  "z": 1348,
+  "travel_region": "lotr:lebennin",
+  "faction": "lotr:gondor"
+}

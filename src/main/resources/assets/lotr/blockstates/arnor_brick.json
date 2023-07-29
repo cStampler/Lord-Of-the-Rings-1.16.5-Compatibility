@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "lotr:block/arnor_brick" }
+    }
+}

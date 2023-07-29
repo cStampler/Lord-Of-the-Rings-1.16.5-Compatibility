@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:dale",
+  "speechbank": "lotr:dale/man",
+  "kill_bonus": 1
+}

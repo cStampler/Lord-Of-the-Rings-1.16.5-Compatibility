@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.crossings_of_harnen",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.crossings_of_harnen.lore",
+    "translate": true
+  },
+  "x": 1503,
+  "z": 1544,
+  "travel_region": "lotr:harondor",
+  "faction": ""
+}

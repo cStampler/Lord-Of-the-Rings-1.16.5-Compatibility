@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/rohan_pillar_face",
+        "top": "lotr:block/rohan_pillar_face",
+        "side": "lotr:block/rohan_pillar"
+    }
+}

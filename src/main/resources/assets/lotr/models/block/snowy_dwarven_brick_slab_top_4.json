@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/snowy_dwarven_brick_4",
+        "top": "lotr:block/snowy_dwarven_brick_4",
+        "side": "lotr:block/snowy_dwarven_brick_4"
+    }
+}

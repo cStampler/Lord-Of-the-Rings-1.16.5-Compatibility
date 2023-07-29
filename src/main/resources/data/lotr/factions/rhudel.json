@@ -1,0 +1,76 @@
+{
+  "name": {
+    "text": "faction.lotr.rhudel",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.rhudel.subtitle",
+    "translate": true
+  },
+  "region": "lotr:rhun",
+  "ordering": 2,
+  "color": "C49227",
+  "map_square": {
+    "x": 1890,
+    "z": 980,
+    "radius": 200
+  },
+  "types": [ "lotr:man" ],
+  "ranks": [
+    {
+      "name": "bondsman",
+      "alignment": 10
+    },
+    {
+      "name": "levyman",
+      "alignment": 50
+    },
+    {
+      "name": "clansman",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "warrior",
+      "alignment": 200
+    },
+    {
+      "name": "champion",
+      "alignment": 500
+    },
+    {
+      "name": "golden",
+      "alignment": 1000
+    },
+    {
+      "name": "warlord",
+      "alignment": 1500
+    },
+    {
+      "name": "chieftain",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:rhunost",
+		"radius": 175
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:minas_tirith",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:dale",
+		"radius": 50
+	  }
+	]
+  },
+  "speechbank_home_biomes": []
+}

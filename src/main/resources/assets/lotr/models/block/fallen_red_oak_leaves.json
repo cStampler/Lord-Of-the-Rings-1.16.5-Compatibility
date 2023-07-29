@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_fallen_leaves",
+    "textures": {
+        "leaves": "lotr:block/red_oak_leaves"
+    }
+}

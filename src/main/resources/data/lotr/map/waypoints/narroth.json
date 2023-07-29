@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.narroth",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.narroth.lore",
+    "translate": true
+  },
+  "x": 1640,
+  "z": 1248,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

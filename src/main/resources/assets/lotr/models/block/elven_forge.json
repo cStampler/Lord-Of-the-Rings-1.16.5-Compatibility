@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "top": "lotr:block/elven_forge_top",
+        "bottom": "lotr:block/elven_forge_bottom",
+        "front": "lotr:block/elven_forge_front",
+        "side": "lotr:block/elven_forge_side"
+    }
+}

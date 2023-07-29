@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "lotr:block/cedar_log",
+        "top": "lotr:block/cedar_log",
+        "side": "lotr:block/cedar_log"
+    }
+}

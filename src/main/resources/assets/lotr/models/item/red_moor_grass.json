@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+        "textures": {
+        "layer0": "lotr:block/red_moor_grass",
+        "layer1": "lotr:block/red_moor_grass_overlay"
+    }
+}

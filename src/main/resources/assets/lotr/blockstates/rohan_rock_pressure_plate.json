@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "lotr:block/rohan_rock_pressure_plate" },
+        "powered=true": { "model": "lotr:block/rohan_rock_pressure_plate_down" }
+    }
+}

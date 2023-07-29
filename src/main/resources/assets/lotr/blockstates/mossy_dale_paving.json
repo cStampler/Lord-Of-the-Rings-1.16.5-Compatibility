@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/mossy_dale_paving_1" },
+            { "model": "lotr:block/mossy_dale_paving_2" },
+            { "model": "lotr:block/mossy_dale_paving_3" }
+        ]
+    }
+}

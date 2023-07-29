@@ -1,0 +1,81 @@
+{
+  "name": {
+    "text": "faction.lotr.high_elves",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.high_elves.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 5,
+  "color": "C6E5FF",
+  "map_square": {
+    "x": 570,
+    "z": 770,
+    "radius": 200
+  },
+  "types": [ "lotr:free_people", "lotr:elf" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "warrior",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "herald",
+      "alignment": 200
+    },
+    {
+      "name": "captain",
+      "alignment": 500
+    },
+    {
+      "name": "noble",
+      "alignment": 1000
+    },
+    {
+      "name": "commander",
+      "alignment": 2000
+    },
+    {
+      "name": "lord",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:south_mithlond",
+		"radius": 60
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:forlond",
+		"radius": 80
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:harlond",
+		"radius": 80
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:ford_of_bruinen",
+		"radius": 50
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:lindon", "lotr:lindon_woodlands", "lotr:rivendell", "lotr:rivendell_hills", "lotr:tower_hills" ]
+}

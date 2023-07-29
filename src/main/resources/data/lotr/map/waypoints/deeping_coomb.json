@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.deeping_coomb",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.deeping_coomb.lore",
+    "translate": true
+  },
+  "x": 1136,
+  "z": 1108,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

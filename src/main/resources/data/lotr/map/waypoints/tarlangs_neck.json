@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tarlangs_neck",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tarlangs_neck.lore",
+    "translate": true
+  },
+  "x": 1205,
+  "z": 1213,
+  "travel_region": "lotr:white_mountains",
+  "faction": ""
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_inventory",
+    "textures": {
+        "wall": "lotr:block/snowy_angmar_brick_1"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_inventory",
+    "textures": {
+        "wall": "lotr:block/snowy_dwarven_brick_1"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "top": "lotr:block/orc_forge_top",
+        "bottom": "lotr:block/orc_forge_bottom",
+        "front": "lotr:block/orc_forge_front_on",
+        "side": "lotr:block/orc_forge_side"
+    }
+}

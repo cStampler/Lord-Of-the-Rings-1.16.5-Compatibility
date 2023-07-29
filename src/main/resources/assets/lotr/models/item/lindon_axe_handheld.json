@@ -1,0 +1,14 @@
+{
+    "parent": "lotr:item/handheld_large",
+        "textures": {
+        "layer0": "lotr:item/lindon_axe_large"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "lotr:elven_glow": 1
+            },
+            "model": "lotr:item/lindon_axe_handheld_glowing"
+        }
+    ]
+}

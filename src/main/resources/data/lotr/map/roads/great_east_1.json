@@ -1,0 +1,58 @@
+{
+  "name": {
+    "text": "road.lotr.great_east",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:south_mithlond"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:elostirion"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:greenholm"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:michel_delving"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:waymeet"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:bywater"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:frogmorton"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:whitfurrows"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:brandywine_bridge"
+    },
+    {
+      "type": "coords",
+      "x": 870,
+      "z": 718
+    },
+    {
+      "type": "coords",
+      "x": 902,
+      "z": 729
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:bree"
+    }
+  ]
+}

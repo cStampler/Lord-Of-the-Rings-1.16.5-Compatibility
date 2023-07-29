@@ -1,0 +1,17 @@
+{
+  "name": {
+    "text": "road.lotr.dol_guldur",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "coords",
+      "x": 1285,
+      "z": 905
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:dol_guldur"
+    }
+  ]
+}

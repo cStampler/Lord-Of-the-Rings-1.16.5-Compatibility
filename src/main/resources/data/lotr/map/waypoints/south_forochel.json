@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.south_forochel",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.south_forochel.lore",
+    "translate": true
+  },
+  "x": 825,
+  "z": 459,
+  "travel_region": "lotr:forochel",
+  "faction": "lotr:lossoth"
+}

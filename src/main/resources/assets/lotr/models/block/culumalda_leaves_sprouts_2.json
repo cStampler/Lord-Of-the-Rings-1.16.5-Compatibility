@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/template_leaves_sprouts",
+    "textures": {
+        "all": "lotr:block/culumalda_leaves_2",
+        "sprouts": "lotr:block/culumalda_sprouts_2"
+    }
+}

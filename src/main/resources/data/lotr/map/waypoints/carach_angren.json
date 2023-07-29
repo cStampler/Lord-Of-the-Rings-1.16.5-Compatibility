@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.carach_angren",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.carach_angren.lore",
+    "translate": true
+  },
+  "x": 1491,
+  "z": 1165,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tuckborough",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tuckborough.lore",
+    "translate": true
+  },
+  "x": 815,
+  "z": 741,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

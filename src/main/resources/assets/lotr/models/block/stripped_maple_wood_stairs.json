@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "lotr:block/stripped_maple_log",
+        "top": "lotr:block/stripped_maple_log",
+        "side": "lotr:block/stripped_maple_log"
+    }
+}

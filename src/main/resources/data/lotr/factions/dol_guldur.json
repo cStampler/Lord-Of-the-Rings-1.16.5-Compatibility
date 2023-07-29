@@ -1,0 +1,67 @@
+{
+  "name": {
+    "text": "faction.lotr.dol_guldur",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.dol_guldur.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 10,
+  "color": "353B44",
+  "map_square": {
+    "x": 1380,
+    "z": 870,
+    "radius": 100
+  },
+  "types": [ "lotr:orc" ],
+  "ranks": [
+    {
+      "name": "thrall",
+      "alignment": 10
+    },
+    {
+      "name": "servant",
+      "alignment": 50
+    },
+    {
+      "name": "brigand",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "torchbearer",
+      "alignment": 200
+    },
+    {
+      "name": "despoiler",
+      "alignment": 500
+    },
+    {
+      "name": "captain",
+      "alignment": 1000
+    },
+    {
+      "name": "lieutenant",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:dol_guldur",
+		"radius": 125
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:enchanted_river",
+		"radius": 75
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:mirkwood", "lotr:mirkwood_mountains" ]
+}

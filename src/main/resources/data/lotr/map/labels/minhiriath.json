@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:minhiriath"
+  },
+  "x": 850,
+  "z": 900,
+  "scale": 3.0,
+  "angle": -40,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

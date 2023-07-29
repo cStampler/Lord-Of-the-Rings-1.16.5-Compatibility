@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:harnennor"
+  },
+  "x": 1440,
+  "z": 1580,
+  "scale": 3.0,
+  "angle": -3,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

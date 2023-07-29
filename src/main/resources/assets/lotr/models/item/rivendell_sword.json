@@ -1,0 +1,14 @@
+{
+    "parent": "item/handheld",
+        "textures": {
+        "layer0": "lotr:item/rivendell_sword"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "lotr:elven_glow": 1
+            },
+            "model": "lotr:item/rivendell_sword_glowing"
+        }
+    ]
+}

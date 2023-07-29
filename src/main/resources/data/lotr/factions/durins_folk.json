@@ -1,0 +1,96 @@
+{
+  "name": {
+    "text": "faction.lotr.durins_folk",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.durins_folk.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 12,
+  "color": "4B6182",
+  "map_square": {
+    "x": 1650,
+    "z": 650,
+    "radius": 125
+  },
+  "types": [ "lotr:free_people", "lotr:dwarf" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "oathfriend",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "axebearer",
+      "alignment": 200
+    },
+    {
+      "name": "champion",
+      "alignment": 500
+    },
+    {
+      "name": "commander",
+      "alignment": 1000
+    },
+    {
+      "name": "lord",
+      "alignment": 1500
+    },
+    {
+      "name": "uzbad",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:erebor",
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:west_peak",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:east_peak",
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:redwater_ford",
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:mount_caradhras",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:mount_gundabad",
+		"radius": 100
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:dains_halls",
+		"radius": 50
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:iron_hills" ]
+}

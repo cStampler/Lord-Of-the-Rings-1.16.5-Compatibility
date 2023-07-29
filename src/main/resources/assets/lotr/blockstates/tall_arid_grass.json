@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=lower": { "model": "lotr:block/tall_arid_grass_bottom" },
+        "half=upper": { "model": "lotr:block/tall_arid_grass_top" }
+    }
+}

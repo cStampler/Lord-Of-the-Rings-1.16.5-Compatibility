@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.carrock",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.carrock.lore",
+    "translate": true
+  },
+  "x": 1281,
+  "z": 681,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

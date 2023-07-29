@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.calenhad",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.calenhad.lore",
+    "translate": true
+  },
+  "x": 1330,
+  "z": 1212,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

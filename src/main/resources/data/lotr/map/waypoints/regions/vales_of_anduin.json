@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:vales_of_anduin",
+    "lotr:anduin_hills",
+    "lotr:gladden_fields"
+  ]
+}

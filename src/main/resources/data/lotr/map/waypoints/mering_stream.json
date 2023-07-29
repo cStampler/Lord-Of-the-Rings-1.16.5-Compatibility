@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mering_stream",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mering_stream.lore",
+    "translate": true
+  },
+  "x": 1299,
+  "z": 1202,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

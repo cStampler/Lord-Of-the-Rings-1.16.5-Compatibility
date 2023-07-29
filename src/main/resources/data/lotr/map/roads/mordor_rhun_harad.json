@@ -1,0 +1,44 @@
+{
+  "name": {
+    "text": "road.lotr.mordor_rhun_harad",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ugri_zadin"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:crossings_of_lithnen"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:an_batina"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:ninzadin"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:belkadar"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:gath_azrazain"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:gate_of_fuinur"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:umbar"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:gate_of_herumor"
+    }
+  ]
+}

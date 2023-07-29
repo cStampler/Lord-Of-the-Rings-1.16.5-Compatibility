@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:dor_en_ernil"
+  },
+  "x": 1220,
+  "z": 1330,
+  "scale": 1.5,
+  "angle": -30,
+  "min_zoom": -2.5,
+  "max_zoom": 2.5
+}

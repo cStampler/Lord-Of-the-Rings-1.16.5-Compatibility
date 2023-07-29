@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_gate_top_open",
+    "textures": {
+        "all": "lotr:block/orc_gate"
+    }
+}

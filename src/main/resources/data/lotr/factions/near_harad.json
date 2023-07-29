@@ -1,0 +1,127 @@
+{
+  "name": {
+    "text": "faction.lotr.near_harad",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.near_harad.subtitle",
+    "translate": true
+  },
+  "region": "lotr:harad",
+  "ordering": 1,
+  "color": "B51B1B",
+  "map_square": {
+    "x": 1400,
+    "z": 1730,
+    "radius": 375
+  },
+  "types": [ "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "kinsman",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "warrior",
+      "alignment": 200
+    },
+    {
+      "name": "champion",
+      "alignment": 500
+    },
+    {
+      "name": "serpentguard",
+      "alignment": 1000
+    },
+    {
+      "name": "warlord",
+      "alignment": 1500
+    },
+    {
+      "name": "prince",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:umbar",
+		"radius": 200
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:ajtiaz_an_ahar",
+		"radius": 150
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:belkadar",
+		"radius": 60
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:ninzadin",
+		"radius": 60
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:ijdi_ilel",
+		"radius": 50
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:izem_ulzuz",
+		"radius": 50
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:khopakadar",
+		"radius": 150
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:crossings_of_harnen",
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:crossings_of_poros",
+		"radius": 50
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:minas_tirith",
+		"radius": 50
+	  },
+	  {
+	    "type": "coords",
+		"x": 1210,
+		"z": 1340,
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:pelargir",
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:linhir",
+		"radius": 75
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:southron_coasts", "lotr:umbar", "lotr:harnennor", "lotr:southron_coasts_forest", "lotr:umbar_forest", "lotr:umbar_hills" ]
+}

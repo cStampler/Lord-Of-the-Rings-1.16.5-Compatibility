@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/stalagmite_double_base_all",
+    "textures": {
+        "all": "lotr:block/gondor_rock"
+    }
+}

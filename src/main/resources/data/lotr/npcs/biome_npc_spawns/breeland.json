@@ -1,0 +1,23 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:bree",
+      "base_weight": 100,
+      "lists": [
+        {
+          "list": "lotr:bree_men",
+          "weight": 7
+        },
+        {
+          "list": "lotr:bree_hobbits",
+          "weight": 3
+        },
+        {
+          "list": "lotr:bree_guards",
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.1
+}

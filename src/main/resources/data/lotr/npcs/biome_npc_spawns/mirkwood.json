@@ -1,0 +1,6 @@
+{
+  "faction_spawn_lists": [
+  ],
+  "npc_density": 1.0,
+  "allow_darkness_spawns_in_daytime": true
+}

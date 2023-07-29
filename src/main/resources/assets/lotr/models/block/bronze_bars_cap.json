@@ -1,0 +1,8 @@
+{
+	"parent": "block/iron_bars_cap",
+    "textures": {
+        "particle": "lotr:block/bronze_bars",
+        "bars": "lotr:block/bronze_bars",
+        "edge": "lotr:block/bronze_bars"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "entries": [
+    {
+	  "entity_type": "lotr:hobbit",
+	  "weight": 40,
+	  "min_count": 1,
+	  "max_count": 4
+	}
+  ]
+}

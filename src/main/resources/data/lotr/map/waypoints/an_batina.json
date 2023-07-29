@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.an_batina",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.an_batina.lore",
+    "translate": true
+  },
+  "x": 1518,
+  "z": 1563,
+  "travel_region": "lotr:harnennor",
+  "faction": "lotr:near_harad"
+}

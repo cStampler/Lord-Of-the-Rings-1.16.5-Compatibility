@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_gate_bottom_open",
+    "textures": {
+        "all": "lotr:block/golden_gate"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/stalactite_double_point_all",
+    "textures": {
+        "all": "block/packed_ice"
+    }
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "block/iron_bars_post_ends",
+    "textures": {
+        "particle": "lotr:block/galadhrim_bars",
+        "bars": "lotr:block/galadhrim_bars",
+        "edge": "lotr:block/galadhrim_bars"
+    }
+}

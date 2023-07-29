@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:rohan",
+  "speechbank": "lotr:rohan/man",
+  "kill_bonus": 1
+}

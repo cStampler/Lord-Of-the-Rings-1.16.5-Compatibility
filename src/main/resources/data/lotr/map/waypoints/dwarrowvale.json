@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dwarrowvale",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dwarrowvale.lore",
+    "translate": true
+  },
+  "x": 1080,
+  "z": 990,
+  "travel_region": "lotr:dunland",
+  "faction": ""
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/morgul_iron_ore_mordor",
+        "side": "lotr:block/morgul_iron_ore_mordor_side"
+    }
+}

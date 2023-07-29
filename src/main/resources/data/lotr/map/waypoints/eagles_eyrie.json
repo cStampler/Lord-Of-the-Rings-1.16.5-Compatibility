@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.eagles_eyrie",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.eagles_eyrie.lore",
+    "translate": true
+  },
+  "x": 1246,
+  "z": 685,
+  "travel_region": "lotr:misty_mountains",
+  "faction": ""
+}

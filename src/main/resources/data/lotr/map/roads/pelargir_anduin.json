@@ -1,0 +1,17 @@
+{
+  "name": {
+    "text": "road.lotr.pelargir_anduin",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:pelargir"
+    },
+    {
+      "type": "coords",
+      "x": 1394,
+      "z": 1352
+    }
+  ]
+}

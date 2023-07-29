@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.minas_tirith",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.minas_tirith.lore",
+    "translate": true
+  },
+  "x": 1419,
+  "z": 1247,
+  "travel_region": "lotr:anorien",
+  "faction": "lotr:gondor"
+}

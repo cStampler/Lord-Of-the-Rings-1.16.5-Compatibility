@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.overhill",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.overhill.lore",
+    "translate": true
+  },
+  "x": 817,
+  "z": 720,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

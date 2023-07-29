@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.arveduis_mines",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.arveduis_mines.lore",
+    "translate": true
+  },
+  "x": 663,
+  "z": 489,
+  "travel_region": "lotr:blue_mountains",
+  "faction": ""
+}

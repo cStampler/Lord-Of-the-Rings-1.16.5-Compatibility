@@ -1,0 +1,72 @@
+{
+  "name": {
+    "text": "faction.lotr.lossoth",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.lossoth.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 8,
+  "color": "EFE5DC",
+  "map_square": {
+    "x": 860,
+    "z": 400,
+    "radius": 150
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "kinsman",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "hunter",
+      "alignment": 200
+    },
+    {
+      "name": "headman",
+      "alignment": 500
+    },
+    {
+      "name": "chieftain",
+      "alignment": 1000
+    },
+    {
+      "name": "snowchief",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:south_forochel",
+		"radius": 90
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:cape_of_forochel",
+		"radius": 65
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:carn_dum",
+		"radius": 85
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:forochel" ]
+}

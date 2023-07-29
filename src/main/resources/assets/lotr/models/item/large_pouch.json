@@ -1,0 +1,15 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "lotr:item/large_pouch",
+        "layer1": "lotr:item/large_pouch_overlay"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "lotr:pouch_open": 1
+            },
+            "model": "lotr:item/large_pouch_open"
+        }
+    ]
+}

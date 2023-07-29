@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.westfold",
+    "translate": true
+  },
+  "x": 1165,
+  "z": 1110,
+  "scale": 1.0,
+  "angle": 40,
+  "min_zoom": -1.5,
+  "max_zoom": 2.5
+}

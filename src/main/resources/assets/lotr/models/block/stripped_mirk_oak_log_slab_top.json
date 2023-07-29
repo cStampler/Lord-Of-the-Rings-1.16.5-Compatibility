@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/stripped_mirk_oak_log_top",
+        "top": "lotr:block/stripped_mirk_oak_log_top",
+        "side": "lotr:block/stripped_mirk_oak_log"
+    }
+}

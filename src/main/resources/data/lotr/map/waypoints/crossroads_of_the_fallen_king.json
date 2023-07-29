@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.crossroads_of_the_fallen_king",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.crossroads_of_the_fallen_king.lore",
+    "translate": true
+  },
+  "x": 1450,
+  "z": 1236,
+  "travel_region": "lotr:ithilien",
+  "faction": ""
+}

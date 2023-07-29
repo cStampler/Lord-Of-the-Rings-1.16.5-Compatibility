@@ -1,0 +1,13 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "all": "#leaves",
+        "particle": "#all"
+    },
+    "loader": "lotr:scatter",
+    "scatter_properties": {
+        "num_elements_range": [ 6, 10 ],
+        "x_size_range": [ 2, 6 ],
+        "z_size_range": [ 2, 6 ]
+    }
+}

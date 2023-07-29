@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lotr:block/wooden_cup" },
+        "facing=south": { "model": "lotr:block/wooden_cup", "y": 180 },
+        "facing=west":  { "model": "lotr:block/wooden_cup", "y": 270 },
+        "facing=east":  { "model": "lotr:block/wooden_cup", "y": 90 }
+    }
+}

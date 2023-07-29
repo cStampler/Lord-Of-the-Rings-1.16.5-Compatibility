@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:eriador",
+    "lotr:eriador_downs",
+    "lotr:minhiriath",
+    "lotr:eryn_vorn",
+    "lotr:midgewater",
+    "lotr:swanfleet",
+    "lotr:tower_hills",
+    "lotr:hills_of_evendim"
+  ]
+}

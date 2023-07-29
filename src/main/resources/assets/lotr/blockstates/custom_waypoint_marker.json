@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lotr:block/custom_waypoint_marker" },
+        "facing=south": { "model": "lotr:block/custom_waypoint_marker", "y": 180 },
+        "facing=west": { "model": "lotr:block/custom_waypoint_marker", "y": 270 },
+        "facing=east": { "model": "lotr:block/custom_waypoint_marker", "y": 90 }
+    }
+}

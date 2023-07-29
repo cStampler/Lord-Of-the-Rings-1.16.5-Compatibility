@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:anorien"
+  },
+  "x": 1370,
+  "z": 1205,
+  "scale": 1.5,
+  "angle": 15,
+  "min_zoom": -2.5,
+  "max_zoom": 2.5
+}

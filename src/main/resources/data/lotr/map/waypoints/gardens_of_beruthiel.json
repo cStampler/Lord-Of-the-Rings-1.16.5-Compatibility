@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.gardens_of_beruthiel",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.gardens_of_beruthiel.lore",
+    "translate": true
+  },
+  "x": 1245,
+  "z": 1781,
+  "travel_region": "lotr:southron_coasts",
+  "faction": "lotr:near_harad"
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "lotr:item/small_pouch_open",
+        "layer1": "lotr:item/small_pouch_open_overlay"
+    }
+}

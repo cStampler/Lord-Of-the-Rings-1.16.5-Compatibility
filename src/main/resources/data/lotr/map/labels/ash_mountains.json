@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.ash_mountains",
+    "translate": true
+  },
+  "x": 1640,
+  "z": 1160,
+  "scale": 2.0,
+  "angle": -5,
+  "min_zoom": -2.5,
+  "max_zoom": 0.5
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.min_rimmon",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.min_rimmon.lore",
+    "translate": true
+  },
+  "x": 1350,
+  "z": 1219,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

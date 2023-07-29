@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:pipeweed_crop",
+    "lotr:flax_crop",
+    "lotr:lettuce"
+  ]
+}

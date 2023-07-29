@@ -1,0 +1,9 @@
+{
+    "parent": "lotr:block/stalactite_double_base_template",
+    "textures": {
+        "particle": "#all",
+        "top": "#all",
+        "bottom": "#all",
+        "side": "#all"
+    }
+}

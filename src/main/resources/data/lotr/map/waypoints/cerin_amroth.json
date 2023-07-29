@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.cerin_amroth",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.cerin_amroth.lore",
+    "translate": true
+  },
+  "x": 1230,
+  "z": 897,
+  "travel_region": "lotr:lothlorien",
+  "faction": "lotr:lothlorien"
+}

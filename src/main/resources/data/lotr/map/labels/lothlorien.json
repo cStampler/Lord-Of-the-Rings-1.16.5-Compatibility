@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:lothlorien"
+  },
+  "x": 1225,
+  "z": 930,
+  "scale": 1.0,
+  "angle": 15,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dale",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dale.lore",
+    "translate": true
+  },
+  "x": 1464,
+  "z": 615,
+  "travel_region": "lotr:dale",
+  "faction": "lotr:dale"
+}

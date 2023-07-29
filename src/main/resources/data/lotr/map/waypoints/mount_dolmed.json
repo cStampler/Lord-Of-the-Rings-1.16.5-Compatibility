@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_dolmed",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_dolmed.lore",
+    "translate": true
+  },
+  "x": 599,
+  "z": 627,
+  "travel_region": "lotr:blue_mountains",
+  "faction": ""
+}

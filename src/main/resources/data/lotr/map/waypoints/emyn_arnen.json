@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.emyn_arnen",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.emyn_arnen.lore",
+    "translate": true
+  },
+  "x": 1437,
+  "z": 1267,
+  "travel_region": "lotr:ithilien",
+  "faction": ""
+}

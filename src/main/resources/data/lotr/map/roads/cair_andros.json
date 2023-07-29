@@ -1,0 +1,21 @@
+{
+  "name": {
+    "text": "road.lotr.cair_andros",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:amon_din"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:cair_andros"
+    },
+    {
+      "type": "coords",
+      "x": 1447,
+      "z": 1151
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.calembel",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.calembel.lore",
+    "translate": true
+  },
+  "x": 1235,
+  "z": 1248,
+  "travel_region": "lotr:lamedon",
+  "faction": "lotr:gondor"
+}

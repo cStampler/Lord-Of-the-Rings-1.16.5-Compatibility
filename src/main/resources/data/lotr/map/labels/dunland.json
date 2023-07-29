@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:dunland"
+  },
+  "x": 1055,
+  "z": 990,
+  "scale": 1.5,
+  "angle": -70,
+  "min_zoom": -1.5,
+  "max_zoom": 1.5
+}

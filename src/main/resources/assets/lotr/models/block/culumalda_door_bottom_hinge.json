@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "lotr:block/culumalda_door_bottom",
+        "top": "lotr:block/culumalda_door_top"
+    }
+}

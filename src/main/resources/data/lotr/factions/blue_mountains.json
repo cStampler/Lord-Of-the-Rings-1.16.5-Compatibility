@@ -1,0 +1,82 @@
+{
+  "name": {
+    "text": "faction.lotr.blue_mountains",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.blue_mountains.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 4,
+  "color": "5D91CC",
+  "map_square": {
+    "x": 650,
+    "z": 600,
+    "radius": 125
+  },
+  "types": [ "lotr:free_people", "lotr:dwarf" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "warden",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "axebearer",
+      "alignment": 200
+    },
+    {
+      "name": "champion",
+      "alignment": 500
+    },
+    {
+      "name": "captain",
+      "alignment": 1000
+    },
+    {
+      "name": "noble",
+      "alignment": 1500
+    },
+    {
+      "name": "lord",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:belegost",
+		"radius": 40
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:nogrod",
+		"radius": 40
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:thorins_halls",
+		"radius": 50
+	  },
+	  {
+	    "type": "coords",
+		"x": 695,
+		"z": 820,
+		"radius": 80
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:blue_mountains", "lotr:blue_mountains_foothills" ]
+}

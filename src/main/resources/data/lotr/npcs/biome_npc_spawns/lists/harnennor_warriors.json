@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "mixed_entity_types": [
+        { "entity_type": "lotr:harnennor_warrior", "weight": 20 },
+        { "entity_type": "lotr:harnennor_archer", "weight": 10 }
+      ],
+	  "weight": 20,
+	  "min_count": 3,
+	  "max_count": 6
+	}
+  ]
+}

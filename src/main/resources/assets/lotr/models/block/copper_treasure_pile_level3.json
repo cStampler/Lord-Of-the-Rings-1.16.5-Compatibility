@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/template_treasure_pile_level3",
+    "textures": {
+        "end": "lotr:block/copper_treasure_pile_top",
+        "side": "lotr:block/copper_treasure_pile_side"
+    }
+}

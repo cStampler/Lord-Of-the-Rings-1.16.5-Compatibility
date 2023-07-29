@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/plate_food/template_empty_bowl",
+    "textures": {
+        "all": "lotr:item/bowl_plate"
+    }
+}

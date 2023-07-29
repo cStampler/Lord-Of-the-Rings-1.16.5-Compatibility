@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:breeland"
+  },
+  "x": 920,
+  "z": 740,
+  "scale": 1.0,
+  "angle": 15,
+  "min_zoom": -1.5,
+  "max_zoom": 1.5
+}

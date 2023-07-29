@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.nogrod_forlond",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:nogrod"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:forlond"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.lond_daer",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.lond_daer.lore",
+    "translate": true
+  },
+  "x": 867,
+  "z": 1004,
+  "travel_region": "lotr:enedwaith",
+  "faction": ""
+}

@@ -1,0 +1,24 @@
+{
+  "name": {
+    "text": "road.lotr.nobottle",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:tighfield"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:little_delving"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:nobottle"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:needlehole"
+    }
+  ]
+}

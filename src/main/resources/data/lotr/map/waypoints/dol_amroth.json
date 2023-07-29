@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.dol_amroth",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.dol_amroth.lore",
+    "translate": true
+  },
+  "x": 1158,
+  "z": 1333,
+  "travel_region": "lotr:dor_en_ernil",
+  "faction": "lotr:gondor"
+}

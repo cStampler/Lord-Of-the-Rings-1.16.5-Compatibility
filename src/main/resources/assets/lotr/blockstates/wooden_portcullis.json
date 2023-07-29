@@ -1,0 +1,178 @@
+{
+  "multipart": [
+	{
+      "when": {
+	"open": "true",
+        "facing": "north",
+	"up": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical_top"
+      }
+    },
+	{
+      "when": {
+	"open": "false",
+        "facing": "north"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "east",
+	"up": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical_top_rotated"
+      }
+    },
+	{
+      "when": {
+	"open": "false",
+        "facing": "east"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical_rotated"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "south",
+	"up": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical_top"
+      }
+    },
+	{
+      "when": {
+	"open": "false",
+        "facing": "south"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "west",
+	"up": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical_top_rotated"
+      }
+    },
+	{
+      "when": {
+	"open": "false",
+        "facing": "west"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_vertical_rotated"
+      }
+    },
+	{
+      "when": {
+	"open": "false",
+        "facing": "up"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_top"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "up",
+	"north": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_top_north"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "up",
+	"east": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_top_east"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "up",
+	"south": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_top_south"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "up",
+	"west": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_top_west"
+      }
+    },
+	{
+      "when": {
+	"open": "false",
+        "facing": "down"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_bottom"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "down",
+	"north": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_bottom_north"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "down",
+	"east": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_bottom_east"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "down",
+	"south": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_bottom_south"
+      }
+    },
+	{
+      "when": {
+	"open": "true",
+        "facing": "down",
+	"west": "false"
+	},
+      "apply": {
+        "model": "lotr:block/wooden_portcullis_bottom_west"
+      }
+    }
+  ]
+}

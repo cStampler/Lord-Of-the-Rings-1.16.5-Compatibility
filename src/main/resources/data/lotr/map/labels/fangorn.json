@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:fangorn"
+  },
+  "x": 1190,
+  "z": 1000,
+  "scale": 1.5,
+  "angle": 0,
+  "min_zoom": -2.5,
+  "max_zoom": 2.5
+}

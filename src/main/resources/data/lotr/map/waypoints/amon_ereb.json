@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.amon_ereb",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.amon_ereb.lore",
+    "translate": true
+  },
+  "x": 500,
+  "z": 708,
+  "travel_region": "lotr:lindon",
+  "faction": "lotr:high_elves"
+}

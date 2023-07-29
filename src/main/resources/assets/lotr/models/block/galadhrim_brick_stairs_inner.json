@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "lotr:block/galadhrim_brick",
+        "top": "lotr:block/galadhrim_brick",
+        "side": "lotr:block/galadhrim_brick"
+    }
+}

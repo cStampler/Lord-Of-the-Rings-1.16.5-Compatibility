@@ -1,0 +1,72 @@
+{
+  "name": {
+    "text": "faction.lotr.woodland_realm",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.woodland_realm.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 9,
+  "color": "39964E",
+  "map_square": {
+    "x": 1400,
+    "z": 640,
+    "radius": 75
+  },
+  "types": [ "lotr:free_people", "lotr:elf" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 50
+    },
+    {
+      "name": "friend",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "warden",
+      "alignment": 200
+    },
+    {
+      "name": "herald",
+      "alignment": 500
+    },
+    {
+      "name": "captain",
+      "alignment": 1000
+    },
+    {
+      "name": "noble",
+      "alignment": 2000
+    },
+    {
+      "name": "lord",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:enchanted_river",
+		"radius": 75
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:forest_gate",
+		"radius": 20
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:dol_guldur",
+		"radius": 30
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:woodland_realm" ]
+}

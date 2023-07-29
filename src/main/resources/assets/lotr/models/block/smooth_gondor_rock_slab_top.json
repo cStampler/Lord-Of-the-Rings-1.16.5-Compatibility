@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/smooth_gondor_rock",
+        "top": "lotr:block/smooth_gondor_rock",
+        "side": "lotr:block/smooth_gondor_rock_slab_side"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lotr:block/carved_dale_brick" },
+        "facing=south": { "model": "lotr:block/carved_dale_brick", "y": 180 },
+        "facing=west":  { "model": "lotr:block/carved_dale_brick", "y": 270 },
+        "facing=east":  { "model": "lotr:block/carved_dale_brick", "y": 90 }
+    }
+}

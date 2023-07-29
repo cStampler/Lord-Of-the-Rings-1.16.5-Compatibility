@@ -1,0 +1,20 @@
+{
+  "name": {
+    "text": "road.lotr.osgiliath_morgul",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:east_osgiliath"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:crossroads_of_the_fallen_king"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:minas_morgul"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:lone_lands",
+    "lotr:lone_lands_hills",
+    "lotr:rivendell_hills"
+  ]
+}

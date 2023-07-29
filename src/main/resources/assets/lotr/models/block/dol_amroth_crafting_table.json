@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "#north",
+        "down": "lotr:block/dol_amroth_brick",
+        "up": "lotr:block/dol_amroth_crafting_table_top",
+        "north": "lotr:block/dol_amroth_crafting_table_front",
+        "east": "lotr:block/dol_amroth_crafting_table_side",
+        "south": "lotr:block/dol_amroth_crafting_table_front",
+        "west": "lotr:block/dol_amroth_crafting_table_side"
+    }
+}

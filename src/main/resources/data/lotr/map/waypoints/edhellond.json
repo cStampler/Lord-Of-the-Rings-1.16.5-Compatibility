@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.edhellond",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.edhellond.lore",
+    "translate": true
+  },
+  "x": 1189,
+  "z": 1293,
+  "travel_region": "lotr:dor_en_ernil",
+  "faction": "lotr:gondor"
+}

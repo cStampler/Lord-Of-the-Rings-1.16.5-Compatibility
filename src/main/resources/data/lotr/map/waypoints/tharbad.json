@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.tharbad",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.tharbad.lore",
+    "translate": true
+  },
+  "x": 979,
+  "z": 878,
+  "travel_region": "lotr:eriador",
+  "faction": ""
+}

@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:grey_mountains"
+  },
+  "x": 1360,
+  "z": 565,
+  "scale": 2.0,
+  "angle": 5,
+  "min_zoom": -3.5,
+  "max_zoom": 0.5
+}

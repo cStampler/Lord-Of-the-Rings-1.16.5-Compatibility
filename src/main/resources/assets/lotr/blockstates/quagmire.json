@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/quagmire" },
+            { "model": "lotr:block/quagmire", "y": 90 },
+            { "model": "lotr:block/quagmire", "y": 180 },
+            { "model": "lotr:block/quagmire", "y": 270 }
+        ]
+    }
+}

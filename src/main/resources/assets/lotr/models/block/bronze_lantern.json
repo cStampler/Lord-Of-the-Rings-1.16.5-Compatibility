@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/template_lamp",
+  "textures": {
+    "lamp": "lotr:block/bronze_lantern",
+    "fire": "lotr:block/bronze_lantern_fire"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:nurnen"
+  },
+  "x": 1710,
+  "z": 1345,
+  "scale": 2.0,
+  "angle": -15,
+  "min_zoom": -1.5,
+  "max_zoom": 2.0
+}

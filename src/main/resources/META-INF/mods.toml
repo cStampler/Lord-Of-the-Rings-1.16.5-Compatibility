@@ -1,0 +1,44 @@
+
+# Note: maintain this file using LF for newlines, not CRLF
+
+modLoader="javafml" #mandatory
+loaderVersion="[36,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+issueTrackerURL="https://discord.gg/Hx5CksdyvE"
+license="All rights to code and assets reserved, excepting such names of characters, locations, objects, etc. as belong to the works of J.R.R. Tolkien."
+[[mods]] #mandatory
+modId="lotr"
+version="Renewed-5.5"
+displayName="The Lord of the Rings Mod"
+displayURL="https://github.com/Hummel009"
+logoFile="renewed_logo.png"
+credits="Hummel009"
+authors="Hummel009"
+description='''
+§oThis is an in-progress, piece-by-piece update of the Lord of the Rings Mod to Minecraft 1.16. The original, feature-complete mod is available for Minecraft 1.7.10.§r
+
+Based on The Lord of the Rings and other works by J.R.R. Tolkien:
+The Lord of the Rings Mod adds the world of Middle-earth and its peoples to Minecraft, with many new blocks, items, weapons, mobs, and more. Explore the regions of Middle-earth, discovering unique structures and resources, mining new ores, meeting both friends and foes. Trade, earn achievements, complete quests, even hire and command your own armies.
+Choose your side - will you fight with the Free Peoples, or serve the Shadow?
+
+A note on Canon:
+We consider it a priority to remain consistent with the creation of J.R.R. Tolkien. For some features of the mod, notably Harad and Rhûn, we have invented our own content based on sensible extrapolations from Tolkien's writings, in order to present a more complete world and playing experience. However, those concerned about canon should be careful not to treat the content of this mod as an authoritative adaptation of Tolkien's works. Our adaptation is intended to be faithful to the spirit of Middle-earth, but it is only one possible interpretation of what might have lain within those empty spaces on the map.
+'''
+
+itemIcon="lotr:gold_ring" # Customisation for MrCrayfish's 'Catalogue' mod
+
+[[dependencies.lotr]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.lotr]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36.2.20,)"
+    ordering="NONE"
+    side="BOTH"
+	
+# Customisation for MrCrayfish's 'Configured' mod
+[modproperties.lotr]
+    configuredBackground="lotr:textures/block/dwarven_brick.png"

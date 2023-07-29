@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "lotr:block/hearth_block_bottom",
+        "top": "lotr:block/soul_fire_hearth_block_lit_top",
+        "side": "lotr:block/soul_fire_hearth_block_lit_side"
+    }
+}

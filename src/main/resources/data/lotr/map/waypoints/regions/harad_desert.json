@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:harad_desert",
+    "lotr:harad_half_desert",
+    "lotr:harad_desert_hills"
+  ]
+}

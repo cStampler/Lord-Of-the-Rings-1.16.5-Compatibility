@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y": { "model": "lotr:block/lebethron_wood" },
+        "axis=z": { "model": "lotr:block/lebethron_wood", "x": 90 },
+        "axis=x": { "model": "lotr:block/lebethron_wood", "x": 90, "y": 90 }
+    }
+}

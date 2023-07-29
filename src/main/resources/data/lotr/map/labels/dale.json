@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:dale"
+  },
+  "x": 1560,
+  "z": 700,
+  "scale": 4.0,
+  "angle": 10,
+  "min_zoom": -3.5,
+  "max_zoom": 0.5
+}

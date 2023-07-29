@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/stalagmite_all",
+    "textures": {
+        "all": "lotr:block/rohan_rock"
+    }
+}

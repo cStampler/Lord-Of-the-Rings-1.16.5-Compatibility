@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/cube_column_mirrored_sides",
+    "textures": {
+        "end": "lotr:block/mordor_rock",
+	"side": "lotr:block/mordor_rock_side_mossy"
+    }
+}

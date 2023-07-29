@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "": [
+		{ "model": "lotr:block/snowy_dwarven_brick_1" },
+		{ "model": "lotr:block/snowy_dwarven_brick_2" },
+		{ "model": "lotr:block/snowy_dwarven_brick_3" },
+		{ "model": "lotr:block/snowy_dwarven_brick_4" },
+		{ "model": "lotr:block/snowy_dwarven_brick_5" }
+		]
+    }
+}

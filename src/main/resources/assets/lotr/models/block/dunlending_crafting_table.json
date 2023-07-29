@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "#north",
+        "down": "block/cobblestone",
+        "up": "lotr:block/dunlending_crafting_table_top",
+        "north": "lotr:block/dunlending_crafting_table_side",
+        "east": "lotr:block/dunlending_crafting_table_side",
+        "south": "lotr:block/dunlending_crafting_table_side",
+        "west": "lotr:block/dunlending_crafting_table_side"
+    }
+}

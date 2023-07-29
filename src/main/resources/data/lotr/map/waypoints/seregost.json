@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.seregost",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.seregost.lore",
+    "translate": true
+  },
+  "x": 1682,
+  "z": 1214,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

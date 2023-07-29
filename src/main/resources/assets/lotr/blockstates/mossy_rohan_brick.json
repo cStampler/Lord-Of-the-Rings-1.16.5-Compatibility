@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/mossy_rohan_brick" },
+            { "model": "lotr:block/mossy_rohan_brick", "y": 90 },
+            { "model": "lotr:block/mossy_rohan_brick", "y": 180 },
+            { "model": "lotr:block/mossy_rohan_brick", "y": 270 }
+        ]
+    }
+}

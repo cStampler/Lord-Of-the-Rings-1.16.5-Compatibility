@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.corsairs_landing",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.corsairs_landing.lore",
+    "translate": true
+  },
+  "x": 992,
+  "z": 1113,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

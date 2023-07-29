@@ -1,0 +1,65 @@
+{
+    "parent": "lotr:block/clover_template",
+    "elements": [
+        {   "from": [ 4.4, 0, 8 ],
+            "to": [ 11.6, 8, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem", "tintindex": 0 },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem", "tintindex": 0 }
+            },
+            "__comment": "stem cross 1"
+        },
+        {   "from": [ 8, 0, 4.4 ],
+            "to": [ 8, 8, 11.6 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem", "tintindex": 0 },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem", "tintindex": 0 }
+            },
+            "__comment": "stem cross 2"
+        },
+        {   "from": [ 6, 4, 4 ],
+            "to": [ 10, 4, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 0 },
+            "shade": false,
+            "faces": {
+                "up": { "uv": [ 0, 0, 8, 8 ], "texture": "#petals", "tintindex": 0 },
+                "down": { "uv": [ 0, 0, 8, 8 ], "texture": "#petals", "tintindex": 0 }
+            },
+            "__comment": "petal 1 (top)"
+        },
+        {   "from": [ 8, 4.0025, 6 ],
+            "to": [ 12, 4.0025, 10 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 0 },
+            "shade": false,
+            "faces": {
+                "up": { "uv": [ 8, 0, 16, 8 ], "texture": "#petals", "tintindex": 0 },
+                "down": { "uv": [ 8, 0, 16, 8 ], "texture": "#petals", "tintindex": 0 }
+            },
+            "__comment": "petal 2 (right)"
+        },
+        {   "from": [ 6, 4.005, 8 ],
+            "to": [ 10, 4.005, 12 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 0 },
+            "shade": false,
+            "faces": {
+                "up": { "uv": [ 8, 8, 16, 16 ], "texture": "#petals", "tintindex": 0 },
+                "down": { "uv": [ 8, 8, 16, 16 ], "texture": "#petals", "tintindex": 0 }
+            },
+            "__comment": "petal 3 (bottom)"
+        },
+        {   "from": [ 4, 4.0075, 6 ],
+            "to": [ 8, 4.0075, 10 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 0 },
+            "shade": false,
+            "faces": {
+                "up": { "uv": [ 0, 8, 8, 16 ], "texture": "#petals", "tintindex": 0 },
+                "down": { "uv": [ 0, 8, 8, 16 ], "texture": "#petals", "tintindex": 0 }
+            },
+            "__comment": "petal 4 (left)"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.halifirien",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.halifirien.lore",
+    "translate": true
+  },
+  "x": 1309,
+  "z": 1205,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

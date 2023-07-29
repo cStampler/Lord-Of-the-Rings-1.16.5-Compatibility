@@ -1,0 +1,62 @@
+{
+  "name": {
+    "text": "faction.lotr.dunland",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.dunland.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 14,
+  "color": "A8948F",
+  "map_square": {
+    "x": 1090,
+    "z": 1030,
+    "radius": 125
+  },
+  "types": [ "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "kinsman",
+      "alignment": 50
+    },
+    {
+      "name": "warrior",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "bearer",
+      "alignment": 200
+    },
+    {
+      "name": "avenger",
+      "alignment": 500
+    },
+    {
+      "name": "warlord",
+      "alignment": 1000
+    },
+    {
+      "name": "chieftain",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:firwold",
+		"radius": 125
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:dunland" ]
+}

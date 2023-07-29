@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ethring",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ethring.lore",
+    "translate": true
+  },
+  "x": 1256,
+  "z": 1259,
+  "travel_region": "lotr:lamedon",
+  "faction": ""
+}

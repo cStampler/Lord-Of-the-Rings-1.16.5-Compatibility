@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "liquid": "lotr:item/apple_juice_liquid"
+    },
+    "loader": "lotr:vessel_drink"
+}

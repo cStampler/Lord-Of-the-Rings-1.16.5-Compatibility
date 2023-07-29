@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/stalagmite_double_base_all",
+    "textures": {
+        "all": "block/stone"
+    },
+    "__comment": "Not to be confused with a Double Bass"
+}

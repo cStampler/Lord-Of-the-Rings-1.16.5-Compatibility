@@ -1,0 +1,13 @@
+{
+    "parent": "block/block",
+    "textures": {
+        "all": "lotr:block/thatch_flooring",
+        "particle": "#all"
+    },
+    "loader": "lotr:scatter",
+    "scatter_properties": {
+        "num_elements_range": [ 10, 16 ],
+        "x_size_range": [ 6, 12 ],
+        "z_size_range": [ 1, 1 ]
+    }
+}

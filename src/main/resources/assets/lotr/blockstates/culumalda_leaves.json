@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/culumalda_leaves", "weight": 2 },
+            { "model": "lotr:block/culumalda_leaves_sprouts_1", "weight": 1 },
+            { "model": "lotr:block/culumalda_leaves_sprouts_2", "weight": 1 },
+            { "model": "lotr:block/culumalda_leaves_sprouts_3", "weight": 1 }
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.amon_din",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.amon_din.lore",
+    "translate": true
+  },
+  "x": 1416,
+  "z": 1231,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_branch_side",
+	"textures": {
+		"branch": "lotr:block/stripped_apple_log"
+	}
+}

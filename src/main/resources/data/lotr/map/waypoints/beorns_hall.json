@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.beorns_hall",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.beorns_hall.lore",
+    "translate": true
+  },
+  "x": 1302,
+  "z": 680,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

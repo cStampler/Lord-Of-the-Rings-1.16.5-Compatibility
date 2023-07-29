@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:andrast"
+  },
+  "x": 860,
+  "z": 1365,
+  "scale": 1.5,
+  "angle": -25,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

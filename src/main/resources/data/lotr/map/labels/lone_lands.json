@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:lone_lands"
+  },
+  "x": 1080,
+  "z": 740,
+  "scale": 3.0,
+  "angle": -5,
+  "min_zoom": -2.5,
+  "max_zoom": 0.5
+}

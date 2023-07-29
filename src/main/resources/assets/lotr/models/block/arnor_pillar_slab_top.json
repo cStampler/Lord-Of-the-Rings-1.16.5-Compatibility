@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/arnor_pillar_face",
+        "top": "lotr:block/arnor_pillar_face",
+        "side": "lotr:block/arnor_pillar"
+    }
+}

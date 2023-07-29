@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.amon_lhaw",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.amon_lhaw.lore",
+    "translate": true
+  },
+  "x": 1372,
+  "z": 1120,
+  "travel_region": "lotr:emyn_muil",
+  "faction": ""
+}

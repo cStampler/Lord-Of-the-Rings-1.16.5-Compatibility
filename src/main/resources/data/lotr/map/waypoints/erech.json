@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.erech",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.erech.lore",
+    "translate": true
+  },
+  "x": 1186,
+  "z": 1205,
+  "travel_region": "lotr:blackroot_vale",
+  "faction": "lotr:gondor"
+}

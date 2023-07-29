@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/template_plate",
+    "textures": {
+        "base": "lotr:block/wooden_plate_base",
+        "top": "lotr:block/wooden_plate_top"
+    }
+}

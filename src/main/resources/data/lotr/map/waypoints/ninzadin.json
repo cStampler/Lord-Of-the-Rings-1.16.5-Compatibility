@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ninzadin",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ninzadin.lore",
+    "translate": true
+  },
+  "x": 1447,
+  "z": 1558,
+  "travel_region": "lotr:harnennor",
+  "faction": "lotr:near_harad"
+}

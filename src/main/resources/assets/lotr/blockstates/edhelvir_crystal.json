@@ -1,0 +1,32 @@
+{
+    "variants": {
+        "facing=up": [
+            { "model": "lotr:block/edhelvir_crystal", "y": 0 },
+            { "model": "lotr:block/edhelvir_crystal", "y": 90 },
+            { "model": "lotr:block/edhelvir_crystal", "y": 180 },
+            { "model": "lotr:block/edhelvir_crystal", "y": 270 }
+        ],
+        "facing=down": [
+            { "model": "lotr:block/edhelvir_crystal", "x": 180, "y": 0},
+            { "model": "lotr:block/edhelvir_crystal", "x": 180, "y": 90 },
+            { "model": "lotr:block/edhelvir_crystal", "x": 180, "y": 180 },
+            { "model": "lotr:block/edhelvir_crystal", "x": 180, "y": 270 }
+        ],
+        "facing=west": [
+            { "model": "lotr:block/edhelvir_crystal", "x": 270, "y": 90 },
+            { "model": "lotr:block/edhelvir_crystal", "x": 90, "y": 270 }
+        ],
+        "facing=east": [
+            { "model": "lotr:block/edhelvir_crystal", "x": 270, "y": 270 },
+            { "model": "lotr:block/edhelvir_crystal", "x": 90, "y": 90 }
+        ],
+        "facing=north": [
+            { "model": "lotr:block/edhelvir_crystal", "x": 90, "y": 0 },
+            { "model": "lotr:block/edhelvir_crystal", "x": 270, "y": 180 }
+        ],
+        "facing=south": [
+            { "model": "lotr:block/edhelvir_crystal", "x": 270, "y": 0 },
+            { "model": "lotr:block/edhelvir_crystal", "x": 90, "y": 180 }
+        ]
+    }
+}

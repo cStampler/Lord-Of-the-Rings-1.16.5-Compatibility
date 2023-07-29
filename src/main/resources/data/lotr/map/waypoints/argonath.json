@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.argonath",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.argonath.lore",
+    "translate": true
+  },
+  "x": 1347,
+  "z": 1112,
+  "travel_region": "lotr:emyn_muil",
+  "faction": ""
+}

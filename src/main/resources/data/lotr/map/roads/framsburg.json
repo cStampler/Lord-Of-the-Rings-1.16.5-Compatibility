@@ -1,0 +1,30 @@
+{
+  "name": {
+    "text": "road.lotr.framsburg",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:forest_gate"
+    },
+    {
+      "type": "coords",
+      "x": 1278,
+      "z": 605
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:framsburg"
+    },
+    {
+      "type": "coords",
+      "x": 1260,
+      "z": 565
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:dains_halls"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:ettenmoors"
+  },
+  "x": 1085,
+  "z": 605,
+  "scale": 2.0,
+  "angle": 25,
+  "min_zoom": -1.5,
+  "max_zoom": 1.5
+}

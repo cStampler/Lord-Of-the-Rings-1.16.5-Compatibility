@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/plate_food/template_bread",
+	"textures": {
+		"all": "lotr:item/maggoty_bread_plate"
+	}
+}

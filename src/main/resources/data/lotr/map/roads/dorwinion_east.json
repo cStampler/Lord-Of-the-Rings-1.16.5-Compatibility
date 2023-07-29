@@ -1,0 +1,20 @@
+{
+  "name": {
+    "text": "road.lotr.dorwinion_east",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:old_rhovanion"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:dorwinion_crossroads"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:mirulond"
+    }
+  ]
+}

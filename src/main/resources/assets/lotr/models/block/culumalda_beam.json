@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/culumalda_beam_top",
+        "side": "lotr:block/culumalda_beam"
+    }
+}

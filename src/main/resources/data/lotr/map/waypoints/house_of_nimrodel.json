@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.house_of_nimrodel",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.house_of_nimrodel.lore",
+    "translate": true
+  },
+  "x": 1198,
+  "z": 894,
+  "travel_region": "lotr:lothlorien",
+  "faction": "lotr:lothlorien"
+}

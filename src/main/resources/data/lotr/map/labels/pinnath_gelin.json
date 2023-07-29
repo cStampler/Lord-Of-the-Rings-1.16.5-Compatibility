@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:pinnath_gelin"
+  },
+  "x": 1035,
+  "z": 1255,
+  "scale": 1.5,
+  "angle": -10,
+  "min_zoom": -1.5,
+  "max_zoom": 2.5
+}

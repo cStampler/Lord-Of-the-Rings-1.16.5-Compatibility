@@ -1,0 +1,10 @@
+{
+    "variants": {
+	"": [
+		{ "model": "lotr:block/mordor_gravel"},
+		{ "model": "lotr:block/mordor_gravel", "y": 90, "x": 90 },
+		{ "model": "lotr:block/mordor_gravel", "y": 180, "x": 180 },
+		{ "model": "lotr:block/mordor_gravel", "y": 270, "x": 270 }
+	]
+    }
+}

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: MDK
+Implementation-Version: lotrmod
+Specification-Vendor: lotrmod
+Specification-Title: lotrmod
+Implementation-Timestamp: 2022-02-24T22:48:21+0000
+Specification-Version: 1
+Implementation-Vendor: lotrmod
+

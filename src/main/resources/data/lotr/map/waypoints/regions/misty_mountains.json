@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:misty_mountains",
+    "lotr:misty_mountains_foothills"
+  ]
+}

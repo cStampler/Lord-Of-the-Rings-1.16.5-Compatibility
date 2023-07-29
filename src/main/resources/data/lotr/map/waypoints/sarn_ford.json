@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.sarn_ford",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.sarn_ford.lore",
+    "translate": true
+  },
+  "x": 883,
+  "z": 802,
+  "travel_region": "lotr:shire",
+  "faction": ""
+}

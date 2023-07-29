@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_mug",
+	"textures": {
+		"mug": "lotr:block/ceramic_mug"
+	}
+}

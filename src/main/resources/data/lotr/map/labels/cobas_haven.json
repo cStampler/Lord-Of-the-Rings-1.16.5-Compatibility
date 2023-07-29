@@ -1,0 +1,13 @@
+{
+  "name": {
+    "type": "text",
+    "text": "maplabel.lotr.cobas_haven",
+    "translate": true
+  },
+  "x": 1150,
+  "z": 1310,
+  "scale": 0.75,
+  "angle": -10,
+  "min_zoom": -1.0,
+  "max_zoom": 2.5
+}

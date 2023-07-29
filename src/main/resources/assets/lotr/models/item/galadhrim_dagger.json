@@ -1,0 +1,29 @@
+{
+    "parent": "lotr:item/handheld_dagger",
+        "textures": {
+        "layer0": "lotr:item/galadhrim_dagger"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "lotr:elven_glow": 1,
+                "lotr:sneaking": 0
+            },
+            "model": "lotr:item/galadhrim_dagger_glowing"
+        },
+        {
+            "predicate": {
+                "lotr:elven_glow": 0,
+                "lotr:sneaking": 1
+            },
+            "model": "lotr:item/galadhrim_dagger_sneaking"
+        },
+        {
+            "predicate": {
+                "lotr:elven_glow": 1,
+                "lotr:sneaking": 1
+            },
+            "model": "lotr:item/galadhrim_dagger_glowing_sneaking"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/flower_pot_tinted_cross",
+    "textures": {
+        "plant": "lotr:block/fernsprout"
+    }
+}

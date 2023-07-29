@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:woodland_realm",
+  "speechbank": "lotr:woodland_realm/warrior",
+  "kill_bonus": 2
+}

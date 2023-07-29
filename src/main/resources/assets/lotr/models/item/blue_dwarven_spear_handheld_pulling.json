@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/handheld_spear_pulling",
+        "textures": {
+        "layer0": "lotr:item/blue_dwarven_spear_large"
+    }
+}

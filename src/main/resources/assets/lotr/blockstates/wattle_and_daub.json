@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "connected=true": { "model": "lotr:block/wattle_and_daub" },
+        "connected=false": { "model": "lotr:block/wattle_and_daub_no_connections" }
+    }
+}

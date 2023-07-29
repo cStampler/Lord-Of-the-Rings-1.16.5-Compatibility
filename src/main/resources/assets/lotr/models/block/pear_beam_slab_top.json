@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "lotr:block/pear_beam_top",
+        "top": "lotr:block/pear_beam_top",
+        "side": "lotr:block/pear_beam"
+    }
+}

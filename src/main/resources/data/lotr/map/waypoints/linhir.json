@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.linhir",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.linhir.lore",
+    "translate": true
+  },
+  "x": 1292,
+  "z": 1342,
+  "travel_region": "lotr:lebennin",
+  "faction": ""
+}

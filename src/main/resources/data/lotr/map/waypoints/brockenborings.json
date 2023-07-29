@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.brockenborings",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.brockenborings.lore",
+    "translate": true
+  },
+  "x": 833,
+  "z": 710,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

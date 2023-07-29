@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/leaves_fruit",
+    "textures": {
+        "end": "lotr:block/cherry_leaves",
+        "side": "lotr:block/cherry_leaves_fruit"
+    }
+}

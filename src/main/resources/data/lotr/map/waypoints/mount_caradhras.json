@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.mount_caradhras",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.mount_caradhras.lore",
+    "translate": true
+  },
+  "x": 1166,
+  "z": 845,
+  "travel_region": "lotr:misty_mountains",
+  "faction": ""
+}

@@ -1,0 +1,49 @@
+{
+    "variants": {
+        "axis=y,type=bottom": [
+            { "model": "lotr:block/cracked_umbar_brick_slab_1" },
+            { "model": "lotr:block/cracked_umbar_brick_slab_2" },
+            { "model": "lotr:block/cracked_umbar_brick_slab_3" }
+        ],
+        "axis=y,type=top": [
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_1" },
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_2" },
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_3" }
+        ],
+        "axis=y,type=double": [
+            { "model": "lotr:block/cracked_umbar_brick_1" },
+            { "model": "lotr:block/cracked_umbar_brick_2" },
+            { "model": "lotr:block/cracked_umbar_brick_3" }
+        ],
+        "axis=z,type=bottom": [
+            { "model": "lotr:block/cracked_umbar_brick_slab_1", "x": 270, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_2", "x": 270, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_3", "x": 270, "uvlock": true }
+        ],
+        "axis=z,type=top": [
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_1", "x": 270, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_2", "x": 270, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_3", "x": 270, "uvlock": true }
+        ],
+        "axis=z,type=double": [
+            { "model": "lotr:block/cracked_umbar_brick_1", "x": 270, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_2", "x": 270, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_3", "x": 270, "uvlock": true }
+        ],
+        "axis=x,type=bottom": [
+            { "model": "lotr:block/cracked_umbar_brick_slab_1", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_2", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_3", "x": 90, "y": 90, "uvlock": true }
+        ],
+        "axis=x,type=top": [
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_1", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_2", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_slab_top_3", "x": 90, "y": 90, "uvlock": true }
+        ],
+        "axis=x,type=double": [
+            { "model": "lotr:block/cracked_umbar_brick_1", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_2", "x": 90, "y": 90, "uvlock": true },
+            { "model": "lotr:block/cracked_umbar_brick_3", "x": 90, "y": 90, "uvlock": true }
+        ]
+    }
+}

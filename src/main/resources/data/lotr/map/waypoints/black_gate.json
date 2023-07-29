@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.black_gate",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.black_gate.lore",
+    "translate": true
+  },
+  "x": 1470,
+  "z": 1131,
+  "travel_region": "lotr:dagorlad",
+  "faction": ""
+}

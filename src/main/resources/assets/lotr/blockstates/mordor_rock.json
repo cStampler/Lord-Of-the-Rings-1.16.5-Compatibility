@@ -1,0 +1,24 @@
+{
+    "variants": {
+        "mossy=false": [
+            { "model": "lotr:block/mordor_rock" },
+            { "model": "lotr:block/mordor_rock", "y": 90 },
+            { "model": "lotr:block/mordor_rock", "y": 180 },
+            { "model": "lotr:block/mordor_rock", "y": 270 },
+            { "model": "lotr:block/mordor_rock_mirrored" },
+            { "model": "lotr:block/mordor_rock_mirrored", "y": 90 },
+            { "model": "lotr:block/mordor_rock_mirrored", "y": 180 },
+            { "model": "lotr:block/mordor_rock_mirrored", "y": 270 }
+        ],
+        "mossy=true": [
+            { "model": "lotr:block/mordor_rock_mossy" },
+            { "model": "lotr:block/mordor_rock_mossy", "y": 90 },
+            { "model": "lotr:block/mordor_rock_mossy", "y": 180 },
+            { "model": "lotr:block/mordor_rock_mossy", "y": 270 },
+            { "model": "lotr:block/mordor_rock_mossy_mirrored" },
+            { "model": "lotr:block/mordor_rock_mossy_mirrored", "y": 90 },
+            { "model": "lotr:block/mordor_rock_mossy_mirrored", "y": 180 },
+            { "model": "lotr:block/mordor_rock_mossy_mirrored", "y": 270 }
+        ]
+    }
+}

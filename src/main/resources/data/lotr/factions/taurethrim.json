@@ -1,0 +1,67 @@
+{
+  "name": {
+    "text": "faction.lotr.taurethrim",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.taurethrim.subtitle",
+    "translate": true
+  },
+  "region": "lotr:harad",
+  "ordering": 3,
+  "color": "2E6342",
+  "map_square": {
+    "x": 1250,
+    "z": 2870,
+    "radius": 400
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "forestman",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "warrior",
+      "alignment": 200
+    },
+    {
+      "name": "champion",
+      "alignment": 500
+    },
+    {
+      "name": "warlord",
+      "alignment": 1000
+    },
+    {
+      "name": "splendour",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:nohoch_kah",
+		"radius": 400
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:kimen_kah",
+		"radius": 75
+	  }
+	]
+  },
+  "speechbank_home_biomes": []
+}

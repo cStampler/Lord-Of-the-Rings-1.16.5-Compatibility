@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "below=false": { "model": "lotr:block/dirty_chalk" },
+        "below=true": { "model": "lotr:block/dirty_chalk_with_below" }
+    }
+}

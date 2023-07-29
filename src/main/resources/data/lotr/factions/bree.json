@@ -1,0 +1,72 @@
+{
+  "name": {
+    "text": "faction.lotr.bree",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.bree.subtitle",
+    "translate": true
+  },
+  "region": "lotr:westlands",
+  "ordering": 2,
+  "color": "AD8B72",
+  "map_square": {
+    "x": 925,
+    "z": 735,
+    "radius": 50
+  },
+  "types": [ "lotr:free_people", "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "townsman",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "trustee",
+      "alignment": 200
+    },
+    {
+      "name": "champion",
+      "alignment": 500
+    },
+    {
+      "name": "captain",
+      "alignment": 1000
+    },
+    {
+      "name": "master",
+      "alignment": 2000
+    }
+  ],
+  "approves_civilian_kills": false,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:bree",
+		"radius": 25
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:archet",
+		"radius": 20
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:forsaken_inn",
+		"radius": 15
+	  }
+	]
+  },
+  "speechbank_home_biomes": [ "lotr:breeland", "lotr:chetwood" ]
+}

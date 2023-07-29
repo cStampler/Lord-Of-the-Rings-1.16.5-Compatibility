@@ -1,0 +1,11 @@
+{
+    "parent": "lotr:block/stairs_sides",
+    "textures": {
+        "top": "lotr:block/cracked_dol_amroth_brick_face",
+	"side": "lotr:block/cracked_dol_amroth_brick_stairs",
+	"side_inv": "lotr:block/cracked_dol_amroth_brick_stairs_inv",
+	"front": "lotr:block/cracked_dol_amroth_brick_half",
+	"back": "lotr:block/cracked_dol_amroth_brick_top",
+	"bottom": "lotr:block/cracked_dol_amroth_brick_face"
+    }
+}

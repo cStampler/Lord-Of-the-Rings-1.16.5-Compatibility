@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/gondor_pillar_face",
+        "side": "lotr:block/gondor_pillar_bottom"
+    }
+}

@@ -1,0 +1,36 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"front": "lotr:block/wooden_portcullis",
+		"side": "lotr:block/wooden_portcullis_side",
+		"bottom": "lotr:block/wooden_portcullis_bottom",
+		"particle": "#front"
+	},
+	"elements": [
+		{
+			"from": [6, 8, 5],
+			"to": [10, 13, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [6, 11, 10, 16], "texture": "#side"},
+				"east": {"uv": [5, 11, 11, 16], "texture": "#front"},
+				"south": {"uv": [6, 11, 10, 16], "texture": "#side"},
+				"west": {"uv": [5, 11, 11, 16], "texture": "#front"},
+				"down": {"uv": [6, 5, 10, 11], "rotation": 180, "texture": "#side"}
+			}
+		},
+		{
+			"from": [6, 13, 0],
+			"to": [10, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [6, 8, 10, 11], "texture": "#side", "cullface": "east"},
+				"east": {"uv": [0, 8, 16, 11], "texture": "#front"},
+				"south": {"uv": [6, 8, 10, 11], "texture": "#side", "cullface": "west"},
+				"west": {"uv": [0, 8, 16, 11], "texture": "#front"},
+				"up": {"uv": [6, 0, 10, 16], "texture": "#side", "cullface": "up"},
+				"down": {"uv": [0, 6, 16, 10], "rotation": 90, "texture": "#bottom"}
+			}
+		}
+	]
+}

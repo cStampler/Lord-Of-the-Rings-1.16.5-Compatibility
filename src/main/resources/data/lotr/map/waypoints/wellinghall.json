@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.wellinghall",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.wellinghall.lore",
+    "translate": true
+  },
+  "x": 1153,
+  "z": 1014,
+  "travel_region": "lotr:fangorn",
+  "faction": "lotr:fangorn"
+}

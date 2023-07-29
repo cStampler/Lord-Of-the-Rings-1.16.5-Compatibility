@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/gondor_rock" },
+            { "model": "lotr:block/gondor_rock", "y": 90, "x": 90 },
+            { "model": "lotr:block/gondor_rock", "y": 180, "x": 180 },
+            { "model": "lotr:block/gondor_rock", "y": 270, "x": 270 }
+        ]
+    }
+}

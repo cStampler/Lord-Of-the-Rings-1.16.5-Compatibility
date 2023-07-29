@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.rhosgobel",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.rhosgobel.lore",
+    "translate": true
+  },
+  "x": 1343,
+  "z": 762,
+  "travel_region": "lotr:mirkwood",
+  "faction": ""
+}

@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:lothlorien",
+  "speechbank": "lotr:lothlorien/warrior",
+  "kill_bonus": 2
+}

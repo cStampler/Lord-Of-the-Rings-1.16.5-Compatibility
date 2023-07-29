@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "axis=z,type=bottom": { "model": "block/smooth_stone_slab", "x": 270, "uvlock": false },
+        "axis=z,type=top": { "model": "block/smooth_stone_slab_top", "x": 270, "uvlock": false },
+        "axis=z,type=double": { "model": "block/smooth_stone_slab_double", "x": 270, "uvlock": false },
+        "axis=x,type=bottom": { "model": "block/smooth_stone_slab", "x": 90, "y": 90, "uvlock": false },
+        "axis=x,type=top": { "model": "block/smooth_stone_slab_top", "x": 90, "y": 90, "uvlock": false },
+        "axis=x,type=double": { "model": "block/smooth_stone_slab_double", "x": 90, "y": 90, "uvlock": false }
+    }
+}

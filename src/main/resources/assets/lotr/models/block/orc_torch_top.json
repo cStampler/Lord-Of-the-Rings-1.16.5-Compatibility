@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_double_torch_top",
+    "textures": {
+        "torch": "lotr:block/orc_torch_top"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.old_elven_way",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.old_elven_way.lore",
+    "translate": true
+  },
+  "x": 1028,
+  "z": 847,
+  "travel_region": "lotr:lone_lands",
+  "faction": ""
+}

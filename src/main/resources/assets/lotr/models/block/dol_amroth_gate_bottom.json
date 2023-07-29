@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_gate_bottom",
+    "textures": {
+        "all": "lotr:block/dol_amroth_gate"
+    }
+}

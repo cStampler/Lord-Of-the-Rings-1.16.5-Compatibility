@@ -1,0 +1,14 @@
+{
+    "parent": "lotr:item/handheld_large",
+        "textures": {
+        "layer0": "lotr:item/galadhrim_axe_large"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "lotr:elven_glow": 1
+            },
+            "model": "lotr:item/galadhrim_axe_handheld_glowing"
+        }
+    ]
+}

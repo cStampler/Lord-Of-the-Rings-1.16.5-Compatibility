@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/water_lily",
+    "textures": {
+        "lily_pad": "block/lily_pad",
+	    "flower": "lotr:block/yellow_water_lily"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.nardol",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.nardol.lore",
+    "translate": true
+  },
+  "x": 1384,
+  "z": 1228,
+  "travel_region": "lotr:anorien",
+  "faction": ""
+}

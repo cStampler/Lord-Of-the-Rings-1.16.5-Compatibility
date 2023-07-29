@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ethir_anduin",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ethir_anduin.lore",
+    "translate": true
+  },
+  "x": 1273,
+  "z": 1369,
+  "travel_region": "lotr:lebennin",
+  "faction": ""
+}

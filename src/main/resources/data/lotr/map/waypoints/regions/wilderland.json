@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "biomes": [
+    "lotr:wilderland",
+    "lotr:northern_wilderland",
+    "lotr:long_marshes"
+  ]
+}

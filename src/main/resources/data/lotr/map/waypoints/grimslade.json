@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.grimslade",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.grimslade.lore",
+    "translate": true
+  },
+  "x": 1153,
+  "z": 1122,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

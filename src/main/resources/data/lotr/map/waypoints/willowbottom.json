@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.willowbottom",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.willowbottom.lore",
+    "translate": true
+  },
+  "x": 845,
+  "z": 752,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

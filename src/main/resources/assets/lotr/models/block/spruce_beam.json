@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/spruce_beam_top",
+        "side": "lotr:block/spruce_beam"
+    }
+}

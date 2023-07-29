@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "lotr:block/blue_rock" },
+            { "model": "lotr:block/blue_rock_mirrored" },
+            { "model": "lotr:block/blue_rock", "y": 180 },
+            { "model": "lotr:block/blue_rock_mirrored", "y": 180 }
+        ]
+    }
+}

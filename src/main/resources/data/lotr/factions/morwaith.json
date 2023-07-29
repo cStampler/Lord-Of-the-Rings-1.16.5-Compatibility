@@ -1,0 +1,77 @@
+{
+  "name": {
+    "text": "faction.lotr.morwaith",
+    "translate": true
+  },
+  "subtitle": {
+    "text": "faction.lotr.morwaith.subtitle",
+    "translate": true
+  },
+  "region": "lotr:harad",
+  "ordering": 2,
+  "color": "D9B05A",
+  "map_square": {
+    "x": 1400,
+    "z": 2360,
+    "radius": 450
+  },
+  "types": [ "lotr:man" ],
+  "ranks": [
+    {
+      "name": "guest",
+      "alignment": 10
+    },
+    {
+      "name": "friend",
+      "alignment": 50
+    },
+    {
+      "name": "kinsman",
+      "alignment": 100,
+      "is_pledge_rank": true
+    },
+    {
+      "name": "hunter",
+      "alignment": 250
+    },
+    {
+      "name": "warrior",
+      "alignment": 500
+    },
+    {
+      "name": "chief",
+      "alignment": 1000
+    },
+    {
+      "name": "greatchief",
+      "alignment": 3000
+    }
+  ],
+  "approves_civilian_kills": true,
+  "areas_of_influence": {
+    "isolationist": false,
+	"areas": [
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:deep_harad",
+		"radius": 350
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:upper_floodplains",
+		"radius": 170
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:hill_of_the_sun",
+		"radius": 200
+	  },
+	  {
+	    "type": "waypoint",
+		"waypoint": "lotr:hunters_haunt",
+		"radius": 75
+	  }
+	]
+  },
+  "speechbank_home_biomes": []
+}

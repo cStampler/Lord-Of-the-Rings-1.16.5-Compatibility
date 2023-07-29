@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.ost_in_edhil",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.ost_in_edhil.lore",
+    "translate": true
+  },
+  "x": 1112,
+  "z": 870,
+  "travel_region": "lotr:eregion",
+  "faction": ""
+}

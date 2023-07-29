@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.stock",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.stock.lore",
+    "translate": true
+  },
+  "x": 849,
+  "z": 737,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

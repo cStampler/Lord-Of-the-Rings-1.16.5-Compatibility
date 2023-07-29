@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lotr:block/smooth_mordor_rock",
+        "side": "lotr:block/smooth_mordor_rock_slab_side"
+    }
+}

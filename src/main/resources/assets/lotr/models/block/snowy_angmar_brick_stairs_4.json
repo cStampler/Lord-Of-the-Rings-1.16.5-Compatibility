@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "lotr:block/snowy_angmar_brick_4",
+        "top": "lotr:block/snowy_angmar_brick_4",
+        "side": "lotr:block/snowy_angmar_brick_4"
+    }
+}

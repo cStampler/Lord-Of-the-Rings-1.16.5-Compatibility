@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "lotr:block/fir_beam" },
+        "axis=z":  { "model": "lotr:block/fir_beam", "x": 90 },
+        "axis=x":  { "model": "lotr:block/fir_beam", "x": 90, "y": 90 }
+    }
+}

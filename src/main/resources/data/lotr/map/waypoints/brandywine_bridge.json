@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.brandywine_bridge",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.brandywine_bridge.lore",
+    "translate": true
+  },
+  "x": 853,
+  "z": 725,
+  "travel_region": "lotr:shire",
+  "faction": ""
+}

@@ -1,0 +1,14 @@
+{
+    "parent": "lotr:item/handheld_spear",
+        "textures": {
+        "layer0": "lotr:item/uruk_spear_large"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 1
+            },
+            "model": "lotr:item/uruk_spear_handheld_pulling"
+        }
+    ]
+}

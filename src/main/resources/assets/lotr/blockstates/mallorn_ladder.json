@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "lotr:block/mallorn_ladder" },
+        "facing=east":  { "model": "lotr:block/mallorn_ladder", "y": 90 },
+        "facing=south": { "model": "lotr:block/mallorn_ladder", "y": 180 },
+        "facing=west":  { "model": "lotr:block/mallorn_ladder", "y": 270 }
+    }
+}

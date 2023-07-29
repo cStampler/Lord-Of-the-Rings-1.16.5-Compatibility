@@ -1,0 +1,7 @@
+{
+    "parent": "lotr:block/flower_pot_herb",
+    "textures": {
+        "plant": "lotr:block/athelas",
+        "leaf" : "lotr:block/athelas_leaf_small"
+    }
+}

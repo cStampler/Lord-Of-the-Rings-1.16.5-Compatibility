@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:brown_lands"
+  },
+  "x": 1480,
+  "z": 1050,
+  "scale": 3.0,
+  "angle": 15,
+  "min_zoom": -2.5,
+  "max_zoom": 0.5
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "lotr:block/rotten_planks",
+        "top": "lotr:block/rotten_planks",
+        "side": "lotr:block/rotten_planks"
+    }
+}

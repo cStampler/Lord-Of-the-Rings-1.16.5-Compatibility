@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.frecas_hold",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.frecas_hold.lore",
+    "translate": true
+  },
+  "x": 1099,
+  "z": 1144,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

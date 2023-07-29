@@ -1,0 +1,25 @@
+{
+  "faction_spawn_lists": [
+    {
+      "faction": "lotr:gondor",
+      "base_weight": 100,
+      "lists": [
+        {
+          "list": "lotr:gondor_soldiers",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "faction": "lotr:mordor",
+      "base_weight": 2,
+      "lists": [
+        {
+          "list": "lotr:mordor_orcs",
+          "weight": 20
+        }
+      ]
+    }
+  ],
+  "npc_density": 0.1
+}

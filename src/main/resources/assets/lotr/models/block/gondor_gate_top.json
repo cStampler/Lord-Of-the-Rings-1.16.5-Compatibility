@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:block/template_gate_top",
+    "textures": {
+        "all": "lotr:block/gondor_gate"
+    }
+}

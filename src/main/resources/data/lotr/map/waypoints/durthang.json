@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.durthang",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.durthang.lore",
+    "translate": true
+  },
+  "x": 1464,
+  "z": 1159,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

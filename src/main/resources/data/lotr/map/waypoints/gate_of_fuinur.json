@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.gate_of_fuinur",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.gate_of_fuinur.lore",
+    "translate": true
+  },
+  "x": 1218,
+  "z": 1631,
+  "travel_region": "lotr:southron_coasts",
+  "faction": "lotr:near_harad"
+}

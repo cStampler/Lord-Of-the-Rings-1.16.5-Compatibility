@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,lit=false": { "model": "lotr:block/dwarven_forge" },
+        "facing=south,lit=false": { "model": "lotr:block/dwarven_forge", "y": 180 },
+        "facing=west,lit=false":  { "model": "lotr:block/dwarven_forge", "y": 270 },
+        "facing=east,lit=false":  { "model": "lotr:block/dwarven_forge", "y": 90 },
+        "facing=north,lit=true": { "model": "lotr:block/dwarven_forge_on" },
+        "facing=south,lit=true": { "model": "lotr:block/dwarven_forge_on", "y": 180 },
+        "facing=west,lit=true":  { "model": "lotr:block/dwarven_forge_on", "y": 270 },
+        "facing=east,lit=true":  { "model": "lotr:block/dwarven_forge_on", "y": 90 }
+    }
+}

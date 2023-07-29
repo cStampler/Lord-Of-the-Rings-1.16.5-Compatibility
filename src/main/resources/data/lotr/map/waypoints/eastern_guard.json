@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.eastern_guard",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.eastern_guard.lore",
+    "translate": true
+  },
+  "x": 1840,
+  "z": 1137,
+  "travel_region": "lotr:mordor",
+  "faction": "lotr:mordor"
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.helms_deep",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.helms_deep.lore",
+    "translate": true
+  },
+  "x": 1128,
+  "z": 1115,
+  "travel_region": "lotr:rohan",
+  "faction": ""
+}

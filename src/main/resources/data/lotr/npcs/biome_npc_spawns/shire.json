@@ -1,0 +1,16 @@
+{
+  "faction_spawn_lists": [
+    {
+	  "faction": "lotr:hobbits",
+	  "base_weight": 100,
+	  "lists": [
+	    {
+		  "list": "lotr:hobbits",
+		  "weight": 10
+		}
+	  ]
+	}
+  ],
+  "npc_density": 1.0,
+  "conquest_gain_rate": 0.2
+}

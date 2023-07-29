@@ -1,0 +1,9 @@
+{
+    "parent": "lotr:block/stalagmite_double_point_template",
+    "textures": {
+        "particle": "#all",
+        "top": "#all",
+        "bottom": "#all",
+        "side": "#all"
+    }
+}

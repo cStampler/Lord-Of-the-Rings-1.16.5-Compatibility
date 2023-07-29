@@ -1,0 +1,5 @@
+{
+  "faction": "lotr:isengard",
+  "speechbank": "lotr:isengard/uruk",
+  "kill_bonus": 2
+}

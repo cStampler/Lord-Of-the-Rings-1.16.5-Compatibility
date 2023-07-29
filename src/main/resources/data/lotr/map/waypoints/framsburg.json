@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.framsburg",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.framsburg.lore",
+    "translate": true
+  },
+  "x": 1251,
+  "z": 590,
+  "travel_region": "lotr:vales_of_anduin",
+  "faction": ""
+}

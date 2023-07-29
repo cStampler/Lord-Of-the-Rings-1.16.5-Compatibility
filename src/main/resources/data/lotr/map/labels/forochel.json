@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:forochel"
+  },
+  "x": 780,
+  "z": 420,
+  "scale": 3.0,
+  "angle": 10,
+  "min_zoom": -2.5,
+  "max_zoom": 1.5
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.south_undeep",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.south_undeep.lore",
+    "translate": true
+  },
+  "x": 1335,
+  "z": 1024,
+  "travel_region": "lotr:brown_lands",
+  "faction": ""
+}

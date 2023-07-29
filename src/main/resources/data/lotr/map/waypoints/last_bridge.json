@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.last_bridge",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.last_bridge.lore",
+    "translate": true
+  },
+  "x": 1088,
+  "z": 714,
+  "travel_region": "lotr:lone_lands",
+  "faction": ""
+}

@@ -1,0 +1,16 @@
+{
+  "name": {
+    "text": "road.lotr.willowbottom",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:willowbottom"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:deephallow"
+    }
+  ]
+}

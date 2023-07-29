@@ -1,0 +1,6 @@
+{
+    "parent": "lotr:item/template_smoking_pipe",
+    "textures": {
+        "all": "lotr:item/smoking_pipe_yellow"
+    }
+}

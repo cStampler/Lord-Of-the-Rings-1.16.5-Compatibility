@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.oatbarton",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.oatbarton.lore",
+    "translate": true
+  },
+  "x": 822,
+  "z": 701,
+  "travel_region": "lotr:shire",
+  "faction": "lotr:hobbits"
+}

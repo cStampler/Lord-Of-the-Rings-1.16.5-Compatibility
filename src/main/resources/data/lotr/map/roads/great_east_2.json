@@ -1,0 +1,69 @@
+{
+  "name": {
+    "text": "road.lotr.great_east",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:bree",
+      "x_offset": 2,
+      "z_offset": 1.5
+    },
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:staddle",
+      "x_offset": 0,
+      "z_offset": 5
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:forsaken_inn"
+    },
+    {
+      "type": "waypoint_offset",
+      "waypoint": "lotr:weathertop",
+      "x_offset": 0,
+      "z_offset": 2
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:last_bridge"
+    },
+    {
+      "type": "coords",
+      "x": 1132,
+      "z": 723
+    },
+    {
+      "type": "coords",
+      "x": 1178,
+      "z": 704
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:high_pass"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:old_ford"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:river_gate"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:great_dalish_crossroads"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:redwater_ford"
+    },
+    {
+      "type": "coords",
+      "x": 1785,
+      "z": 775
+    }
+  ]
+}

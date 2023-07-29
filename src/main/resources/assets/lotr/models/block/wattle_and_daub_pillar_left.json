@@ -1,0 +1,10 @@
+{
+    "parent": "lotr:block/cube_stack",
+    "textures": {
+        "face": "lotr:block/wattle_and_daub_pillar_face",
+        "side": "lotr:block/wattle_and_daub_pillar_left",
+	"side_inv": "lotr:block/wattle_and_daub_pillar_right",
+        "bottom": "lotr:block/wattle_and_daub_pillar_bottom",
+	"top": "lotr:block/wattle_and_daub_pillar_top"
+    }
+}

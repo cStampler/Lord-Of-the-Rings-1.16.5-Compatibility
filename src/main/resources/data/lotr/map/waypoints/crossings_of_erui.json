@@ -1,0 +1,14 @@
+{
+  "name": {
+    "text": "waypoint.lotr.crossings_of_erui",
+    "translate": true
+  },
+  "lore": {
+    "text": "waypoint.lotr.crossings_of_erui.lore",
+    "translate": true
+  },
+  "x": 1412,
+  "z": 1272,
+  "travel_region": "lotr:lossarnach",
+  "faction": ""
+}

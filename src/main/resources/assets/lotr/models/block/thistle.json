@@ -1,0 +1,8 @@
+{
+    "parent": "lotr:block/template_herb_tinted_overlay",
+    "textures": {
+        "leaf": "lotr:block/thistle_leaf",
+        "stem": "lotr:block/thistle",
+        "overlay": "lotr:block/thistle_overlay"
+    }
+}

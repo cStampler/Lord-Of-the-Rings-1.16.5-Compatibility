@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "lotr:block/yellow_iris_top"
+    }
+}

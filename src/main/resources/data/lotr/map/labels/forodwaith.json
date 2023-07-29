@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:forodwaith"
+  },
+  "x": 1650,
+  "z": 340,
+  "scale": 15.0,
+  "angle": 2,
+  "min_zoom": -5.5,
+  "max_zoom": -0.5
+}

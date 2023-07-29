@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "type=1":  { "model": "lotr:block/dried_reeds_1" },
+        "type=2_top,waterlogged=false":  { "model": "lotr:block/dried_reeds_2_top" },
+		"type=2_top,waterlogged=true":  { "model": "lotr:block/dried_reeds_2_top_waterlogged" },
+        "type=2_bottom":  { "model": "lotr:block/dried_reeds_2_bottom" },
+        "type=3_top":  { "model": "lotr:block/dried_reeds_3_top" },
+        "type=3_middle":  { "model": "lotr:block/dried_reeds_3_middle" },
+        "type=3_bottom":  { "model": "lotr:block/dried_reeds_3_bottom" }
+    }
+}

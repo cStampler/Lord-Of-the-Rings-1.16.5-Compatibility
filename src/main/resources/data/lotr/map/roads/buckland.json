@@ -1,0 +1,20 @@
+{
+  "name": {
+    "text": "road.lotr.buckland_road",
+    "translate": true
+  },
+  "route": [
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:hay_gate"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:bucklebury"
+    },
+    {
+      "type": "waypoint",
+      "waypoint": "lotr:haysend"
+    }
+  ]
+}

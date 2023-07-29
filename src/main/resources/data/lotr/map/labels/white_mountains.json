@@ -1,0 +1,12 @@
+{
+  "name": {
+    "type": "biome",
+    "biome": "lotr:white_mountains"
+  },
+  "x": 1125,
+  "z": 1180,
+  "scale": 3.0,
+  "angle": 5,
+  "min_zoom": -3.5,
+  "max_zoom": 1.5
+}
