@@ -1,7 +1,8 @@
 package lotr.client;
 
 import java.awt.Color;
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.function.Predicate;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -11,16 +12,21 @@ import lotr.common.LOTRLog;
 import lotr.common.config.LOTRConfig;
 import lotr.common.world.map.MapSettings;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.texture.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
 import net.minecraft.client.renderer.texture.NativeImage.PixelFormat;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.resources.*;
+import net.minecraft.resources.IReloadableResourceManager;
+import net.minecraft.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix4f;
-import net.minecraftforge.resource.*;
+import net.minecraftforge.resource.IResourceType;
+import net.minecraftforge.resource.ISelectiveResourceReloadListener;
+import net.minecraftforge.resource.VanillaResourceType;
 
 public class MapImageTextures implements ISelectiveResourceReloadListener {
 	private static Minecraft mc = Minecraft.getInstance();
@@ -83,7 +89,7 @@ public class MapImageTextures implements ISelectiveResourceReloadListener {
 	}
 
 	@Override
-	public void onResourceManagerReload(IResourceManager resMgr, Predicate resPredicate) {
+	public void onResourceManagerReload(IResourceManager resMgr, Predicate<IResourceType> resPredicate) {
 		if (resPredicate.test(VanillaResourceType.TEXTURES)) {
 			currentMapImagePath = null;
 			backgroundColor = 0;

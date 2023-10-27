@@ -1,9 +1,12 @@
 package lotr.common.entity.npc.ai.goal;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.Random;
 import java.util.function.Predicate;
 
-import net.minecraft.entity.*;
+import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.BowItem;

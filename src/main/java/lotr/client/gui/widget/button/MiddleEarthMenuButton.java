@@ -3,7 +3,8 @@ package lotr.client.gui.widget.button;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import lotr.client.gui.*;
+import lotr.client.gui.MiddleEarthMasterMenuScreen;
+import lotr.client.gui.MiddleEarthMenuScreen;
 import lotr.client.gui.map.MiddleEarthMapScreen;
 import lotr.common.LOTRLog;
 import lotr.common.init.LOTRWorldTypes;

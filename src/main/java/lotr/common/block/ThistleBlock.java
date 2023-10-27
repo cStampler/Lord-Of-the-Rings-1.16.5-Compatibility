@@ -1,8 +1,10 @@
 package lotr.common.block;
 
 import lotr.common.init.LOTRDamageSources;
-import net.minecraft.block.*;
-import net.minecraft.entity.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.potion.Effect;
 import net.minecraft.util.math.BlockPos;

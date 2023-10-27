@@ -4,7 +4,8 @@ import java.text.DecimalFormat;
 
 import lotr.client.util.LocalizableDecimalFormat;
 import lotr.common.config.LOTRConfig;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class WaypointDistanceDisplay {
 	private static final LocalizableDecimalFormat DECIMAL_FORMAT = new LocalizableDecimalFormat(new DecimalFormat(",##0.#"), "gui.lotr.map.distance.decimal_separator_char", "gui.lotr.map.distance.group_separator_char");

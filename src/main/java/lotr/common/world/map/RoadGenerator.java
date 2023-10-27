@@ -7,10 +7,12 @@ import com.google.common.math.IntMath;
 
 import lotr.common.world.biome.LOTRBiomeWrapper;
 import lotr.common.world.gen.feature.LOTRFeatures;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.chunk.IChunk;
 

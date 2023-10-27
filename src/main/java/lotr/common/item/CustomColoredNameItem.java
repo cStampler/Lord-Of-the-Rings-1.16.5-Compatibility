@@ -1,7 +1,12 @@
 package lotr.common.item;
 
-import net.minecraft.item.*;
-import net.minecraft.util.text.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.Color;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class CustomColoredNameItem extends Item {
 	private final int nameColor;

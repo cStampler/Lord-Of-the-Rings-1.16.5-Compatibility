@@ -2,7 +2,9 @@ package lotr.common.entity.npc.util;
 
 import java.util.Random;
 
-import net.minecraft.item.*;
+import net.minecraft.item.DyeableArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Util;
 
 public class LeatherDyeUtil {

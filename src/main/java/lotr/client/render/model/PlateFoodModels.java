@@ -1,20 +1,31 @@
 package lotr.client.render.model;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Predicate;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
-import net.minecraft.resources.*;
-import net.minecraft.util.*;
+import net.minecraft.resources.IResource;
+import net.minecraft.resources.IResourceManager;
+import net.minecraft.resources.SimpleReloadableResourceManager;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.resource.*;
+import net.minecraftforge.resource.ISelectiveResourceReloadListener;
+import net.minecraftforge.resource.VanillaResourceType;
 
 public class PlateFoodModels implements ISelectiveResourceReloadListener {
 	private static final ResourceLocation CONFIG_JSON = new ResourceLocation("lotr", "models/item/plate_food/config.json");

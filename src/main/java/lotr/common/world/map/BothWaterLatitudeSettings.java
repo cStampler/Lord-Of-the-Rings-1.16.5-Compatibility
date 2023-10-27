@@ -1,6 +1,7 @@
 package lotr.common.world.map;
 
-import java.util.function.*;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 import com.google.gson.JsonObject;
 

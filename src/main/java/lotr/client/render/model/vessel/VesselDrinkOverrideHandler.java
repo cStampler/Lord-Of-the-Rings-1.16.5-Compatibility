@@ -1,11 +1,14 @@
 package lotr.client.render.model.vessel;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.annotation.Nullable;
 
-import lotr.common.item.*;
-import net.minecraft.client.renderer.model.*;
+import lotr.common.item.VesselDrinkItem;
+import lotr.common.item.VesselType;
+import net.minecraft.client.renderer.model.IBakedModel;
+import net.minecraft.client.renderer.model.ItemOverrideList;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;

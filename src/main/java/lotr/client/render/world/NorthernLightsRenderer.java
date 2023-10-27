@@ -1,26 +1,36 @@
 package lotr.client.render.world;
 
 import java.awt.Color;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lotr.client.render.ProjectionUtil;
 import lotr.common.LOTRLog;
-import lotr.common.init.*;
-import lotr.common.time.*;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTRWorldTypes;
+import lotr.common.time.MiddleEarthCalendar;
+import lotr.common.time.ShireReckoning;
 import lotr.common.util.CalendarUtil;
 import lotr.common.world.biome.LOTRBiomeBase;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
+import lotr.common.world.map.NorthernLightsSettings;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.profiler.IProfiler;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;

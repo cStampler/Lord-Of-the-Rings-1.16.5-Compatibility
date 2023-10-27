@@ -6,7 +6,9 @@ import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import net.minecraft.block.Block;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class MouthsOfEntwashBiome extends LOTRBiomeBase {
 	public MouthsOfEntwashBiome(boolean major) {

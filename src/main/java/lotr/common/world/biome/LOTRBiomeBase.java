@@ -1,27 +1,40 @@
 package lotr.common.world.biome;
 
 import java.awt.Color;
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.List;
+import java.util.Random;
 
 import com.google.common.collect.ImmutableList;
 
-import lotr.common.*;
-import lotr.common.init.*;
-import lotr.common.util.*;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTREntities;
+import lotr.common.util.CalendarUtil;
+import lotr.common.util.LOTRUtil;
 import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
 import lotr.common.world.gen.feature.WeightedRandomFeatureConfig;
-import net.minecraft.block.*;
-import net.minecraft.entity.*;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedSeedRandom;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.biome.*;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.RainType;
+import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.MobSpawnInfo.Spawners;
+import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.PerlinNoiseGenerator;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public abstract class LOTRBiomeBase implements LOTRBiomeWrapper {

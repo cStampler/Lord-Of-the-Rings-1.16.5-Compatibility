@@ -1,7 +1,8 @@
 package lotr.common.block;
 
 import lotr.common.init.LOTRBlocks;
-import net.minecraft.block.*;
+import net.minecraft.block.LanternBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class LOTRLanternBlock extends LanternBlock {

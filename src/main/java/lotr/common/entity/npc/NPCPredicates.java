@@ -1,10 +1,15 @@
 package lotr.common.entity.npc;
 
-import java.util.function.*;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 import lotr.common.data.LOTRLevelData;
-import lotr.common.fac.*;
-import net.minecraft.entity.*;
+import lotr.common.fac.AlignmentPredicate;
+import lotr.common.fac.AlignmentPredicates;
+import lotr.common.fac.EntityFactionHelper;
+import lotr.common.fac.Faction;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class NPCPredicates {

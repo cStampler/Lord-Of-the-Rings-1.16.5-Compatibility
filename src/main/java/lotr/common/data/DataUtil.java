@@ -1,46 +1,48 @@
 package lotr.common.data;
 
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.function.*;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 import org.apache.commons.lang3.tuple.Pair;
 
 import lotr.common.LOTRLog;
 import lotr.common.fac.FactionPointer;
 import lotr.common.util.TriConsumer;
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.ResourceLocationException;
 
 public class DataUtil {
-	public static void fillCollectionFromBuffer(PacketBuffer buf, Collection collection, Supplier bufferToElement) {
+	public static <T> void fillCollectionFromBuffer(PacketBuffer buf, Collection<T> collection, Supplier<T> bufferToElement) {
 		collection.clear();
 		int collectionSize = buf.readVarInt();
-
-		for (int i = 0; i < collectionSize; ++i) {
-			Object element = bufferToElement.get();
-			if (element != null) {
+		for (int i = 0; i < collectionSize; i++) {
+			T element = bufferToElement.get();
+			if (element != null)
 				collection.add(element);
-			}
 		}
-
 	}
 
-	public static void fillMapFromBuffer(PacketBuffer buf, Map map, Supplier bufferToEntry) {
+	public static <K, V> void fillMapFromBuffer(PacketBuffer buf, Map<K, V> map, Supplier<Pair<K, V>> bufferToEntry) {
 		map.clear();
 		int mapSize = buf.readVarInt();
-
-		for (int i = 0; i < mapSize; ++i) {
-			Pair entry = (Pair) bufferToEntry.get();
-			if (entry != null) {
-				map.put(entry.getKey(), entry.getValue());
-			}
+		for (int i = 0; i < mapSize; i++) {
+			Pair<K, V> entry = bufferToEntry.get();
+			if (entry != null)
+				map.put((K) entry.getKey(), (V) entry.getValue());
 		}
-
 	}
 
-	public static Object getIfNBTContains(Object currentValue, CompoundNBT nbt, String key, BiFunction nbtGetter) {
+	public static <T> T getIfNBTContains(T currentValue, CompoundNBT nbt, String key, BiFunction<CompoundNBT, String, T> nbtGetter) {
 		return nbt.contains(key) ? nbtGetter.apply(nbt, key) : currentValue;
 	}
 
@@ -75,12 +77,12 @@ public class DataUtil {
 		return nbt.hasUUID(key) || hasOldUniqueId(nbt, key);
 	}
 
-	public static void loadCollectionFromCompoundListNBT(Collection collection, ListNBT tagList, Function nbtToElement) {
+	public static <T> void loadCollectionFromCompoundListNBT(Collection<T> collection, ListNBT tagList, Function<CompoundNBT, T> nbtToElement) {
 		collection.clear();
 
 		for (int i = 0; i < tagList.size(); ++i) {
 			CompoundNBT nbt = tagList.getCompound(i);
-			Object element = nbtToElement.apply(nbt);
+			T element = nbtToElement.apply(nbt);
 			if (element != null) {
 				collection.add(element);
 			}
@@ -88,131 +90,116 @@ public class DataUtil {
 
 	}
 
-	public static void loadCollectionFromPrimitiveListNBT(Collection collection, ListNBT tagList, BiFunction listNbtToPrimitive, Function primitiveToElement) {
+	public static <T, P> void loadCollectionFromPrimitiveListNBT(Collection<T> collection, ListNBT tagList, BiFunction<ListNBT, Integer, P> listNbtToPrimitive, Function<P, T> primitiveToElement) {
 		collection.clear();
-
-		for (int i = 0; i < tagList.size(); ++i) {
-			Object value = listNbtToPrimitive.apply(tagList, i);
-			Object element = primitiveToElement.apply(value);
-			if (element != null) {
+		for (int i = 0; i < tagList.size(); i++) {
+			P value = listNbtToPrimitive.apply(tagList, Integer.valueOf(i));
+			T element = primitiveToElement.apply(value);
+			if (element != null)
 				collection.add(element);
-			}
 		}
-
 	}
 
-	public static void loadMapFromListNBT(Map map, ListNBT tagList, Function nbtToEntry) {
+	public static <K, V> void loadMapFromListNBT(Map<K, V> map, ListNBT tagList, Function<CompoundNBT, Pair<K, V>> nbtToEntry) {
 		map.clear();
-
-		for (int i = 0; i < tagList.size(); ++i) {
+		for (int i = 0; i < tagList.size(); i++) {
 			CompoundNBT nbt = tagList.getCompound(i);
-			Pair entry = (Pair) nbtToEntry.apply(nbt);
-			if (entry != null) {
-				map.put(entry.getKey(), entry.getValue());
-			}
+			Pair<K, V> entry = nbtToEntry.apply(nbt);
+			if (entry != null)
+				map.put((K) entry.getKey(), (V) entry.getValue());
 		}
-
 	}
 
 	public static void putResourceLocation(CompoundNBT nbt, String key, ResourceLocation value) {
 		nbt.putString(key, value.toString());
 	}
 
-	public static Collection readNewCollectionFromBuffer(PacketBuffer buf, Supplier collectionSupplier, Supplier bufferToElement) {
-		Collection collection = (Collection) collectionSupplier.get();
-		fillCollectionFromBuffer(buf, collection, bufferToElement);
-		return collection;
+	public static <T, C extends Collection<T>> C readNewCollectionFromBuffer(PacketBuffer buf, Supplier<C> collectionSupplier, Supplier<T> bufferToElement) {
+		Collection<T> collection = collectionSupplier.get();
+	    fillCollectionFromBuffer(buf, collection, bufferToElement);
+	    return (C) collection;
 	}
 
-	public static Map readNewMapFromBuffer(PacketBuffer buf, Supplier mapSupplier, Supplier bufferToEntry) {
-		Map map = (Map) mapSupplier.get();
+	public static <K, V, M extends Map<K, V>> M readNewMapFromBuffer(PacketBuffer buf, Supplier<M> mapSupplier, Supplier<Pair<K, V>> bufferToEntry) {
+		Map<K, V> map = mapSupplier.get();
 		fillMapFromBuffer(buf, map, bufferToEntry);
-		return map;
+		return (M) map;
 	}
 
-	public static Object readNullableFromBuffer(PacketBuffer buf, Function bufferToObject) {
-		return readNullableFromBuffer(buf, () -> bufferToObject.apply(buf));
+	public static <T> T readNullableFromBuffer(PacketBuffer buf, Function<PacketBuffer, T> bufferToObject) {
+	    return readNullableFromBuffer(buf, () -> bufferToObject.apply(buf));
+	  }
+
+	public static <T> T readNullableFromBuffer(PacketBuffer buf, Supplier<T> bufferToObject) {
+	    boolean hasObject = buf.readBoolean();
+	    if (hasObject)
+	      return bufferToObject.get(); 
+	    return null;
+	  }
+
+	public static Optional<FactionPointer> readOptionalFactionPointerFromNBT(CompoundNBT nbt, String key) {
+	    Optional<ResourceLocation> optName = readOptionalFromNBT(nbt, key, DataUtil::getResourceLocation);
+	    return optName.map(FactionPointer::of);
+	  }
+
+	public static <T> Optional<T> readOptionalFromNBT(CompoundNBT nbt, String key, BiFunction<CompoundNBT, String, T> nbtGetter) {
+		if (nbt.contains(key))
+			return Optional.ofNullable(nbtGetter.apply(nbt, key)); 
+		return Optional.empty();
 	}
 
-	public static Object readNullableFromBuffer(PacketBuffer buf, Supplier bufferToObject) {
-		boolean hasObject = buf.readBoolean();
-		return hasObject ? bufferToObject.get() : null;
-	}
-
-	public static Optional readOptionalFactionPointerFromNBT(CompoundNBT nbt, String key) {
-		Optional optName = readOptionalFromNBT(nbt, key, (hummel, hummel2) -> DataUtil.getResourceLocation((CompoundNBT) hummel, (String) hummel2));
-		return optName.map(hummel -> FactionPointer.of((ResourceLocation) hummel));
-	}
-
-	public static Optional readOptionalFromNBT(CompoundNBT nbt, String key, BiFunction nbtGetter) {
-		return nbt.contains(key) ? Optional.ofNullable(nbtGetter.apply(nbt, key)) : Optional.empty();
-	}
-
-	public static ListNBT saveCollectionAsCompoundListNBT(Collection collection, BiConsumer elementToNbt) {
+	public static <T> ListNBT saveCollectionAsCompoundListNBT(Collection<T> collection, BiConsumer<CompoundNBT, T> elementToNbt) {
 		ListNBT tagList = new ListNBT();
-		Iterator var3 = collection.iterator();
-
-		while (var3.hasNext()) {
-			Object t = var3.next();
+		for (T t : collection) {
 			CompoundNBT nbt = new CompoundNBT();
 			elementToNbt.accept(nbt, t);
 			tagList.add(nbt);
 		}
-
 		return tagList;
 	}
 
-	public static ListNBT saveCollectionAsPrimitiveListNBT(Collection collection, Function elementToNbt) {
+	public static <T, N extends net.minecraft.nbt.INBT> ListNBT saveCollectionAsPrimitiveListNBT(Collection<T> collection, Function<T, N> elementToNbt) {
 		ListNBT tagList = new ListNBT();
-		Iterator var3 = collection.iterator();
-
-		while (var3.hasNext()) {
-			Object t = var3.next();
-			tagList.add((INBT) elementToNbt.apply(t));
-		}
-
+		for (T t : collection)
+			tagList.add(elementToNbt.apply(t));
 		return tagList;
 	}
 
-	public static ListNBT saveMapAsListNBT(Map map, TriConsumer entryToNbt) {
+	public static <K, V> ListNBT saveMapAsListNBT(Map<K, V> map, TriConsumer<CompoundNBT, K, V> entryToNbt) {
 		ListNBT tagList = new ListNBT();
-		Iterator var3 = map.entrySet().iterator();
-
-		while (var3.hasNext()) {
-			Entry e = (Entry) var3.next();
-			Object key = e.getKey();
-			Object value = e.getValue();
+		for (Map.Entry<K, V> e : map.entrySet()) {
+			K key = e.getKey();
+			V value = e.getValue();
 			CompoundNBT nbt = new CompoundNBT();
 			entryToNbt.accept(nbt, key, value);
 			tagList.add(nbt);
 		}
-
 		return tagList;
 	}
 
-	public static void writeCollectionToBuffer(PacketBuffer buf, Collection collection, Consumer elementToBuffer) {
+	public static <T> void writeCollectionToBuffer(PacketBuffer buf, Collection<T> collection, Consumer<T> elementToBuffer) {
 		buf.writeVarInt(collection.size());
 		collection.forEach(elementToBuffer);
 	}
 
-	public static void writeMapToBuffer(PacketBuffer buf, Map map, BiConsumer entryToBuffer) {
+	public static <K, V> void writeMapToBuffer(PacketBuffer buf, Map<K, V> map, BiConsumer<K, V> entryToBuffer) {
 		buf.writeVarInt(map.size());
 		map.forEach(entryToBuffer);
 	}
 
-	public static void writeNullableToBuffer(PacketBuffer buf, Object object, BiConsumer elementToBuffer) {
+	public static <T> void writeNullableToBuffer(PacketBuffer buf, T object, BiConsumer<T, PacketBuffer> elementToBuffer) {
 		writeNullableToBuffer(buf, object, () -> {
 			elementToBuffer.accept(object, buf);
 		});
 	}
 
-	public static void writeNullableToBuffer(PacketBuffer buf, Object object, BiFunction elementToBuffer) {
+	public static <T> void writeNullableToBuffer(PacketBuffer buf, T object, BiFunction<PacketBuffer, T, PacketBuffer> elementToBuffer) {
 		writeNullableToBuffer(buf, object, () -> {
 			elementToBuffer.apply(buf, object);
 		});
 	}
 
-	public static void writeNullableToBuffer(PacketBuffer buf, Object object, Runnable elementToBuffer) {
+	public static <T> void writeNullableToBuffer(PacketBuffer buf, T object, Runnable elementToBuffer) {
 		boolean hasObject = object != null;
 		buf.writeBoolean(hasObject);
 		if (hasObject) {
@@ -221,14 +208,12 @@ public class DataUtil {
 
 	}
 
-	public static void writeOptionalFactionPointerToNBT(CompoundNBT nbt, String key, Optional pointer) {
-		Optional optName = pointer.map(hummel -> ((FactionPointer) hummel).getName());
+	public static void writeOptionalFactionPointerToNBT(CompoundNBT nbt, String key, Optional<FactionPointer> pointer) {
+		Optional<ResourceLocation> optName = pointer.map(hummel -> ((FactionPointer) hummel).getName());
 		writeOptionalToNBT(nbt, key, optName, (hummel, hummel2, hummel3) -> DataUtil.getResourceLocation((CompoundNBT) hummel, (String) hummel2));
 	}
 
-	public static void writeOptionalToNBT(CompoundNBT nbt, String key, Optional opt, TriConsumer nbtPutter) {
-		opt.ifPresent(val -> {
-			nbtPutter.accept(nbt, key, val);
-		});
+	public static <T> void writeOptionalToNBT(CompoundNBT nbt, String key, Optional<T> opt, TriConsumer<CompoundNBT, String, T> nbtPutter) {
+		opt.ifPresent(val -> nbtPutter.accept(nbt, key, val));
 	}
 }

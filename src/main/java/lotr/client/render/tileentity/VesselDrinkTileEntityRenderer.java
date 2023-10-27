@@ -9,13 +9,17 @@ import lotr.client.render.model.vessel.VesselDrinkModel;
 import lotr.common.block.VesselDrinkBlock;
 import lotr.common.item.VesselType;
 import lotr.common.tileentity.VesselDrinkTileEntity;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.tileentity.*;
+import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.vector.*;
+import net.minecraft.util.math.vector.Matrix3f;
+import net.minecraft.util.math.vector.Matrix4f;
+import net.minecraft.util.math.vector.Vector3f;
 
 public class VesselDrinkTileEntityRenderer extends TileEntityRenderer {
 	public VesselDrinkTileEntityRenderer(TileEntityRendererDispatcher disp) {

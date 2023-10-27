@@ -1,6 +1,7 @@
 package lotr.common;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.NoSuchElementException;
 
 import lotr.client.LOTRClientProxy;
@@ -11,9 +12,22 @@ import lotr.common.datagen.NPCLootTableGenerator;
 import lotr.common.entity.LOTREntityDataSerializers;
 import lotr.common.entity.npc.data.NPCEntitySettingsManager;
 import lotr.common.entity.npc.data.name.NameBankManager;
-import lotr.common.event.*;
+import lotr.common.event.LOTREventHandler;
+import lotr.common.event.LOTRTickHandlerServer;
 import lotr.common.fac.FactionSettingsManager;
-import lotr.common.init.*;
+import lotr.common.init.LOTRAttributes;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTRBlocks;
+import lotr.common.init.LOTRCapabilities;
+import lotr.common.init.LOTRCommands;
+import lotr.common.init.LOTRContainers;
+import lotr.common.init.LOTRDimensions;
+import lotr.common.init.LOTREntities;
+import lotr.common.init.LOTRItems;
+import lotr.common.init.LOTRParticles;
+import lotr.common.init.LOTRSoundEvents;
+import lotr.common.init.LOTRTileEntities;
+import lotr.common.init.LOTRWorldTypes;
 import lotr.common.loot.functions.LOTRLootFunctions;
 import lotr.common.loot.modifiers.LOTRLootModifiers;
 import lotr.common.network.LOTRPacketHandler;
@@ -29,16 +43,22 @@ import net.minecraft.resources.ResourcePackType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.*;
+import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.RegistryEvent.MissingMappings;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.eventbus.api.*;
-import net.minecraftforge.fml.*;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModContainer;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.*;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartedEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.packs.*;
+import net.minecraftforge.fml.packs.ModFileResourcePack;
+import net.minecraftforge.fml.packs.ResourcePackLoader;
 
 @Mod("lotr")
 public class LOTRMod {

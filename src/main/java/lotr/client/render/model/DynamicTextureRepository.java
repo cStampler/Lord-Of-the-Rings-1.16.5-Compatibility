@@ -1,15 +1,26 @@
 package lotr.client.render.model;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
+import java.util.Set;
 
-import lotr.client.render.model.connectedtex.*;
+import lotr.client.render.model.connectedtex.ConnectedTextureElement;
+import lotr.client.render.model.connectedtex.TextureConnectionProperties;
 import lotr.common.LOTRLog;
 import lotr.common.item.VesselType;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.*;
-import net.minecraft.resources.*;
+import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.MissingTextureSprite;
+import net.minecraft.client.renderer.texture.NativeImage;
+import net.minecraft.resources.IResourceManager;
+import net.minecraft.resources.ResourcePackType;
+import net.minecraft.resources.SimpleReloadableResourceManager;
 import net.minecraft.util.ResourceLocation;
 
 public class DynamicTextureRepository {

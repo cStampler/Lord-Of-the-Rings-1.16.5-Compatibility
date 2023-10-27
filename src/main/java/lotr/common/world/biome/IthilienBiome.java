@@ -6,8 +6,11 @@ import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
 import lotr.common.world.gen.feature.TreeCluster;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import lotr.common.world.map.RoadBlockProvider;
-import net.minecraft.block.*;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class IthilienBiome extends LOTRBiomeBase {
 	public IthilienBiome(boolean major) {

@@ -1,6 +1,7 @@
 package lotr.common.entity.npc.ai;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
 
 import lotr.common.entity.npc.NPCEntity;
 import net.minecraft.entity.Entity;

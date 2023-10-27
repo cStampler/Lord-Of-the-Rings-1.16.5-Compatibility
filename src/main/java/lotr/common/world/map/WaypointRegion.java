@@ -1,9 +1,13 @@
 package lotr.common.world.map;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.function.Supplier;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
 import lotr.common.data.DataUtil;

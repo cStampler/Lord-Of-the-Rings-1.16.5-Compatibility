@@ -2,11 +2,14 @@ package lotr.common.loot.functions;
 
 import java.util.Random;
 
-import com.google.gson.*;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonObject;
 
 import lotr.common.item.VesselDrinkItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.*;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootFunction;
+import net.minecraft.loot.LootFunctionType;
 import net.minecraft.loot.conditions.ILootCondition;
 
 public class SetNPCDrinkPotency extends LootFunction {

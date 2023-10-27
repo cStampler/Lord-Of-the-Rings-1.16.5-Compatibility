@@ -3,12 +3,17 @@ package lotr.common.item;
 import javax.annotation.Nullable;
 
 import lotr.client.render.entity.model.armor.LOTRArmorModels;
-import lotr.common.init.*;
+import lotr.common.init.LOTRItemGroups;
+import lotr.common.init.LOTRMaterial;
 import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.*;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class LOTRArmorItem extends ArmorItem {
 	private final String specialTextureName;

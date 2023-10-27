@@ -5,15 +5,27 @@ import java.util.function.Supplier;
 import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.types.Type;
 
-import lotr.common.tileentity.*;
+import lotr.common.tileentity.AlloyForgeTileEntity;
+import lotr.common.tileentity.CustomWaypointMarkerTileEntity;
+import lotr.common.tileentity.DwarvenForgeTileEntity;
+import lotr.common.tileentity.ElvenForgeTileEntity;
+import lotr.common.tileentity.GondorBeaconTileEntity;
+import lotr.common.tileentity.HobbitOvenTileEntity;
+import lotr.common.tileentity.KegTileEntity;
+import lotr.common.tileentity.OrcForgeTileEntity;
+import lotr.common.tileentity.PalantirTileEntity;
+import lotr.common.tileentity.PlateTileEntity;
+import lotr.common.tileentity.VesselDrinkTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntityType.Builder;
 import net.minecraft.util.SharedConstants;
-import net.minecraft.util.datafix.*;
+import net.minecraft.util.datafix.DataFixesManager;
+import net.minecraft.util.datafix.TypeReferences;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.*;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRTileEntities {
 	public static final DeferredRegister TILE_ENTITIES;

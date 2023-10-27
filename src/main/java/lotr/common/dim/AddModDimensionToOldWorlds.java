@@ -1,19 +1,28 @@
 package lotr.common.dim;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Optional;
 
 import org.apache.commons.io.FileUtils;
 
-import com.mojang.serialization.*;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.Dynamic;
+import com.mojang.serialization.DynamicOps;
 
 import lotr.common.LOTRLog;
 import lotr.common.init.LOTRDimensions;
-import net.minecraft.util.*;
-import net.minecraft.util.registry.*;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.DynamicRegistries;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.SimpleRegistry;
+import net.minecraft.util.registry.WorldSettingsImport;
 import net.minecraft.world.gen.settings.DimensionGeneratorSettings;
-import net.minecraft.world.storage.*;
+import net.minecraft.world.storage.FolderName;
 import net.minecraft.world.storage.SaveFormat.LevelSave;
+import net.minecraft.world.storage.ServerWorldInfo;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class AddModDimensionToOldWorlds {

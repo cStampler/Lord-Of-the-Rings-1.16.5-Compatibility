@@ -1,11 +1,13 @@
 package lotr.curuquesta.condition;
 
 import java.util.function.Function;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import io.netty.buffer.ByteBuf;
 import lotr.curuquesta.SpeechbankContextProvider;
-import lotr.curuquesta.condition.predicate.*;
+import lotr.curuquesta.condition.predicate.ComplexPredicateParsers;
+import lotr.curuquesta.condition.predicate.PredicateParser;
 
 public class EnumSpeechbankCondition<E extends Enum<E>, C extends SpeechbankContextProvider> extends SpeechbankCondition<E, C> {
 	private final E[] enumValues;

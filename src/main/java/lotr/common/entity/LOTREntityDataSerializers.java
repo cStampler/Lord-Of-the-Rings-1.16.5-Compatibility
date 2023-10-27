@@ -4,7 +4,8 @@ import java.util.Optional;
 
 import lotr.common.fac.FactionPointer;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.network.datasync.*;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.IDataSerializer;
 
 public class LOTREntityDataSerializers {
 	public static final IDataSerializer FACTION_POINTER = new IDataSerializer() {

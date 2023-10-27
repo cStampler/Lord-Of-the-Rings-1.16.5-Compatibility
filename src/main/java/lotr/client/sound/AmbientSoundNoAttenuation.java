@@ -2,8 +2,10 @@ package lotr.client.sound;
 
 import net.minecraft.client.audio.SimpleSound;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 
 public class AmbientSoundNoAttenuation extends SimpleSound {
 	public AmbientSoundNoAttenuation(SoundEvent evt, SoundCategory cat, float vol, float pit, BlockPos pos) {

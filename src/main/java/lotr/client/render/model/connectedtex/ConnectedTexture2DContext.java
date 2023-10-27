@@ -1,6 +1,8 @@
 package lotr.client.render.model.connectedtex;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.EnumSet;
+import java.util.Set;
 
 public class ConnectedTexture2DContext {
 	private final EnumSet relativePositions;

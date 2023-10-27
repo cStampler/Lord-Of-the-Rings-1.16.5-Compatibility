@@ -1,9 +1,13 @@
 package lotr.client.render.model.connectedtex;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 
-import com.google.gson.*;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import lotr.client.render.model.BlockModelUtil;
 import lotr.common.LOTRLog;

@@ -1,10 +1,13 @@
 package lotr.common.inv;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import lotr.common.LOTRLog;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.container.*;
+import net.minecraft.inventory.container.ShulkerBoxContainer;
+import net.minecraft.inventory.container.ShulkerBoxSlot;
+import net.minecraft.inventory.container.Slot;
 
 public class ShulkerBoxContainerFix {
 	public static void fixContainerSlots(ShulkerBoxContainer container, PlayerEntity player) {

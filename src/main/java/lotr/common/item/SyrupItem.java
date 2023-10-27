@@ -1,7 +1,8 @@
 package lotr.common.item;
 
 import net.minecraft.item.SoupItem;
-import net.minecraft.util.*;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 public class SyrupItem extends SoupItem {
 	public SyrupItem(Properties properties) {

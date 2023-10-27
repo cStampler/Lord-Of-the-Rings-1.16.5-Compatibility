@@ -1,12 +1,15 @@
 package lotr.common.block;
 
 import lotr.common.event.CompostingHelper;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.DoublePlantBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 import net.minecraftforge.common.extensions.IForgeBlockState;
 
 public class LOTRDoubleGrassBlock extends DoublePlantBlock implements IForgeBlockState {

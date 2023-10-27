@@ -1,31 +1,54 @@
 package lotr.common.item;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Nullable;
 
 import io.netty.buffer.Unpooled;
 import lotr.common.LOTRMod;
-import lotr.common.fac.*;
-import lotr.common.init.*;
-import lotr.common.inv.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettingsManager;
+import lotr.common.init.LOTRContainers;
+import lotr.common.init.LOTRItemGroups;
+import lotr.common.init.LOTRSoundEvents;
+import lotr.common.inv.OpenPouchContainer;
+import lotr.common.inv.PouchContainer;
+import lotr.common.inv.PouchInventory;
 import lotr.common.stat.LOTRStats;
 import lotr.common.util.PlayerInventorySlotsHelper;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.*;
-import net.minecraft.inventory.container.*;
-import net.minecraft.item.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.SimpleNamedContainerProvider;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public class PouchItem extends Item {
-	public static final Set ALL_POUCH_ITEMS = new HashSet();
-	public static final Map POUCHES_BY_CAPACITY = new HashMap();
+	public static final Set<Item> ALL_POUCH_ITEMS = new HashSet<Item>();
+	public static final Map<Integer, PouchItem> POUCHES_BY_CAPACITY = new HashMap<Integer, PouchItem>();
 	public static final int MAX_NAME_LENGTH = 64;
 	private final int capacity;
 	private final SoundEvent openSound;
@@ -47,7 +70,7 @@ public class PouchItem extends Item {
 		POUCHES_BY_CAPACITY.put(capacity, this);
 	}
 
-	private void addShulkerBoxStyleTooltip(ItemStack pouch, List tooltip) {
+	private void addShulkerBoxStyleTooltip(ItemStack pouch, List<ITextComponent> tooltip) {
 		TextFormatting textColor = TextFormatting.DARK_GRAY;
 		PouchInventory pouchInv = getPouchInventoryForTooltip(pouch);
 		int listed = 0;
@@ -74,7 +97,7 @@ public class PouchItem extends Item {
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, @Nullable World world, List tooltip, ITooltipFlag flag) {
+	public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
 		if (getPickedUpNewItems(stack)) {
 			tooltip.add(new TranslationTextComponent("item.lotr.pouch.picked_up_new_items").withStyle(TextFormatting.YELLOW));
 		}
@@ -123,10 +146,10 @@ public class PouchItem extends Item {
 	}
 
 	@Override
-	public ActionResult use(World world, PlayerEntity player, Hand hand) {
+	public ActionResult<ItemStack>  use(World world, PlayerEntity player, Hand hand) {
 		ItemStack heldItem = player.getItemInHand(hand);
 		if (!world.isClientSide) {
-			ContainerType containerType = (ContainerType) LOTRContainers.POUCH.get();
+			ContainerType<PouchContainer> containerType = (ContainerType<PouchContainer>)LOTRContainers.POUCH.get();
 			ITextComponent containerTitle = heldItem.getHoverName();
 			int invSlot = PlayerInventorySlotsHelper.getHandHeldItemIndex(player, hand);
 			PacketBuffer initData = new PacketBuffer(Unpooled.buffer());
@@ -143,8 +166,8 @@ public class PouchItem extends Item {
 
 	public static void attemptRestockPouches(PlayerEntity player) {
 		PlayerInventory inv = player.inventory;
-		List pouchSlots = new ArrayList();
-		List itemSlots = new ArrayList();
+		List<Integer> pouchSlots = new ArrayList<Integer>();
+		List<Integer> itemSlots = new ArrayList<Integer>();
 
 		for (int i = 0; i < inv.items.size(); ++i) {
 			ItemStack stack = inv.getItem(i);
@@ -158,13 +181,13 @@ public class PouchItem extends Item {
 		}
 
 		boolean movedAny = false;
-		Iterator var13 = itemSlots.iterator();
+		Iterator<Integer> var13 = itemSlots.iterator();
 
 		while (true) {
 			while (var13.hasNext()) {
 				int i = (Integer) var13.next();
 				ItemStack stack = inv.getItem(i);
-				Iterator var8 = pouchSlots.iterator();
+				Iterator<Integer> var8 = pouchSlots.iterator();
 
 				while (var8.hasNext()) {
 					int p = (Integer) var8.next();

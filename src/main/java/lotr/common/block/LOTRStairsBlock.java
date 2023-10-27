@@ -2,7 +2,8 @@ package lotr.common.block;
 
 import java.util.function.Supplier;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;

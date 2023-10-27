@@ -2,12 +2,16 @@ package lotr.common.world.biome;
 
 import lotr.common.block.DripstoneBlock;
 import lotr.common.init.LOTRBlocks;
-import lotr.common.world.biome.surface.*;
+import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
+import lotr.common.world.biome.surface.MountainTerrainProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.*;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.biome.MobSpawnInfo.Spawners;
 
 public class ForodwaithBiome extends LOTRBiomeBase {

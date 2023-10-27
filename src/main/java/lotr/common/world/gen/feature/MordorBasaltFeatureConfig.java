@@ -1,14 +1,16 @@
 package lotr.common.world.gen.feature;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.block.*;
-import net.minecraft.block.AbstractBlock.AbstractBlockState;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.world.gen.feature.FeatureSpread;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public class MordorBasaltFeatureConfig implements IFeatureConfig {
 	public static final Codec<MordorBasaltFeatureConfig> CODEC = RecordCodecBuilder.create(instance ->

@@ -1,15 +1,24 @@
 package lotr.common.network;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+import java.util.function.BiFunction;
+import java.util.function.Supplier;
 
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.collect.ImmutableMap;
 
-import lotr.common.*;
-import lotr.common.data.*;
-import lotr.common.fac.*;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.DataUtil;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

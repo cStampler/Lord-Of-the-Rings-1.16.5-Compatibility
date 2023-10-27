@@ -1,22 +1,35 @@
 package lotr.common.loot.modifiers;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang3.mutable.MutableInt;
 
-import com.google.common.collect.*;
-import com.google.gson.*;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import com.google.common.collect.UnmodifiableIterator;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.PolarBearEntity;
-import net.minecraft.loot.*;
+import net.minecraft.loot.ILootGenerator;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootEntry;
+import net.minecraft.loot.LootParameters;
+import net.minecraft.loot.LootSerializers;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.loot.functions.*;
+import net.minecraft.loot.functions.ILootFunction;
+import net.minecraft.loot.functions.LootFunctionManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.loot.*;
+import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
+import net.minecraftforge.common.loot.LootModifier;
 
 public class PolarBearBlubberModifier extends LootModifier {
 	private final LootEntry extraEntry;

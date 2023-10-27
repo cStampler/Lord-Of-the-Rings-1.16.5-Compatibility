@@ -14,15 +14,19 @@
  */
 package lotr.client.text;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import lotr.common.LOTRLog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.ReloadListener;
 import net.minecraft.profiler.IProfiler;
-import net.minecraft.resources.*;
+import net.minecraft.resources.IReloadableResourceManager;
+import net.minecraft.resources.IResource;
+import net.minecraft.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
 
 public abstract class TranslatableTextReloadListener<T, P> extends ReloadListener {

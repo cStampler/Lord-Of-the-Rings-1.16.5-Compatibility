@@ -1,7 +1,9 @@
 package lotr.common.entity.npc;
 
-import lotr.common.entity.npc.data.*;
-import lotr.common.entity.npc.data.name.*;
+import lotr.common.entity.npc.data.NPCFoodPool;
+import lotr.common.entity.npc.data.NPCFoodPools;
+import lotr.common.entity.npc.data.name.NPCNameGenerator;
+import lotr.common.entity.npc.data.name.NPCNameGenerators;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.World;
 

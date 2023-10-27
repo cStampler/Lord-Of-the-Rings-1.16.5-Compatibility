@@ -1,14 +1,19 @@
 package lotr.common.entity.npc.data;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.Random;
+import java.util.UUID;
 import java.util.function.BiConsumer;
 
 import lotr.common.data.DataUtil;
 import lotr.common.entity.npc.NPCEntity;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketNPCPersonalInfo;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.ai.attributes.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.AttributeModifier.Operation;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;

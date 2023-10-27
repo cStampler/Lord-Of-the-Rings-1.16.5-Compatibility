@@ -1,12 +1,18 @@
 package lotr.common.entity.npc;
 
-import lotr.common.entity.npc.data.name.*;
+import lotr.common.entity.npc.data.name.NPCNameGenerator;
+import lotr.common.entity.npc.data.name.NPCNameGenerators;
 import lotr.common.init.LOTRItems;
-import net.minecraft.entity.*;
-import net.minecraft.item.*;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.IItemProvider;
-import net.minecraft.world.*;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.IServerWorld;
+import net.minecraft.world.World;
 
 public class GaladhrimElfEntity extends ElfEntity {
 	public GaladhrimElfEntity(EntityType type, World w) {

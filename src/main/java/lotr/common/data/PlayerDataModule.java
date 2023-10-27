@@ -4,8 +4,11 @@ import java.util.UUID;
 import java.util.function.Consumer;
 
 import lotr.common.LOTRLog;
-import lotr.common.fac.*;
-import lotr.common.world.map.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;

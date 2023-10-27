@@ -1,27 +1,45 @@
 package lotr.common.block;
 
-import java.util.*;
+import java.util.Optional;
+import java.util.Random;
 import java.util.function.Supplier;
 
 import io.netty.buffer.Unpooled;
 import lotr.common.LOTRLog;
-import lotr.common.data.*;
-import lotr.common.fac.*;
-import lotr.common.init.*;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.fac.AlignmentLevels;
+import lotr.common.fac.AlignmentPredicates;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionPointer;
+import lotr.common.fac.FactionPointers;
+import lotr.common.init.LOTRBlocks;
+import lotr.common.init.LOTRContainers;
 import lotr.common.inv.FactionCraftingContainer;
-import lotr.common.recipe.*;
+import lotr.common.recipe.FactionTableType;
+import lotr.common.recipe.LOTRRecipes;
 import lotr.common.stat.LOTRStats;
-import net.minecraft.block.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.inventory.container.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
+import net.minecraft.util.IWorldPosCallable;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public abstract class FactionCraftingTableBlock extends Block {
@@ -36,13 +54,13 @@ public abstract class FactionCraftingTableBlock extends Block {
 		this.tableScreenName = tableScreenName;
 	}
 
-	public FactionCraftingTableBlock(Supplier block, FactionPointer tableFac, FactionTableType factionRecipeType, String tableScreenName) {
+	public FactionCraftingTableBlock(Supplier<? extends Block> block, FactionPointer tableFac, FactionTableType factionRecipeType, String tableScreenName) {
 		this(Properties.copy((AbstractBlock) block.get()), tableFac, factionRecipeType, tableScreenName);
 	}
 
 	private boolean hasRequiredAligment(PlayerEntity player) {
 		AlignmentDataModule alignData = LOTRLevelData.getSidedData(player).getAlignmentData();
-		Optional optFaction = tableFac.resolveFaction(player.level);
+		Optional<Faction> optFaction = tableFac.resolveFaction(player.level);
 		return (Boolean) optFaction.map(faction -> alignData.hasAlignment((Faction) faction, AlignmentPredicates.greaterThanOrEqual(1.0F))).orElseGet(() -> {
 			LOTRLog.warn("Player %s tried to use faction table %s, but the associated faction %s does not exist in the current datapacks! Allowing the use.", player.getName().getString(), getRegistryName(), tableFac.getName());
 			return true;
@@ -54,7 +72,7 @@ public abstract class FactionCraftingTableBlock extends Block {
 		if (hasRequiredAligment(player)) {
 			if (world.isClientSide) {
 			} else {
-				ContainerType containerType = (ContainerType) LOTRContainers.FACTION_CRAFTING.get();
+				ContainerType<FactionCraftingContainer> containerType = LOTRContainers.FACTION_CRAFTING.get();
 				ITextComponent containerTitle = new TranslationTextComponent(String.format("container.%s.%s", "lotr", tableScreenName));
 				FactionCraftingContainer.FactionCraftingContainerInitData initData = null;
 				try {
@@ -87,91 +105,91 @@ public abstract class FactionCraftingTableBlock extends Block {
 	}
 
 	public static class Angmar extends FactionCraftingTableBlock {
-		public Angmar(Supplier block) {
+		public Angmar(Supplier<? extends Block> block) {
 			super(block, FactionPointers.ANGMAR, LOTRRecipes.ANGMAR_CRAFTING, "angmar_crafting");
 		}
 	}
 
 	public static class BlueMountains extends FactionCraftingTableBlock {
-		public BlueMountains(Supplier block) {
+		public BlueMountains(Supplier<? extends Block> block) {
 			super(block, FactionPointers.BLUE_MOUNTAINS, LOTRRecipes.BLUE_MOUNTAINS_CRAFTING, "blue_mountains_crafting");
 		}
 	}
 
 	public static class Bree extends FactionCraftingTableBlock {
-		public Bree(Supplier block) {
+		public Bree(Supplier<? extends Block> block) {
 			super(block, FactionPointers.BREE, LOTRRecipes.BREE_CRAFTING, "bree_crafting");
 		}
 	}
 
 	public static class Dale extends FactionCraftingTableBlock {
-		public Dale(Supplier block) {
+		public Dale(Supplier<? extends Block> block) {
 			super(block, FactionPointers.DALE, LOTRRecipes.DALE_CRAFTING, "dale_crafting");
 		}
 	}
 
 	public static class DolAmroth extends FactionCraftingTableBlock {
-		public DolAmroth(Supplier block) {
+		public DolAmroth(Supplier<? extends Block> block) {
 			super(block, FactionPointers.GONDOR, LOTRRecipes.DOL_AMROTH_CRAFTING, "dol_amroth_crafting");
 		}
 	}
 
 	public static class Dorwinion extends FactionCraftingTableBlock {
-		public Dorwinion(Supplier block) {
+		public Dorwinion(Supplier<? extends Block> block) {
 			super(block, FactionPointers.DORWINION, LOTRRecipes.DORWINION_CRAFTING, "dorwinion_crafting");
 		}
 	}
 
 	public static class Dunlending extends FactionCraftingTableBlock {
-		public Dunlending(Supplier block) {
+		public Dunlending(Supplier<? extends Block> block) {
 			super(block, FactionPointers.DUNLAND, LOTRRecipes.DUNLENDING_CRAFTING, "dunlending_crafting");
 		}
 	}
 
 	public static class Dwarven extends FactionCraftingTableBlock {
-		public Dwarven(Supplier block) {
+		public Dwarven(Supplier<? extends Block> block) {
 			super(block, FactionPointers.DURINS_FOLK, LOTRRecipes.DWARVEN_CRAFTING, "dwarven_crafting");
 		}
 	}
 
 	public static class Galadhrim extends FactionCraftingTableBlock {
-		public Galadhrim(Supplier block) {
+		public Galadhrim(Supplier<? extends Block> block) {
 			super(block, FactionPointers.LOTHLORIEN, LOTRRecipes.GALADHRIM_CRAFTING, "galadhrim_crafting");
 		}
 	}
 
 	public static class Gondor extends FactionCraftingTableBlock {
-		public Gondor(Supplier block) {
+		public Gondor(Supplier<? extends Block> block) {
 			super(block, FactionPointers.GONDOR, LOTRRecipes.GONDOR_CRAFTING, "gondor_crafting");
 		}
 	}
 
 	public static class Harad extends FactionCraftingTableBlock {
-		public Harad(Supplier block) {
+		public Harad(Supplier<? extends Block> block) {
 			super(block, FactionPointers.NEAR_HARAD, LOTRRecipes.HARAD_CRAFTING, "harad_crafting");
 		}
 	}
 
 	public static class Hobbit extends FactionCraftingTableBlock {
-		public Hobbit(Supplier block) {
+		public Hobbit(Supplier<? extends Block> block) {
 			super(block, FactionPointers.HOBBITS, LOTRRecipes.HOBBIT_CRAFTING, "hobbit_crafting");
 		}
 	}
 
 	public static class Lindon extends FactionCraftingTableBlock {
-		public Lindon(Supplier block) {
+		public Lindon(Supplier<? extends Block> block) {
 			super(block, FactionPointers.HIGH_ELVES, LOTRRecipes.LINDON_CRAFTING, "lindon_crafting");
 		}
 	}
 
 	public static class Lossoth extends FactionCraftingTableBlock {
-		public Lossoth(Supplier block) {
+		public Lossoth(Supplier<? extends Block> block) {
 			super(block, FactionPointers.LOSSOTH, LOTRRecipes.LOSSOTH_CRAFTING, "lossoth_crafting");
 		}
 	}
 
 	public static class Mordor extends FactionCraftingTableBlock {
-		public Mordor(Supplier block) {
+		public Mordor(Supplier<? extends Block> block) {
 			super(Properties.copy((AbstractBlock) block.get()).lightLevel(LOTRBlocks.constantLight(8)), FactionPointers.MORDOR, LOTRRecipes.MORDOR_CRAFTING, "mordor_crafting");
 		}
 
@@ -189,37 +207,37 @@ public abstract class FactionCraftingTableBlock extends Block {
 	}
 
 	public static class Ranger extends FactionCraftingTableBlock {
-		public Ranger(Supplier block) {
+		public Ranger(Supplier<? extends Block> block) {
 			super(block, FactionPointers.DUNEDAIN_NORTH, LOTRRecipes.RANGER_CRAFTING, "ranger_crafting");
 		}
 	}
 
 	public static class Rivendell extends FactionCraftingTableBlock {
-		public Rivendell(Supplier block) {
+		public Rivendell(Supplier<? extends Block> block) {
 			super(block, FactionPointers.HIGH_ELVES, LOTRRecipes.RIVENDELL_CRAFTING, "rivendell_crafting");
 		}
 	}
 
 	public static class Rohan extends FactionCraftingTableBlock {
-		public Rohan(Supplier block) {
+		public Rohan(Supplier<? extends Block> block) {
 			super(block, FactionPointers.ROHAN, LOTRRecipes.ROHAN_CRAFTING, "rohan_crafting");
 		}
 	}
 
 	public static class Umbar extends FactionCraftingTableBlock {
-		public Umbar(Supplier block) {
+		public Umbar(Supplier<? extends Block> block) {
 			super(block, FactionPointers.NEAR_HARAD, LOTRRecipes.UMBAR_CRAFTING, "umbar_crafting");
 		}
 	}
 
 	public static class Uruk extends FactionCraftingTableBlock {
-		public Uruk(Supplier block) {
+		public Uruk(Supplier<? extends Block> block) {
 			super(block, FactionPointers.ISENGARD, LOTRRecipes.URUK_CRAFTING, "uruk_crafting");
 		}
 	}
 
 	public static class WoodElven extends FactionCraftingTableBlock {
-		public WoodElven(Supplier block) {
+		public WoodElven(Supplier<? extends Block> block) {
 			super(block, FactionPointers.WOODLAND_REALM, LOTRRecipes.WOOD_ELVEN_CRAFTING, "wood_elven_crafting");
 		}
 	}

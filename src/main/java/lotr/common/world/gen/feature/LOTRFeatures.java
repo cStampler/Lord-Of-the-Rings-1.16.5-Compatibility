@@ -1,20 +1,31 @@
 package lotr.common.world.gen.feature;
 
-import lotr.common.init.*;
-import lotr.common.world.gen.placement.*;
-import net.minecraft.block.*;
+import lotr.common.init.LOTRTags;
+import lotr.common.init.RegistryOrderHelper;
+import lotr.common.world.gen.placement.AtSurfaceLayerLimitedWithExtra;
+import lotr.common.world.gen.placement.AtSurfaceLayerLimitedWithExtraConfig;
+import lotr.common.world.gen.placement.ByWater;
+import lotr.common.world.gen.placement.ByWaterConfig;
+import lotr.common.world.gen.placement.TreeClusters;
+import lotr.common.world.gen.placement.TreeClustersConfig;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.feature.BlockStateProvidingFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraftforge.common.Tags.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.*;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRFeatures {
 	public static final DeferredRegister FEATURES;

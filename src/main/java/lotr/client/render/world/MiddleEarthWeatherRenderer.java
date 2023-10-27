@@ -5,9 +5,14 @@ import java.util.Random;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lotr.common.init.LOTRBiomes;
-import lotr.common.world.biome.*;
+import lotr.common.world.biome.ExtendedWeatherType;
+import lotr.common.world.biome.LOTRBiomeBase;
+import lotr.common.world.biome.LOTRBiomeWrapper;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.ResourceLocation;

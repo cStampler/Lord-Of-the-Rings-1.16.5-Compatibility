@@ -6,10 +6,12 @@ import java.util.stream.Stream;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.gen.feature.WorldDecoratingHelper;
-import net.minecraft.world.gen.placement.*;
+import net.minecraft.world.gen.placement.IPlacementConfig;
+import net.minecraft.world.gen.placement.Placement;
 
 public class ByWater extends Placement {
 	public ByWater(Codec codec) {

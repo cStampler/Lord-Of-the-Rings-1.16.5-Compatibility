@@ -1,6 +1,7 @@
 package lotr.common.event;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.util.IItemProvider;

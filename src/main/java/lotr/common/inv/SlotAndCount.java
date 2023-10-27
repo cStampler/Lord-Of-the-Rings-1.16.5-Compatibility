@@ -1,6 +1,8 @@
 package lotr.common.inv;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import net.minecraft.inventory.IInventory;
 

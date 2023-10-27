@@ -3,13 +3,16 @@ package lotr.client.gui;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import lotr.client.gui.widget.button.RedBookButton;
-import lotr.common.network.*;
+import lotr.common.network.CPacketUpdateCustomWaypoint;
+import lotr.common.network.LOTRPacketHandler;
 import lotr.common.world.map.CustomWaypoint;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class UpdateCustomWaypointScreen extends CustomWaypointScreen {
 	private static final ITextComponent PUBLIC_TEXT = new TranslationTextComponent("gui.lotr.cwp.create.public.yes");

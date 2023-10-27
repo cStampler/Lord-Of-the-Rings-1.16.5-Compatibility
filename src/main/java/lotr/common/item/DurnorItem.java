@@ -1,6 +1,7 @@
 package lotr.common.item;
 
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class DurnorItem extends Item {
 	public DurnorItem(Properties properties) {

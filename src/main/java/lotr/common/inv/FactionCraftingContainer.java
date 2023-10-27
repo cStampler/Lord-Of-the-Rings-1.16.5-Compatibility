@@ -1,16 +1,27 @@
 package lotr.common.inv;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Optional;
 
-import lotr.common.fac.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettingsManager;
 import lotr.common.init.LOTRContainers;
-import lotr.common.recipe.*;
+import lotr.common.recipe.FactionTableType;
+import lotr.common.recipe.LOTRRecipes;
+import lotr.common.recipe.MultiTableType;
 import net.minecraft.block.Block;
-import net.minecraft.entity.player.*;
-import net.minecraft.inventory.*;
-import net.minecraft.inventory.container.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.CraftResultInventory;
+import net.minecraft.inventory.CraftingInventory;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.*;
+import net.minecraft.item.crafting.ICraftingRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.util.IWorldPosCallable;

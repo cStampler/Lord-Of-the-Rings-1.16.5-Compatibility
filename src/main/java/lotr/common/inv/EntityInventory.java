@@ -3,7 +3,8 @@ package lotr.common.inv;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 
 public class EntityInventory extends Inventory {
 	protected final LivingEntity theEntity;

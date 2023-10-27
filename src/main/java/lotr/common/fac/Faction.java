@@ -1,20 +1,38 @@
 package lotr.common.fac;
 
 import java.awt.Color;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
-import lotr.common.data.*;
+import lotr.common.data.DataUtil;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
 import lotr.common.init.LOTRBiomes;
 import lotr.common.world.map.MapSettings;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
@@ -32,18 +50,18 @@ public class Faction {
 	private final float[] colorComponents;
 	private final MapSquare mapSquare;
 	private final boolean isPlayableAlignmentFaction;
-	private final Set types;
+	private final Set<FactionType> types;
 	private final boolean approvesCivilianKills;
-	private List ranks = new ArrayList();
-	private Map ranksById = new HashMap();
-	private Map ranksByName = new HashMap();
-	private List trueRanksSortedAscending = new ArrayList();
-	private List trueRanksSortedDescending = new ArrayList();
-	private Optional pledgeRank;
+	private List<FactionRank> ranks = new ArrayList<FactionRank>();
+	private Map<Integer, FactionRank> ranksById = new HashMap<Integer, FactionRank>();
+	private Map<String, FactionRank> ranksByName = new HashMap<String, FactionRank>();
+	private List<FactionRank> trueRanksSortedAscending = new ArrayList<FactionRank>();
+	private List<FactionRank> trueRanksSortedDescending = new ArrayList<FactionRank>();
+	private Optional<FactionRank> pledgeRank;
 	private AreasOfInfluence areasOfInfluence;
-	private List speechbankHomeBiomes;
+	private List<ResourceLocation> speechbankHomeBiomes;
 
-	public Faction(FactionSettings facSettings, ResourceLocation res, int id, String name, boolean translateName, String subtitle, boolean translateSubtitle, FactionRegion region, int ordering, int color, MapSquare mapSquare, boolean isPlayableAlignmentFaction, Set types, boolean civilianKills) {
+	public Faction(FactionSettings facSettings, ResourceLocation res, int id, String name, boolean translateName, String subtitle, boolean translateSubtitle, FactionRegion region, int ordering, int color, MapSquare mapSquare, boolean isPlayableAlignmentFaction, Set<FactionType> types, boolean civilianKills) {
 		factionSettings = facSettings;
 		resourceName = res;
 		assignedId = id;
@@ -73,8 +91,8 @@ public class Faction {
 		return assignedId;
 	}
 
-	public List getBonusesForKilling() {
-		return (List) factionSettings.streamFactionsExcept(this).filter(hummel -> isBadRelation((Faction) hummel)).collect(Collectors.toList());
+	public List<Faction> getBonusesForKilling() {
+		return factionSettings.streamFactionsExcept(this).filter(hummel -> isBadRelation(hummel)).collect(Collectors.toList());
 	}
 
 	public int getColor() {
@@ -91,11 +109,11 @@ public class Faction {
 		return text;
 	}
 
-	public List getConquestBoostRelations() {
-		return (List) factionSettings.streamFactionsExcept(this).filter(hummel -> ((Faction) hummel).isPlayableAlignmentFaction()).filter(hummel -> isAlly((Faction) hummel)).collect(Collectors.toList());
+	public List<Faction> getConquestBoostRelations() {
+		return factionSettings.streamFactionsExcept(this).filter(hummel -> (hummel).isPlayableAlignmentFaction()).filter(hummel -> isAlly((Faction) hummel)).collect(Collectors.toList());
 	}
 
-	public RegistryKey getDimension() {
+	public RegistryKey<World> getDimension() {
 		return region != null ? region.getDimension() : null;
 	}
 
@@ -135,19 +153,19 @@ public class Faction {
 		return ordering;
 	}
 
-	public List getOthersOfRelation(FactionRelation relation) {
-		return (List) factionSettings.streamFactionsExcept(this).filter(hummel -> ((Faction) hummel).isPlayableAlignmentFaction()).filter(faction -> (getRelation((Faction) faction) == relation)).collect(Collectors.toList());
+	public List<Faction> getOthersOfRelation(FactionRelation relation) {
+		return factionSettings.streamFactionsExcept(this).filter(hummel -> ((Faction) hummel).isPlayableAlignmentFaction()).filter(faction -> (getRelation((Faction) faction) == relation)).collect(Collectors.toList());
 	}
 
-	public List getPenaltiesForKilling() {
-		return (List) factionSettings.streamFactions().filter(f -> (f == this || isGoodRelation((Faction) f))).collect(Collectors.toList());
+	public List<Faction> getPenaltiesForKilling() {
+		return factionSettings.streamFactions().filter(f -> (f == this || isGoodRelation((Faction) f))).collect(Collectors.toList());
 	}
 
 	public float getPledgeAlignment() {
 		return (Float) pledgeRank.map(hummel -> ((FactionRank) hummel).getAlignment()).orElse(0.0F);
 	}
 
-	public Optional getPledgeRank() {
+	public Optional<FactionRank> getPledgeRank() {
 		return pledgeRank;
 	}
 
@@ -204,7 +222,7 @@ public class Faction {
 		return getRankNAbove(curRank, -n);
 	}
 
-	public List getRanks() {
+	public List<FactionRank> getRanks() {
 		return ranks;
 	}
 
@@ -216,11 +234,11 @@ public class Faction {
 		return factionSettings.getRelations().getRelation(this, other);
 	}
 
-	public List getSpeechbankHomeBiomes() {
+	public List<ResourceLocation> getSpeechbankHomeBiomes() {
 		return speechbankHomeBiomes;
 	}
 
-	public Set getTypes() {
+	public Set<FactionType> getTypes() {
 		return types;
 	}
 
@@ -247,10 +265,7 @@ public class Faction {
 	}
 
 	public boolean isOfAnyType(FactionType... checkTypes) {
-		Stream var10000 = Stream.of(checkTypes);
-		Set var10001 = types;
-		var10001.getClass();
-		return var10000.anyMatch(var10001::contains);
+		return Stream.<FactionType>of(checkTypes).anyMatch(this.types::contains);
 	}
 
 	public boolean isPlayableAlignmentFaction() {
@@ -258,7 +273,7 @@ public class Faction {
 	}
 
 	public boolean isSameDimension(Faction other) {
-		RegistryKey dim = getDimension();
+		RegistryKey<World> dim = getDimension();
 		if (dim != null) {
 			return dim.equals(other.getDimension());
 		}
@@ -286,22 +301,22 @@ public class Faction {
 		areasOfInfluence = aoi;
 	}
 
-	public void setRanks(List ranksToSet) {
+	public void setRanks(List<FactionRank> ranksToSet) {
 		if (ranks != null && !ranks.isEmpty()) {
 			throw new IllegalArgumentException("Cannot set " + name + " ranks - already set!");
 		}
 		ranks = ranksToSet;
-		ranksById = (Map) ranks.stream().collect(Collectors.toMap(FactionRank::getAssignedId, UnaryOperator.identity()));
-		ranksByName = (Map) ranks.stream().collect(Collectors.toMap(FactionRank::getBaseName, UnaryOperator.identity()));
-		List trueRanks = (List) ranks.stream().filter(rank -> !((FactionRank) rank).isDummyRank()).collect(Collectors.toList());
-		trueRanksSortedAscending = new ArrayList(trueRanks);
-		trueRanksSortedDescending = new ArrayList(trueRanks);
+		ranksById = ranks.stream().collect(Collectors.toMap(FactionRank::getAssignedId, UnaryOperator.identity()));
+		ranksByName = ranks.stream().collect(Collectors.toMap(FactionRank::getBaseName, UnaryOperator.identity()));
+		List<FactionRank> trueRanks = ranks.stream().filter(rank -> !((FactionRank) rank).isDummyRank()).collect(Collectors.toList());
+		trueRanksSortedAscending = new ArrayList<FactionRank>(trueRanks);
+		trueRanksSortedDescending = new ArrayList<FactionRank>(trueRanks);
 		Collections.sort(trueRanksSortedAscending);
 		Collections.sort(trueRanksSortedDescending, Comparator.reverseOrder());
-		pledgeRank = trueRanks.stream().filter(hummel -> ((FactionRank) hummel).isPledgeRank()).findFirst();
+		pledgeRank = trueRanks.stream().filter(FactionRank::isPledgeRank).findFirst();
 	}
 
-	public void setSpeechbankHomeBiomes(List biomes) {
+	public void setSpeechbankHomeBiomes(List<ResourceLocation> biomes) {
 		if (speechbankHomeBiomes != null) {
 			throw new IllegalArgumentException("Cannot set " + name + " speechbank home biomes - already set!");
 		}
@@ -309,28 +324,22 @@ public class Faction {
 	}
 
 	public void write(PacketBuffer buf) {
-		buf.writeResourceLocation(resourceName);
-		buf.writeVarInt(assignedId);
-		buf.writeUtf(name);
-		buf.writeBoolean(translateName);
-		buf.writeUtf(subtitle);
-		buf.writeBoolean(translateSubtitle);
-		DataUtil.writeNullableToBuffer(buf, region, (Runnable) () -> {
-			buf.writeVarInt(region.getAssignedId());
-		});
-		buf.writeVarInt(ordering);
-		buf.writeInt(color);
-		DataUtil.writeNullableToBuffer(buf, mapSquare, (BiConsumer) (hummel1, hummel2) -> ((MapSquare) hummel1).write((PacketBuffer) hummel2));
-		buf.writeBoolean(isPlayableAlignmentFaction);
-		DataUtil.writeCollectionToBuffer(buf, types, type -> {
-			buf.writeVarInt(((FactionType) type).networkID);
-		});
-		buf.writeBoolean(approvesCivilianKills);
-		DataUtil.writeCollectionToBuffer(buf, ranks, rank -> {
-			((FactionRank) rank).write(buf);
-		});
-		areasOfInfluence.write(buf);
-		DataUtil.writeCollectionToBuffer(buf, speechbankHomeBiomes, hummel -> buf.writeResourceLocation((ResourceLocation) hummel));
+		buf.writeResourceLocation(this.resourceName);
+	    buf.writeVarInt(this.assignedId);
+	    buf.writeUtf(this.name);
+	    buf.writeBoolean(this.translateName);
+	    buf.writeUtf(this.subtitle);
+	    buf.writeBoolean(this.translateSubtitle);
+	    DataUtil.writeNullableToBuffer(buf, this.region, () -> buf.writeVarInt(this.region.getAssignedId()));
+	    buf.writeVarInt(this.ordering);
+	    buf.writeInt(this.color);
+	    DataUtil.writeNullableToBuffer(buf, this.mapSquare, MapSquare::write);
+	    buf.writeBoolean(this.isPlayableAlignmentFaction);
+	    DataUtil.writeCollectionToBuffer(buf, this.types, type -> buf.writeVarInt(type.networkID));
+	    buf.writeBoolean(this.approvesCivilianKills);
+	    DataUtil.writeCollectionToBuffer(buf, this.ranks, rank -> rank.write(buf));
+	    this.areasOfInfluence.write(buf);
+	    DataUtil.writeCollectionToBuffer(buf, this.speechbankHomeBiomes, buf::writeResourceLocation);
 	}
 
 	public static ITextComponent getFactionOrUnknownDisplayName(Faction faction) {
@@ -357,7 +366,7 @@ public class Faction {
 		int color = buf.readInt();
 		MapSquare mapSquare = (MapSquare) DataUtil.readNullableFromBuffer(buf, () -> MapSquare.read(buf));
 		boolean isPlayableAlignmentFaction = buf.readBoolean();
-		Set types = (Set) DataUtil.readNewCollectionFromBuffer(buf, HashSet::new, () -> {
+		Set<FactionType> types = DataUtil.readNewCollectionFromBuffer(buf, HashSet::new, () -> {
 			int typeId = buf.readVarInt();
 			FactionType type = FactionType.forNetworkID(typeId);
 			if (type == null) {
@@ -368,7 +377,7 @@ public class Faction {
 		});
 		boolean approvesCivilianKills = buf.readBoolean();
 		Faction faction = new Faction(factionSettings, resourceName, assignedId, name, translateName, subtitle, translateSubtitle, region, ordering, color, mapSquare, isPlayableAlignmentFaction, types, approvesCivilianKills);
-		List ranks = (List) DataUtil.readNewCollectionFromBuffer(buf, ArrayList::new, () -> {
+		List<FactionRank> ranks = DataUtil.readNewCollectionFromBuffer(buf, ArrayList::new, () -> {
 			try {
 				return FactionRank.read(faction, buf);
 			} catch (Exception var4) {
@@ -380,9 +389,7 @@ public class Faction {
 		faction.setRanks(ranks);
 		AreasOfInfluence areasOfInfluence = AreasOfInfluence.read(faction, buf, mapSettings);
 		faction.setAreasOfInfluence(areasOfInfluence);
-		Supplier var10002 = ArrayList::new;
-		buf.getClass();
-		faction.setSpeechbankHomeBiomes((List) DataUtil.readNewCollectionFromBuffer(buf, var10002, buf::readResourceLocation));
+		faction.setSpeechbankHomeBiomes(DataUtil.readNewCollectionFromBuffer(buf, ArrayList::new, buf::readResourceLocation));
 		return faction;
 	}
 
@@ -417,7 +424,7 @@ public class Faction {
 		MapSquare mapSquare = MapSquare.read(mapSquareObj);
 		boolean isPlayableAlignmentFaction = true;
 		JsonArray typesArray = json.get("types").getAsJsonArray();
-		Set types = new HashSet();
+		Set<FactionType> types = new HashSet<FactionType>();
 		for (JsonElement typeElement : typesArray) {
 			String typeName = typeElement.getAsString();
 			FactionType type = FactionType.forName(new ResourceLocation(typeName));
@@ -430,7 +437,7 @@ public class Faction {
 
 		boolean approvesCivilianKills = json.get("approves_civilian_kills").getAsBoolean();
 		Faction faction = new Faction(factionSettings, resourceName, assignedId, name, translateName, subtitle, translateSubtitle, region, ordering, color, mapSquare, isPlayableAlignmentFaction, types, approvesCivilianKills);
-		List ranks = new ArrayList();
+		List<FactionRank> ranks = new ArrayList<FactionRank>();
 		int nextRankId = 0;
 		nextRankId = DummyFactionRanks.registerCommonRanks(faction, ranks, nextRankId);
 		if (json.has("ranks")) {
@@ -451,7 +458,7 @@ public class Faction {
 			}
 
 			if (ranks.stream().filter(hummel -> ((FactionRank) hummel).isPledgeRank()).count() > 1L) {
-				LOTRLog.warn("Faction %s declares more than one pledge rank (%s) - only one is allowed. Ranks will not be loaded until this is fixed", faction.getName(), String.join(",", (Iterable) ranks.stream().filter(hummel -> ((FactionRank) hummel).isPledgeRank()).map(hummel -> ((FactionRank) hummel).getBaseName()).collect(Collectors.toList())));
+				LOTRLog.warn("Faction %s declares more than one pledge rank (%s) - only one is allowed. Ranks will not be loaded until this is fixed", faction.getName(), String.join(",", ranks.stream().filter(hummel -> ((FactionRank) hummel).isPledgeRank()).map(hummel -> ((FactionRank) hummel).getBaseName()).collect(Collectors.toList())));
 			} else {
 				faction.setRanks(ranks);
 			}
@@ -460,7 +467,7 @@ public class Faction {
 		JsonObject aoiObj = json.get("areas_of_influence").getAsJsonObject();
 		AreasOfInfluence areasOfInfluence = AreasOfInfluence.read(faction, aoiObj, mapSettings);
 		faction.setAreasOfInfluence(areasOfInfluence);
-		List speechbankHomeBiomes = new ArrayList();
+		List<ResourceLocation> speechbankHomeBiomes = new ArrayList<ResourceLocation>();
 		if (json.has("speechbank_home_biomes")) {
 			JsonArray biomeArray = json.get("speechbank_home_biomes").getAsJsonArray();
 			for (JsonElement elem : biomeArray) {

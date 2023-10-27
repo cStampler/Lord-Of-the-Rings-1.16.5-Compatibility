@@ -3,13 +3,15 @@ package lotr.common.world.map;
 import java.util.UUID;
 
 import lotr.common.LOTRLog;
-import lotr.common.data.*;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
 import lotr.common.util.UsernameHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class AdoptedCustomWaypoint extends AbstractCustomWaypoint {
 	private String ownerUsername;

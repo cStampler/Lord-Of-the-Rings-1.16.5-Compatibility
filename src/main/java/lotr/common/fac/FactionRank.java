@@ -6,7 +6,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class FactionRank implements Comparable {
+public class FactionRank implements Comparable<FactionRank> {
 	private final Faction faction;
 	private final String name;
 	private final int assignedId;
@@ -27,7 +27,7 @@ public class FactionRank implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object other) {
+	public int compareTo(FactionRank other) {
 		if (faction != ((FactionRank) other).faction) {
 			throw new IllegalArgumentException(String.format("Cannot compare two ranks from different factions! %s, %s", getTranslationNameKey(), ((FactionRank) other).getTranslationNameKey()));
 		}

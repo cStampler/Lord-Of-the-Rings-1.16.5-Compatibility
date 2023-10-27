@@ -1,6 +1,7 @@
 package lotr.client.render.entity.model.armor;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import net.minecraft.client.renderer.entity.model.BipedModel;
 

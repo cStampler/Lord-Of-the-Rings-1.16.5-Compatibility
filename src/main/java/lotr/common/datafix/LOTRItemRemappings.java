@@ -1,13 +1,20 @@
 package lotr.common.datafix;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRLog;
-import lotr.common.init.*;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTRBlocks;
+import lotr.common.init.LOTRItems;
+import lotr.common.init.LOTRSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.util.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.RegistryEvent.MissingMappings;
 import net.minecraftforge.event.RegistryEvent.MissingMappings.Mapping;

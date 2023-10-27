@@ -2,12 +2,17 @@ package lotr.common.recipe;
 
 import com.google.gson.JsonObject;
 
-import lotr.common.item.*;
+import lotr.common.item.IEmptyVesselItem;
+import lotr.common.item.VesselDrinkItem;
+import lotr.common.item.VesselType;
 import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.item.*;
-import net.minecraft.item.crafting.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.ShapelessRecipe;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.*;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 

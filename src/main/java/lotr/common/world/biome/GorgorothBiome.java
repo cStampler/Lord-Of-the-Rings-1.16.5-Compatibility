@@ -1,10 +1,13 @@
 package lotr.common.world.biome;
 
 import lotr.common.init.LOTRBlocks;
-import lotr.common.world.biome.surface.*;
+import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
+import lotr.common.world.biome.surface.SurfaceNoiseMixer;
 import net.minecraft.block.Block;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.biome.ParticleEffectAmbience;
 
 public class GorgorothBiome extends BaseMordorBiome {

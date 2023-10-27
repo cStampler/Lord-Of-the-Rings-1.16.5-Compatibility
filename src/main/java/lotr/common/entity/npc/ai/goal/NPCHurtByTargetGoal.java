@@ -1,7 +1,8 @@
 package lotr.common.entity.npc.ai.goal;
 
 import lotr.common.entity.npc.NPCEntity;
-import net.minecraft.entity.*;
+import net.minecraft.entity.EntityPredicate;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.util.math.BlockPos;
 

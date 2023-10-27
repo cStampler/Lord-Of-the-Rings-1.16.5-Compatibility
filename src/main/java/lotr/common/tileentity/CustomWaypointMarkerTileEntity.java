@@ -5,14 +5,16 @@ import java.util.UUID;
 import lotr.common.block.CustomWaypointMarkerBlock;
 import lotr.common.data.DataUtil;
 import lotr.common.init.LOTRTileEntities;
-import lotr.common.world.map.*;
+import lotr.common.world.map.AbstractCustomWaypoint;
+import lotr.common.world.map.CustomWaypoint;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.ItemFrameEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
-import net.minecraft.tileentity.*;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 
 public class CustomWaypointMarkerTileEntity extends TileEntity {

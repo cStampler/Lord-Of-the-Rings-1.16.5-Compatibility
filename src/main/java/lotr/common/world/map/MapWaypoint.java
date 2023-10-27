@@ -5,14 +5,19 @@ import javax.annotation.Nullable;
 import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
-import lotr.common.data.*;
-import lotr.common.fac.*;
-import lotr.common.util.*;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettingsManager;
+import lotr.common.util.LOTRUtil;
+import lotr.common.util.LazyReference;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
 public class MapWaypoint implements Waypoint {

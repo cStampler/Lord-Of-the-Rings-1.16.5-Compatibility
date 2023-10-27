@@ -1,13 +1,20 @@
 package lotr.common.entity.npc;
 
-import lotr.common.init.*;
+import lotr.common.init.LOTRItems;
+import lotr.common.init.LOTRMaterial;
 import lotr.common.item.ManFleshItem;
 import lotr.common.util.GameRuleUtil;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap.MutableAttribute;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.item.*;
-import net.minecraft.util.*;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.TieredItem;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.world.World;
 
 public abstract class AbstractMannishEntity extends NPCEntity {

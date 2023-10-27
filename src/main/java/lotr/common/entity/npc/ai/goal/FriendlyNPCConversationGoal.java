@@ -1,11 +1,14 @@
 package lotr.common.entity.npc.ai.goal;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Random;
 
 import lotr.common.entity.npc.NPCEntity;
 import lotr.common.fac.Faction;
 import lotr.common.init.LOTRAttributes;
-import net.minecraft.entity.*;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.goal.Goal;
 

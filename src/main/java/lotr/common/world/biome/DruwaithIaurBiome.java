@@ -1,10 +1,13 @@
 package lotr.common.world.biome;
 
-import lotr.common.world.biome.surface.*;
+import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
+import lotr.common.world.biome.surface.SurfaceNoiseMixer;
 import lotr.common.world.gen.feature.TreeCluster;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import net.minecraft.block.Blocks;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class DruwaithIaurBiome extends LOTRBiomeBase {
 	public DruwaithIaurBiome(boolean major) {

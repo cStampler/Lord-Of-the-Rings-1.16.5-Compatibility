@@ -2,7 +2,8 @@ package lotr.curuquesta.condition.predicate;
 
 import java.util.function.Predicate;
 
-import lotr.curuquesta.*;
+import lotr.curuquesta.SpeechbankContext;
+import lotr.curuquesta.SpeechbankContextProvider;
 import lotr.curuquesta.condition.SpeechbankCondition;
 import lotr.curuquesta.structure.SpeechbankContextSatisfier;
 

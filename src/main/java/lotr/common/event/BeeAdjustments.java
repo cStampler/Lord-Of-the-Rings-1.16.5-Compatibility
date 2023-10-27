@@ -1,9 +1,11 @@
 package lotr.common.event;
 
 import lotr.common.LOTRLog;
-import lotr.common.config.*;
+import lotr.common.config.ClientsideCurrentServerConfigSettings;
+import lotr.common.config.LOTRConfig;
 import lotr.common.init.LOTRDimensions;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityEvent.Size;

@@ -1,7 +1,10 @@
 package lotr.common.entity.npc.data;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import net.minecraft.item.ItemStack;

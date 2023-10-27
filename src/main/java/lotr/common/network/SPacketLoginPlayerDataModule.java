@@ -4,7 +4,8 @@ import java.util.function.Supplier;
 
 import io.netty.buffer.Unpooled;
 import lotr.common.LOTRMod;
-import lotr.common.data.*;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

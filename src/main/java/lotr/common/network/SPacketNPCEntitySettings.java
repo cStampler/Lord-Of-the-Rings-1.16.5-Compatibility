@@ -2,7 +2,8 @@ package lotr.common.network;
 
 import java.util.function.Supplier;
 
-import lotr.common.entity.npc.data.*;
+import lotr.common.entity.npc.data.NPCEntitySettingsManager;
+import lotr.common.entity.npc.data.NPCEntitySettingsMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

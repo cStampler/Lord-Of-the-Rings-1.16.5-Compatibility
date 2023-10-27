@@ -1,14 +1,17 @@
 package lotr.common.tileentity;
 
-import lotr.common.init.*;
+import lotr.common.init.LOTRTags;
+import lotr.common.init.LOTRTileEntities;
 import lotr.common.inv.AlloyForgeContainer;
 import lotr.common.recipe.LOTRRecipes;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class HobbitOvenTileEntity extends AbstractAlloyForgeTileEntity {
 	public HobbitOvenTileEntity() {

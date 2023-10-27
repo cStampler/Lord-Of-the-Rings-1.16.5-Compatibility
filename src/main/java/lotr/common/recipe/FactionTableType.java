@@ -1,11 +1,13 @@
 package lotr.common.recipe;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRLog;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.*;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.ResourceLocation;
 
 public class FactionTableType implements FactionBasedRecipeType {
 	public final ResourceLocation recipeTypeName;

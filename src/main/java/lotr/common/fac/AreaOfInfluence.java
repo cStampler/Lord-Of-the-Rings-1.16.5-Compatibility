@@ -3,7 +3,8 @@ package lotr.common.fac;
 import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapWaypoint;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 

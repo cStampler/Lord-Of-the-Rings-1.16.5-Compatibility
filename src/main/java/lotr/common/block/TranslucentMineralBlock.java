@@ -1,6 +1,7 @@
 package lotr.common.block;
 
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.IBeaconBeamColorProvider;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.DyeColor;
 import net.minecraft.util.math.BlockPos;

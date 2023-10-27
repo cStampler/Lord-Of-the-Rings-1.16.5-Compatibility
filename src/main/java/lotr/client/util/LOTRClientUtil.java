@@ -3,7 +3,9 @@ package lotr.client.util;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
@@ -14,21 +16,28 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import lotr.client.LOTRClientProxy;
 import lotr.common.LOTRLog;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.*;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.IRenderTypeBuffer.Impl;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldVertexBufferUploader;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.IReorderingProcessor;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Matrix4f;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.ITextProperties;
 import net.minecraft.world.World;
 
 public class LOTRClientUtil {
 	private static final AbstractGui GUI_BLIT_PROXY = new AbstractGui() {
 	};
-	private static final Map averagedPageColors = new HashMap();
+	private static final Map<ResourceLocation, Integer> averagedPageColors = new HashMap<ResourceLocation, Integer>();
 
 	public static void blit(MatrixStack matStack, int x, int y, int u, int v, int width, int height) {
 		GUI_BLIT_PROXY.setBlitOffset(0);
@@ -171,7 +180,7 @@ public class LOTRClientUtil {
 		doBlitFloat(matStack.last().pose(), x0, x1, y0, y1, z, u0 / texW, (u0 + w) / texW, v0 / texH, (v0 + h) / texH);
 	}
 
-	public static List trimEachLineToWidth(List lines, FontRenderer fr, int stringWidth) {
-		return (List) lines.stream().flatMap(line -> fr.split((ITextProperties) line, stringWidth).stream()).collect(Collectors.toList());
+	public static List<? extends IReorderingProcessor> trimEachLineToWidth(List<ITextProperties> lines, FontRenderer fr, int stringWidth) {
+		return lines.stream().flatMap(line -> fr.split(line, stringWidth).stream()).collect(Collectors.toList());
 	}
 }

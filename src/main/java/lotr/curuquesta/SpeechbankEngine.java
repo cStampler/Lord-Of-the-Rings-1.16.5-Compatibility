@@ -1,6 +1,7 @@
 package lotr.curuquesta;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import lotr.curuquesta.condition.SpeechbankCondition;
 import lotr.curuquesta.replaceablevar.ReplaceableSpeechVariable;

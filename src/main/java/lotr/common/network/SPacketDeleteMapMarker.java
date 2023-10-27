@@ -2,8 +2,10 @@ package lotr.common.network;
 
 import java.util.function.Supplier;
 
-import lotr.common.*;
-import lotr.common.data.*;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.MapMarkerDataModule;
 import lotr.common.world.map.MapMarker;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;

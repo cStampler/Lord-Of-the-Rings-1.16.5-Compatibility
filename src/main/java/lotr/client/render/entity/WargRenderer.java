@@ -2,7 +2,8 @@ package lotr.client.render.entity;
 
 import lotr.client.render.entity.model.WargModel;
 import lotr.common.entity.npc.WargEntity;
-import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 

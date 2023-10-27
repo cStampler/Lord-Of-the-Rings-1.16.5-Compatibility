@@ -2,7 +2,9 @@ package lotr.common.block;
 
 import java.util.function.Supplier;
 
-import net.minecraft.block.*;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.StandingSignBlock;
+import net.minecraft.block.WoodType;
 import net.minecraft.block.material.Material;
 
 public class LOTRStandingSignBlock extends StandingSignBlock {

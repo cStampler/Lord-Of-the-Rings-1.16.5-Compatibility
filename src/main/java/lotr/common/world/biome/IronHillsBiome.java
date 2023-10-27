@@ -3,8 +3,11 @@ package lotr.common.world.biome;
 import lotr.common.init.LOTRBlocks;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import lotr.common.world.map.RoadBlockProvider;
-import net.minecraft.block.*;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 
 public class IronHillsBiome extends LOTRBiomeBase {

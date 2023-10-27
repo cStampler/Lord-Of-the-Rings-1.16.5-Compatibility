@@ -3,10 +3,13 @@ package lotr.common.block;
 import java.util.Random;
 import java.util.function.Supplier;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.WallBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class LOTRWallBlock extends WallBlock {
 	private final Block modelBlock;

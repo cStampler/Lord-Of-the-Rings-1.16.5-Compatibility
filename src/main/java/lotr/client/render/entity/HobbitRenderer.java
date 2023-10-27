@@ -4,7 +4,8 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 import lotr.client.render.GenderedRandomTextureVariants;
 import lotr.client.render.entity.model.HobbitModel;
-import lotr.common.entity.npc.*;
+import lotr.common.entity.npc.HobbitEntity;
+import lotr.common.entity.npc.NPCEntity;
 import lotr.common.util.CalendarUtil;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.entity.Entity;

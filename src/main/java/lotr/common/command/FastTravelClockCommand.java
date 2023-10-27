@@ -1,17 +1,21 @@
 package lotr.common.command;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Iterator;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.builder.*;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 
 import lotr.common.data.FastTravelDataModule;
 import lotr.common.util.LOTRUtil;
-import net.minecraft.command.*;
+import net.minecraft.command.CommandSource;
+import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class FastTravelClockCommand extends LOTRBaseCommand {
 	public static void register(CommandDispatcher dispatcher) {

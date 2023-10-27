@@ -1,7 +1,8 @@
 package lotr.common.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.*;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 
 public class LOTRSandstoneBlock extends Block {
 	public LOTRSandstoneBlock(MaterialColor color) {

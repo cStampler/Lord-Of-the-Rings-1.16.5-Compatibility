@@ -5,7 +5,8 @@ import java.util.function.Supplier;
 import lotr.common.world.biome.LOTRBiomeBase;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.util.*;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.common.util.NonNullSupplier;
 
 public class PreRegisteredLOTRBiome {
 	private final String name;

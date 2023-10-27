@@ -1,6 +1,7 @@
 package lotr.common.command;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Iterator;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.FloatArgumentType;
@@ -9,10 +10,16 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 import lotr.common.command.arguments.FactionArgument;
 import lotr.common.fac.Faction;
-import net.minecraft.command.*;
+import net.minecraft.command.CommandException;
+import net.minecraft.command.CommandSource;
+import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class AlignmentCommand extends LOTRBaseCommand {
 	private static int addAlignment(CommandSource source, Collection players, Faction faction, float addAmount) throws CommandSyntaxException {

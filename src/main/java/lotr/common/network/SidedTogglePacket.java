@@ -1,6 +1,7 @@
 package lotr.common.network;
 
-import java.util.function.*;
+import java.util.function.BiFunction;
+import java.util.function.Supplier;
 
 import lotr.common.LOTRLog;
 import lotr.common.data.LOTRPlayerData;

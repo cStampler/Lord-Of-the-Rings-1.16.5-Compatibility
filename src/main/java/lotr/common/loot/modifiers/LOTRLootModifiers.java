@@ -4,7 +4,8 @@ import lotr.common.loot.modifiers.PolarBearBlubberModifier.Serializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.*;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRLootModifiers {
 	public static final DeferredRegister LOOT_MODIFIERS;

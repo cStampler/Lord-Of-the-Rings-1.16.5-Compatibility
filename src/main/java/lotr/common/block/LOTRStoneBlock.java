@@ -3,8 +3,10 @@ package lotr.common.block;
 import java.util.function.Supplier;
 
 import lotr.common.init.LOTRBlocks;
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 
 public class LOTRStoneBlock extends Block {
 	public LOTRStoneBlock(MaterialColor materialColor) {

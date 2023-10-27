@@ -1,7 +1,9 @@
 package lotr.common.item;
 
-import lotr.common.init.*;
-import net.minecraft.item.*;
+import lotr.common.init.LOTRItemGroups;
+import lotr.common.init.LOTRMaterial;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.IItemTier;
 
 public class LOTRAxeItem extends AxeItem {
 	public LOTRAxeItem(IItemTier tier) {

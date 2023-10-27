@@ -2,9 +2,15 @@ package lotr.client.gui.map;
 
 import java.awt.Color;
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
-import java.util.stream.*;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.lwjgl.opengl.GL11;
 
@@ -14,32 +20,68 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import lotr.client.*;
-import lotr.client.gui.*;
+import lotr.client.LOTRKeyHandler;
+import lotr.client.MapImageTextures;
+import lotr.client.gui.MiddleEarthFactionsScreen;
+import lotr.client.gui.MiddleEarthMenuScreen;
 import lotr.client.gui.util.AlignmentTextRenderer;
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.config.LOTRConfig;
-import lotr.common.data.*;
-import lotr.common.fac.*;
-import lotr.common.init.*;
-import lotr.common.network.*;
+import lotr.common.data.FastTravelDataModule;
+import lotr.common.data.FogDataModule;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
+import lotr.common.fac.AreaBorders;
+import lotr.common.fac.AreaOfInfluence;
+import lotr.common.fac.AreasOfInfluence;
+import lotr.common.fac.Faction;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTRDimensions;
+import lotr.common.init.LOTRItems;
+import lotr.common.network.CPacketCreateMapMarker;
+import lotr.common.network.CPacketDeleteMapMarker;
+import lotr.common.network.CPacketFastTravel;
+import lotr.common.network.CPacketIsOpRequest;
+import lotr.common.network.CPacketMapTp;
+import lotr.common.network.LOTRPacketHandler;
 import lotr.common.util.LOTRUtil;
-import lotr.common.world.map.*;
+import lotr.common.world.map.AdoptedCustomWaypoint;
+import lotr.common.world.map.CustomWaypoint;
+import lotr.common.world.map.MapExplorationTile;
+import lotr.common.world.map.MapLabel;
+import lotr.common.world.map.MapMarker;
+import lotr.common.world.map.MapPlayerLocation;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
+import lotr.common.world.map.MapWaypoint;
+import lotr.common.world.map.Road;
+import lotr.common.world.map.RoadPoint;
+import lotr.common.world.map.RoadSection;
+import lotr.common.world.map.RouteRoadPoint;
+import lotr.common.world.map.SelectableMapObject;
+import lotr.common.world.map.Waypoint;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SimpleSound;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.gui.IGuiEventListener;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.InputMappings;
 import net.minecraft.item.ItemStack;
 import net.minecraft.profiler.IProfiler;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.math.vector.Matrix4f;
+import net.minecraft.util.math.vector.Vector3f;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
@@ -261,12 +303,12 @@ public class MiddleEarthMapScreen extends MiddleEarthMenuScreen {
    }
 
    private List<Waypoint> getVisibleWaypoints() {
-      Stream<Waypoint> mapWps = this.loadedMapSettings.getWaypoints().stream();
-      Stream<Waypoint> customWps = this.getOptClientPlayerData()
-              .map(pd -> pd.getFastTravelData().getCustomWaypoints().stream())
+      Stream<MapWaypoint> mapWps = this.loadedMapSettings.getWaypoints().stream();
+      Stream<CustomWaypoint> customWps = this.getOptClientPlayerData()
+    		  .<Stream<CustomWaypoint>>map(pd -> pd.getFastTravelData().getCustomWaypoints().stream())
               .orElse(Stream.empty());
-      Stream<Waypoint> adoptedCustomWps = this.getOptClientPlayerData()
-              .map(pd -> pd.getFastTravelData().getAdoptedCustomWaypoints().stream())
+      Stream<AdoptedCustomWaypoint> adoptedCustomWps = this.getOptClientPlayerData()
+              .<Stream<AdoptedCustomWaypoint>>map(pd -> pd.getFastTravelData().getAdoptedCustomWaypoints().stream())
               .orElse(Stream.empty());
       return Streams.concat(mapWps, customWps, adoptedCustomWps)
               .filter(this::isWaypointVisible)

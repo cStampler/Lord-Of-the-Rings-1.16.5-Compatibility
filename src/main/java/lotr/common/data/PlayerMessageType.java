@@ -1,11 +1,14 @@
 package lotr.common.data;
 
 import java.util.List;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketPlayerMessage;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public enum PlayerMessageType {
 	FRIENDLY_FIRE("friendly_fire"), ALIGN_DRAIN("align_drain"), CUSTOM("custom");

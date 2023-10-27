@@ -4,20 +4,25 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lotr.client.align.AlignmentFormatter;
-import lotr.client.gui.util.*;
+import lotr.client.gui.util.AlignmentRenderer;
+import lotr.client.gui.util.AlignmentTextRenderer;
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.LOTRMod;
-import lotr.common.data.*;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.LOTRLevelData;
 import lotr.common.entity.misc.AlignmentBonusEntity;
 import lotr.common.fac.Faction;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class AlignmentBonusRenderer extends EntityRenderer {
 	private static final ResourceLocation ALIGNMENT_TEXTURE;

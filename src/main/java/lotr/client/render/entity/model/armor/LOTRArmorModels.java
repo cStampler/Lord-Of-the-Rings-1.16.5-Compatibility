@@ -1,6 +1,7 @@
 package lotr.client.render.entity.model.armor;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
@@ -9,7 +10,8 @@ import lotr.common.init.LOTRItems;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class LOTRArmorModels {
 	private static boolean hasSetup = false;

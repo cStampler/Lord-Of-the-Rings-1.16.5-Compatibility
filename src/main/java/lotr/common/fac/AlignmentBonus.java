@@ -2,7 +2,8 @@ package lotr.common.fac;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class AlignmentBonus {
 	public static final AlignmentBonus MARRIAGE_BONUS = createSimpleBonus(5.0F, "lotr.alignment.marriage");

@@ -1,9 +1,12 @@
 package lotr.curuquesta.condition.predicate;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.regex.Pattern;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ComplexPredicateParsers {
 	public static <T extends Comparable<T>> PredicateParser<T> logicalExpressionOfComparableSubpredicates(Function<String, T> objFromString) {

@@ -3,8 +3,12 @@ package lotr.common.recipe;
 import lotr.common.init.LOTRTags;
 import lotr.common.item.SmokingPipeItem;
 import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.item.*;
-import net.minecraft.item.crafting.*;
+import net.minecraft.item.DyeColor;
+import net.minecraft.item.DyeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.SpecialRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 

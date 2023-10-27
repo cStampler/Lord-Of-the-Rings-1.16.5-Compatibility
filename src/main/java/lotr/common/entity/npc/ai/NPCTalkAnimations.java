@@ -1,11 +1,13 @@
 package lotr.common.entity.npc.ai;
 
 import java.util.Random;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import lotr.common.entity.npc.NPCEntity;
 import lotr.common.init.LOTRParticles;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketNPCTalkAnimations;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;

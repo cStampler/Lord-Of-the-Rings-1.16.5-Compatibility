@@ -1,6 +1,13 @@
 package lotr.client.render;
 
-import lotr.client.particle.*;
+import lotr.client.particle.ElvenGlowParticle;
+import lotr.client.particle.FallingLeafParticle;
+import lotr.client.particle.GlitterParticle;
+import lotr.client.particle.NPCSpeechParticle;
+import lotr.client.particle.TranslucentRainParticle;
+import lotr.client.particle.TranslucentSplashParticle;
+import lotr.client.particle.WaterfallParticle;
+import lotr.client.particle.WhiteSmokeParticle;
 import lotr.common.init.LOTRParticles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleManager;

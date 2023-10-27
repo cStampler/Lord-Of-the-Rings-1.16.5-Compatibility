@@ -1,6 +1,7 @@
 package lotr.client.gui;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
@@ -11,7 +12,9 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class MiddleEarthMasterMenuScreen extends BasicIngameScreen {
 	public static final ResourceLocation MENU_ICONS = new ResourceLocation("lotr", "textures/gui/menu_icons.png");

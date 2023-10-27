@@ -1,10 +1,14 @@
 package lotr.common.world.gen.feature.grassblend;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
-import lotr.common.world.gen.feature.*;
-import net.minecraft.world.gen.feature.*;
+import lotr.common.world.gen.feature.WeightedFeature;
+import lotr.common.world.gen.feature.WeightedRandomFeatureConfig;
+import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
 
 public abstract class GrassBlend {
 	private final List entries;

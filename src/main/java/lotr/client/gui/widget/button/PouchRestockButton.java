@@ -1,6 +1,6 @@
 package lotr.client.gui.widget.button;
 
-import java.util.*;
+import java.util.Optional;
 
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -10,13 +10,18 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import lotr.client.event.LOTRGuiHandler;
 import lotr.common.item.PouchItem;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.inventory.*;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.gui.screen.inventory.CreativeScreen;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.entity.player.*;
-import net.minecraft.inventory.container.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class PouchRestockButton extends Button {
 	private static final ResourceLocation TEXTURE = new ResourceLocation("lotr", "textures/gui/widgets.png");
@@ -58,7 +63,7 @@ public class PouchRestockButton extends Button {
 
 	private void checkPouchRestockPositionAndVisibility(Minecraft minecraft) {
 		PlayerInventory inv = minecraft.player.inventory;
-		active = visible = inv.hasAnyOf(new HashSet(PouchItem.ALL_POUCH_ITEMS));
+		active = visible = inv.hasAnyOf(PouchItem.ALL_POUCH_ITEMS);
 		int guiLeft = parentScreen.getGuiLeft();
 		int guiTop = parentScreen.getGuiTop();
 		int guiXSize = parentScreen.getXSize();
@@ -99,17 +104,17 @@ public class PouchRestockButton extends Button {
 	}
 
 	private void repositionButton(Minecraft minecraft) {
-		Optional optButtonCoords = getRestockButtonPosition(minecraft, parentScreen, positioner);
+		Optional<Pair<Integer, Integer>> optButtonCoords = getRestockButtonPosition(minecraft, parentScreen, positioner);
 		if (optButtonCoords.isPresent()) {
-			x = (Integer) ((Pair) optButtonCoords.get()).getLeft();
-			y = (Integer) ((Pair) optButtonCoords.get()).getRight();
+			x = optButtonCoords.get().getLeft();
+			y = optButtonCoords.get().getRight();
 		} else {
 			active = visible = false;
 		}
 
 	}
 
-	public static Optional getRestockButtonPosition(Minecraft minecraft, ContainerScreen containerScreen, LOTRGuiHandler.PouchRestockButtonPositioner positioner) {
+	public static Optional<Pair<Integer, Integer>> getRestockButtonPosition(Minecraft minecraft, ContainerScreen containerScreen, LOTRGuiHandler.PouchRestockButtonPositioner positioner) {
 		PlayerEntity thePlayer = minecraft.player;
 		PlayerInventory playerInv = thePlayer.inventory;
 		boolean containsPlayer = false;
@@ -146,7 +151,7 @@ public class PouchRestockButton extends Button {
 		if (containsPlayer) {
 			int guiLeft = containerScreen.getGuiLeft();
 			int guiTop = containerScreen.getGuiTop();
-			Pair buttonCoords = positioner.getButtonPosition(topLeftPlayerSlot, topRightPlayerSlot);
+			Pair<Integer, Integer> buttonCoords = positioner.getButtonPosition(topLeftPlayerSlot, topRightPlayerSlot);
 			buttonCoords = Pair.of(guiLeft + (Integer) buttonCoords.getLeft(), guiTop + (Integer) buttonCoords.getRight());
 			return Optional.of(buttonCoords);
 		}

@@ -2,9 +2,23 @@ package lotr.common.item;
 
 import javax.annotation.Nullable;
 
-import lotr.common.block.*;
+import lotr.common.block.BranchBlock;
+import lotr.common.block.LOTRFenceBlock;
+import lotr.common.block.LOTRFenceGateBlock;
+import lotr.common.block.LOTRSlabBlock;
+import lotr.common.block.LogSlabBlock;
+import lotr.common.block.LogStairsBlock;
+import lotr.common.block.ReedsBlock;
+import lotr.common.block.RottenWoodBeamBlock;
+import lotr.common.block.ThatchBlock;
+import lotr.common.block.ThatchSlabBlock;
+import lotr.common.block.ThatchStairsBlock;
+import lotr.common.block.WickerFenceBlock;
+import lotr.common.block.WickerFenceGateBlock;
+import lotr.common.block.WoodBeamBlock;
 import net.minecraft.block.Block;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 
 public class LOTRBlockItem extends BlockItem {

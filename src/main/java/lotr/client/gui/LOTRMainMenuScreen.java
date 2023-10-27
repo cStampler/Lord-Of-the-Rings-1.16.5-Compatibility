@@ -1,23 +1,34 @@
 package lotr.client.gui;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.platform.GlStateManager.*;
+import com.mojang.blaze3d.platform.GlStateManager.DestFactor;
+import com.mojang.blaze3d.platform.GlStateManager.SourceFactor;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import lotr.client.gui.map.*;
+import lotr.client.gui.map.MiddleEarthMapRenderer;
+import lotr.client.gui.map.MiddleEarthMapScreen;
 import lotr.client.gui.widget.button.RedBookButton;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
+import lotr.common.world.map.MapWaypoint;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.screen.MainMenuScreen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.util.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SharedConstants;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.gui.NotificationModUpdateScreen;
 import net.minecraftforge.fml.BrandingControl;
@@ -32,7 +43,7 @@ public class LOTRMainMenuScreen extends MainMenuScreen {
 	private static MiddleEarthMapRenderer mapRenderer;
 	private static int tickCounter;
 	private static Random rand;
-	private static List waypointRoute;
+	private static List<MapWaypoint> waypointRoute;
 	private static int currentWPIndex;
 	private static boolean randomWPStart;
 	private static float mapSpeed;
@@ -41,7 +52,7 @@ public class LOTRMainMenuScreen extends MainMenuScreen {
 	static {
 		MOD_SUBTITLE = new TranslationTextComponent("lotr.menu.subtitle").withStyle(TextFormatting.ITALIC);
 		rand = new Random();
-		waypointRoute = new ArrayList();
+		waypointRoute = new ArrayList<MapWaypoint>();
 		randomWPStart = false;
 	}
 	private boolean fadeIn = false;
@@ -203,7 +214,7 @@ public class LOTRMainMenuScreen extends MainMenuScreen {
 				fill(matStack, widthCopyrightRest, height - 1, widthCopyrightRest + widthCopyright, height, 16777215 | l);
 			}
 
-			Iterator var12 = buttons.iterator();
+			Iterator<Widget> var12 = buttons.iterator();
 
 			Widget widget;
 			while (var12.hasNext()) {

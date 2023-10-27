@@ -1,7 +1,8 @@
 package lotr.client.render.entity;
 
 import lotr.client.render.RandomTextureVariants;
-import lotr.client.render.entity.layers.*;
+import lotr.client.render.entity.layers.ManOutfitLayer;
+import lotr.client.render.entity.layers.NPCOutfitLayer;
 import lotr.common.entity.npc.NPCEntity;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.inventory.EquipmentSlotType;

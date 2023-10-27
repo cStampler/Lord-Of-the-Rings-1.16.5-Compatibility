@@ -1,11 +1,15 @@
 package lotr.common.entity.npc.data;
 
-import java.util.*;
-import java.util.stream.*;
+import java.util.EnumSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import lotr.common.LOTRLog;
 import lotr.common.data.DataUtil;
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.StringNBT;
 import net.minecraft.network.PacketBuffer;
 
 public class PersonalityTraits {

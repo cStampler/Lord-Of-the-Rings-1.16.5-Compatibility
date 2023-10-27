@@ -1,8 +1,17 @@
 package lotr.common.world.map;
 
 import java.awt.image.BufferedImage;
-import java.io.*;
-import java.util.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
@@ -10,17 +19,25 @@ import javax.imageio.ImageIO;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.math.IntMath;
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
-import lotr.common.*;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
 import lotr.common.init.LOTRBiomes;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.resources.*;
-import net.minecraft.util.*;
+import net.minecraft.resources.IResourceManager;
+import net.minecraft.resources.ResourcePackType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
-import net.minecraft.world.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.LogicalSide;
 
@@ -43,23 +60,23 @@ public class MapSettings {
 	private final int scaleFactor;
 	private final String title;
 	private final boolean translateTitle;
-	private final Set lockSides;
+	private final Set<Direction> lockSides;
 	private final boolean proceduralRivers;
 	private BothWaterLatitudeSettings waterLatitudes;
 	private NorthernLightsSettings northernLights;
-	private List waypointRegions;
-	private Map waypointRegionsById;
-	private Map waypointRegionsByName;
-	private Map waypointRegionsForBiome;
-	private List waypoints;
-	private Map waypointsById;
-	private Map waypointsByName;
-	private List menuWaypointRoute;
-	private List roads;
+	private List<WaypointRegion> waypointRegions;
+	private Map<Integer, WaypointRegion> waypointRegionsById;
+	private Map<ResourceLocation, WaypointRegion> waypointRegionsByName;
+	private Map<ResourceLocation, List<WaypointRegion>> waypointRegionsForBiome;
+	private List<MapWaypoint> waypoints;
+	private Map<Integer, MapWaypoint> waypointsById;
+	private Map<ResourceLocation, MapWaypoint> waypointsByName;
+	private List<MapWaypoint> menuWaypointRoute;
+	private List<Road> roads;
 	private final RoadPointCache roadPointCache = new RoadPointCache();
-	private List labels;
+	private List<MapLabel> labels;
 
-	public MapSettings(MapSettingsManager mgr, ResourceLocation map, int origX, int origZ, int scale, String ttl, boolean translate, Set locks, boolean rivers) {
+	public MapSettings(MapSettingsManager mgr, ResourceLocation map, int origX, int origZ, int scale, String ttl, boolean translate, Set<Direction> locks, boolean rivers) {
 		manager = mgr;
 		mapImagePath = map;
 		originX = origX;
@@ -100,7 +117,7 @@ public class MapSettings {
 		return imageHeight;
 	}
 
-	public List getLabels() {
+	public List<MapLabel> getLabels() {
 		return labels;
 	}
 
@@ -108,7 +125,7 @@ public class MapSettings {
 		return mapImagePath;
 	}
 
-	public List getMenuWaypointRoute() {
+	public List<MapWaypoint> getMenuWaypointRoute() {
 		return menuWaypointRoute;
 	}
 
@@ -136,7 +153,7 @@ public class MapSettings {
 		return roadPointCache;
 	}
 
-	public List getRoads() {
+	public List<Road> getRoads() {
 		return roads;
 	}
 
@@ -176,20 +193,20 @@ public class MapSettings {
 		return (WaypointRegion) waypointRegionsByName.get(name);
 	}
 
-	public List getWaypointRegionNames() {
-		return (List) waypointRegions.stream().map(hummel -> ((WaypointRegion) hummel).getName()).collect(Collectors.toList());
+	public List<ResourceLocation> getWaypointRegionNames() {
+		return waypointRegions.stream().map(hummel -> ((WaypointRegion) hummel).getName()).collect(Collectors.toList());
 	}
 
-	public List getWaypointRegions() {
+	public List<WaypointRegion> getWaypointRegions() {
 		return waypointRegions;
 	}
 
-	public List getWaypointRegionsForBiome(Biome biome, IWorld world) {
+	public List<WaypointRegion> getWaypointRegionsForBiome(Biome biome, IWorld world) {
 		ResourceLocation biomeName = LOTRBiomes.getBiomeRegistryName(biome, world);
-		return (List) waypointRegionsForBiome.getOrDefault(biomeName, ImmutableList.of());
+		return waypointRegionsForBiome.getOrDefault(biomeName, ImmutableList.of());
 	}
 
-	public List getWaypoints() {
+	public List<MapWaypoint> getWaypoints() {
 		return waypoints;
 	}
 
@@ -392,28 +409,28 @@ public class MapSettings {
 		waterLatitudes = water;
 	}
 
-	public void setWaypointRegions(List regions) {
+	public void setWaypointRegions(List<WaypointRegion> regions) {
 		if (waypointRegions != null) {
 			throw new IllegalArgumentException("Cannot set map's waypoint regions - already set!");
 		}
 		waypointRegions = regions;
-		waypointRegionsById = (Map) waypointRegions.stream().collect(Collectors.toMap(WaypointRegion::getAssignedId, UnaryOperator.identity()));
-		waypointRegionsByName = (Map) waypointRegions.stream().collect(Collectors.toMap(WaypointRegion::getName, UnaryOperator.identity()));
-		waypointRegionsForBiome = new HashMap();
+		waypointRegionsById = waypointRegions.stream().collect(Collectors.toMap(WaypointRegion::getAssignedId, UnaryOperator.identity()));
+		waypointRegionsByName = waypointRegions.stream().collect(Collectors.toMap(WaypointRegion::getName, UnaryOperator.identity()));
+		waypointRegionsForBiome = new HashMap<>();
 		waypointRegions.forEach(region -> {
 			((WaypointRegion) region).getBiomeNames().forEach(biomeName -> {
-				((List) waypointRegionsForBiome.computeIfAbsent(biomeName, b -> new ArrayList())).add(region);
+				((List) waypointRegionsForBiome.computeIfAbsent((ResourceLocation) biomeName, b -> new ArrayList())).add(region);
 			});
 		});
 	}
 
-	public void setWaypoints(List wps) {
+	public void setWaypoints(List<MapWaypoint> wps) {
 		if (waypoints != null) {
 			throw new IllegalArgumentException("Cannot set map's waypoints - already set!");
 		}
 		waypoints = wps;
-		waypointsById = (Map) waypoints.stream().collect(Collectors.toMap(MapWaypoint::getAssignedId, UnaryOperator.identity()));
-		waypointsByName = (Map) waypoints.stream().collect(Collectors.toMap(MapWaypoint::getName, UnaryOperator.identity()));
+		waypointsById = waypoints.stream().collect(Collectors.toMap(MapWaypoint::getAssignedId, UnaryOperator.identity()));
+		waypointsByName = waypoints.stream().collect(Collectors.toMap(MapWaypoint::getName, UnaryOperator.identity()));
 	}
 
 	public int worldToMapDistance(double dist) {

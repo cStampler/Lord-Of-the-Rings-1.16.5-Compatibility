@@ -12,7 +12,8 @@
 package lotr.client.text;
 
 import java.io.BufferedReader;
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +22,8 @@ import com.google.common.collect.ImmutableList;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 public class QuoteListLoader extends TranslatableTextReloadListener<QuoteList, ParentTextResourceLoader.NoopParentLoader> {
 	private static final Random RANDOM = new Random();

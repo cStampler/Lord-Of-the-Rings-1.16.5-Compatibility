@@ -9,18 +9,29 @@
  */
 package lotr.client.speech;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
+import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
-import lotr.curuquesta.*;
+import lotr.curuquesta.SpeechbankContextProvider;
+import lotr.curuquesta.SpeechbankEngine;
 import lotr.curuquesta.condition.SpeechbankCondition;
 import lotr.curuquesta.condition.predicate.SpeechbankConditionAndPredicate;
-import lotr.curuquesta.structure.*;
+import lotr.curuquesta.structure.AlternativeConditionSets;
+import lotr.curuquesta.structure.Speechbank;
+import lotr.curuquesta.structure.SpeechbankConditionSet;
+import lotr.curuquesta.structure.SpeechbankEntry;
 import net.minecraft.util.ResourceLocation;
 
 public class SpeechbankLoader<C extends SpeechbankContextProvider> {

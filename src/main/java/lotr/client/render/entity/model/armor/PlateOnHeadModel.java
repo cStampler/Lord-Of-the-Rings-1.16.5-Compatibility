@@ -5,11 +5,13 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import lotr.client.event.LOTRTickHandlerClient;
-import lotr.common.entity.capabilities.*;
+import lotr.common.entity.capabilities.PlateFallingData;
+import lotr.common.entity.capabilities.PlateFallingDataProvider;
 import lotr.common.init.LOTRBlocks;
 import lotr.common.item.PlateItem;
 import lotr.common.tileentity.PlateTileEntity;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.model.BipedModel;

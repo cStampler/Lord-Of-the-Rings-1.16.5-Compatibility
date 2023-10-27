@@ -7,16 +7,22 @@ import com.mojang.serialization.Codec;
 import lotr.common.block.RottenLogBlock;
 import lotr.common.init.LOTRBlocks;
 import lotr.common.world.map.RoadPointCache;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Direction.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.Direction.Axis;
+import net.minecraft.util.Direction.Plane;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
-import net.minecraft.world.*;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public class FallenLogFeature extends Feature {
 	public FallenLogFeature(Codec codec) {

@@ -1,13 +1,17 @@
 package lotr.common.world.gen.feature;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import lotr.common.LOTRLog;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public class WeightedRandomFeatureConfig implements IFeatureConfig {
 	public static final Codec CODEC = RecordCodecBuilder.create(instance -> instance.group(WeightedFeature.CODEC.listOf().fieldOf("weighted_features").forGetter(config -> ImmutableList.copyOf(((WeightedRandomFeatureConfig) config).weightedFeatures))).apply(instance, hummel -> new WeightedRandomFeatureConfig((List) hummel)));

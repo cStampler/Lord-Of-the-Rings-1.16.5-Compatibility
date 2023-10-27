@@ -1,12 +1,17 @@
 package lotr.common.world.biome.surface;
 
-import java.util.*;
-import java.util.stream.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraftforge.fml.RegistryObject;
 
 public final class MountainTerrainProvider {

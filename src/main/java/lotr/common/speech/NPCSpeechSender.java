@@ -6,10 +6,12 @@ import com.google.common.collect.ImmutableList;
 
 import lotr.common.LOTRLog;
 import lotr.common.entity.npc.NPCEntity;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketSpeechbank;
 import lotr.curuquesta.SpeechbankContext;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class NPCSpeechSender {

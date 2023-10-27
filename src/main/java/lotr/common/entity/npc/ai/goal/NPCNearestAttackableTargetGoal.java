@@ -1,6 +1,7 @@
 package lotr.common.entity.npc.ai.goal;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.Predicate;
 
 import com.google.common.base.Predicates;

@@ -1,23 +1,35 @@
 package lotr.common.data;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.UUID;
 
 import lotr.common.LOTRLog;
 import lotr.common.config.LOTRConfig;
 import lotr.common.init.LOTRWorldTypes;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketAlignment;
+import lotr.common.network.SPacketLoginLOTR;
+import lotr.common.network.SPacketMapPlayerLocations;
+import lotr.common.network.SPacketRingPortalPos;
+import lotr.common.network.SPacketWorldWaypointCooldown;
 import lotr.common.time.LOTRDate;
 import lotr.common.util.UsernameHelper;
 import lotr.common.world.map.MapPlayerLocation;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.LogicalSide;
 

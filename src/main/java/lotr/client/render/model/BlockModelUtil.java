@@ -1,6 +1,7 @@
 package lotr.client.render.model;
 
-import net.minecraft.util.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.ResourceLocationException;
 
 public class BlockModelUtil {
 	public static boolean validateTextureString(String s) {

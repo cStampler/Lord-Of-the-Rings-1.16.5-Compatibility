@@ -3,8 +3,11 @@ package lotr.common.entity.npc.ai;
 import java.util.function.Predicate;
 
 import lotr.common.entity.npc.NPCEntity;
-import lotr.common.fac.*;
-import net.minecraft.entity.*;
+import lotr.common.fac.EntityFactionHelper;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionPointers;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 
 public class NPCTargetSelector implements Predicate {
 	private NPCEntity owner;

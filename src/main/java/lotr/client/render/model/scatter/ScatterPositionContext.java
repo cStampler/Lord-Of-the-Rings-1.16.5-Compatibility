@@ -1,9 +1,11 @@
 package lotr.client.render.model.scatter;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockDisplayReader;
-import net.minecraftforge.client.model.data.*;
+import net.minecraftforge.client.model.data.IModelData;
+import net.minecraftforge.client.model.data.ModelProperty;
 
 public class ScatterPositionContext implements IModelData {
 	private final long positionHash;

@@ -7,7 +7,10 @@ import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
 import lotr.common.data.DataUtil;
-import lotr.common.fac.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionPointers;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
 import net.minecraft.entity.EntityType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;

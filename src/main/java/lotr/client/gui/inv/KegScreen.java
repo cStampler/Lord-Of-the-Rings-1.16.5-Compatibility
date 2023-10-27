@@ -1,6 +1,7 @@
 package lotr.client.gui.inv;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -9,17 +10,21 @@ import lotr.client.gui.widget.button.KegBrewButton;
 import lotr.client.render.model.vessel.VesselDrinkModel;
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.inv.KegContainer;
-import lotr.common.network.*;
+import lotr.common.network.CPacketKegBrewButton;
+import lotr.common.network.LOTRPacketHandler;
 import lotr.common.tileentity.KegTileEntity;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class KegScreen extends ContainerScreen {
 	public static final ResourceLocation KEG_SCREEN = new ResourceLocation("lotr", "textures/gui/keg/keg.png");

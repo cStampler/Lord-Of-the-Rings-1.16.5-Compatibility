@@ -4,10 +4,12 @@ import java.util.OptionalLong;
 
 import com.google.common.math.IntMath;
 
-import lotr.common.time.*;
+import lotr.common.time.LOTRTime;
+import lotr.common.time.MiddleEarthCalendar;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.*;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.thread.EffectiveSide;
 
 public abstract class LOTRDimensionType extends DimensionType {

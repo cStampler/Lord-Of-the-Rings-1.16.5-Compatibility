@@ -3,7 +3,8 @@ package lotr.common.speech.condition;
 import java.util.OptionalInt;
 
 import lotr.common.LOTRLog;
-import lotr.common.fac.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionRank;
 import lotr.curuquesta.condition.predicate.AsymmetricComparator;
 
 public class OptionallyUnderspecifiedFactionRank {

@@ -3,7 +3,8 @@ package lotr.common.block;
 import lotr.common.init.LOTRTileEntities;
 import lotr.common.stat.LOTRStats;
 import net.minecraft.block.material.MaterialColor;
-import net.minecraft.tileentity.*;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockReader;
 

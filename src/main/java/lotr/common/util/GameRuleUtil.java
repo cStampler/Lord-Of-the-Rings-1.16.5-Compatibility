@@ -1,6 +1,7 @@
 package lotr.common.util;
 
-import net.minecraft.world.*;
+import net.minecraft.world.GameRules;
+import net.minecraft.world.World;
 
 public class GameRuleUtil {
 	public static boolean canDropLoot(World world) {

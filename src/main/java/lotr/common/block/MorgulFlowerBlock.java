@@ -1,22 +1,31 @@
 package lotr.common.block;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 
 import lotr.common.data.LOTRLevelData;
 import lotr.common.fac.FactionPointers;
-import lotr.common.init.*;
+import lotr.common.init.LOTRParticles;
+import lotr.common.init.LOTRTags;
 import lotr.common.util.LOTRUtil;
-import net.minecraft.block.*;
-import net.minecraft.entity.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.IParticleData;
-import net.minecraft.potion.*;
-import net.minecraft.util.math.*;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.*;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MorgulFlowerBlock extends LOTRFlowerBlock {
 	private static final VoxelShape MORGUL_FLOWER_SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);

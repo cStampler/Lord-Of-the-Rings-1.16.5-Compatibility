@@ -4,7 +4,8 @@ import java.util.function.BooleanSupplier;
 
 import lotr.client.gui.BasicIngameScreen;
 import net.minecraft.client.gui.IGuiEventListener;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class MapWidget implements IGuiEventListener {
 	public static Object sus = new Object[0];

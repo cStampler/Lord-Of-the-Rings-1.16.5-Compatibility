@@ -1,6 +1,7 @@
 package lotr.common.block;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraftforge.common.ToolType;
 
 public class SnowBrickBlock extends Block {

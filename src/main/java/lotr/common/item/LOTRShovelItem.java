@@ -1,7 +1,9 @@
 package lotr.common.item;
 
-import lotr.common.init.*;
-import net.minecraft.item.*;
+import lotr.common.init.LOTRItemGroups;
+import lotr.common.init.LOTRMaterial;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.ShovelItem;
 
 public class LOTRShovelItem extends ShovelItem {
 	public LOTRShovelItem(IItemTier tier) {

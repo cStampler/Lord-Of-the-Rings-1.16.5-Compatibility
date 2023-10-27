@@ -1,17 +1,26 @@
 package lotr.common.recipe;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
 
 import com.google.gson.JsonObject;
 
 import lotr.common.fac.Faction;
-import lotr.common.inv.*;
+import lotr.common.inv.FactionCraftingInventory;
+import lotr.common.inv.PouchInventory;
 import lotr.common.item.PouchItem;
 import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.item.*;
-import net.minecraft.item.crafting.*;
+import net.minecraft.item.DyeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.item.crafting.SpecialRecipe;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.*;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
@@ -143,7 +152,7 @@ public class PouchRecipe extends SpecialRecipe {
 			}
 		}
 
-		return (PouchItem) PouchItem.POUCHES_BY_CAPACITY.getOrDefault(totalCapacity, (Object) null);
+		return (PouchItem) PouchItem.POUCHES_BY_CAPACITY.getOrDefault(totalCapacity, null);
 	}
 
 	@Override

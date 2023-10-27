@@ -1,12 +1,17 @@
 package lotr.common.world.spawning;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
-import lotr.common.fac.*;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
 import lotr.common.init.LOTRBiomes;
 import lotr.common.resources.InstancedJsonReloadListener;
 import net.minecraft.profiler.IProfiler;

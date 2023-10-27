@@ -8,14 +8,17 @@ import lotr.common.fac.Faction;
 import lotr.common.network.SPacketNotifyAlignRequirement;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class NotifyAlignmentRequirement {
 	public static void displayMessage(ClientPlayerEntity player, SPacketNotifyAlignRequirement packet) {
 		String alignString = AlignmentFormatter.formatAlignForDisplay(packet.getAlignmentRequired());
 		IFormattableTextComponent componentAlignReq = new StringTextComponent(alignString);
 		componentAlignReq.withStyle(TextFormatting.YELLOW);
-		List<String> factionNames = (List<String>) packet.getAnyOfFactions().stream().map(hummel -> ((Faction) hummel).getColoredDisplayName()).collect(Collectors.toList());
+		List<IFormattableTextComponent> factionNames = packet.getAnyOfFactions().stream().map(Faction::getColoredDisplayName).collect(Collectors.toList());
 		if (!factionNames.isEmpty()) {
 			TranslationTextComponent fullMessage;
 			if (factionNames.size() == 1) {

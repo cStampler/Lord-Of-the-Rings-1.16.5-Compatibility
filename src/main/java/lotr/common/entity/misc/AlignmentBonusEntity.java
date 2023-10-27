@@ -1,11 +1,16 @@
 package lotr.common.entity.misc;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Optional;
 
 import lotr.common.data.AlignmentDataModule;
-import lotr.common.fac.*;
+import lotr.common.fac.AlignmentBonus;
+import lotr.common.fac.AlignmentBonusMap;
+import lotr.common.fac.Faction;
 import lotr.common.init.LOTREntities;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.math.vector.Vector3d;

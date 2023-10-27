@@ -3,14 +3,17 @@ package lotr.client.gui;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import lotr.client.gui.map.*;
+import lotr.client.gui.map.MiddleEarthMapRenderer;
+import lotr.client.gui.map.MiddleEarthMapScreen;
 import lotr.common.init.LOTRDimensions;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.chat.NarratorChatListener;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class LOTRLoadingTerrainScreen extends Screen {

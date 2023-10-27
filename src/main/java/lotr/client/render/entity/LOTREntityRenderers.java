@@ -1,10 +1,15 @@
 package lotr.client.render.entity;
 
-import lotr.client.render.tileentity.*;
-import lotr.common.init.*;
+import lotr.client.render.tileentity.CustomWaypointMarkerTileEntityRenderer;
+import lotr.client.render.tileentity.PalantirTileEntityRenderer;
+import lotr.client.render.tileentity.PlateTileEntityRenderer;
+import lotr.client.render.tileentity.VesselDrinkTileEntityRenderer;
+import lotr.common.init.LOTREntities;
+import lotr.common.init.LOTRTileEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraftforge.fml.client.registry.*;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class LOTREntityRenderers {
 	public static void registerEntityRenderers() {

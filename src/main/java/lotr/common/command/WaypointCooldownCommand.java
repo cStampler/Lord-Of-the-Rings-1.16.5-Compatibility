@@ -5,7 +5,8 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
 import lotr.common.util.LOTRUtil;
-import net.minecraft.command.*;
+import net.minecraft.command.CommandSource;
+import net.minecraft.command.Commands;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class WaypointCooldownCommand extends LOTRBaseCommand {

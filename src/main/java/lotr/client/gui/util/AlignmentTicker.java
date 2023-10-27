@@ -2,7 +2,8 @@ package lotr.client.gui.util;
 
 import lotr.common.LOTRLog;
 import lotr.common.data.LOTRLevelData;
-import lotr.common.fac.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettingsManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 

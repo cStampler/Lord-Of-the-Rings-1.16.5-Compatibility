@@ -1,18 +1,24 @@
 package lotr.common.world.map;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
-import lotr.common.network.*;
-import lotr.common.resources.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketMapSettings;
+import lotr.common.resources.InstancedJsonReloadListener;
+import lotr.common.resources.PostServerLoadedValidator;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.profiler.IProfiler;
 import net.minecraft.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.*;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.LogicalSide;
 
 public class MapSettingsManager extends InstancedJsonReloadListener implements PostServerLoadedValidator {

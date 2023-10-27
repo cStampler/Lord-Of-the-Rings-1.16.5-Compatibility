@@ -2,8 +2,11 @@ package lotr.common.block;
 
 import java.util.function.Function;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Direction.Axis;
 import net.minecraft.util.math.BlockPos;

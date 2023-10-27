@@ -1,7 +1,8 @@
 package lotr.common.entity.npc.inv;
 
 import lotr.common.entity.npc.NPCEntity;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketNPCState;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;

@@ -2,9 +2,16 @@ package lotr.common.data;
 
 import java.util.List;
 
-import lotr.common.network.*;
+import lotr.common.network.CPacketToggle;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketCreateMapMarker;
+import lotr.common.network.SPacketDeleteMapMarker;
+import lotr.common.network.SPacketToggle;
+import lotr.common.network.SPacketUpdateMapMarker;
+import lotr.common.network.SidedTogglePacket;
 import lotr.common.util.LookupList;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapMarker;
+import lotr.common.world.map.MapMarkerIcon;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 

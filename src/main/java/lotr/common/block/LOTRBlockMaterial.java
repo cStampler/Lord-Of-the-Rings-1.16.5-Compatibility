@@ -1,6 +1,8 @@
 package lotr.common.block;
 
-import net.minecraft.block.material.*;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
+import net.minecraft.block.material.PushReaction;
 
 public class LOTRBlockMaterial {
 	public static final Material CRYSTAL;

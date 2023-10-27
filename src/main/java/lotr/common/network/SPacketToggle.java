@@ -3,7 +3,8 @@ package lotr.common.network;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRMod;
-import lotr.common.data.*;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
 import net.minecraft.network.PacketBuffer;
 
 public class SPacketToggle extends SidedTogglePacket {

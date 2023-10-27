@@ -1,6 +1,9 @@
 package lotr.common.network;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
 import java.util.function.Supplier;
 
 import com.mojang.authlib.GameProfile;

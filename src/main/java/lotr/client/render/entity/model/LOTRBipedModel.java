@@ -1,18 +1,23 @@
 package lotr.client.render.entity.model;
 
-import java.util.function.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
-import com.google.common.collect.*;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import lotr.common.entity.npc.NPCEntity;
 import lotr.common.entity.npc.ai.NPCTalkAnimations;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.model.*;
+import net.minecraft.client.renderer.entity.model.BipedModel;
+import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.Hand;
+import net.minecraft.util.HandSide;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
 public class LOTRBipedModel extends BipedModel {

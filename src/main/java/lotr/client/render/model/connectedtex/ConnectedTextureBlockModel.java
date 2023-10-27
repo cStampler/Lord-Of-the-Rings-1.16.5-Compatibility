@@ -1,18 +1,23 @@
 package lotr.client.render.model.connectedtex;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 
-import com.google.common.collect.*;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import lotr.client.render.model.BlockModelQuadsHolder;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.renderer.model.*;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.model.ItemOverrideList;
+import net.minecraft.client.renderer.model.SimpleBakedModel;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.TransformationMatrix;
 import net.minecraft.world.IBlockDisplayReader;
-import net.minecraftforge.client.model.data.*;
+import net.minecraftforge.client.model.data.EmptyModelData;
+import net.minecraftforge.client.model.data.IModelData;
 
 public class ConnectedTextureBlockModel extends SimpleBakedModel {
 	private final ConnectedTextureUnbakedModel.DeferredConnectedTextureModelBakery deferredConnectedModelBakery;

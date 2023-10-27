@@ -1,12 +1,14 @@
 package lotr.common.world.biome.surface;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Random;
 
 import com.mojang.serialization.Codec;
 
 import lotr.common.util.LOTRUtil;
 import lotr.common.world.map.MapSettingsManager;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.IStringSerializable;
 
 public enum UnderwaterNoiseMixer implements IStringSerializable {

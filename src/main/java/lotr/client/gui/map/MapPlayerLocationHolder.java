@@ -1,11 +1,16 @@
 package lotr.client.gui.map;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import lotr.common.LOTRLog;
 import lotr.common.world.map.MapPlayerLocation;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.network.play.*;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
 
 public class MapPlayerLocationHolder {
 	private static final Map locations = new HashMap();

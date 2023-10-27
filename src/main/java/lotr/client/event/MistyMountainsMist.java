@@ -4,7 +4,8 @@ import lotr.common.config.LOTRConfig;
 import lotr.common.init.LOTRBiomes;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.world.LightType;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
 public class MistyMountainsMist {

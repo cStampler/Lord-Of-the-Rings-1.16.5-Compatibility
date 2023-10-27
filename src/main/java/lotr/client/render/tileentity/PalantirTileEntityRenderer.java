@@ -6,10 +6,14 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import lotr.client.render.tileentity.model.PalantirModel;
 import lotr.common.tileentity.PalantirTileEntity;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.tileentity.*;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Util;
 
 public class PalantirTileEntityRenderer extends TileEntityRenderer {
 	private static final ResourceLocation TEXTURE = new ResourceLocation("lotr", "textures/entity/palantir/palantir.png");

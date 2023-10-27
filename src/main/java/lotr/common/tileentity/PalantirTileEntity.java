@@ -3,7 +3,9 @@ package lotr.common.tileentity;
 import java.util.Random;
 
 import lotr.common.init.LOTRTileEntities;
-import net.minecraft.tileentity.*;
+import net.minecraft.tileentity.ITickableTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 
 public class PalantirTileEntity extends TileEntity implements ITickableTileEntity {
 	private static final Random tickRand = new Random();

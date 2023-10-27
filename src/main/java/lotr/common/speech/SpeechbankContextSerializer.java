@@ -1,8 +1,10 @@
 package lotr.common.speech;
 
 import lotr.common.LOTRLog;
-import lotr.curuquesta.*;
-import lotr.curuquesta.condition.*;
+import lotr.curuquesta.SpeechbankContext;
+import lotr.curuquesta.SpeechbankEngine;
+import lotr.curuquesta.condition.SpeechbankCondition;
+import lotr.curuquesta.condition.SpeechbankConditionAndValue;
 import lotr.curuquesta.replaceablevar.ReplaceableSpeechVariable;
 import net.minecraft.network.PacketBuffer;
 

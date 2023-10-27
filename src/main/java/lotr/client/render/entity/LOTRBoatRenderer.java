@@ -1,9 +1,11 @@
 package lotr.client.render.entity;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import lotr.common.entity.item.LOTRBoatEntity;
-import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.BoatRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.util.ResourceLocation;
 

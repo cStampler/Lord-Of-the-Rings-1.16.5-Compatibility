@@ -1,7 +1,8 @@
 package lotr.common.init;
 
-import net.minecraft.tags.*;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ITag.INamedTag;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 
 public class LOTRTags {

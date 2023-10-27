@@ -1,14 +1,17 @@
 package lotr.common.world.gen.tree;
 
-import java.util.*;
+import java.util.Random;
+import java.util.Set;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.IWorldGenerationReader;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.foliageplacer.*;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.FeatureSpread;
+import net.minecraft.world.gen.foliageplacer.FoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
 
 public class LairelosseFoliagePlacer extends FoliagePlacer {
 	public static final Codec<LairelosseFoliagePlacer> CODEC = RecordCodecBuilder.create(instance -> foliagePlacerParts(instance).and(FeatureSpread.codec(0, 16, 8).fieldOf("trunk_height").forGetter(foliage -> foliage.trunkHeightSpread)).apply(instance, LairelosseFoliagePlacer::new));

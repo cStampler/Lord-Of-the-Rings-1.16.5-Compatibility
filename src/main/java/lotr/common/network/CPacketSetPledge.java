@@ -3,8 +3,11 @@ package lotr.common.network;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRLog;
-import lotr.common.data.*;
-import lotr.common.fac.*;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

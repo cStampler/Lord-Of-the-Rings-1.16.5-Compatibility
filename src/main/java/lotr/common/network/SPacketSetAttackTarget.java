@@ -3,7 +3,8 @@ package lotr.common.network;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRMod;
-import net.minecraft.entity.*;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;
 

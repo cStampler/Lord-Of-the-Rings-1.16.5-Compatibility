@@ -1,6 +1,7 @@
 package lotr.common;
 
-import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LOTRLog {
 	private static Logger LOGGER;

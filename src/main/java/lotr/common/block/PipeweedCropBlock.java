@@ -4,10 +4,12 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 import lotr.common.init.LOTRBlocks;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class PipeweedCropBlock extends LOTRCropBlock {
 	public PipeweedCropBlock(Properties properties, Supplier sup) {

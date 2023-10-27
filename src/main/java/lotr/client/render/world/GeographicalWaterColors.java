@@ -6,12 +6,16 @@ import java.util.Map.Entry;
 
 import lotr.common.LOTRLog;
 import lotr.common.init.LOTRBiomes;
-import lotr.common.world.map.*;
+import lotr.common.world.map.BothWaterLatitudeSettings;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.profiler.IProfiler;
-import net.minecraft.util.math.*;
-import net.minecraft.util.registry.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.MutableRegistry;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 

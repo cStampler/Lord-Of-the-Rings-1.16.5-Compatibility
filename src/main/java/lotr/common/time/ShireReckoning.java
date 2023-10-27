@@ -2,7 +2,8 @@ package lotr.common.time;
 
 import com.google.common.math.IntMath;
 
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class ShireReckoning extends MiddleEarthCalendar {
 	public static final ShireReckoning INSTANCE = new ShireReckoning();

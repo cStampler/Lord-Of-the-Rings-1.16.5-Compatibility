@@ -2,7 +2,8 @@ package lotr.curuquesta.structure;
 
 import java.util.List;
 
-import lotr.curuquesta.*;
+import lotr.curuquesta.SpeechbankContext;
+import lotr.curuquesta.SpeechbankContextProvider;
 
 public class AlternativeConditionSets<C extends SpeechbankContextProvider> implements SpeechbankContextSatisfier<C> {
 	private final List<SpeechbankConditionSet<C>> alternatives;

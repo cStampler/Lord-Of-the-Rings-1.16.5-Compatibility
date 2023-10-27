@@ -2,7 +2,8 @@ package lotr.common.network;
 
 import java.util.function.Supplier;
 
-import lotr.common.data.*;
+import lotr.common.data.FastTravelDataModule;
+import lotr.common.data.LOTRLevelData;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

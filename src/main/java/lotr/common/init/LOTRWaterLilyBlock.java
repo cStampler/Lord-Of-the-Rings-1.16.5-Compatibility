@@ -1,11 +1,14 @@
 package lotr.common.init;
 
 import lotr.common.event.CompostingHelper;
-import net.minecraft.block.*;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.LilyPadBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraftforge.common.*;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
 
 public class LOTRWaterLilyBlock extends LilyPadBlock {
 	public LOTRWaterLilyBlock() {

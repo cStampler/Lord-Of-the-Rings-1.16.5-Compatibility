@@ -1,21 +1,28 @@
 package lotr.client.gui;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lotr.client.LOTRClientProxy;
-import lotr.client.gui.map.*;
+import lotr.client.gui.map.MiddleEarthMapRenderer;
+import lotr.client.gui.map.MiddleEarthMapScreen;
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.init.LOTRSoundEvents;
 import lotr.common.util.LOTRUtil;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
+import lotr.common.world.map.Waypoint;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SimpleSound;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.IReorderingProcessor;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class FastTravelScreen extends BasicIngameScreen {
 	private static final ResourceLocation FAST_TRAVEL_QUOTES = new ResourceLocation("lotr", "fast_travel");

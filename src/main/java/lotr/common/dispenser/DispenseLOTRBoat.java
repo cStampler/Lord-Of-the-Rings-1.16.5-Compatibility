@@ -2,7 +2,8 @@ package lotr.common.dispenser;
 
 import lotr.common.entity.item.LOTRBoatEntity;
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.dispenser.*;
+import net.minecraft.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;

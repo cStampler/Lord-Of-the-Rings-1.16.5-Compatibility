@@ -3,7 +3,8 @@ package lotr.client.gui;
 import lotr.client.LOTRKeyHandler;
 import lotr.client.gui.widget.button.LeftRightButton;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class MiddleEarthMenuScreen extends BasicIngameScreen {
 	public int xSize = 200;

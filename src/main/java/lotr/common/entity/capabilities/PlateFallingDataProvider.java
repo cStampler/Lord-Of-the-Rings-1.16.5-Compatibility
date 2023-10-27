@@ -1,21 +1,18 @@
 package lotr.common.entity.capabilities;
 
 import net.minecraft.nbt.INBT;
-import net.minecraft.util.*;
-import net.minecraftforge.common.capabilities.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityInject;
+import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
 
-public class PlateFallingDataProvider implements ICapabilitySerializable {
+public class PlateFallingDataProvider implements ICapabilitySerializable<INBT> {
 	public static final ResourceLocation KEY = new ResourceLocation("lotr", "plate_falling_data");
 	@CapabilityInject(PlateFallingData.class)
-	public static final Capability CAPABILITY = null;
-	private LazyOptional instance;
-
-	public PlateFallingDataProvider() {
-		Capability var10001 = CAPABILITY;
-		var10001.getClass();
-		instance = LazyOptional.of(var10001::getDefaultInstance);
-	}
+	public static final Capability<PlateFallingData> CAPABILITY = null;
+	private LazyOptional<PlateFallingData> instance = LazyOptional.of(CAPABILITY::getDefaultInstance);
 
 	@Override
 	public void deserializeNBT(INBT nbt) {
@@ -28,8 +25,8 @@ public class PlateFallingDataProvider implements ICapabilitySerializable {
 	}
 
 	@Override
-	public LazyOptional getCapability(Capability cap, Direction side) {
-		return cap == CAPABILITY ? instance.cast() : LazyOptional.empty();
+	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+		return (cap == CAPABILITY) ? this.instance.cast() : LazyOptional.empty();
 	}
 
 	@Override

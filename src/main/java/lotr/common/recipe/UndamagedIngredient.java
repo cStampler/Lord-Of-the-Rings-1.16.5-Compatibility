@@ -9,7 +9,8 @@ import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.network.PacketBuffer;
-import net.minecraftforge.common.crafting.*;
+import net.minecraftforge.common.crafting.IIngredientSerializer;
+import net.minecraftforge.common.crafting.VanillaIngredientSerializer;
 
 public class UndamagedIngredient extends Ingredient {
 	private UndamagedIngredient(Stream itemLists) {
