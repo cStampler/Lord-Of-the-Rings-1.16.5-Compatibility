@@ -8,8 +8,10 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.biome.*;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
+import net.minecraft.world.biome.Biomes;
 
 public class VanillaPlaceholderLOTRBiome implements LOTRBiomeWrapper {
 	private final ResourceLocation biomeName;

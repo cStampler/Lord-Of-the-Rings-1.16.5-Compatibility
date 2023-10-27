@@ -1,22 +1,30 @@
 package lotr.common.coremod;
 
-import java.util.*;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import com.mojang.datafixers.DataFixerBuilder;
-import com.mojang.serialization.*;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.Dynamic;
+import com.mojang.serialization.DynamicOps;
 
-import lotr.common.*;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
 import lotr.common.datafix.LOTRDataFixes;
 import lotr.common.dim.AddModDimensionToOldWorlds;
 import lotr.common.event.MiddleEarthRespawning;
-import lotr.common.init.*;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTRDimensions;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.*;
-import net.minecraft.world.*;
+import net.minecraft.util.registry.MutableRegistry;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.SimpleRegistry;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.storage.SaveFormat.LevelSave;

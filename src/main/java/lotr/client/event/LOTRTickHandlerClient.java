@@ -1,7 +1,8 @@
 package lotr.client.event;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.Optional;
+import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -11,47 +12,80 @@ import com.google.common.base.Function;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import lotr.client.*;
+import lotr.client.ClientsideAttackTargetCache;
+import lotr.client.LOTRKeyHandler;
 import lotr.client.gui.map.MapPlayerLocationHolder;
-import lotr.client.gui.util.*;
-import lotr.client.render.*;
+import lotr.client.gui.util.AlignmentRenderer;
+import lotr.client.gui.util.AlignmentTextRenderer;
+import lotr.client.render.LOTRGameRenderer;
+import lotr.client.render.OnScreenCompassRenderer;
 import lotr.client.render.speech.ImmersiveSpeechRenderer;
-import lotr.client.render.world.*;
+import lotr.client.render.world.GeographicalWaterColors;
+import lotr.client.render.world.LOTRDimensionRenderInfo;
+import lotr.client.render.world.MiddleEarthCloudRenderer;
+import lotr.client.render.world.MiddleEarthWorldRenderer;
+import lotr.client.render.world.NorthernLightsRenderer;
 import lotr.client.sound.LOTRAmbience;
 import lotr.client.speech.ImmersiveSpeech;
 import lotr.common.LOTRLog;
 import lotr.common.config.LOTRConfig;
 import lotr.common.data.LOTRLevelData;
-import lotr.common.entity.capabilities.*;
-import lotr.common.event.*;
-import lotr.common.init.*;
-import lotr.common.time.*;
+import lotr.common.entity.capabilities.PlateFallingData;
+import lotr.common.entity.capabilities.PlateFallingDataProvider;
+import lotr.common.event.BeeAdjustments;
+import lotr.common.event.LOTRTickHandlerServer;
+import lotr.common.init.LOTRDimensions;
+import lotr.common.init.LOTRParticles;
+import lotr.common.time.LOTRDate;
+import lotr.common.time.LOTRTime;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.*;
+import net.minecraft.client.MainWindow;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.client.gui.screen.*;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.gui.screen.MainMenuScreen;
+import net.minecraft.client.gui.screen.MultiplayerScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.FogRenderer.FogType;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.entity.model.BeeModel;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.settings.PointOfView;
-import net.minecraft.client.world.*;
-import net.minecraft.entity.*;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.world.DimensionRenderInfo;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.IParticleData;
-import net.minecraft.resources.*;
+import net.minecraft.resources.IFutureReloadListener;
+import net.minecraft.resources.IReloadableResourceManager;
+import net.minecraft.resources.IResourceManager;
+import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
-import net.minecraft.world.*;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 import net.minecraftforge.client.ICloudRenderHandler;
-import net.minecraftforge.client.event.EntityViewRenderEvent.*;
-import net.minecraftforge.client.event.RenderGameOverlayEvent.*;
+import net.minecraftforge.client.event.EntityViewRenderEvent.CameraSetup;
+import net.minecraftforge.client.event.EntityViewRenderEvent.FogColors;
+import net.minecraftforge.client.event.EntityViewRenderEvent.RenderFogEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.Pre;
+import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.minecraftforge.event.TickEvent.*;
+import net.minecraftforge.event.TickEvent.ClientTickEvent;
+import net.minecraftforge.event.TickEvent.Phase;
+import net.minecraftforge.event.TickEvent.RenderTickEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.world.WorldEvent.Load;
@@ -252,7 +286,7 @@ public class LOTRTickHandlerClient {
 	}
 
 	@SubscribeEvent
-	public void onPreRenderLiving(net.minecraftforge.client.event.RenderLivingEvent.Pre event) {
+	public void onPreRenderLiving(RenderLivingEvent.Pre<BeeEntity, BeeModel<BeeEntity>> event) {
 		LivingEntity entity = event.getEntity();
 		World world = entity.level;
 		MatrixStack matStack = event.getMatrixStack();
@@ -503,35 +537,33 @@ public class LOTRTickHandlerClient {
 
 	}
 
-	private static void replaceFinalMinecraftFieldIfNotReplaced(Minecraft mc, Class baseClass, Class subClass, Function getter, Supplier newSubClassSupplier, String loggingNameOfField) {
-		Object object = getter.apply(mc);
+	private static <T, U extends T> void replaceFinalMinecraftFieldIfNotReplaced(Minecraft mc, Class<T> baseClass, Class<U> subClass, Function<Minecraft, T> getter, Supplier<U> newSubClassSupplier, String loggingNameOfField) {
+		T object = (T) getter.apply(mc);
 		if (!subClass.isAssignableFrom(object.getClass())) {
-			Object newSubClassObject = newSubClassSupplier.get();
-			Optional opt_mcField = Stream.of(Minecraft.class.getDeclaredFields()).filter(f -> (f.getType() == baseClass)).findFirst();
+			U newSubClassObject = newSubClassSupplier.get();
+			Optional<Field> opt_mcField = Stream.<Field>of(Minecraft.class.getDeclaredFields()).filter(f -> (f.getType() == baseClass)).findFirst();
 			if (!opt_mcField.isPresent()) {
-				LOTRLog.error("Could not locate %s field in Minecraft game class", loggingNameOfField);
+				LOTRLog.error("Could not locate %s field in Minecraft game class", new Object[] { loggingNameOfField });
 			} else {
-				Field mcField = (Field) opt_mcField.get();
+				Field mcField = opt_mcField.get();
 				LOTRUtil.unlockFinalField(mcField);
-
 				try {
 					mcField.set(mc, newSubClassObject);
 					if (newSubClassObject instanceof IFutureReloadListener) {
 						IReloadableResourceManager resMgr = (IReloadableResourceManager) mc.getResourceManager();
 						IFutureReloadListener objectAsListener = (IFutureReloadListener) newSubClassObject;
 						resMgr.registerReloadListener(objectAsListener);
-						if (objectAsListener instanceof IResourceManagerReloadListener) {
-							((IResourceManagerReloadListener) objectAsListener).onResourceManagerReload(resMgr);
-						}
+						if (objectAsListener instanceof IResourceManagerReloadListener)
+							((IResourceManagerReloadListener) objectAsListener)
+									.onResourceManagerReload((IResourceManager) resMgr);
 					}
-
-					LOTRLog.info("Successfully replaced %s instance with subclass instance", loggingNameOfField);
-				} catch (IllegalAccessException | IllegalArgumentException var12) {
-					LOTRLog.error("Failed to set new %s", loggingNameOfField);
-					var12.printStackTrace();
+					LOTRLog.info("Successfully replaced %s instance with subclass instance",
+							new Object[] { loggingNameOfField });
+				} catch (IllegalArgumentException | IllegalAccessException e) {
+					LOTRLog.error("Failed to set new %s", new Object[] { loggingNameOfField });
+					e.printStackTrace();
 				}
 			}
 		}
-
 	}
 }

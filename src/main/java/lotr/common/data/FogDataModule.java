@@ -3,9 +3,12 @@ package lotr.common.data;
 import java.util.BitSet;
 import java.util.stream.Stream;
 
-import lotr.common.config.*;
+import lotr.common.config.ClientsideCurrentServerConfigSettings;
+import lotr.common.config.LOTRConfig;
 import lotr.common.util.LOTRUtil;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapExploration;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;

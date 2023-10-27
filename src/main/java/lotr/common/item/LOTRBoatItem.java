@@ -1,6 +1,7 @@
 package lotr.common.item;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 import java.util.function.Predicate;
 
 import lotr.common.dispenser.DispenseLOTRBoat;
@@ -9,11 +10,15 @@ import lotr.common.init.LOTRItemGroups;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EntityPredicates;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceContext.FluidMode;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;

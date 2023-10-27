@@ -1,19 +1,32 @@
 package lotr.common.world.biome;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 
 import lotr.common.init.LOTRBlocks;
-import lotr.common.world.biome.surface.*;
+import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
+import lotr.common.world.biome.surface.SurfaceNoiseMixer;
+import lotr.common.world.biome.surface.UnderwaterNoiseMixer;
 import lotr.common.world.gen.feature.LatitudeBasedFeatureConfig;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import lotr.common.world.map.MapSettingsManager;
-import net.minecraft.block.*;
-import net.minecraft.entity.*;
-import net.minecraft.fluid.*;
-import net.minecraft.util.math.*;
-import net.minecraft.world.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.LightType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.biome.MobSpawnInfo.Spawners;
 import net.minecraft.world.gen.PerlinNoiseGenerator;
 

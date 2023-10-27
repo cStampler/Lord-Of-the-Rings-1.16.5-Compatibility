@@ -3,8 +3,10 @@ package lotr.common.world.biome;
 import java.awt.Color;
 
 import lotr.common.LOTRMod;
-import net.minecraft.util.math.*;
-import net.minecraft.world.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.GrassColors;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeAmbience.GrassColorModifier;
 import net.minecraft.world.biome.BiomeAmbience.GrassColorModifier.ColorModifier;

@@ -1,9 +1,12 @@
 package lotr.common.resources;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import net.minecraft.util.ResourceLocation;
 

@@ -25,11 +25,11 @@ public class FactionPointer {
 		return getName().equals(fac.getName());
 	}
 
-	public Optional resolveFaction(FactionSettings currentSettings) {
+	public Optional<Faction> resolveFaction(FactionSettings currentSettings) {
 		return Optional.ofNullable(currentSettings.getFactionByPointer(this));
 	}
 
-	public Optional resolveFaction(IWorldReader world) {
+	public Optional<Faction> resolveFaction(IWorldReader world) {
 		FactionSettings currentSettings = FactionSettingsManager.sidedInstance(world).getCurrentLoadedFactions();
 		if (currentSettings == null) {
 			LOTRLog.error("Tried to call a FactionPointer (%s) outside the context of a currently loaded faction list");

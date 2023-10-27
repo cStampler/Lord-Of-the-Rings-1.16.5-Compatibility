@@ -1,8 +1,12 @@
 package lotr.client.render.model.connectedtex;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Util;
 
 public abstract class ConnectedTextureFaceMapper {
 	public static final Map FACE_MAPPERS = Util.make(new HashMap(), map -> {

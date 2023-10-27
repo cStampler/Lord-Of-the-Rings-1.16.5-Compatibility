@@ -1,6 +1,7 @@
 package lotr.common.stat;
 
-import net.minecraft.stats.*;
+import net.minecraft.stats.IStatFormatter;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 

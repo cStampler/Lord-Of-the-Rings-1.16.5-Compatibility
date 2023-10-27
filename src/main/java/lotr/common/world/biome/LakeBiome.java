@@ -1,10 +1,13 @@
 package lotr.common.world.biome;
 
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
-import net.minecraft.entity.*;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.biome.MobSpawnInfo.Spawners;
 
 public class LakeBiome extends LOTRBiomeBase {

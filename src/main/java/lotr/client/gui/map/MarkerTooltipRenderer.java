@@ -5,9 +5,11 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 import lotr.client.MapImageTextures;
 import lotr.client.util.LOTRClientUtil;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapMarker;
+import lotr.common.world.map.MapMarkerIcon;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.*;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.MathHelper;

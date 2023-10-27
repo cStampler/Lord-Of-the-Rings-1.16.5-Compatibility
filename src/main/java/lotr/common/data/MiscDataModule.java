@@ -2,7 +2,12 @@ package lotr.common.data;
 
 import lotr.common.LOTRLog;
 import lotr.common.fac.RankGender;
-import lotr.common.network.*;
+import lotr.common.network.CPacketChoosePreferredRankGender;
+import lotr.common.network.CPacketToggle;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketPreferredRankGender;
+import lotr.common.network.SPacketToggle;
+import lotr.common.network.SidedTogglePacket;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;

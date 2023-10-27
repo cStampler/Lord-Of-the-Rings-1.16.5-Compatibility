@@ -2,8 +2,11 @@ package lotr.common.item;
 
 import lotr.common.init.LOTRItemGroups;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.util.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemUseContext;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
 public class EmptyVesselBlocklessItem extends Item implements IEmptyVesselItem {

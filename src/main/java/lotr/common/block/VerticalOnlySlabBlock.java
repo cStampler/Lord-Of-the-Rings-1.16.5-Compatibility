@@ -1,17 +1,30 @@
 package lotr.common.block;
 
-import com.google.common.collect.*;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.item.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.SoundType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.state.EnumProperty;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Direction.Axis;
-import net.minecraft.util.math.*;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.world.*;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 public class VerticalOnlySlabBlock extends AxialSlabBlock {
 	private static final BiMap VANILLA_SLABS_TO_VERTICAL_SLABS = HashBiMap.create();

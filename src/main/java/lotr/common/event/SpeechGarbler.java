@@ -7,8 +7,11 @@ import org.apache.commons.lang3.StringUtils;
 import lotr.common.LOTRLog;
 import lotr.common.config.LOTRConfig;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.potion.*;
-import net.minecraft.util.text.*;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.event.ServerChatEvent;
 
 public class SpeechGarbler {

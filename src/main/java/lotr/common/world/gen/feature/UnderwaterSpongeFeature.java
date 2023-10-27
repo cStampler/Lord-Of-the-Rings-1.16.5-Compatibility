@@ -11,7 +11,9 @@ import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap.Type;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public class UnderwaterSpongeFeature extends Feature {
 	public UnderwaterSpongeFeature(Codec configFactory) {

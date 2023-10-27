@@ -1,12 +1,18 @@
 package lotr.common.loot.functions;
 
-import com.google.gson.*;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializationContext;
 
-import lotr.common.fac.*;
+import lotr.common.fac.EntityFactionHelper;
+import lotr.common.fac.Faction;
 import lotr.common.item.PouchItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.*;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootFunction;
+import net.minecraft.loot.LootFunctionType;
+import net.minecraft.loot.LootParameters;
 import net.minecraft.loot.conditions.ILootCondition;
 import net.minecraft.util.JSONUtils;
 

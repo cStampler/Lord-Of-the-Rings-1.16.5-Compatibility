@@ -1,6 +1,7 @@
 package lotr.common.recipe;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
@@ -9,13 +10,18 @@ import com.google.common.collect.ImmutableList;
 
 import lotr.common.init.LOTRBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.item.crafting.*;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.item.crafting.SpecialRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
-import net.minecraftforge.common.crafting.*;
+import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.common.crafting.IIngredientSerializer;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.*;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRRecipes {
 	public static IIngredientSerializer DYNAMIC_INGREDIENT_SERIALIZER;

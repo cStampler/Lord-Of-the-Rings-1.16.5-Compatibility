@@ -1,6 +1,9 @@
 package lotr.common.recipe;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;

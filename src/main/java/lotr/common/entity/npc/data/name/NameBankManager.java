@@ -1,8 +1,12 @@
 package lotr.common.entity.npc.data.name;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.ImmutableList;
@@ -10,7 +14,8 @@ import com.google.common.collect.ImmutableList;
 import lotr.common.LOTRLog;
 import net.minecraft.client.resources.ReloadListener;
 import net.minecraft.profiler.IProfiler;
-import net.minecraft.resources.*;
+import net.minecraft.resources.IResource;
+import net.minecraft.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
 
 public class NameBankManager extends ReloadListener {

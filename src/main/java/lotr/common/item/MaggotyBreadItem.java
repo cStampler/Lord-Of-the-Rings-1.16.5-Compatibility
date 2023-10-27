@@ -5,8 +5,10 @@ import java.util.Random;
 import lotr.common.fac.FoodAlignmentHelper;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
-import net.minecraft.potion.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 

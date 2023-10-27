@@ -1,6 +1,10 @@
 package lotr.common.world.biome.surface;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,8 +16,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.WeightedList;
 import net.minecraftforge.fml.RegistryObject;
-
-import static com.google.common.collect.ImmutableList.*;
 
 public final class SurfaceNoiseMixer {
 	public static Condition[] sus = {};

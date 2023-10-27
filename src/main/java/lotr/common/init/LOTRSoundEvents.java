@@ -1,8 +1,10 @@
 package lotr.common.init;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import net.minecraft.util.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRSoundEvents {

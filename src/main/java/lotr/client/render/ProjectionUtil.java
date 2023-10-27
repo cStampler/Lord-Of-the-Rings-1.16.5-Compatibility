@@ -1,14 +1,17 @@
 package lotr.client.render;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.*;
+import net.minecraft.util.math.vector.Matrix4f;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class ProjectionUtil {

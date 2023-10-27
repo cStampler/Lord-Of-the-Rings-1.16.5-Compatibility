@@ -1,7 +1,8 @@
 package lotr.common.dispenser;
 
 import lotr.common.entity.projectile.ThrownPlateEntity;
-import net.minecraft.dispenser.*;
+import net.minecraft.dispenser.IPosition;
+import net.minecraft.dispenser.ProjectileDispenseBehavior;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;

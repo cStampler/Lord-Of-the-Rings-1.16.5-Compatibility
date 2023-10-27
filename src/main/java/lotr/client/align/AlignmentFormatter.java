@@ -1,6 +1,7 @@
 package lotr.client.align;
 
-import java.text.*;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 
 import lotr.client.util.LocalizableDecimalFormat;
 import lotr.common.LOTRLog;

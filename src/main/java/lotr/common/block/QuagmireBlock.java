@@ -1,13 +1,19 @@
 package lotr.common.block;
 
-import lotr.common.init.*;
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
-import net.minecraft.entity.*;
+import lotr.common.init.LOTRBlocks;
+import lotr.common.init.LOTRDamageSources;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.*;
+import net.minecraft.world.IBlockDisplayReader;
+import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 public class QuagmireBlock extends Block {

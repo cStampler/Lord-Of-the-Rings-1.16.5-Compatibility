@@ -1,6 +1,7 @@
 package lotr.common.time;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import net.minecraft.util.text.ITextComponent;
 

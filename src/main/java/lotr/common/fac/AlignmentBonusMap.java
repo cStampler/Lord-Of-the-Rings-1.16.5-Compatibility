@@ -1,6 +1,7 @@
 package lotr.common.fac;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
@@ -9,7 +10,7 @@ import lotr.common.LOTRLog;
 import lotr.common.data.DataUtil;
 import net.minecraft.network.PacketBuffer;
 
-public class AlignmentBonusMap extends HashMap {
+public class AlignmentBonusMap extends HashMap<Faction, Float>{
 	public Set getChangedFactions() {
 		return (Set) keySet().stream().filter(f -> ((Float) get(f) != 0.0F)).collect(Collectors.toSet());
 	}

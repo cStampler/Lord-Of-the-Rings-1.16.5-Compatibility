@@ -1,19 +1,25 @@
 package lotr.client.gui;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import lotr.client.gui.util.*;
+import lotr.client.gui.util.AlignmentRenderer;
+import lotr.client.gui.util.AlignmentTextRenderer;
 import lotr.client.gui.widget.button.RedBookButton;
 import lotr.common.data.PlayerMessageType;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.IReorderingProcessor;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class PlayerMessageScreen extends BasicIngameScreen {
 	private static final ResourceLocation MESSAGE_TEXTURE = new ResourceLocation("lotr", "textures/gui/message.png");

@@ -2,7 +2,8 @@ package lotr.common.network;
 
 import java.util.function.Supplier;
 
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

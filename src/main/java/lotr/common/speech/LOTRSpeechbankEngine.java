@@ -1,8 +1,14 @@
 package lotr.common.speech;
 
-import lotr.common.speech.condition.*;
+import lotr.common.speech.condition.BiomeSpeechbankCondition;
+import lotr.common.speech.condition.NullableResourceLocationSpeechbankCondition;
+import lotr.common.speech.condition.PersonalitySpeechbankCondition;
+import lotr.common.speech.condition.RankSpeechbankCondition;
 import lotr.curuquesta.SpeechbankEngine;
-import lotr.curuquesta.condition.*;
+import lotr.curuquesta.condition.BooleanSpeechbankCondition;
+import lotr.curuquesta.condition.EnumSpeechbankCondition;
+import lotr.curuquesta.condition.FloatRangeSpeechbankCondition;
+import lotr.curuquesta.condition.FloatSpeechbankCondition;
 import lotr.curuquesta.replaceablevar.ReplaceableSpeechVariable;
 
 public class LOTRSpeechbankEngine {

@@ -3,7 +3,8 @@ package lotr.common.network;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRMod;
-import lotr.common.world.map.*;
+import lotr.common.world.map.CustomWaypoint;
+import lotr.common.world.map.MapSettingsManager;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;
 

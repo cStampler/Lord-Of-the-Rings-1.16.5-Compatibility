@@ -5,9 +5,12 @@ import java.util.function.Supplier;
 
 import lotr.common.item.LOTRSpawnEggItem;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.*;
-import net.minecraft.util.*;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class LOTRItemGroups {
 	public static final ItemGroup BLOCKS = new LOTRItemGroups.LOTRItemGroup("blocks", () -> LOTRBlocks.GONDOR_BRICK.get());

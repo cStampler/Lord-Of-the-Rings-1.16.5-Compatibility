@@ -1,10 +1,14 @@
 package lotr.curuquesta;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import lotr.curuquesta.condition.*;
+import lotr.curuquesta.condition.SpeechbankCondition;
+import lotr.curuquesta.condition.SpeechbankConditionAndValue;
 import lotr.curuquesta.replaceablevar.ReplaceableSpeechVariable;
 
 public class SpeechbankContext<C extends SpeechbankContextProvider> {

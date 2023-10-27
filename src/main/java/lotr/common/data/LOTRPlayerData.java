@@ -1,14 +1,23 @@
 package lotr.common.data;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
-import com.google.common.collect.*;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 
-import io.netty.buffer.*;
-import lotr.common.*;
-import lotr.common.network.*;
-import net.minecraft.entity.player.*;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketLoginPlayerDataModule;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.server.MinecraftServer;

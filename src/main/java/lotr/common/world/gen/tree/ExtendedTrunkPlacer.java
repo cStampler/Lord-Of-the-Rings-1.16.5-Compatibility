@@ -1,23 +1,28 @@
 package lotr.common.world.gen.tree;
 
-import java.util.*;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 
 import com.mojang.datafixers.Products.P6;
 import com.mojang.serialization.codecs.RecordCodecBuilder.Instance;
 
 import lotr.common.world.gen.feature.LOTRFeatures;
-import net.minecraft.block.*;
 import net.minecraft.block.AbstractBlock.AbstractBlockState;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Direction.Axis;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.blockstateprovider.BlockStateProvider;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.trunkplacer.AbstractTrunkPlacer;
 
 public abstract class ExtendedTrunkPlacer extends AbstractTrunkPlacer {

@@ -3,7 +3,8 @@ package lotr.common.fac;
 import java.util.Map;
 
 import lotr.common.util.LOTRUtil;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public enum FactionRelation {
 	ALLY("ally"), FRIEND("friend"), NEUTRAL("neutral"), ENEMY("enemy"), MORTAL_ENEMY("mortal_enemy");

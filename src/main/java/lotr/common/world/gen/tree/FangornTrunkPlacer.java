@@ -1,6 +1,12 @@
 package lotr.common.world.gen.tree;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 import java.util.function.Predicate;
 
 import com.mojang.serialization.Codec;
@@ -11,10 +17,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Direction.Axis;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.IWorldGenerationReader;
-import net.minecraft.world.gen.blockstateprovider.*;
+import net.minecraft.world.gen.blockstateprovider.BlockStateProvider;
+import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.foliageplacer.FoliagePlacer.Foliage;
 import net.minecraft.world.gen.trunkplacer.TrunkPlacerType;

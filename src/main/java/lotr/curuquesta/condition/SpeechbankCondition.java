@@ -1,6 +1,7 @@
 package lotr.curuquesta.condition;
 
-import java.util.function.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import io.netty.buffer.ByteBuf;
 import lotr.curuquesta.SpeechbankContextProvider;

@@ -2,8 +2,11 @@ package lotr.common.entity.npc.ai.goal;
 
 import lotr.common.entity.npc.NPCEntity;
 import lotr.common.entity.npc.data.NPCFoodPool;
-import net.minecraft.item.*;
-import net.minecraft.particles.*;
+import net.minecraft.item.Food;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.particles.ItemParticleData;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 

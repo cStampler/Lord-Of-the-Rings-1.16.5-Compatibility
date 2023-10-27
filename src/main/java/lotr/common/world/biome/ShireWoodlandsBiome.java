@@ -3,7 +3,9 @@ package lotr.common.world.biome;
 import lotr.common.init.LOTRBlocks;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import lotr.common.world.map.RoadBlockProvider;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class ShireWoodlandsBiome extends ShireBiome {
 	public ShireWoodlandsBiome(boolean major) {

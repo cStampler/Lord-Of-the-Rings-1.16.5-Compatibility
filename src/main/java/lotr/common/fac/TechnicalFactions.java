@@ -1,8 +1,10 @@
 package lotr.common.fac;
 
-import java.util.*;
+import java.util.List;
+import java.util.Set;
 
-import com.google.common.collect.*;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
 import lotr.common.world.map.MapSettings;
 import net.minecraft.util.ResourceLocation;

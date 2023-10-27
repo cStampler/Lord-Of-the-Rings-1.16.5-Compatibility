@@ -1,6 +1,11 @@
 package lotr.common.world.gen.tree;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import java.util.function.IntPredicate;
 
 import com.mojang.serialization.Codec;
@@ -10,9 +15,11 @@ import lotr.common.LOTRLog;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.treedecorator.*;
+import net.minecraft.world.gen.treedecorator.TreeDecorator;
+import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraftforge.common.ToolType;
 
 public class PineStripDecorator extends TreeDecorator {

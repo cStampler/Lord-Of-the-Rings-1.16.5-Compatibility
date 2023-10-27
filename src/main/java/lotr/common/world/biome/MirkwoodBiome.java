@@ -1,12 +1,15 @@
 package lotr.common.world.biome;
 
-import lotr.common.world.biome.surface.*;
+import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
+import lotr.common.world.biome.surface.MountainTerrainProvider;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import lotr.common.world.map.RoadBlockProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class MirkwoodBiome extends LOTRBiomeBase {
 	public MirkwoodBiome(boolean major) {

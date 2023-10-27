@@ -4,9 +4,13 @@ import java.util.function.Supplier;
 
 import lotr.common.block.ThreeLeafCloverBlock;
 import lotr.common.init.LOTRBlocks;
-import net.minecraft.block.*;
-import net.minecraft.world.gen.blockplacer.*;
-import net.minecraft.world.gen.blockstateprovider.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.world.gen.blockplacer.DoublePlantBlockPlacer;
+import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
+import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig.Builder;
 

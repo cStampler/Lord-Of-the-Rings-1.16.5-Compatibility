@@ -1,9 +1,12 @@
 package lotr.curuquesta.structure;
 
-import java.util.*;
-import java.util.stream.*;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import lotr.curuquesta.*;
+import lotr.curuquesta.SpeechbankContext;
+import lotr.curuquesta.SpeechbankContextProvider;
 
 public class SpeechbankEntry<C extends SpeechbankContextProvider> {
 	private final Set<SpeechbankContextSatisfier<C>> contextSatisfiers;

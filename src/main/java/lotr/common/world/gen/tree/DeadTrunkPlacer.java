@@ -1,6 +1,9 @@
 package lotr.common.world.gen.tree;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
@@ -9,9 +12,11 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.AbstractBlock.AbstractBlockState;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Direction.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.Direction.Axis;
+import net.minecraft.util.Direction.Plane;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;

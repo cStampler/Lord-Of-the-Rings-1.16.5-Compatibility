@@ -1,15 +1,20 @@
 package lotr.common.entity.npc.data;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 
-import com.google.gson.*;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
 import lotr.common.fac.Faction;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketNPCEntitySettings;
 import lotr.common.resources.InstancedJsonReloadListener;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.profiler.IProfiler;
 import net.minecraft.resources.IResourceManager;

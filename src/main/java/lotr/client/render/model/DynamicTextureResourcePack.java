@@ -1,15 +1,25 @@
 package lotr.client.render.model;
 
-import java.io.*;
-import java.util.*;
-import java.util.function.*;
+import java.io.ByteArrayInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.Sets;
 
 import lotr.common.LOTRLog;
-import net.minecraft.client.renderer.texture.*;
-import net.minecraft.resources.*;
+import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.renderer.texture.NativeImage;
+import net.minecraft.resources.IResourcePack;
+import net.minecraft.resources.ResourcePackType;
 import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 

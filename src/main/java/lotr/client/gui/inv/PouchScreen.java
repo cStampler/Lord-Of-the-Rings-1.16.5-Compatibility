@@ -6,7 +6,8 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import lotr.common.inv.PouchContainer;
-import lotr.common.network.*;
+import lotr.common.network.CPacketRenamePouch;
+import lotr.common.network.LOTRPacketHandler;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.util.InputMappings;
@@ -14,7 +15,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class PouchScreen extends ContainerScreen {
+public class PouchScreen extends ContainerScreen<PouchContainer> {
 	private static final ResourceLocation POUCH_TEXTURE = new ResourceLocation("lotr:textures/gui/pouch.png");
 	private final int pouchRows;
 	private TextFieldWidget renameField;

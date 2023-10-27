@@ -1,19 +1,32 @@
 package lotr.client.sound;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 import lotr.common.LOTRLog;
 import lotr.common.config.LOTRConfig;
 import lotr.common.dim.LOTRDimensionType;
-import lotr.common.init.*;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTRSoundEvents;
 import lotr.common.world.biome.ExtendedWeatherType;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.*;
+import net.minecraft.client.audio.ISound;
+import net.minecraft.client.audio.LocatableSound;
+import net.minecraft.client.audio.SimpleSound;
+import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.profiler.IProfiler;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;

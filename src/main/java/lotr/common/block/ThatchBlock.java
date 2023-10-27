@@ -1,12 +1,15 @@
 package lotr.common.block;
 
 import lotr.common.event.CompostingHelper;
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeBlockState;
 

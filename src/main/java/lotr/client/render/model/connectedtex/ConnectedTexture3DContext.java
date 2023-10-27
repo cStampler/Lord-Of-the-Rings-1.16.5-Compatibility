@@ -1,20 +1,32 @@
 package lotr.client.render.model.connectedtex;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.google.common.collect.ImmutableSet;
 
-import lotr.common.block.*;
+import lotr.common.block.GateBlock;
+import lotr.common.block.WattleAndDaubBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.util.math.vector.TransformationMatrix;
 import net.minecraft.world.IBlockDisplayReader;
-import net.minecraftforge.client.model.data.*;
+import net.minecraftforge.client.model.data.IModelData;
+import net.minecraftforge.client.model.data.ModelProperty;
 
 public class ConnectedTexture3DContext implements IModelData {
 	private static final Map ALL_RELEVANT_3D_CONTEXTS = Util.make(new HashMap(), map -> {

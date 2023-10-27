@@ -1,18 +1,24 @@
 package lotr.common.fac;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
-import lotr.common.config.*;
+import lotr.common.config.ClientsideCurrentServerConfigSettings;
+import lotr.common.config.LOTRConfig;
 import lotr.common.entity.npc.NPCPredicates;
 import lotr.common.init.LOTRWorldTypes;
 import lotr.common.world.map.MapSettings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;

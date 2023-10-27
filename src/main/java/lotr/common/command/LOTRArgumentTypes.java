@@ -1,10 +1,17 @@
 package lotr.common.command;
 
 import lotr.common.LOTRMod;
-import lotr.common.command.arguments.*;
-import lotr.common.fac.*;
-import lotr.common.world.map.*;
-import net.minecraft.command.arguments.*;
+import lotr.common.command.arguments.FactionArgument;
+import lotr.common.command.arguments.LOTRTimeArgument;
+import lotr.common.command.arguments.PlayerMessageTypeArgument;
+import lotr.common.command.arguments.WaypointRegionArgument;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
+import net.minecraft.command.arguments.ArgumentSerializer;
+import net.minecraft.command.arguments.ArgumentTypes;
+import net.minecraft.command.arguments.IArgumentSerializer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.server.ServerLifecycleHooks;

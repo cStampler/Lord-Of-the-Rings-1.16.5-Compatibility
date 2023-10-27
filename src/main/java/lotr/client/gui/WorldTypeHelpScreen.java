@@ -1,21 +1,32 @@
 package lotr.client.gui;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.LOTRLog;
 import lotr.common.config.LOTRConfig;
-import lotr.common.init.*;
+import lotr.common.init.LOTRItems;
+import lotr.common.init.LOTRWorldTypes;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.screen.*;
+import net.minecraft.client.gui.screen.BiomeGeneratorTypeScreens;
+import net.minecraft.client.gui.screen.CreateWorldScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.WorldOptionsScreen;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.item.*;
-import net.minecraft.util.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.IReorderingProcessor;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.gen.settings.DimensionGeneratorSettings;
 import net.minecraftforge.client.ForgeWorldTypeScreens;
 import net.minecraftforge.common.world.ForgeWorldType;

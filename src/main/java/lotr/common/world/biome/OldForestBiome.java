@@ -1,7 +1,9 @@
 package lotr.common.world.biome;
 
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class OldForestBiome extends LOTRBiomeBase {
 	public OldForestBiome(boolean major) {

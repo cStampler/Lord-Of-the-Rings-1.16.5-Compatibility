@@ -1,11 +1,16 @@
 package lotr.common.entity.npc;
 
-import lotr.common.entity.npc.data.*;
+import lotr.common.entity.npc.data.NPCFoodPool;
+import lotr.common.entity.npc.data.NPCFoodPools;
 import lotr.common.init.LOTRItems;
-import net.minecraft.entity.*;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.world.*;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.IServerWorld;
+import net.minecraft.world.World;
 
 public class BlueDwarfEntity extends DwarfEntity {
 	private static final SpawnEquipmentTable WEAPONS;

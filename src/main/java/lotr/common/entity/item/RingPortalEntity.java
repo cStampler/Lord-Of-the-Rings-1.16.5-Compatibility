@@ -3,19 +3,29 @@ package lotr.common.entity.item;
 import java.util.List;
 
 import lotr.common.LOTRMod;
-import lotr.common.init.*;
+import lotr.common.init.LOTRDimensions;
+import lotr.common.init.LOTREntities;
+import lotr.common.init.LOTRItems;
 import net.minecraft.block.SoundType;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
-import net.minecraft.network.datasync.*;
-import net.minecraft.particles.*;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.particles.ItemParticleData;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public class RingPortalEntity extends Entity {

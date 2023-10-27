@@ -1,16 +1,23 @@
 package lotr.common.config;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import org.apache.commons.lang3.tuple.Pair;
 
 import lotr.common.util.LOTRUtil;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.*;
-import net.minecraftforge.eventbus.api.*;
+import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
+import net.minecraftforge.common.ForgeConfigSpec.Builder;
+import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
+import net.minecraftforge.common.ForgeConfigSpec.IntValue;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.config.ModConfig.*;
+import net.minecraftforge.fml.config.ModConfig.ModConfigEvent;
+import net.minecraftforge.fml.config.ModConfig.Type;
 
 public class LOTRConfig {
 	public static final LOTRConfig.ClientConfig CLIENT;

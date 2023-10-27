@@ -1,23 +1,41 @@
 package lotr.common.resources;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
+import java.util.Set;
 import java.util.function.Predicate;
-import java.util.stream.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
-import lotr.common.*;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
 import net.minecraft.client.resources.JsonReloadListener;
-import net.minecraft.resources.*;
-import net.minecraft.util.*;
+import net.minecraft.resources.IResource;
+import net.minecraft.resources.IResourceManager;
+import net.minecraft.resources.ResourcePackType;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.LogicalSide;
-import net.minecraftforge.fml.packs.*;
+import net.minecraftforge.fml.packs.ModFileResourcePack;
+import net.minecraftforge.fml.packs.ResourcePackLoader;
 
 public abstract class InstancedJsonReloadListener extends JsonReloadListener {
 	protected static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();

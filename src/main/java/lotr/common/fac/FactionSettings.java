@@ -1,36 +1,43 @@
 package lotr.common.fac;
 
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import lotr.common.LOTRLog;
 import lotr.common.init.LOTRDimensions;
 import lotr.common.world.map.MapSettings;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.*;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class FactionSettings {
-	private final List allRegions;
-	private final Map regionsByDimension;
-	private final Map regionsByName;
-	private final Map regionsById;
-	private List allFactions;
-	private Map factionsByRegion;
-	private Map factionsByName;
-	private Map factionsById;
+	private final List<FactionRegion> allRegions;
+	private final Map<ResourceLocation, List<FactionRegion>> regionsByDimension;
+	private final Map<ResourceLocation, FactionRegion> regionsByName;
+	private final Map<Integer, FactionRegion> regionsById;
+	private List<Faction> allFactions;
+	private Map<FactionRegion, List<Faction>> factionsByRegion;
+	private Map<ResourceLocation, Faction> factionsByName;
+	private Map<Integer, Faction> factionsById;
 	private FactionRelationsTable relations;
 
-	public FactionSettings(List regions) {
+	public FactionSettings(List<FactionRegion> regions) {
 		allRegions = sortRegionsByOrder(regions);
 		regionsByDimension = groupRegionsByDimensionAndSortOrder(allRegions);
-		regionsByName = (Map) allRegions.stream().collect(Collectors.toMap(FactionRegion::getName, UnaryOperator.identity()));
-		regionsById = (Map) allRegions.stream().collect(Collectors.toMap(FactionRegion::getAssignedId, UnaryOperator.identity()));
+		regionsByName = allRegions.stream().collect(Collectors.toMap(FactionRegion::getName, UnaryOperator.identity()));
+		regionsById = allRegions.stream().collect(Collectors.toMap(FactionRegion::getAssignedId, UnaryOperator.identity()));
 	}
 
-	public List getAllPlayableAlignmentFactions() {
-		return (List) streamFactions().filter(hummel -> ((Faction) hummel).isPlayableAlignmentFaction()).collect(Collectors.toList());
+	public List<Faction> getAllPlayableAlignmentFactions() {
+		return streamFactions().filter(hummel -> ((Faction) hummel).isPlayableAlignmentFaction()).collect(Collectors.toList());
 	}
 
 	public Faction getFactionByID(int id) {
@@ -45,20 +52,20 @@ public class FactionSettings {
 		return getFactionByName(pointer.getName());
 	}
 
-	public List getFactions() {
+	public List<Faction> getFactions() {
 		return allFactions;
 	}
 
-	public List getFactionsForRegion(FactionRegion region) {
-		return (List) factionsByRegion.get(region);
+	public List<Faction> getFactionsForRegion(FactionRegion region) {
+		return factionsByRegion.get(region);
 	}
 
-	public List getFactionsOfTypes(FactionType... types) {
-		return (List) streamFactions().filter(fac -> ((Faction) fac).isOfAnyType(types)).collect(Collectors.toList());
+	public List<Faction> getFactionsOfTypes(FactionType... types) {
+		return (List<Faction>) streamFactions().filter(fac -> ((Faction) fac).isOfAnyType(types)).collect(Collectors.toList());
 	}
 
-	public List getPlayableFactionNames() {
-		return (List) getAllPlayableAlignmentFactions().stream().map(hummel -> ((Faction) hummel).getName()).collect(Collectors.toList());
+	public List<ResourceLocation> getPlayableFactionNames() {
+		return getAllPlayableAlignmentFactions().stream().map(hummel -> ((Faction) hummel).getName()).collect(Collectors.toList());
 	}
 
 	public FactionRegion getRegionByID(int id) {
@@ -69,15 +76,15 @@ public class FactionSettings {
 		return (FactionRegion) regionsByName.get(name);
 	}
 
-	public List getRegions() {
+	public List<FactionRegion> getRegions() {
 		return allRegions;
 	}
 
-	public List getRegionsForDimension(RegistryKey dim) {
-		return (List) regionsByDimension.get(dim.location());
+	public List<FactionRegion> getRegionsForDimension(RegistryKey<World> dim) {
+		return regionsByDimension.get(dim.location());
 	}
 
-	public List getRegionsForDimensionOrDefault(RegistryKey dim) {
+	public List<FactionRegion> getRegionsForDimensionOrDefault(RegistryKey<World> dim) {
 		if (!regionsByDimension.containsKey(dim.location())) {
 			dim = LOTRDimensions.MIDDLE_EARTH_WORLD_KEY;
 		}
@@ -95,14 +102,14 @@ public class FactionSettings {
 		});
 	}
 
-	public void setFactions(List facs) {
+	public void setFactions(List<Faction> facs) {
 		if (allFactions != null) {
 			throw new IllegalArgumentException("Cannot set faction list - already set!");
 		}
 		allFactions = sortFactionsByOrder(facs);
 		factionsByRegion = groupFactionsByRegionAndSortOrder(allFactions);
-		factionsById = (Map) allFactions.stream().collect(Collectors.toMap(Faction::getAssignedId, UnaryOperator.identity()));
-		factionsByName = (Map) allFactions.stream().collect(Collectors.toMap(Faction::getName, UnaryOperator.identity()));
+		factionsById = allFactions.stream().collect(Collectors.toMap(Faction::getAssignedId, UnaryOperator.identity()));
+		factionsByName = allFactions.stream().collect(Collectors.toMap(Faction::getName, UnaryOperator.identity()));
 	}
 
 	public void setRelations(FactionRelationsTable rels) {
@@ -112,11 +119,11 @@ public class FactionSettings {
 		relations = rels;
 	}
 
-	public Stream streamFactions() {
+	public Stream<Faction> streamFactions() {
 		return allFactions.stream();
 	}
 
-	public Stream streamFactionsExcept(Faction except) {
+	public Stream<Faction> streamFactionsExcept(Faction except) {
 		return streamFactions().filter(Predicate.isEqual(except).negate());
 	}
 
@@ -132,19 +139,19 @@ public class FactionSettings {
 		relations.write(buf);
 	}
 
-	private static Map groupFactionsByRegionAndSortOrder(List factions) {
-		Map unsortedMap = (Map) factions.stream().filter(fac -> (((Faction) fac).getRegion() != null)).collect(Collectors.groupingBy(Faction::getRegion));
-		return (Map) unsortedMap.keySet().stream().collect(Collectors.toMap(UnaryOperator.identity(), region -> sortFactionsByOrder((List) unsortedMap.get(region))));
+	private static Map<FactionRegion, List<Faction>> groupFactionsByRegionAndSortOrder(List<Faction> factions) {
+		Map<FactionRegion, List<Faction>> unsortedMap = factions.stream().filter(fac -> (((Faction) fac).getRegion() != null)).collect(Collectors.groupingBy(Faction::getRegion));
+		return unsortedMap.keySet().stream().collect(Collectors.toMap(UnaryOperator.identity(), region -> sortFactionsByOrder((List<Faction>)unsortedMap.get(region))));
 	}
 
-	private static Map groupRegionsByDimensionAndSortOrder(List regions) {
-		Map map = (Map) regions.stream().collect(Collectors.groupingBy(FactionRegion::getDimensionName));
-		map.values().forEach(hummel -> FactionSettings.sortRegionsByOrder((List) hummel));
+	private static Map<ResourceLocation, List<FactionRegion>> groupRegionsByDimensionAndSortOrder(List<FactionRegion> regions) {
+		Map<ResourceLocation, List<FactionRegion>> map = regions.stream().collect(Collectors.groupingBy(FactionRegion::getDimensionName));
+		map.values().forEach(hummel -> FactionSettings.sortRegionsByOrder(hummel));
 		return map;
 	}
 
 	public static FactionSettings read(MapSettings mapSettings, PacketBuffer buf) {
-		List regions = new ArrayList();
+		List<FactionRegion> regions = new ArrayList<FactionRegion>();
 		int numRegions = buf.readVarInt();
 
 		for (int i = 0; i < numRegions; ++i) {
@@ -160,7 +167,7 @@ public class FactionSettings {
 		}
 
 		FactionSettings facSettings = new FactionSettings(regions);
-		List factions = new ArrayList();
+		List<Faction> factions = new ArrayList<Faction>();
 		int numFactions = buf.readVarInt();
 
 		for (int i = 0; i < numFactions; ++i) {
@@ -181,12 +188,12 @@ public class FactionSettings {
 		return facSettings;
 	}
 
-	private static List sortFactionsByOrder(List factions) {
+	private static List<Faction> sortFactionsByOrder(List<Faction> factions) {
 		Collections.sort(factions, Comparator.comparingInt(Faction::getNullableRegionOrdering).thenComparingInt(Faction::getOrdering));
 		return factions;
 	}
 
-	private static List sortRegionsByOrder(List regions) {
+	private static List<FactionRegion> sortRegionsByOrder(List<FactionRegion> regions) {
 		Collections.sort(regions, Comparator.comparingInt(FactionRegion::getOrdering));
 		return regions;
 	}

@@ -4,7 +4,8 @@ import java.util.BitSet;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRMod;
-import lotr.common.data.*;
+import lotr.common.data.FogDataModule;
+import lotr.common.data.LOTRLevelData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

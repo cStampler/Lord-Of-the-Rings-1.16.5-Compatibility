@@ -2,8 +2,13 @@ package lotr.common.network;
 
 import java.util.function.Supplier;
 
-import lotr.common.*;
-import lotr.common.fac.*;
+import lotr.common.LOTRLog;
+import lotr.common.LOTRMod;
+import lotr.common.fac.AlignmentBonus;
+import lotr.common.fac.AlignmentBonusMap;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

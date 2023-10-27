@@ -6,14 +6,21 @@ import lotr.common.dispenser.DispenseSpear;
 import lotr.common.entity.projectile.SpearEntity;
 import lotr.common.init.LOTRMaterial;
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.enchantment.*;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity.PickupStatus;
-import net.minecraft.item.*;
+import net.minecraft.item.BowItem;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.UseAction;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public class SpearItem extends LOTRSwordItem {

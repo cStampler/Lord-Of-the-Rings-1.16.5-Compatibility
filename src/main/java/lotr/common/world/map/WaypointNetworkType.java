@@ -1,7 +1,9 @@
 package lotr.common.world.map;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 
 import lotr.common.data.LOTRPlayerData;
 import net.minecraft.network.PacketBuffer;

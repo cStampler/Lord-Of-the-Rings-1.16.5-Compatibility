@@ -1,16 +1,21 @@
 package lotr.common.command.arguments;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.*;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 
 import lotr.common.command.LOTRArgumentTypes;
-import lotr.common.fac.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionPointer;
+import lotr.common.fac.FactionPointers;
+import lotr.common.fac.FactionSettings;
 import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -55,7 +60,7 @@ public class FactionArgument implements ArgumentType {
 	}
 
 	public static Faction getFaction(CommandContext context, String name) {
-		return (Faction) getFactionPointer(context, name).resolveFaction(LOTRArgumentTypes.getCurrentSidedFactionSettings()).orElse((Object) null);
+		return (Faction) getFactionPointer(context, name).resolveFaction(LOTRArgumentTypes.getCurrentSidedFactionSettings()).orElse(null);
 	}
 
 	public static FactionPointer getFactionPointer(CommandContext context, String name) {

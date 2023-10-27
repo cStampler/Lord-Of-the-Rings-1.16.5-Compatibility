@@ -5,7 +5,8 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.INoiseRandom;
 import net.minecraft.world.gen.area.IArea;
-import net.minecraft.world.gen.layer.traits.*;
+import net.minecraft.world.gen.layer.traits.IAreaTransformer2;
+import net.minecraft.world.gen.layer.traits.IDimOffset0Transformer;
 
 public enum MEAddRiversLayer implements IAreaTransformer2, IDimOffset0Transformer {
 	INSTANCE;

@@ -1,11 +1,15 @@
 package lotr.curuquesta.structure;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
-import com.google.common.collect.*;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
-import lotr.curuquesta.*;
+import lotr.curuquesta.SpeechbankContext;
+import lotr.curuquesta.SpeechbankContextProvider;
 
 public class Speechbank<C extends SpeechbankContextProvider> {
 	private final String speechbankName;

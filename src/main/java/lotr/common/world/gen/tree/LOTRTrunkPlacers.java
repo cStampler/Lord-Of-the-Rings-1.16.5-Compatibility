@@ -11,7 +11,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.TreeFeature;
-import net.minecraft.world.gen.trunkplacer.*;
+import net.minecraft.world.gen.trunkplacer.AbstractTrunkPlacer;
+import net.minecraft.world.gen.trunkplacer.TrunkPlacerType;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class LOTRTrunkPlacers {

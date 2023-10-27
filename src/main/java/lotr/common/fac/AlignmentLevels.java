@@ -1,11 +1,13 @@
 package lotr.common.fac;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 import com.google.common.collect.ImmutableList;
 
 import lotr.common.LOTRLog;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketNotifyAlignRequirement;
 import net.minecraft.entity.player.ServerPlayerEntity;
 
 public class AlignmentLevels {

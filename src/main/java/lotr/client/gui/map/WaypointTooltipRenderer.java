@@ -1,6 +1,8 @@
 package lotr.client.gui.map;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -10,7 +12,8 @@ import lotr.client.MapImageTextures;
 import lotr.common.world.map.Waypoint;
 import net.minecraft.util.IReorderingProcessor;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 public class WaypointTooltipRenderer extends MapTooltipRenderer<Waypoint> {
 	private List sections = new ArrayList();

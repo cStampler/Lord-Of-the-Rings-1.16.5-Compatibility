@@ -1,8 +1,13 @@
 package lotr.common.data;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.storage.FolderName;

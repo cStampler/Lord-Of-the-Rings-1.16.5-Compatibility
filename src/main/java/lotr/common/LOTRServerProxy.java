@@ -5,7 +5,9 @@ import java.util.Optional;
 
 import lotr.common.entity.item.RingPortalEntity;
 import lotr.common.network.SPacketSetAttackTarget;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.server.ServerLifecycleHooks;
@@ -27,7 +29,7 @@ public class LOTRServerProxy implements LOTRProxy {
 	}
 
 	@Override
-	public Optional getSidedAttackTarget(MobEntity entity) {
+	public Optional<LivingEntity> getSidedAttackTarget(MobEntity entity) {
 		return Optional.ofNullable(entity.getTarget());
 	}
 

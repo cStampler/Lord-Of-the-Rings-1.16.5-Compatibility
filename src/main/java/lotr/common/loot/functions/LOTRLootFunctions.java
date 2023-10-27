@@ -1,6 +1,7 @@
 package lotr.common.loot.functions;
 
-import net.minecraft.loot.*;
+import net.minecraft.loot.ILootSerializer;
+import net.minecraft.loot.LootFunctionType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 

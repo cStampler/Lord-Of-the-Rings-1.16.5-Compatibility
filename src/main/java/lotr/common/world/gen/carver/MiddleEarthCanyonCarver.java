@@ -4,7 +4,8 @@ import java.util.Set;
 
 import com.mojang.serialization.Codec;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.gen.carver.CanyonWorldCarver;
 

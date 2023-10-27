@@ -6,7 +6,8 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.time.ShireReckoning;
 import lotr.common.util.LOTRUtil;
-import net.minecraft.client.*;
+import net.minecraft.client.MainWindow;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.ITextComponent;
 

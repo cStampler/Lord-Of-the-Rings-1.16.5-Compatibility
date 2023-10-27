@@ -6,7 +6,8 @@
  */
 package lotr.client.text;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 
 import net.minecraft.util.ResourceLocation;
 

@@ -1,8 +1,10 @@
 package lotr.client.render.entity;
 
-import lotr.client.render.entity.layers.*;
+import lotr.client.render.entity.layers.CaracalCollarLayer;
+import lotr.client.render.entity.layers.CaracalHeldItemLayer;
 import lotr.client.render.entity.model.CaracalModel;
-import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 

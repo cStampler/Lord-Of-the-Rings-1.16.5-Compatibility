@@ -1,16 +1,21 @@
 package lotr.common.item;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
 import lotr.common.LOTRLog;
-import lotr.common.init.*;
+import lotr.common.init.LOTREntities;
+import lotr.common.init.LOTRItemGroups;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.*;
+import net.minecraft.item.Items;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 

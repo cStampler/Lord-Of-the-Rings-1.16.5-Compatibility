@@ -1,6 +1,8 @@
 package lotr.common.world.gen.carver;
 
-import java.util.*;
+import java.util.BitSet;
+import java.util.Random;
+import java.util.Set;
 import java.util.function.Function;
 
 import org.apache.commons.lang3.mutable.MutableBoolean;
@@ -8,7 +10,8 @@ import org.apache.commons.lang3.mutable.MutableBoolean;
 import com.mojang.serialization.Codec;
 
 import lotr.common.init.LOTRBlocks;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos.Mutable;

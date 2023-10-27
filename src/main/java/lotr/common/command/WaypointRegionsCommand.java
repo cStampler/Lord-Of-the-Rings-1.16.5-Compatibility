@@ -1,6 +1,7 @@
 package lotr.common.command;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Iterator;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
@@ -9,7 +10,9 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import lotr.common.command.arguments.WaypointRegionArgument;
 import lotr.common.data.FastTravelDataModule;
 import lotr.common.world.map.WaypointRegion;
-import net.minecraft.command.*;
+import net.minecraft.command.CommandException;
+import net.minecraft.command.CommandSource;
+import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;

@@ -3,11 +3,14 @@ package lotr.common.block;
 import java.util.Random;
 
 import lotr.common.init.LOTRBlocks;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
 public class MineralBlock extends Block {

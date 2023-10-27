@@ -2,7 +2,8 @@ package lotr.curuquesta.structure;
 
 import java.util.Set;
 
-import lotr.curuquesta.*;
+import lotr.curuquesta.SpeechbankContext;
+import lotr.curuquesta.SpeechbankContextProvider;
 import lotr.curuquesta.condition.predicate.SpeechbankConditionAndPredicate;
 
 public class SpeechbankConditionSet<C extends SpeechbankContextProvider> implements SpeechbankContextSatisfier<C> {

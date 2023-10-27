@@ -5,13 +5,16 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSet.Builder;
 
-import lotr.common.init.*;
-import net.minecraft.block.*;
+import lotr.common.init.LOTRBlocks;
+import lotr.common.init.RegistryOrderHelper;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.*;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRWorldCarvers {
 	public static final DeferredRegister WORLD_CARVERS;

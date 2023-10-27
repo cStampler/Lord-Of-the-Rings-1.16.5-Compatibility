@@ -1,14 +1,20 @@
 package lotr.common.block;
 
 import lotr.common.event.CompostingHelper;
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.DirectionalBlock;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.StateContainer.Builder;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 import net.minecraftforge.common.extensions.IForgeBlockState;
 
 public class DirectionalBaleBlock extends DirectionalBlock implements IForgeBlockState {

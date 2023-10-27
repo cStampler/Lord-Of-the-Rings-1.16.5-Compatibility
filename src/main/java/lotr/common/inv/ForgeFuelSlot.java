@@ -1,7 +1,8 @@
 package lotr.common.inv;
 
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.container.*;
+import net.minecraft.inventory.container.FurnaceFuelSlot;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 
 public class ForgeFuelSlot extends Slot {

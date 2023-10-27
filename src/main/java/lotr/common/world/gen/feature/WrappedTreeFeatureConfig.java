@@ -10,7 +10,8 @@ import net.minecraft.block.AbstractBlock.AbstractBlockState;
 import net.minecraft.block.BlockState;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.IStringSerializable;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraftforge.common.Tags.Blocks;
 
 public class WrappedTreeFeatureConfig implements IFeatureConfig {

@@ -2,7 +2,8 @@ package lotr.common.item;
 
 import java.util.Arrays;
 
-import lotr.common.fac.*;
+import lotr.common.fac.FactionType;
+import lotr.common.fac.FoodAlignmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.math.MathHelper;

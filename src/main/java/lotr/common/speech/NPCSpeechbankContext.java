@@ -2,18 +2,23 @@ package lotr.common.speech;
 
 import java.util.Optional;
 
-import lotr.common.data.*;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
 import lotr.common.dim.LOTRDimensionType;
 import lotr.common.entity.npc.NPCEntity;
-import lotr.common.fac.*;
+import lotr.common.fac.Faction;
+import lotr.common.fac.RankGender;
 import lotr.common.init.LOTRBiomes;
-import lotr.common.speech.condition.*;
+import lotr.common.speech.condition.BiomeWithTags;
+import lotr.common.speech.condition.OptionallyUnderspecifiedFactionRank;
 import lotr.curuquesta.SpeechbankContextProvider;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
 public class NPCSpeechbankContext implements SpeechbankContextProvider {

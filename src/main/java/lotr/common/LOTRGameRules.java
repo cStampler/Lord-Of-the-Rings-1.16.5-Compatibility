@@ -4,7 +4,11 @@ import java.lang.reflect.Method;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameRules;
-import net.minecraft.world.GameRules.*;
+import net.minecraft.world.GameRules.BooleanValue;
+import net.minecraft.world.GameRules.Category;
+import net.minecraft.world.GameRules.IntegerValue;
+import net.minecraft.world.GameRules.RuleKey;
+import net.minecraft.world.GameRules.RuleType;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class LOTRGameRules {

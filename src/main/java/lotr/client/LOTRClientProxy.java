@@ -2,22 +2,34 @@ package lotr.client;
 
 import java.io.File;
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
-import it.unimi.dsi.fastutil.objects.*;
+import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
+import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import lotr.client.align.NotifyAlignmentRequirement;
-import lotr.client.event.*;
-import lotr.client.gui.*;
+import lotr.client.event.LOTRGuiHandler;
+import lotr.client.event.LOTRTickHandlerClient;
+import lotr.client.gui.AdoptCustomWaypointScreen;
+import lotr.client.gui.CreateCustomWaypointScreen;
+import lotr.client.gui.FastTravelScreen;
+import lotr.client.gui.PlayerMessageScreen;
+import lotr.client.gui.UpdateCustomWaypointScreen;
+import lotr.client.gui.ViewAdoptedCustomWaypointScreen;
 import lotr.client.gui.inv.ContainerScreenHelper;
-import lotr.client.gui.map.*;
-import lotr.client.render.*;
+import lotr.client.gui.map.MapPlayerLocationHolder;
+import lotr.client.gui.map.MiddleEarthMapScreen;
+import lotr.client.render.BlockRenderHelper;
+import lotr.client.render.LOTRClientParticles;
 import lotr.client.render.entity.LOTREntityRenderers;
-import lotr.client.render.model.*;
+import lotr.client.render.model.HandheldItemModels;
+import lotr.client.render.model.PlateFoodModels;
 import lotr.client.render.model.connectedtex.ConnectedTextureUnbakedModel;
 import lotr.client.render.model.scatter.ScatterUnbakedModel;
 import lotr.client.render.model.vessel.VesselDrinkUnbakedModel;
 import lotr.client.render.player.LOTRPlayerRendering;
-import lotr.client.speech.*;
+import lotr.client.speech.NPCSpeechReceiver;
+import lotr.client.speech.SpeechbankResourceManager;
 import lotr.client.text.QuoteListLoader;
 import lotr.common.LOTRServerProxy;
 import lotr.common.block.LOTRSignTypes;
@@ -25,24 +37,41 @@ import lotr.common.data.PlayerMessageType;
 import lotr.common.entity.item.RingPortalEntity;
 import lotr.common.entity.misc.AlignmentBonusEntity;
 import lotr.common.init.LOTRDimensions;
-import lotr.common.inv.*;
+import lotr.common.inv.KegResultSlot;
+import lotr.common.inv.KegSlot;
 import lotr.common.item.LOTRItemProperties;
-import lotr.common.network.*;
+import lotr.common.network.SPacketAlignmentBonus;
+import lotr.common.network.SPacketNotifyAlignRequirement;
+import lotr.common.network.SPacketOpenScreen;
+import lotr.common.network.SPacketSetAttackTarget;
+import lotr.common.network.SPacketSpeechbank;
 import lotr.common.util.LOTRUtil;
-import lotr.common.world.map.*;
+import lotr.common.world.map.AdoptedCustomWaypoint;
+import lotr.common.world.map.CustomWaypoint;
+import lotr.common.world.map.MapPlayerLocation;
+import lotr.common.world.map.Waypoint;
 import net.minecraft.block.WoodType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.Atlases;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.texture.AtlasTexture;
-import net.minecraft.client.world.*;
-import net.minecraft.entity.*;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.world.DimensionRenderInfo;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.inventory.container.PlayerContainer;
-import net.minecraft.util.*;
-import net.minecraft.world.*;
-import net.minecraftforge.client.event.*;
-import net.minecraftforge.client.event.ColorHandlerEvent.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Util;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
+import net.minecraftforge.client.event.ColorHandlerEvent.Block;
+import net.minecraftforge.client.event.ColorHandlerEvent.Item;
+import net.minecraftforge.client.event.ModelBakeEvent;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.client.event.TextureStitchEvent.Pre;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -133,7 +162,7 @@ public class LOTRClientProxy extends LOTRServerProxy {
 	}
 
 	@Override
-	public Optional getSidedAttackTarget(MobEntity entity) {
+	public Optional<LivingEntity> getSidedAttackTarget(MobEntity entity) {
 		return !entity.level.isClientSide ? super.getSidedAttackTarget(entity) : ClientsideAttackTargetCache.getAttackTarget(entity);
 	}
 
@@ -157,7 +186,7 @@ public class LOTRClientProxy extends LOTRServerProxy {
 	}
 
 	@Override
-	public void mapHandlePlayerLocations(List playerLocations) {
+	public void mapHandlePlayerLocations(List<MapPlayerLocation> playerLocations) {
 		MapPlayerLocationHolder.refreshPlayerLocations(playerLocations);
 	}
 

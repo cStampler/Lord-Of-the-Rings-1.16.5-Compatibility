@@ -1,13 +1,18 @@
 package lotr.common.item;
 
-import com.google.common.collect.*;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
+import com.google.common.collect.Multimap;
 
-import lotr.common.init.*;
-import net.minecraft.entity.ai.attributes.*;
+import lotr.common.init.LOTRItemGroups;
+import lotr.common.init.LOTRMaterial;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.AttributeModifier.Operation;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.*;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.IItemTier;
 
 public class LOTRHoeItem extends HoeItem {
 	public LOTRHoeItem(IItemTier tier) {

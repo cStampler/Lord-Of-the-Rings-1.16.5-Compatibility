@@ -1,10 +1,13 @@
 package lotr.common.world.gen.layer;
 
 import lotr.common.LOTRLog;
-import net.minecraft.util.*;
+import net.minecraft.util.SharedConstants;
+import net.minecraft.util.Util;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.*;
-import net.minecraft.world.gen.area.*;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeRegistry;
+import net.minecraft.world.gen.area.IAreaFactory;
+import net.minecraft.world.gen.area.LazyArea;
 
 public class LayerWithDataDrivenBiomes {
 	private final LazyArea genLayers;

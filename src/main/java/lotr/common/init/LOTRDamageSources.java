@@ -3,7 +3,8 @@ package lotr.common.init;
 import javax.annotation.Nullable;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.IndirectEntityDamageSource;
 
 public class LOTRDamageSources {
 	public static final DamageSource PLANT = new DamageSource("lotr.plant").bypassArmor();

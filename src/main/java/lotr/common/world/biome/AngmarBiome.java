@@ -1,12 +1,17 @@
 package lotr.common.world.biome;
 
 import lotr.common.init.LOTRBlocks;
-import lotr.common.world.biome.surface.*;
+import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
+import lotr.common.world.biome.surface.MountainTerrainProvider;
+import lotr.common.world.biome.surface.SurfaceNoiseMixer;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 
 public class AngmarBiome extends LOTRBiomeBase {

@@ -5,14 +5,17 @@ import java.util.Random;
 
 import lotr.common.LOTRLog;
 import lotr.common.init.LOTRBiomes;
-import lotr.common.world.biome.*;
-import net.minecraft.block.*;
+import lotr.common.world.biome.LOTRBiomeFeatures;
+import lotr.common.world.biome.ShireBiome;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 

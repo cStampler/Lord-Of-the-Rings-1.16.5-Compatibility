@@ -1,7 +1,10 @@
 package lotr.client.gui.inv;
 
 import lotr.common.init.LOTRContainers;
-import lotr.common.inv.*;
+import lotr.common.inv.AbstractAlloyForgeContainer;
+import lotr.common.inv.FactionCraftingContainer;
+import lotr.common.inv.KegContainer;
+import lotr.common.inv.PouchContainer;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.gui.ScreenManager.IScreenFactory;
 import net.minecraft.inventory.container.ContainerType;

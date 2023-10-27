@@ -3,7 +3,8 @@ package lotr.common.entity.npc.ai.goal;
 import lotr.common.entity.npc.NPCEntity;
 import lotr.common.entity.npc.data.NPCFoodPool;
 import lotr.common.item.VesselDrinkItem;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class NPCDrinkGoal extends NPCConsumeGoal {
 	private final NPCFoodPool drinkPool;

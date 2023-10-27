@@ -2,10 +2,20 @@ package lotr.common.entity.npc;
 
 import lotr.common.config.LOTRConfig;
 import lotr.common.entity.npc.ai.AttackGoalsHolder;
-import lotr.common.entity.npc.ai.goal.*;
+import lotr.common.entity.npc.ai.goal.FriendlyNPCConversationGoal;
+import lotr.common.entity.npc.ai.goal.NPCDrinkGoal;
+import lotr.common.entity.npc.ai.goal.NPCEatGoal;
+import lotr.common.entity.npc.ai.goal.TalkToCurrentGoal;
+import lotr.common.entity.npc.ai.goal.WatchSunriseSunsetGoal;
 import lotr.common.entity.npc.data.NPCFoodPool;
-import net.minecraft.entity.*;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.goal.Goal;
+import net.minecraft.entity.ai.goal.LookAtGoal;
+import net.minecraft.entity.ai.goal.LookRandomlyGoal;
+import net.minecraft.entity.ai.goal.OpenDoorGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 

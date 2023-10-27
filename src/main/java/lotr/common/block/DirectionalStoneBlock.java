@@ -8,7 +8,9 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 
 public class DirectionalStoneBlock extends LOTRStoneBlock {
 	public static final DirectionProperty HORIZONTAL_FACING;

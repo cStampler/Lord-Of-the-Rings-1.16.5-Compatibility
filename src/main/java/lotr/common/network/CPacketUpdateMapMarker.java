@@ -3,9 +3,11 @@ package lotr.common.network;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRLog;
-import lotr.common.data.*;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.MapMarkerDataModule;
 import lotr.common.util.UsernameHelper;
-import lotr.common.world.map.*;
+import lotr.common.world.map.MapMarker;
+import lotr.common.world.map.MapMarkerIcon;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent.Context;

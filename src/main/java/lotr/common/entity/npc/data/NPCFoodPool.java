@@ -1,11 +1,15 @@
 package lotr.common.entity.npc.data;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
-import lotr.common.item.*;
+import lotr.common.item.VesselDrinkItem;
+import lotr.common.item.VesselType;
 import lotr.common.tileentity.PlateTileEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class NPCFoodPool extends SuppliableItemTable {
 	private List drinkVessels;

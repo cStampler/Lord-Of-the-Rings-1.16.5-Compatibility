@@ -1,7 +1,8 @@
 package lotr.client.render;
 
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.vertex.*;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.renderer.vertex.VertexFormat;
 import net.minecraft.util.ResourceLocation;
 
 public class LOTRRenderTypes extends RenderType {

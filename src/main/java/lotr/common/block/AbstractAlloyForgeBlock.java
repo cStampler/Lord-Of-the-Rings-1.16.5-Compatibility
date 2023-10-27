@@ -5,10 +5,14 @@ import java.util.function.ToIntFunction;
 
 import lotr.common.tileentity.AbstractAlloyForgeTileEntity;
 import lotr.common.util.LOTRUtil;
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
+import net.minecraft.block.AbstractFurnaceBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
@@ -16,11 +20,15 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.StateHolder;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Direction.Axis;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public abstract class AbstractAlloyForgeBlock extends AbstractFurnaceBlock {

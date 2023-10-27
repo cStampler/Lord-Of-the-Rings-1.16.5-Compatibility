@@ -2,7 +2,8 @@ package lotr.common.init;
 
 import net.minecraft.item.Food;
 import net.minecraft.item.Food.Builder;
-import net.minecraft.potion.*;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 
 public class LOTRFoods {
 	public static final Food BLUBBER = new Builder().nutrition(2).saturationMod(0.4F).meat().build();

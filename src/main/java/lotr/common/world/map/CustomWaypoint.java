@@ -1,13 +1,20 @@
 package lotr.common.world.map;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
 
 import javax.annotation.Nullable;
 
 import lotr.common.LOTRLog;
-import lotr.common.data.*;
+import lotr.common.data.DataUtil;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.StringNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;

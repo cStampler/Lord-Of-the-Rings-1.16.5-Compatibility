@@ -3,11 +3,15 @@ package lotr.common.speech;
 import lotr.common.entity.npc.NPCEntity;
 import lotr.common.fac.RankGender;
 import lotr.common.init.LOTRBiomes;
-import lotr.common.world.biome.*;
+import lotr.common.world.biome.ExtendedWeatherType;
+import lotr.common.world.biome.LOTRBiomeBase;
+import lotr.common.world.biome.LOTRBiomeWrapper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.*;
-import net.minecraft.world.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IDayTimeReader;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
 public class SpeechEnums {

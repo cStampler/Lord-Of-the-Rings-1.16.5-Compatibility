@@ -1,14 +1,25 @@
 package lotr.common.world.spawning;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import lotr.common.LOTRLog;
-import lotr.common.fac.*;
-import net.minecraft.entity.*;
+import lotr.common.fac.FactionPointer;
+import lotr.common.fac.FactionSettings;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

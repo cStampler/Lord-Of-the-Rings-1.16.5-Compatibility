@@ -4,7 +4,9 @@ import java.util.Optional;
 
 import lotr.common.config.ClientsideCurrentServerConfigSettings;
 import lotr.common.world.gen.MiddleEarthChunkGenerator;
-import net.minecraft.util.registry.*;
+import net.minecraft.util.registry.DynamicRegistries;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.SimpleRegistry;
 import net.minecraft.world.Dimension;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.settings.DimensionGeneratorSettings;
@@ -14,7 +16,8 @@ import net.minecraftforge.common.world.ForgeWorldType.IChunkGeneratorFactory;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.*;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRWorldTypes {
 	public static final DeferredRegister WORLD_TYPES;

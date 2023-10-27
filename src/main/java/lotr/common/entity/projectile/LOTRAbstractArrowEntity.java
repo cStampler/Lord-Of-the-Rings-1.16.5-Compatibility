@@ -1,6 +1,7 @@
 package lotr.common.entity.projectile;
 
-import net.minecraft.entity.*;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.math.MathHelper;

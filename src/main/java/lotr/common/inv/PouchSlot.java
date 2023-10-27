@@ -1,7 +1,8 @@
 package lotr.common.inv;
 
 import lotr.common.item.PouchItem;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;

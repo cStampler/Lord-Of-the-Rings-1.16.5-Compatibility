@@ -1,9 +1,11 @@
 package lotr.common.speech.condition;
 
-import java.util.function.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import io.netty.buffer.ByteBuf;
-import lotr.common.entity.npc.data.*;
+import lotr.common.entity.npc.data.PersonalityTrait;
+import lotr.common.entity.npc.data.PersonalityTraits;
 import lotr.curuquesta.condition.SpeechbankCondition;
 import lotr.curuquesta.condition.predicate.ComplexPredicateParsers;
 import net.minecraft.network.PacketBuffer;

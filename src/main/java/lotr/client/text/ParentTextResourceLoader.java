@@ -6,7 +6,9 @@
  */
 package lotr.client.text;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 import net.minecraft.util.ResourceLocation;
 

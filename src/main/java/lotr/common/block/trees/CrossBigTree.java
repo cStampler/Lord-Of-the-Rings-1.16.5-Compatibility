@@ -2,7 +2,9 @@ package lotr.common.block.trees;
 
 import java.util.Random;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;

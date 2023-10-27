@@ -3,10 +3,14 @@ package lotr.common.world.gen.layer;
 import java.util.function.LongFunction;
 
 import lotr.common.world.gen.MiddleEarthBiomeGenSettings;
-import lotr.common.world.map.*;
-import net.minecraft.world.gen.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
+import net.minecraft.world.gen.IExtendedNoiseRandom;
+import net.minecraft.world.gen.LazyAreaLayerContext;
 import net.minecraft.world.gen.area.IAreaFactory;
-import net.minecraft.world.gen.layer.*;
+import net.minecraft.world.gen.layer.LayerUtil;
+import net.minecraft.world.gen.layer.SmoothLayer;
+import net.minecraft.world.gen.layer.ZoomLayer;
 
 public class MiddleEarthWorldLayers {
 	public static final int MIN_SCALE_POWER = 2;

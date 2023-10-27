@@ -1,6 +1,12 @@
 package lotr.client.gui;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import com.google.common.math.IntMath;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -8,21 +14,43 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 import lotr.client.align.AlignmentFormatter;
 import lotr.client.gui.map.MiddleEarthMapScreen;
-import lotr.client.gui.util.*;
+import lotr.client.gui.util.AlignmentRenderer;
+import lotr.client.gui.util.AlignmentTextRenderer;
 import lotr.client.gui.widget.ScrollPane;
-import lotr.client.gui.widget.button.*;
+import lotr.client.gui.widget.button.FactionsMapButton;
+import lotr.client.gui.widget.button.FactionsPageButton;
+import lotr.client.gui.widget.button.FriendlyFireToggleButton;
+import lotr.client.gui.widget.button.PledgeButton;
+import lotr.client.gui.widget.button.PreferredRankGenderButton;
+import lotr.client.gui.widget.button.RedBookButton;
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.config.LOTRConfig;
-import lotr.common.data.*;
-import lotr.common.fac.*;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.FactionStats;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
+import lotr.common.fac.AreasOfInfluence;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionRank;
+import lotr.common.fac.FactionRegion;
+import lotr.common.fac.FactionRelation;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
+import lotr.common.fac.MapSquare;
+import lotr.common.fac.RankGender;
 import lotr.common.init.LOTRDimensions;
-import lotr.common.network.*;
+import lotr.common.network.CPacketSetPledge;
+import lotr.common.network.LOTRPacketHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.util.*;
+import net.minecraft.util.IReorderingProcessor;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class MiddleEarthFactionsScreen extends MiddleEarthMenuScreen {
 	public static final ResourceLocation FACTIONS_TEXTURE = new ResourceLocation("lotr", "textures/gui/factions.png");

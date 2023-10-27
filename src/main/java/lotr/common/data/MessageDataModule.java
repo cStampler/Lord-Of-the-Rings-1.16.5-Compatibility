@@ -1,9 +1,13 @@
 package lotr.common.data;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.nbt.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.StringNBT;
 
 public class MessageDataModule extends PlayerDataModule {
 	private Set sentMessages = new HashSet();

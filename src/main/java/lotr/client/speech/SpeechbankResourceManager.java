@@ -1,19 +1,26 @@
 package lotr.client.speech;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.Reader;
+import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import lotr.client.speech.SpeechbankResourceManager.ParentSpeechbankLoader;
-import lotr.client.text.*;
-import lotr.common.speech.*;
+import lotr.client.text.ParentTextResourceLoader;
+import lotr.client.text.TranslatableTextReloadListener;
+import lotr.common.speech.LOTRSpeechbankEngine;
+import lotr.common.speech.NPCSpeechbankContext;
 import lotr.curuquesta.SpeechbankContextProvider;
 import lotr.curuquesta.structure.Speechbank;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.*;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 
 public class SpeechbankResourceManager extends TranslatableTextReloadListener<Speechbank<NPCSpeechbankContext>, ParentSpeechbankLoader<NPCSpeechbankContext>> {
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();

@@ -1,13 +1,23 @@
 package lotr.common;
 
 import java.io.File;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 import lotr.common.data.PlayerMessageType;
 import lotr.common.entity.item.RingPortalEntity;
-import lotr.common.network.*;
-import lotr.common.world.map.*;
-import net.minecraft.entity.*;
+import lotr.common.network.SPacketAlignmentBonus;
+import lotr.common.network.SPacketNotifyAlignRequirement;
+import lotr.common.network.SPacketOpenScreen;
+import lotr.common.network.SPacketSetAttackTarget;
+import lotr.common.network.SPacketSpeechbank;
+import lotr.common.world.map.AdoptedCustomWaypoint;
+import lotr.common.world.map.CustomWaypoint;
+import lotr.common.world.map.MapPlayerLocation;
+import lotr.common.world.map.Waypoint;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
@@ -46,7 +56,7 @@ public interface LOTRProxy {
 
 	File getGameRootDirectory();
 
-	Optional getSidedAttackTarget(MobEntity var1);
+	Optional<LivingEntity> getSidedAttackTarget(MobEntity var1);
 
 	boolean isClient();
 
@@ -55,7 +65,7 @@ public interface LOTRProxy {
 	default void mapHandleIsOp(boolean isOp) {
 	}
 
-	default void mapHandlePlayerLocations(List playerLocations) {
+	default void mapHandlePlayerLocations(List<MapPlayerLocation> playerLocations) {
 	}
 
 	void receiveClientAttackTarget(SPacketSetAttackTarget var1);

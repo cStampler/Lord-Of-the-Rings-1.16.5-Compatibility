@@ -1,22 +1,51 @@
 package lotr.client.render.model.connectedtex;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.google.common.collect.*;
-import com.google.gson.*;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.mojang.datafixers.util.Pair;
 
-import lotr.client.render.model.*;
+import lotr.client.render.model.BlockModelQuadsHolder;
+import lotr.client.render.model.BlockModelUtil;
+import lotr.client.render.model.DynamicTextureRepository;
 import lotr.common.LOTRLog;
-import net.minecraft.client.renderer.model.*;
-import net.minecraft.client.renderer.texture.*;
+import net.minecraft.client.renderer.model.BakedQuad;
+import net.minecraft.client.renderer.model.BlockModel;
+import net.minecraft.client.renderer.model.BlockPart;
+import net.minecraft.client.renderer.model.BlockPartFace;
+import net.minecraft.client.renderer.model.IBakedModel;
+import net.minecraft.client.renderer.model.IModelTransform;
+import net.minecraft.client.renderer.model.IUnbakedModel;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.model.ItemOverrideList;
+import net.minecraft.client.renderer.model.ModelBakery;
+import net.minecraft.client.renderer.model.RenderMaterial;
+import net.minecraft.client.renderer.texture.MissingTextureSprite;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.IResourceManager;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.TransformationMatrix;
-import net.minecraftforge.client.model.*;
+import net.minecraftforge.client.model.IModelBuilder;
+import net.minecraftforge.client.model.IModelConfiguration;
+import net.minecraftforge.client.model.IModelLoader;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.geometry.ISimpleModelGeometry;
 
 public class ConnectedTextureUnbakedModel implements ISimpleModelGeometry {

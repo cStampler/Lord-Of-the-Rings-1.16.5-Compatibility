@@ -1,6 +1,7 @@
 package lotr.common.block;
 
-import net.minecraft.block.*;
+import net.minecraft.block.LadderBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class LOTRLadderBlock extends LadderBlock {

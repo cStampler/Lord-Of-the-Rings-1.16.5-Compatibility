@@ -1,9 +1,14 @@
 package lotr.client.particle;
 
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.IAnimatedSprite;
+import net.minecraft.client.particle.IParticleFactory;
+import net.minecraft.client.particle.IParticleRenderType;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.SpriteTexturedParticle;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particles.IParticleData;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class WaterfallParticle extends SpriteTexturedParticle {
 	private WaterfallParticle(ClientWorld world, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {

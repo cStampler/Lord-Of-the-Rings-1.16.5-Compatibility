@@ -1,19 +1,25 @@
 package lotr.client;
 
-import java.util.*;
-import java.util.Map.Entry;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.math.IntMath;
 
 import lotr.client.gui.MiddleEarthMasterMenuScreen;
-import lotr.common.data.*;
-import lotr.common.fac.*;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionRegion;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
 import lotr.common.init.LOTRDimensions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.RegistryKey;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.InputEvent.KeyInputEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,7 +33,7 @@ public class LOTRKeyHandler {
 	public static final KeyBinding KEY_BIND_ALIGNMENT_NEXT;
 	public static final KeyBinding KEY_BIND_ALIGNMENT_GROUP_PREVIOUS;
 	public static final KeyBinding KEY_BIND_ALIGNMENT_GROUP_NEXT;
-	private static final Map ALIGNMENT_KEY_ACTIONS;
+	private static final Map<KeyBinding, AlignmentKeyAction> ALIGNMENT_KEY_ACTIONS;
 	private static int alignmentChangeTick;
 	static {
 		KEY_BIND_MENU = new KeyBinding(keybindName("menu"), 77, KEY_CATEGORY_MOD);
@@ -58,7 +64,7 @@ public class LOTRKeyHandler {
 		}
 
 		if (mc.screen == null && mc.player != null && (action == 1 || action == 2) && alignmentChangeTick <= 0) {
-			Optional<AlignmentKeyAction> optAlignmentAction = ALIGNMENT_KEY_ACTIONS.entrySet().stream().filter(e -> ((KeyBinding) ((Entry) e).getKey()).matches(key, scancode)).map(e -> (AlignmentKeyAction) ((Entry) e).getValue()).findFirst();
+			Optional<AlignmentKeyAction> optAlignmentAction = ALIGNMENT_KEY_ACTIONS.entrySet().stream().filter(e -> (e.getKey()).matches(key, scancode)).map(e -> e.getValue()).findFirst();
 
 			optAlignmentAction.ifPresent(alignmentAction -> {
 				FactionSettings factionSettings = FactionSettingsManager.clientInstance().getCurrentLoadedFactions();
@@ -66,12 +72,12 @@ public class LOTRKeyHandler {
 				boolean changedAlignmentView = false;
 				int factionShift = alignmentAction.factionShift;
 				int groupShift = alignmentAction.groupShift;
-				RegistryKey currentDimension = LOTRDimensions.getCurrentLOTRDimensionOrFallback(mc.level);
+				RegistryKey<World> currentDimension = LOTRDimensions.getCurrentLOTRDimensionOrFallback(mc.level);
 				Faction currentFaction = alignData.getCurrentViewedFaction();
 				if (currentFaction != null) {
 					FactionRegion currentRegion = currentFaction.getRegion();
-					List regionList = factionSettings.getRegionsForDimension(currentDimension);
-					List factionList = factionSettings.getFactionsForRegion(currentRegion);
+					List<FactionRegion> regionList = factionSettings.getRegionsForDimension(currentDimension);
+					List<Faction> factionList = factionSettings.getFactionsForRegion(currentRegion);
 					int i;
 					if (factionShift != 0) {
 						i = factionList.indexOf(currentFaction);

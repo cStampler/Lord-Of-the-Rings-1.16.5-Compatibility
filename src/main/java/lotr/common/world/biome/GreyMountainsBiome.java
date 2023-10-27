@@ -1,11 +1,14 @@
 package lotr.common.world.biome;
 
-import lotr.common.world.biome.surface.*;
+import lotr.common.world.biome.surface.MiddleEarthSurfaceConfig;
+import lotr.common.world.biome.surface.MountainTerrainProvider;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class GreyMountainsBiome extends LOTRBiomeBase {
 	public GreyMountainsBiome(boolean major) {

@@ -1,19 +1,23 @@
 package lotr.client;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 import lotr.common.LOTRLog;
 import lotr.common.network.SPacketSetAttackTarget;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 
 public class ClientsideAttackTargetCache {
-	private static final Map attackTargetIds = new HashMap();
+	private static final Map<Integer, Integer> attackTargetIds = new HashMap<>();
 
 	public static void clearAll() {
 		attackTargetIds.clear();
 	}
 
-	public static Optional getAttackTarget(MobEntity entity) {
+	public static Optional<LivingEntity> getAttackTarget(MobEntity entity) {
 		int entityId = entity.getId();
 		if (attackTargetIds.containsKey(entityId)) {
 			int targetEntityId = (Integer) attackTargetIds.get(entityId);

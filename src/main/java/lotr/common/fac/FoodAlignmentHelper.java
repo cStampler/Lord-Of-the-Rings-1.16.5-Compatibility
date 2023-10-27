@@ -1,14 +1,17 @@
 package lotr.common.fac;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 
 import lotr.common.data.LOTRLevelData;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.*;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 

@@ -1,18 +1,26 @@
 package lotr.common.world.biome.surface;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
 import com.mojang.serialization.Codec;
 
-import lotr.common.init.*;
+import lotr.common.init.LOTRBiomes;
+import lotr.common.init.LOTRBlocks;
 import lotr.common.world.biome.LOTRBiomeBase;
-import lotr.common.world.map.*;
-import net.minecraft.block.*;
+import lotr.common.world.map.MapSettings;
+import lotr.common.world.map.MapSettingsManager;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.PerlinNoiseGenerator;
-import net.minecraft.world.gen.surfacebuilders.*;
+import net.minecraft.world.gen.surfacebuilders.FrozenOceanSurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class MiddleEarthSurfaceBuilder extends SurfaceBuilder {
 	private final FrozenOceanSurfaceBuilder frozenOcean;

@@ -1,6 +1,8 @@
 package lotr.client.util;
 
-import java.text.*;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.ParseException;
 
 import net.minecraft.client.resources.I18n;
 

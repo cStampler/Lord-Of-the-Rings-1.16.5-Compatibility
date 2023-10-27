@@ -2,14 +2,19 @@ package lotr.common.entity.item;
 
 import java.util.function.Supplier;
 
-import lotr.common.init.*;
+import lotr.common.init.LOTRBlocks;
+import lotr.common.init.LOTREntities;
+import lotr.common.init.LOTRItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.item.*;
+import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
-import net.minecraft.network.datasync.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;

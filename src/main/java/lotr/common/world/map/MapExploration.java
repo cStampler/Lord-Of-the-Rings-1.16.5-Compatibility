@@ -1,12 +1,17 @@
 package lotr.common.world.map;
 
-import java.util.*;
+import java.util.BitSet;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.function.BiFunction;
-import java.util.stream.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import lotr.common.LOTRLog;
 import lotr.common.data.DataUtil;
-import lotr.common.network.*;
+import lotr.common.network.LOTRPacketHandler;
+import lotr.common.network.SPacketMapExplorationFull;
+import lotr.common.network.SPacketMapExplorationTile;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;

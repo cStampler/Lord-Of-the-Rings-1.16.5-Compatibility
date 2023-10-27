@@ -1,17 +1,27 @@
 package lotr.common.entity.npc.ai.goal;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Stream;
 
-import lotr.common.entity.npc.*;
+import lotr.common.entity.npc.NPCEntity;
+import lotr.common.entity.npc.NPCPredicates;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.AttributeModifier.Operation;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.pathfinding.Path;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
+import net.minecraft.util.EntityPredicates;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeMod;
 

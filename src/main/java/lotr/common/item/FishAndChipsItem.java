@@ -3,7 +3,8 @@ package lotr.common.item;
 import java.util.Random;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 public class FishAndChipsItem extends HeavyFoodSubtitledItem {
 	private static final Random RAND = new Random();

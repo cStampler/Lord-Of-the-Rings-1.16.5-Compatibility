@@ -1,15 +1,20 @@
 package lotr.common.fac;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import com.google.common.base.Predicates;
 
 import lotr.common.LOTRMod;
-import lotr.common.data.*;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
+import lotr.common.data.PlayerMessageType;
 import lotr.common.entity.npc.NPCEntity;
 import lotr.common.entity.npc.data.NPCEntitySettingsManager;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class EntityFactionHelper {

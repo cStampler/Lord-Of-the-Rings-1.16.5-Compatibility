@@ -4,7 +4,8 @@ import java.util.function.Function;
 
 import io.netty.buffer.ByteBuf;
 import lotr.curuquesta.condition.SpeechbankCondition;
-import lotr.curuquesta.condition.predicate.*;
+import lotr.curuquesta.condition.predicate.ComplexPredicateParsers;
+import lotr.curuquesta.condition.predicate.PredicateParser;
 
 public class BiomeSpeechbankCondition extends SpeechbankCondition {
 	public static final String HOME = "#home";

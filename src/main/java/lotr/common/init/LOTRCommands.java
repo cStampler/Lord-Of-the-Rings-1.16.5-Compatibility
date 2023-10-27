@@ -2,7 +2,15 @@ package lotr.common.init;
 
 import com.mojang.brigadier.CommandDispatcher;
 
-import lotr.common.command.*;
+import lotr.common.command.AlignmentCommand;
+import lotr.common.command.DateCommand;
+import lotr.common.command.FastTravelClockCommand;
+import lotr.common.command.LOTRTimeCommand;
+import lotr.common.command.PlayerMessageCommand;
+import lotr.common.command.PledgeCommand;
+import lotr.common.command.WaypointCooldownCommand;
+import lotr.common.command.WaypointRegionsCommand;
+import lotr.common.command.WeatherCommandFixedForDimensions;
 
 public class LOTRCommands {
 	public static void registerCommands(CommandDispatcher dispatcher) {

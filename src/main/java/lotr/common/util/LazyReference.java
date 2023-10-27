@@ -1,7 +1,8 @@
 package lotr.common.util;
 
 import java.util.Objects;
-import java.util.function.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 import net.minecraft.util.ResourceLocation;
 

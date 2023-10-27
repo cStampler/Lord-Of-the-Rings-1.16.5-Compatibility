@@ -1,14 +1,19 @@
 package lotr.common.block;
 
 import lotr.common.event.CompostingHelper;
-import lotr.common.fac.*;
+import lotr.common.fac.EntityFactionHelper;
+import lotr.common.fac.FactionPointers;
 import lotr.common.init.LOTRDamageSources;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.*;
-import net.minecraft.world.*;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 public class MordorThornBlock extends MordorPlantBlock {
 	private static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);

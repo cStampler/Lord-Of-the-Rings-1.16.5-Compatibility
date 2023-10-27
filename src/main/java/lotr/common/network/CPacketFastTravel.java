@@ -2,11 +2,16 @@ package lotr.common.network;
 
 import java.util.function.Supplier;
 
-import lotr.common.*;
-import lotr.common.data.*;
+import lotr.common.LOTRGameRules;
+import lotr.common.LOTRLog;
+import lotr.common.data.FastTravelDataModule;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
 import lotr.common.init.LOTRWorldTypes;
-import lotr.common.util.*;
-import lotr.common.world.map.*;
+import lotr.common.util.LOTRUtil;
+import lotr.common.util.UsernameHelper;
+import lotr.common.world.map.Waypoint;
+import lotr.common.world.map.WaypointNetworkType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.TranslationTextComponent;

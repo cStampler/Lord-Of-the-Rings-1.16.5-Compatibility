@@ -1,6 +1,7 @@
 package lotr.common.resources;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import net.minecraft.world.World;
 

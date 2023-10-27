@@ -3,18 +3,28 @@ package lotr.common.item;
 import java.util.List;
 
 import lotr.common.entity.projectile.SmokeRingEntity;
-import lotr.common.init.*;
+import lotr.common.init.LOTRItemGroups;
+import lotr.common.init.LOTRItems;
+import lotr.common.init.LOTRSoundEvents;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.DyeColor;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class SmokingPipeItem extends Item {
 	public SmokingPipeItem() {

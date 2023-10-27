@@ -1,6 +1,7 @@
 package lotr.common.world.map;
 
-import lotr.common.network.*;
+import lotr.common.network.CPacketUpdateMapMarker;
+import lotr.common.network.LOTRPacketHandler;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.World;

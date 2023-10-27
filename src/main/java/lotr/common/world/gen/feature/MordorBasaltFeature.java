@@ -1,18 +1,23 @@
 package lotr.common.world.gen.feature;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
 import com.mojang.serialization.Codec;
 
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Direction.Plane;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
-import net.minecraft.world.*;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap.Type;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public class MordorBasaltFeature extends Feature {
 	public MordorBasaltFeature(Codec codec) {

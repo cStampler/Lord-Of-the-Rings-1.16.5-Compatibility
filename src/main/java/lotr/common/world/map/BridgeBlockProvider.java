@@ -3,10 +3,14 @@ package lotr.common.world.map;
 import java.util.Random;
 
 import lotr.common.init.LOTRBlocks;
-import net.minecraft.block.*;
-import net.minecraft.state.properties.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.gen.blockstateprovider.*;
+import net.minecraft.world.gen.blockstateprovider.BlockStateProvider;
+import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 import net.minecraftforge.common.util.LazyOptional;
 
 public class BridgeBlockProvider {

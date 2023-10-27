@@ -1,6 +1,7 @@
 package lotr.common.world.map;
 
-import java.util.*;
+import java.util.Objects;
+import java.util.UUID;
 
 import lotr.common.data.DataUtil;
 import net.minecraft.nbt.CompoundNBT;

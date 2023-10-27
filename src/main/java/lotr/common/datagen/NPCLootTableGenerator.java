@@ -2,26 +2,52 @@ package lotr.common.datagen;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.*;
-import java.util.function.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import com.google.common.collect.*;
-import com.google.gson.*;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Sets;
+import com.google.common.collect.UnmodifiableIterator;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
-import lotr.common.init.*;
+import lotr.common.init.LOTREntities;
+import lotr.common.init.LOTRItems;
 import lotr.common.item.VesselDrinkItem;
-import lotr.common.loot.functions.*;
-import net.minecraft.data.*;
+import lotr.common.loot.functions.SetNPCDrinkPotency;
+import lotr.common.loot.functions.SetPouchColorFromEntityFaction;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.DirectoryCache;
+import net.minecraft.data.IDataProvider;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.*;
-import net.minecraft.loot.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.loot.ConstantRange;
+import net.minecraft.loot.ItemLootEntry;
+import net.minecraft.loot.LootParameterSet;
+import net.minecraft.loot.LootParameterSets;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTable.Builder;
-import net.minecraft.loot.conditions.*;
-import net.minecraft.loot.functions.*;
-import net.minecraft.util.*;
+import net.minecraft.loot.LootTableManager;
+import net.minecraft.loot.LootTables;
+import net.minecraft.loot.RandomValueRange;
+import net.minecraft.loot.TableLootEntry;
+import net.minecraft.loot.ValidationTracker;
+import net.minecraft.loot.conditions.KilledByPlayer;
+import net.minecraft.loot.conditions.RandomChance;
+import net.minecraft.loot.conditions.RandomChanceWithLooting;
+import net.minecraft.loot.functions.LootingEnchantBonus;
+import net.minecraft.loot.functions.SetCount;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.ResourceLocation;
 
 public class NPCLootTableGenerator implements IDataProvider {
 	private static final Logger LOGGER = LogManager.getLogger();

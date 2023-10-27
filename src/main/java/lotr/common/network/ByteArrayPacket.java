@@ -1,6 +1,7 @@
 package lotr.common.network;
 
-import java.util.function.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 import io.netty.buffer.Unpooled;
 import net.minecraft.network.PacketBuffer;

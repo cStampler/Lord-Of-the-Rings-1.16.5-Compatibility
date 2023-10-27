@@ -2,7 +2,8 @@ package lotr.common.item;
 
 import lotr.common.fac.FoodAlignmentHelper;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 

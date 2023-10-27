@@ -4,7 +4,8 @@ import java.util.function.Function;
 
 import io.netty.buffer.ByteBuf;
 import lotr.curuquesta.SpeechbankContextProvider;
-import lotr.curuquesta.condition.predicate.*;
+import lotr.curuquesta.condition.predicate.ComplexPredicateParsers;
+import lotr.curuquesta.condition.predicate.PredicateParser;
 
 public class IntegerSpeechbankCondition<C extends SpeechbankContextProvider> extends SpeechbankCondition<Integer, C> {
 	public IntegerSpeechbankCondition(String conditionName, Function<C, Integer> valueFromContext) {

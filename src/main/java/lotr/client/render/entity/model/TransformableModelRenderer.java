@@ -3,7 +3,8 @@ package lotr.client.render.entity.model;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import net.minecraft.client.renderer.model.*;
+import net.minecraft.client.renderer.model.Model;
+import net.minecraft.client.renderer.model.ModelRenderer;
 
 public class TransformableModelRenderer extends ModelRenderer {
 	private float scaleX;

@@ -3,8 +3,11 @@ package lotr.common.world.biome;
 import lotr.common.world.gen.feature.TreeCluster;
 import lotr.common.world.gen.feature.grassblend.GrassBlends;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.math.*;
-import net.minecraft.world.biome.Biome.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.biome.Biome.Builder;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 
 public class WilderlandBiome extends LOTRBiomeBase {
 	public WilderlandBiome(boolean major) {

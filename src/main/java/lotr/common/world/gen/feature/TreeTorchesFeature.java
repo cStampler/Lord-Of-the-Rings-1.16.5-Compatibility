@@ -1,18 +1,24 @@
 package lotr.common.world.gen.feature;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.WallTorchBlock;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Direction.Plane;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.BlockStateProvidingFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public class TreeTorchesFeature extends Feature {
 	public TreeTorchesFeature(Codec codec) {

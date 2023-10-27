@@ -3,8 +3,10 @@ package lotr.client.render.world;
 import lotr.common.dim.LOTRDimensionType;
 import lotr.common.init.LOTRParticles;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
-import net.minecraft.particles.*;
+import net.minecraft.client.renderer.RenderTypeBuffers;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.particles.ParticleTypes;
 
 public class MiddleEarthWorldRenderer extends WorldRenderer {
 	private final Minecraft theMinecraft;

@@ -1,6 +1,7 @@
 package lotr.client.render.entity.model.armor;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 

@@ -7,9 +7,11 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import lotr.common.util.LOTRUtil;
-import lotr.common.world.map.*;
+import lotr.common.world.map.BothWaterLatitudeSettings;
+import lotr.common.world.map.MapSettingsManager;
 import net.minecraft.util.IStringSerializable;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public class LatitudeBasedFeatureConfig implements IFeatureConfig {
 	public static final Codec CODEC = RecordCodecBuilder.create(instance -> instance.group(ConfiguredFeature.DIRECT_CODEC.fieldOf("feature").forGetter(config -> ((LatitudeBasedFeatureConfig) config).feature), LatitudeBasedFeatureConfig.LatitudeConfiguration.CODEC.fieldOf("latitude_config").forGetter(config -> ((LatitudeBasedFeatureConfig) config).latitudeConfig)).apply(instance, (h1, h2) -> new LatitudeBasedFeatureConfig((ConfiguredFeature) h1, (LatitudeConfiguration) h2)));

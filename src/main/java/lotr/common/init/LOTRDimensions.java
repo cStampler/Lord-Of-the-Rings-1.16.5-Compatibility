@@ -1,36 +1,57 @@
 package lotr.common.init;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import com.google.common.collect.ImmutableSet;
-import com.mojang.serialization.*;
+import com.mojang.datafixers.util.Pair;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.DynamicOps;
+import com.mojang.serialization.Lifecycle;
 
 import lotr.common.LOTRLog;
-import lotr.common.dim.*;
+import lotr.common.dim.LOTRDimensionType;
+import lotr.common.dim.MiddleEarthDimensionType;
 import lotr.common.fac.Faction;
 import lotr.common.util.LOTRUtil;
 import lotr.common.world.biome.provider.MiddleEarthBiomeProvider;
 import lotr.common.world.gen.MiddleEarthChunkGenerator;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.*;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.*;
-import net.minecraft.util.text.*;
-import net.minecraft.world.*;
-import net.minecraft.world.gen.*;
-import net.minecraft.world.gen.settings.*;
+import net.minecraft.util.registry.MutableRegistry;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.SimpleRegistry;
+import net.minecraft.util.registry.WorldGenRegistries;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.Dimension;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.DimensionSettings;
+import net.minecraft.world.gen.settings.DimensionGeneratorSettings;
+import net.minecraft.world.gen.settings.DimensionStructuresSettings;
+import net.minecraft.world.gen.settings.NoiseSettings;
+import net.minecraft.world.gen.settings.ScalingSettings;
+import net.minecraft.world.gen.settings.SlideSettings;
 import net.minecraft.world.server.ServerWorld;
 
 public class LOTRDimensions {
 	public static final ResourceLocation MIDDLE_EARTH_ID = new ResourceLocation("lotr", "middle_earth");
 	public static final LOTRDimensionType MIDDLE_EARTH_DIMTYPE;
-	public static final RegistryKey MIDDLE_EARTH_DIMTYPE_KEY;
-	public static final RegistryKey MIDDLE_EARTH_DIM_KEY;
-	public static final RegistryKey MIDDLE_EARTH_WORLD_KEY;
-	private static Set addedDimensionKeys;
-	public static final RegistryKey MIDDLE_EARTH_DIMSETTINGS_KEY;
+	public static final RegistryKey<DimensionType> MIDDLE_EARTH_DIMTYPE_KEY;
+	public static final RegistryKey<Dimension> MIDDLE_EARTH_DIM_KEY;
+	public static final RegistryKey<World> MIDDLE_EARTH_WORLD_KEY;
+	private static Set<RegistryKey<Dimension>> addedDimensionKeys;
+	public static final RegistryKey<DimensionSettings> MIDDLE_EARTH_DIMSETTINGS_KEY;
 	public static final DimensionSettings MIDDLE_EARTH_DIMSETTINGS;
 
 	static {
@@ -42,24 +63,24 @@ public class LOTRDimensions {
 		MIDDLE_EARTH_DIMSETTINGS = createMiddleEarthDimensionSettings();
 	}
 
-	public static void addSpecificDimensionToWorldRegistry(RegistryKey dimKey, SimpleRegistry dimReg, Registry dimTypeReg, Registry biomeReg, Registry dimSettingsReg, long seed) {
+	public static void addSpecificDimensionToWorldRegistry(RegistryKey<Dimension> dimKey, SimpleRegistry<Dimension> dimReg, Registry<DimensionType> dimTypeReg, Registry<Biome> biomeReg, Registry<DimensionSettings> dimSettingsReg, long seed) {
 		if (!dimKey.equals(MIDDLE_EARTH_DIM_KEY)) {
 			throw new IllegalArgumentException("Coding error! LOTR mod somehow tried to add an unknown dimension (" + dimKey.location() + ") to the world registry - it isn't one of ours!");
 		}
 		dimReg.register(dimKey, new Dimension(() -> ((DimensionType) dimTypeReg.getOrThrow(MIDDLE_EARTH_DIMTYPE_KEY)), createMiddleEarthChunkGenerator(biomeReg, dimSettingsReg, seed)), Lifecycle.stable());
 	}
 
-	private static RegistryKey createDimensionKey(ResourceLocation res) {
-		RegistryKey key = RegistryKey.create(Registry.LEVEL_STEM_REGISTRY, res);
+	private static RegistryKey<Dimension> createDimensionKey(ResourceLocation res) {
+		RegistryKey<Dimension> key = RegistryKey.create(Registry.LEVEL_STEM_REGISTRY, res);
 		if (addedDimensionKeys == null) {
-			addedDimensionKeys = new HashSet();
+			addedDimensionKeys = new HashSet<RegistryKey<Dimension>>();
 		}
 
 		addedDimensionKeys.add(key);
 		return key;
 	}
 
-	private static ChunkGenerator createMiddleEarthChunkGenerator(Registry biomeReg, Registry dimSettingsReg, long seed) {
+	private static ChunkGenerator createMiddleEarthChunkGenerator(Registry<Biome> biomeReg, Registry<DimensionSettings> dimSettingsReg, long seed) {
 		boolean classicBiomes = false;
 		return new MiddleEarthChunkGenerator(new MiddleEarthBiomeProvider(seed, classicBiomes, biomeReg), seed, () -> (DimensionSettings) dimSettingsReg.getOrThrow(MIDDLE_EARTH_DIMSETTINGS_KEY), Optional.empty());
 	}
@@ -79,7 +100,7 @@ public class LOTRDimensions {
 		throw new IllegalArgumentException("Dimension ID " + dimensionId + " is not a known LOTR mod dimension and cannot be dispatched to a LOTRDimensionType!");
 	}
 
-	public static RegistryKey getCurrentLOTRDimensionOrFallback(World world) {
+	public static RegistryKey<World> getCurrentLOTRDimensionOrFallback(World world) {
 		DimensionType dimension = world.dimensionType();
 		return dimension instanceof LOTRDimensionType ? world.dimension() : MIDDLE_EARTH_WORLD_KEY;
 	}
@@ -89,21 +110,21 @@ public class LOTRDimensions {
 		return dimension instanceof MiddleEarthDimensionType ? ((MiddleEarthDimensionType) dimension).getSpawnCoordinate(world) : world.getSharedSpawnPos();
 	}
 
-	public static ITextComponent getDisplayName(RegistryKey dimensionWorldKey) {
+	public static ITextComponent getDisplayName(RegistryKey<World> dimensionWorldKey) {
 		ResourceLocation dimensionName = dimensionWorldKey.location();
 		String key = String.format("dimension.%s.%s", dimensionName.getNamespace(), dimensionName.getPath());
 		return new TranslationTextComponent(key);
 	}
 
-	public static boolean isAddedDimension(RegistryKey key) {
+	public static boolean isAddedDimension(RegistryKey<Dimension> key) {
 		return addedDimensionKeys.contains(key);
 	}
 
-	public static boolean isDimension(Faction fac, RegistryKey dimension) {
+	public static boolean isDimension(Faction fac, RegistryKey<World> dimension) {
 		return fac.getDimension().equals(dimension);
 	}
 
-	public static boolean isDimension(World world, RegistryKey dimension) {
+	public static boolean isDimension(World world, RegistryKey<World> dimension) {
 		return world.dimension().equals(dimension);
 	}
 
@@ -118,15 +139,15 @@ public class LOTRDimensions {
 		WorldGenRegistries.register(WorldGenRegistries.NOISE_GENERATOR_SETTINGS, MIDDLE_EARTH_DIMSETTINGS_KEY.location(), MIDDLE_EARTH_DIMSETTINGS);
 	}
 
-	public static void registerDimensionTypes(MutableRegistry dimTypeReg) {
+	public static void registerDimensionTypes(MutableRegistry<DimensionType> dimTypeReg) {
 		dimTypeReg.register(MIDDLE_EARTH_DIMTYPE_KEY, MIDDLE_EARTH_DIMTYPE, Lifecycle.stable());
 	}
 
-	public static void registerWorldDimensions(SimpleRegistry dimReg, Registry dimTypeReg, Registry biomeReg, Registry dimSettingsReg, long seed) {
-		Iterator var6 = viewAddedDimensions().iterator();
+	public static void registerWorldDimensions(SimpleRegistry<Dimension> dimReg, Registry<DimensionType> dimTypeReg, Registry<Biome> biomeReg, Registry<DimensionSettings> dimSettingsReg, long seed) {
+		Iterator<RegistryKey<Dimension>> var6 = viewAddedDimensions().iterator();
 
 		while (var6.hasNext()) {
-			RegistryKey modDimension = (RegistryKey) var6.next();
+			RegistryKey<Dimension> modDimension = var6.next();
 			addSpecificDimensionToWorldRegistry(modDimension, dimReg, dimTypeReg, biomeReg, dimSettingsReg, seed);
 		}
 
@@ -134,25 +155,17 @@ public class LOTRDimensions {
 
 	public static void replaceDimensionCodecToForceStability() {
 		try {
-			final Codec codec = DimensionGeneratorSettings.CODEC;
-			Codec stableCodec = new Codec() {
-				@Override
-				public DataResult decode(DynamicOps ops, Object input) {
-					DataResult result = codec.decode(ops, input);
-					try {
-						return DataResult.success(result.result().orElseThrow(() -> new IllegalStateException("Failed to change lifecycle to stable")), Lifecycle.stable());
-					} catch (Throwable e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					return result;
-				}
-
-				@Override
-				public DataResult encode(Object input, DynamicOps ops, Object prefix) {
-					return codec.encode(input, ops, prefix);
-				}
-			};
+			final Codec<DimensionGeneratorSettings> codec = DimensionGeneratorSettings.CODEC;
+		      Codec<DimensionGeneratorSettings> stableCodec = new Codec<DimensionGeneratorSettings>() {
+		          public <T> DataResult<T> encode(DimensionGeneratorSettings input, DynamicOps<T> ops, T prefix) {
+		            return codec.encode(input, ops, prefix);
+		          }
+		          
+		          public <T> DataResult<Pair<DimensionGeneratorSettings, T>> decode(DynamicOps<T> ops, T input) {
+		            DataResult<Pair<DimensionGeneratorSettings, T>> result = codec.decode(ops, input);
+		            return DataResult.success(result.result().orElseThrow(() -> new IllegalStateException("Failed to change lifecycle to stable")), Lifecycle.stable());
+		          }
+		        };
 			Field f_codec = Stream.of(DimensionGeneratorSettings.class.getDeclaredFields()).filter(field -> ((field.getModifiers() & 8) != 0)).filter(field -> (field.getType() == Codec.class)).findFirst().orElseThrow(() -> new IllegalStateException("Failed to find codec field in DimensionGeneratorSettings"));
 			LOTRUtil.unlockFinalField(f_codec);
 			f_codec.set((Object) null, stableCodec);
@@ -163,7 +176,7 @@ public class LOTRDimensions {
 
 	}
 
-	public static Set viewAddedDimensions() {
+	public static Set<RegistryKey<Dimension>> viewAddedDimensions() {
 		return ImmutableSet.copyOf(addedDimensionKeys);
 	}
 }

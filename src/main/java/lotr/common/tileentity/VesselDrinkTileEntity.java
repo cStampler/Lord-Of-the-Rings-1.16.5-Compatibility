@@ -1,13 +1,17 @@
 package lotr.common.tileentity;
 
-import lotr.common.init.*;
-import lotr.common.item.*;
+import lotr.common.init.LOTRItems;
+import lotr.common.init.LOTRTileEntities;
+import lotr.common.item.VesselDrinkItem;
+import lotr.common.item.VesselOperations;
+import lotr.common.item.VesselType;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
-import net.minecraft.tileentity.*;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.IItemProvider;
 
 public class VesselDrinkTileEntity extends TileEntity {

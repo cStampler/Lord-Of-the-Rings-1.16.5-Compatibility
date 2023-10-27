@@ -1,6 +1,6 @@
 package lotr.common.util;
 
 @FunctionalInterface
-public interface TriConsumer {
-	void accept(Object var1, Object var2, Object var3);
+public interface TriConsumer<T, U, V> {
+	void accept(T paramT, U paramU, V paramV);
 }

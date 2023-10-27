@@ -8,7 +8,8 @@ import lotr.common.init.LOTRDimensions;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.*;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class ClientWorldDimensionTypeHelper {

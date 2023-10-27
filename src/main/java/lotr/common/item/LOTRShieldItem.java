@@ -1,8 +1,11 @@
 package lotr.common.item;
 
-import lotr.common.init.*;
+import lotr.common.init.LOTRItemGroups;
+import lotr.common.init.LOTRMaterial;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.item.ShieldItem;
 
 public class LOTRShieldItem extends ShieldItem {
 	public LOTRShieldItem(LOTRMaterial material) {

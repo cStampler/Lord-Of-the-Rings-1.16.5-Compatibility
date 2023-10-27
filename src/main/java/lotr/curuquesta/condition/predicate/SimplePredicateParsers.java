@@ -1,7 +1,8 @@
 package lotr.curuquesta.condition.predicate;
 
 import java.util.Objects;
-import java.util.function.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class SimplePredicateParsers {
 	public static Predicate<Boolean> booleanEquality(String s) {

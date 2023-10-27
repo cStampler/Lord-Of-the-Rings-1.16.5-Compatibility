@@ -4,7 +4,8 @@ import java.util.function.LongFunction;
 
 import lotr.common.world.gen.MiddleEarthBiomeGenSettings;
 import net.minecraft.world.gen.IExtendedNoiseRandom;
-import net.minecraft.world.gen.area.*;
+import net.minecraft.world.gen.area.IArea;
+import net.minecraft.world.gen.area.IAreaFactory;
 import net.minecraft.world.gen.layer.ZoomLayer;
 import net.minecraft.world.gen.layer.traits.IAreaTransformer1;
 

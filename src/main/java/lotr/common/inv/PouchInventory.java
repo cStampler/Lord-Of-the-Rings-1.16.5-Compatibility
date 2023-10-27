@@ -3,7 +3,8 @@ package lotr.common.inv;
 import java.util.List;
 
 import lotr.common.item.PouchItem;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.NonNullList;

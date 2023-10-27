@@ -1,6 +1,8 @@
 package lotr.client.gui.util;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -9,15 +11,24 @@ import lotr.client.align.AlignmentFormatter;
 import lotr.client.gui.PlayerMessageScreen;
 import lotr.client.util.LOTRClientUtil;
 import lotr.common.config.LOTRConfig;
-import lotr.common.data.*;
-import lotr.common.fac.*;
+import lotr.common.data.AlignmentDataModule;
+import lotr.common.data.LOTRLevelData;
+import lotr.common.data.LOTRPlayerData;
+import lotr.common.fac.AreasOfInfluence;
+import lotr.common.fac.Faction;
+import lotr.common.fac.FactionRank;
+import lotr.common.fac.FactionSettings;
+import lotr.common.fac.FactionSettingsManager;
+import lotr.common.fac.RankGender;
 import lotr.common.util.LOTRUtil;
-import net.minecraft.client.*;
+import net.minecraft.client.MainWindow;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 public class AlignmentRenderer {
 	public static final ResourceLocation ALIGNMENT_TEXTURE = new ResourceLocation("lotr", "textures/gui/alignment.png");

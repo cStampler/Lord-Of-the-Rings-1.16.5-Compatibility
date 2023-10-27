@@ -2,7 +2,8 @@ package lotr.common.block;
 
 import java.util.function.Supplier;
 
-import net.minecraft.block.*;
+import net.minecraft.block.DoorBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class LOTRDoorBlock extends DoorBlock {

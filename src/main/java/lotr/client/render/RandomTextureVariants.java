@@ -1,15 +1,22 @@
 package lotr.client.render;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
 import java.util.function.Predicate;
 
 import lotr.common.LOTRLog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.MissingTextureSprite;
 import net.minecraft.entity.Entity;
-import net.minecraft.resources.*;
+import net.minecraft.resources.IReloadableResourceManager;
+import net.minecraft.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.resource.*;
+import net.minecraftforge.resource.ISelectiveResourceReloadListener;
+import net.minecraftforge.resource.VanillaResourceType;
 
 public class RandomTextureVariants implements ISelectiveResourceReloadListener {
 	private static final Random RAND = new Random();

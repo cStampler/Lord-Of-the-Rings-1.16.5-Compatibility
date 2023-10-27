@@ -1,6 +1,9 @@
 package lotr.client.particle;
 
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.IAnimatedSprite;
+import net.minecraft.client.particle.IParticleFactory;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.SmokeParticle;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.MathHelper;

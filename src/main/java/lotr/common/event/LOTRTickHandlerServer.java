@@ -1,21 +1,32 @@
 package lotr.common.event;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
+import java.util.Set;
 
 import lotr.common.config.LOTRConfig;
 import lotr.common.data.LOTRLevelData;
 import lotr.common.entity.item.RingPortalEntity;
 import lotr.common.init.LOTRDimensions;
-import lotr.common.time.*;
+import lotr.common.time.LOTRDate;
+import lotr.common.time.LOTRTime;
 import lotr.common.world.RingPortalTeleporter;
 import lotr.common.world.spawning.RenewedNPCSpawner;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.*;
-import net.minecraft.world.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.TickEvent.*;
+import net.minecraftforge.event.TickEvent.Phase;
+import net.minecraftforge.event.TickEvent.PlayerTickEvent;
+import net.minecraftforge.event.TickEvent.WorldTickEvent;
 import net.minecraftforge.event.world.WorldEvent.Unload;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;

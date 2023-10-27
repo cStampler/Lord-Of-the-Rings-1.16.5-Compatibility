@@ -2,7 +2,8 @@ package lotr.common.world.biome.surface;
 
 import java.util.Random;
 
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 public class SurfaceNoisePaths {
 	public static BlockState getReplacement(int x, int z, BlockState in, boolean top, Random rand) {

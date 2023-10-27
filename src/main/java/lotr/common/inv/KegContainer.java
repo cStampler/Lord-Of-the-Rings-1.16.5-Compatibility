@@ -4,13 +4,22 @@ import lotr.common.init.LOTRContainers;
 import lotr.common.item.VesselDrinkItem;
 import lotr.common.recipe.DrinkBrewingRecipe;
 import lotr.common.tileentity.KegTileEntity;
-import net.minecraft.entity.player.*;
-import net.minecraft.inventory.*;
-import net.minecraft.inventory.container.*;
-import net.minecraft.item.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.Slot;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
+import net.minecraft.util.IIntArray;
+import net.minecraft.util.IntArray;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class KegContainer extends Container {
 	public final IInventory theKeg;

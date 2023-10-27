@@ -3,15 +3,21 @@ package lotr.common.block;
 import java.util.function.Supplier;
 
 import lotr.common.init.LOTRTags;
-import net.minecraft.block.*;
-import net.minecraft.fluid.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.FourWayBlock;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.*;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
 import net.minecraftforge.common.extensions.IForgeBlockState;
 
 public class BranchBlock extends FourWayBlock implements IForgeBlockState {

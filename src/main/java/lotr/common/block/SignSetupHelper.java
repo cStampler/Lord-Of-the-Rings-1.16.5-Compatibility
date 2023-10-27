@@ -1,14 +1,16 @@
 package lotr.common.block;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import lotr.common.LOTRLog;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class SignSetupHelper {
