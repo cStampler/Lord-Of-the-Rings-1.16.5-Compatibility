@@ -6,10 +6,9 @@ import lotr.common.entity.animal.CaracalEntity;
 import lotr.common.util.LOTRUtil;
 import net.minecraft.client.renderer.entity.model.AgeableModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class CaracalModel extends AgeableModel {
+public class CaracalModel<E extends CaracalEntity> extends AgeableModel<E> {
 	private final TransformableModelRenderer body;
 	private final ModelRenderer head;
 	private final ModelRenderer noseBridge;
@@ -83,7 +82,7 @@ public class CaracalModel extends AgeableModel {
 	}
 
 	@Override
-	protected Iterable bodyParts() {
+	protected Iterable<ModelRenderer> bodyParts() {
 		return ImmutableList.of(body, backLegL, backLegR, frontLegL, frontLegR, tailMain);
 	}
 
@@ -92,7 +91,7 @@ public class CaracalModel extends AgeableModel {
 	}
 
 	@Override
-	protected Iterable headParts() {
+	protected Iterable<ModelRenderer> headParts() {
 		return ImmutableList.of(head);
 	}
 
@@ -185,7 +184,7 @@ public class CaracalModel extends AgeableModel {
 	}
 
 	@Override
-	public void setupAnim(Entity caracal, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(E caracal, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		head.xRot = (float) Math.toRadians(headPitch);
 		head.yRot = (float) Math.toRadians(netHeadYaw);
 		noseBridge.xRot = (float) Math.toRadians(-27.5D);

@@ -20,7 +20,7 @@ import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
-public class LOTRBipedModel extends BipedModel {
+public class LOTRBipedModel<E extends LivingEntity> extends BipedModel<E> {
 	protected static final int STANDARD_BIPED_SKIN_WIDTH = 128;
 	protected static final int STANDARD_BIPED_SKIN_HEIGHT = 64;
 	protected static final int STANDARD_BIPED_ARMOR_WIDTH = 64;
@@ -48,7 +48,7 @@ public class LOTRBipedModel extends BipedModel {
 		this(hummel -> RenderType.entityCutoutNoCull((ResourceLocation) hummel), modelSize, yOff, texW, texH, isArmor, smallArms);
 	}
 
-	public LOTRBipedModel(Function renderType, float modelSize, float yOff, int texW, int texH, boolean isArmor, boolean smallArms) {
+	public LOTRBipedModel(Function<ResourceLocation, RenderType> renderType, float modelSize, float yOff, int texW, int texH, boolean isArmor, boolean smallArms) {
 		super(renderType, modelSize, yOff, texW, texH);
 		showChest = false;
 		isEating = false;
@@ -110,23 +110,23 @@ public class LOTRBipedModel extends BipedModel {
 	}
 
 	@Override
-	protected Iterable bodyParts() {
-		Iterable superBodyParts = super.bodyParts();
+	protected Iterable<ModelRenderer> bodyParts() {
+		Iterable<ModelRenderer> superBodyParts = super.bodyParts();
 		return isArmor ? superBodyParts : Iterables.concat(superBodyParts, ImmutableList.of(bipedLeftLegwear, bipedRightLegwear, bipedLeftArmwear, bipedRightArmwear, bipedBodywear));
 	}
 
 	@Override
-	public void copyPropertiesTo(EntityModel other) {
+	public void copyPropertiesTo(EntityModel<E> other) {
 		super.copyPropertiesTo(other);
 		if (other instanceof BipedModel) {
-			BipedModel otherBiped = (BipedModel) other;
+			BipedModel<E> otherBiped = (BipedModel<E>) other;
 			otherBiped.leftArmPose = leftArmPose;
 			otherBiped.rightArmPose = rightArmPose;
 			otherBiped.crouching = crouching;
 		}
 
 		if (other instanceof LOTRBipedModel) {
-			LOTRBipedModel otherBiped = (LOTRBipedModel) other;
+			LOTRBipedModel<E> otherBiped = (LOTRBipedModel<E>) other;
 			otherBiped.showChest = showChest;
 			otherBiped.isEating = isEating;
 			otherBiped.talkingHeadYawRadians = talkingHeadYawRadians;
@@ -143,7 +143,7 @@ public class LOTRBipedModel extends BipedModel {
 		hat.setPos(0.0F, headRotationY, 0.0F);
 	}
 
-	private void onArm(LivingEntity entity, Hand handType, Consumer action) {
+	private void onArm(LivingEntity entity, Hand handType, Consumer<ModelRenderer> action) {
 		HandSide mainHandSide = entity.getMainArm();
 		if (mainHandSide == HandSide.RIGHT) {
 			action.accept(handType == Hand.MAIN_HAND ? rightArm : leftArm);
@@ -248,7 +248,7 @@ public class LOTRBipedModel extends BipedModel {
 	}
 
 	@Override
-	public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(E entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 		bipedChest.visible = showChest;
 		if (isEating) {

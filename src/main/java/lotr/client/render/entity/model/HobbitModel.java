@@ -2,10 +2,11 @@ package lotr.client.render.entity.model;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
+import lotr.common.entity.npc.HobbitEntity;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.util.HandSide;
 
-public class HobbitModel extends LOTRBipedModel {
+public class HobbitModel<E extends HobbitEntity> extends LOTRBipedModel<E> {
 	public HobbitModel(boolean smallArms) {
 		this(0.0F, false, smallArms);
 	}

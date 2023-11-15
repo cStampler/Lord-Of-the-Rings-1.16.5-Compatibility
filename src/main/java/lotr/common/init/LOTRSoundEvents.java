@@ -8,7 +8,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRSoundEvents {
-	private static final List toRegister = new ArrayList();
+	private static final List<SoundEvent> toRegister = new ArrayList<SoundEvent>();
 	public static final SoundEvent AMBIENCE_WIND = preRegSound("ambience.weather.wind");
 	public static final SoundEvent NEW_RAIN = preRegSound("ambience.weather.rain");
 	public static final SoundEvent NEW_THUNDER = preRegSound("ambience.weather.thunder");

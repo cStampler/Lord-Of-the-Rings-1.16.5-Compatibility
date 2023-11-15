@@ -8,7 +8,7 @@ import net.minecraft.util.ResourceLocation;
 public enum WargType {
 	BROWN(0, "brown"), GREY(1, "grey"), BLACK(2, "black"), SILVER(3, "silver"), WHITE(4, "white");
 
-	private static final Map ID_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), hummel -> ((WargType) hummel).getId());
+	private static final Map<Integer, WargType> ID_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), hummel -> hummel.getId());
 	private final int id;
 	private final ResourceLocation texture;
 

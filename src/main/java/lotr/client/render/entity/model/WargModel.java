@@ -8,10 +8,9 @@ import lotr.client.event.LOTRTickHandlerClient;
 import lotr.common.entity.npc.WargEntity;
 import net.minecraft.client.renderer.entity.model.SegmentedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class WargModel extends SegmentedModel {
+public class WargModel<E extends WargEntity> extends SegmentedModel<E> {
 	private final ModelRenderer frontBody;
 	private final ModelRenderer backHairL;
 	private final ModelRenderer backHairR;
@@ -27,7 +26,7 @@ public class WargModel extends SegmentedModel {
 	private final ModelRenderer tail;
 	private final ModelRenderer backLegR;
 	private final ModelRenderer backLegL;
-	private final List topLevelParts;
+	private final List<ModelRenderer> topLevelParts;
 
 	public WargModel(float f) {
 		texWidth = 128;
@@ -114,15 +113,15 @@ public class WargModel extends SegmentedModel {
 	}
 
 	@Override
-	public Iterable parts() {
+	public Iterable<ModelRenderer> parts() {
 		return topLevelParts;
 	}
 
-	public void setLivingAnimations(WargEntity warg, float limbSwing, float limbSwingAmount, float partialTick) {
+	public void setLivingAnimations(E warg, float limbSwing, float limbSwingAmount, float partialTick) {
 	}
 
 	@Override
-	public void setupAnim(Entity warg, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(E warg, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		head.xRot = (float) Math.toRadians(headPitch);
 		head.yRot = (float) Math.toRadians(netHeadYaw);
 		backLegL.xRot = MathHelper.cos(limbSwing * 0.6662F) * limbSwingAmount;

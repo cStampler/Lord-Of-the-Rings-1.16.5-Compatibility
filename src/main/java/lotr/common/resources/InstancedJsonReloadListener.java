@@ -7,7 +7,6 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -51,49 +50,49 @@ public abstract class InstancedJsonReloadListener extends JsonReloadListener {
 		this.side = side;
 	}
 
-	protected Map asMapOfSingletonLists(Map map) {
-		return (Map) map.entrySet().stream().collect(Collectors.toMap(hummel -> ((Entry) hummel).getKey(), e -> ImmutableList.of(((Entry) e).getValue())));
+	protected Map<ResourceLocation, List<JsonObject>> asMapOfSingletonLists(Map<ResourceLocation, JsonObject> map) {
+		return map.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, e -> ImmutableList.of(e.getValue())));
 	}
 
-	private void extractAndApplyDataDirectorySettings(Map jsons, String subFolder) {
-		Entry settingsEntry = extractDataDirectorySettingsJson(jsons);
+	private void extractAndApplyDataDirectorySettings(Map<ResourceLocation, JsonObject> jsons, String subFolder) {
+		Entry<ResourceLocation, JsonObject> settingsEntry = extractDataDirectorySettingsJson(jsons);
 		if (settingsEntry != null) {
-			ResourceLocation settingsRes = (ResourceLocation) settingsEntry.getKey();
-			JsonObject settingsJson = (JsonObject) settingsEntry.getValue();
+			ResourceLocation settingsRes = settingsEntry.getKey();
+			JsonObject settingsJson = settingsEntry.getValue();
 			DataDirectorySettings settings = DataDirectorySettings.read(settingsRes, settingsJson);
 			removeResourcesExcludedInSettings(jsons, subFolder, settings);
 		}
 
 	}
 
-	private Entry extractDataDirectorySettingsJson(Map jsons) {
-		Optional settingsResOpt = jsons.keySet().stream().filter(res -> getPreparedPath((ResourceLocation) res).getPath().endsWith("/_settings.json")).findFirst();
+	private Entry<ResourceLocation, JsonObject> extractDataDirectorySettingsJson(Map<ResourceLocation, JsonObject> jsons) {
+		Optional<ResourceLocation> settingsResOpt = jsons.keySet().stream().filter(res -> getPreparedPath(res).getPath().endsWith("/_settings.json")).findFirst();
 		if (settingsResOpt.isPresent()) {
-			ResourceLocation settingsRes = (ResourceLocation) settingsResOpt.get();
-			JsonObject settingsJson = (JsonObject) jsons.remove(settingsRes);
+			ResourceLocation settingsRes = settingsResOpt.get();
+			JsonObject settingsJson = jsons.remove(settingsRes);
 			return Pair.of(settingsRes, settingsJson);
 		}
 		return null;
 	}
 
-	protected Map filterDataJsonsByRootFolderOnly(Map jsons) {
-		Map subJsons = (Map) jsons.entrySet().stream().filter(e -> {
-			ResourceLocation res = (ResourceLocation) ((Entry) e).getKey();
-			return !res.getPath().contains("/");
-		}).collect(jsonElemToObjMapCollector());
-		extractAndApplyDataDirectorySettings(subJsons, (String) null);
-		return subJsons;
-	}
+	protected Map<ResourceLocation, JsonObject> filterDataJsonsByRootFolderOnly(Map<ResourceLocation, JsonElement> jsons) {
+	    Map<ResourceLocation, JsonObject> subJsons = jsons.entrySet().stream().filter(e -> {
+	          ResourceLocation res = e.getKey();
+	          return !res.getPath().contains("/");
+	        }).collect(jsonElemToObjMapCollector());
+	    extractAndApplyDataDirectorySettings(subJsons, (String)null);
+	    return subJsons;
+	  }
 
-	protected Map filterDataJsonsBySubFolder(Map jsons, String subFolder) {
-		Map rootJsons = (Map) jsons.entrySet().stream().filter(e -> {
-			ResourceLocation res = (ResourceLocation) ((Entry) e).getKey();
-			String resPath = res.getPath();
-			return resPath.startsWith(subFolder) && !resPath.substring(subFolder.length()).contains("/");
-		}).collect(jsonElemToObjMapCollector());
-		extractAndApplyDataDirectorySettings(rootJsons, subFolder);
-		return rootJsons;
-	}
+	protected Map<ResourceLocation, JsonObject> filterDataJsonsBySubFolder(Map<ResourceLocation, JsonElement> jsons, String subFolder) {
+	    Map<ResourceLocation, JsonObject> rootJsons = jsons.entrySet().stream().filter(e -> {
+	          ResourceLocation res = e.getKey();
+	          String resPath = res.getPath();
+	          return (resPath.startsWith(subFolder) && !resPath.substring(subFolder.length()).contains("/"));
+	        }).collect(jsonElemToObjMapCollector());
+	    extractAndApplyDataDirectorySettings(rootJsons, subFolder);
+	    return rootJsons;
+	  }
 
 	private String getFullFolderName(String subFolder) {
 		return rootFolder + (subFolder == null ? "" : "/" + subFolder);
@@ -103,17 +102,16 @@ public abstract class InstancedJsonReloadListener extends JsonReloadListener {
 		return side;
 	}
 
-	protected JsonObject loadDataJsonIfExists(Map jsons, ResourceLocation targetPath) {
-		Optional optEntry = jsons.entrySet().stream().filter(entry -> {
-			ResourceLocation shortenedPath = (ResourceLocation) ((Entry) entry).getKey();
-			return getPreparedPath(shortenedPath).equals(targetPath);
-		}).findFirst();
-		if (optEntry.isPresent()) {
-			return ((JsonElement) ((Entry) optEntry.get()).getValue()).getAsJsonObject();
-		}
-		LOTRLog.error("%s datapack load missing %s", loaderNameForLogging, targetPath);
-		return null;
-	}
+	protected JsonObject loadDataJsonIfExists(Map<ResourceLocation, JsonElement> jsons, ResourceLocation targetPath) {
+	    Optional<Map.Entry<ResourceLocation, JsonElement>> optEntry = jsons.entrySet().stream().filter(entry -> {
+	          ResourceLocation shortenedPath = entry.getKey();
+	          return getPreparedPath(shortenedPath).equals(targetPath);
+	        }).findFirst();
+	    if (optEntry.isPresent())
+	      return optEntry.get().getValue().getAsJsonObject(); 
+	    LOTRLog.error("%s datapack load missing %s", new Object[] { this.loaderNameForLogging, targetPath });
+	    return null;
+	  }
 
 	protected JsonObject loadDefaultJson(ResourceLocation res) {
 		try {
@@ -150,10 +148,10 @@ public abstract class InstancedJsonReloadListener extends JsonReloadListener {
 		}
 	}
 
-	protected Map loadDefaultJsonsInSubFolder(String subFolder, int maxDepth) {
+	protected Map<ResourceLocation, JsonObject> loadDefaultJsonsInSubFolder(String subFolder, int maxDepth) {
 		String fullFolder = String.format("%s/%s", rootFolder, subFolder);
-		Collection resources = getDefaultDatapackResourcesInFolder(fullFolder, maxDepth, s -> ((String) s).endsWith(".json"));
-		Map jsons = (Map) resources.stream().collect(Collectors.toMap(res -> {
+		Collection<ResourceLocation> resources = getDefaultDatapackResourcesInFolder(fullFolder, maxDepth, s -> s.endsWith(".json"));
+		Map<ResourceLocation, JsonObject> jsons = resources.stream().collect(Collectors.toMap(res -> {
 			String resPath = res.getPath();
 			return new ResourceLocation(res.getNamespace(), resPath.substring((rootFolder + "/").length(), resPath.indexOf(".json")));
 		}, this::loadDefaultJson));
@@ -161,12 +159,12 @@ public abstract class InstancedJsonReloadListener extends JsonReloadListener {
 		return jsons;
 	}
 
-	protected Map loadJsonResourceVersionsFromAllDatapacks(Set jsonPaths, IResourceManager resMgr) {
-		return (Map) jsonPaths.stream().collect(Collectors.toMap(res -> res, res -> {
-			ResourceLocation fullRes = getPreparedPath((ResourceLocation) res);
+	protected Map<ResourceLocation, List<JsonObject>> loadJsonResourceVersionsFromAllDatapacks(Set<ResourceLocation> jsonPaths, IResourceManager resMgr) {
+		return jsonPaths.stream().collect(Collectors.toMap(res -> res, res -> {
+			ResourceLocation fullRes = getPreparedPath(res);
 
 			try {
-				return (List) resMgr.getResources(fullRes).stream().map(IResource::getInputStream).map(is -> {
+				return resMgr.getResources(fullRes).stream().map(IResource::getInputStream).map(is -> {
 					Reader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
 					JsonElement json = JSONUtils.fromJson(GSON, reader, JsonElement.class);
 					return json.getAsJsonObject();
@@ -179,24 +177,19 @@ public abstract class InstancedJsonReloadListener extends JsonReloadListener {
 		}));
 	}
 
-	private void removeResourcesExcludedInSettings(Map jsons, String subFolder, DataDirectorySettings settings) {
+	private void removeResourcesExcludedInSettings(Map<ResourceLocation, JsonObject> jsons, String subFolder, DataDirectorySettings settings) {
 		int sizeBefore = jsons.size();
-		Set toRemove = new HashSet();
-		Iterator var6 = jsons.keySet().iterator();
-
-		while (var6.hasNext()) {
-			ResourceLocation res = (ResourceLocation) var6.next();
-			if (settings.shouldExclude(trimSubFolderResource(res, subFolder))) {
-				toRemove.add(res);
-			}
-		}
-
-		toRemove.forEach(jsons::remove);
+		Set<ResourceLocation> toRemove = new HashSet<>();
+	    for (ResourceLocation res : jsons.keySet()) {
+	      if (settings.shouldExclude(trimSubFolderResource(res, subFolder)))
+	        toRemove.add(res); 
+	    } 
+	    toRemove.forEach(jsons::remove);
 		int numRemoved = sizeBefore - jsons.size();
 		LOTRLog.info("Excluded %d resources in folder '%s' based on the %s", numRemoved, getFullFolderName(subFolder), "_settings.json");
 	}
 
-	private static Collection getDefaultDatapackResourcesInFolder(String path, int maxDepth, Predicate filter) {
+	private static Collection<ResourceLocation> getDefaultDatapackResourcesInFolder(String path, int maxDepth, Predicate<String> filter) {
 		String namespace = "lotr";
 		ModFileResourcePack lotrAsPack = ResourcePackLoader.getResourcePackFor(namespace).get();
 		return lotrAsPack.getResources(ResourcePackType.SERVER_DATA, namespace, path, maxDepth, filter);
@@ -206,12 +199,12 @@ public abstract class InstancedJsonReloadListener extends JsonReloadListener {
 		return LOTRMod.getDefaultModResourceStream(ResourcePackType.SERVER_DATA, res);
 	}
 
-	protected static Collector jsonElemToObjMapCollector() {
-		return Collectors.toMap(hummel -> ((Entry) hummel).getKey(), e -> ((JsonElement) ((Entry) e).getValue()).getAsJsonObject());
+	protected static Collector<Map.Entry<ResourceLocation, JsonElement>, ?, Map<ResourceLocation, JsonObject>> jsonElemToObjMapCollector() {
+		return Collectors.toMap(Map.Entry::getKey, e -> e.getValue().getAsJsonObject());
 	}
 
-	protected static Collector toMapCollector() {
-		return Collectors.toMap(hummel -> ((Entry) hummel).getKey(), hummel -> ((Entry) hummel).getValue());
+	protected static <K, V> Collector<Map.Entry<K, V>, ?, Map<K, V>> toMapCollector() {
+		return Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue);
 	}
 
 	protected static ResourceLocation trimSubFolderResource(ResourceLocation res, String subFolder) {

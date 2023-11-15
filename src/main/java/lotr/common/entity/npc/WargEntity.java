@@ -35,14 +35,14 @@ import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
 
 public abstract class WargEntity extends NPCEntity {
-	private static final DataParameter WARG_TYPE;
-	private static final DataParameter IS_LEAPING;
-	private static final Predicate ANIMAL_TARGETS;
+	private static final DataParameter<Integer> WARG_TYPE;
+	private static final DataParameter<Boolean> IS_LEAPING;
+	private static final Predicate<LivingEntity> ANIMAL_TARGETS;
 	static {
 		WARG_TYPE = EntityDataManager.defineId(WargEntity.class, DataSerializers.INT);
 		IS_LEAPING = EntityDataManager.defineId(WargEntity.class, DataSerializers.BOOLEAN);
 		ANIMAL_TARGETS = entity -> {
-			EntityType type = ((Entity) entity).getType();
+			EntityType<?> type = entity.getType();
 			return type == EntityType.SHEEP || type == EntityType.CHICKEN || type == EntityType.RABBIT || type == EntityType.FOX;
 		};
 	}
@@ -51,7 +51,7 @@ public abstract class WargEntity extends NPCEntity {
 
 	private int prevLeapingProgress = 0;
 
-	protected WargEntity(EntityType type, World w) {
+	protected WargEntity(EntityType<? extends WargEntity> type, World w) {
 		super(type, w);
 		spawnRequiresDarkness = true;
 	}
