@@ -95,17 +95,17 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class LOTREntities {
-	public static final DeferredRegister ENTITIES;
+	public static final DeferredRegister<EntityType<?>> ENTITIES;
 	private static final Map ENTITY_ATTRIBUTE_FACTORIES;
 	private static final List DEFERRED_SPAWN_EGGS;
-	public static final RegistryObject RING_PORTAL;
-	public static final RegistryObject THROWN_PLATE;
-	public static final RegistryObject BOAT;
+	public static final RegistryObject<EntityType<RingPortalEntity>> RING_PORTAL;
+	public static final RegistryObject<EntityType<ThrownPlateEntity>> THROWN_PLATE;
+	public static final RegistryObject<EntityType<LOTRBoatEntity>> BOAT;
 	public static final RegistryObject FALLING_TREASURE_BLOCK;
 	public static final RegistryObject SMOKE_RING;
 	public static final RegistryObject ALIGNMENT_BONUS;
 	public static final RegistryObject SPEAR;
-	public static final RegistryObject HOBBIT;
+	public static final RegistryObject<EntityType<HobbitEntity>> HOBBIT;
 	public static final RegistryObject MORDOR_ORC;
 	public static final RegistryObject GONDOR_MAN;
 	public static final RegistryObject GALADHRIM_ELF;

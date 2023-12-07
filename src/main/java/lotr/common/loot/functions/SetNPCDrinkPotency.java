@@ -47,11 +47,11 @@ public class SetNPCDrinkPotency extends LootFunction {
 		return stack;
 	}
 
-	public static Builder setNPCDrinkPotencyBuilder() {
+	public static Builder<?> setNPCDrinkPotencyBuilder() {
 		return simpleBuilder(SetNPCDrinkPotency::new);
 	}
 
-	public static class Serializer extends net.minecraft.loot.LootFunction.Serializer {
+	public static class Serializer extends net.minecraft.loot.LootFunction.Serializer<SetNPCDrinkPotency> {
 		@Override
 		public SetNPCDrinkPotency deserialize(JsonObject object, JsonDeserializationContext context, ILootCondition[] conditions) {
 			return new SetNPCDrinkPotency(conditions);

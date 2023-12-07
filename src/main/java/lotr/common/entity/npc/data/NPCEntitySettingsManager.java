@@ -1,9 +1,7 @@
 package lotr.common.entity.npc.data;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -38,7 +36,7 @@ public class NPCEntitySettingsManager extends InstancedJsonReloadListener {
 	}
 
 	@Override
-	protected void apply(Map jsons, IResourceManager serverResMgr, IProfiler profiler) {
+	protected void apply(Map<ResourceLocation, JsonElement> jsons, IResourceManager serverResMgr, IProfiler profiler) {
 		currentLoadedEntitySettings = loadEntitySettingsFromJsons(jsons);
 		logEntitySettingsLoad("Loaded serverside NPC entity settings", currentLoadedEntitySettings);
 	}
@@ -52,17 +50,14 @@ public class NPCEntitySettingsManager extends InstancedJsonReloadListener {
 		logEntitySettingsLoad("Loaded clientside NPC entity settings from server", currentLoadedEntitySettings);
 	}
 
-	private NPCEntitySettingsMap loadEntitySettingsFromJsons(Map entityTypeJsons) {
-		Map entityTypeMap = new HashMap();
-		Iterator var4 = entityTypeJsons.entrySet().iterator();
+	private NPCEntitySettingsMap loadEntitySettingsFromJsons(Map<ResourceLocation, JsonElement> entityTypeJsons) {
+		Map<EntityType<?>, NPCEntitySettings> entityTypeMap = new HashMap<>();
 
-		while (var4.hasNext()) {
-			Entry entry = (Entry) var4.next();
-			ResourceLocation res = (ResourceLocation) entry.getKey();
-			JsonObject entityTypeJson = ((JsonElement) entry.getValue()).getAsJsonObject();
-
+		for (Map.Entry<ResourceLocation, JsonElement> entry : entityTypeJsons.entrySet()) {
+			ResourceLocation res = entry.getKey();
+			JsonObject entityTypeJson = ((JsonElement)entry.getValue()).getAsJsonObject();
 			try {
-				EntityType entityType = lookupEntityTypeByName(res);
+				EntityType<?> entityType = lookupEntityTypeByName(res);
 				if (entityType == null) {
 					LOTRLog.error("Failed to load NPC entity settings for %s - no such entity type exists in the game!", res);
 				} else {
@@ -101,7 +96,7 @@ public class NPCEntitySettingsManager extends InstancedJsonReloadListener {
 		return sidedInstance(entity.level).getCurrentLoadedEntitySettings().getEntityTypeSettings(entity.getType());
 	}
 
-	public static EntityType lookupEntityTypeByName(ResourceLocation name) {
+	public static EntityType<?> lookupEntityTypeByName(ResourceLocation name) {
 		return ForgeRegistries.ENTITIES.getValue(name);
 	}
 

@@ -49,11 +49,11 @@ public class SetPouchColorFromEntityFaction extends LootFunction {
 		return stack;
 	}
 
-	public static Builder setPouchColorFromEntityFactionBuilder(float chance) {
+	public static Builder<?> setPouchColorFromEntityFactionBuilder(float chance) {
 		return simpleBuilder(conditions -> new SetPouchColorFromEntityFaction(conditions, chance));
 	}
 
-	public static class Serializer extends net.minecraft.loot.LootFunction.Serializer {
+	public static class Serializer extends net.minecraft.loot.LootFunction.Serializer<SetPouchColorFromEntityFaction>  {
 		@Override
 		public SetPouchColorFromEntityFaction deserialize(JsonObject object, JsonDeserializationContext context, ILootCondition[] conditions) {
 			float chance = JSONUtils.getAsFloat(object, "chance", 1.0F);

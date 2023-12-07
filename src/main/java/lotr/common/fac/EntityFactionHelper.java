@@ -27,10 +27,10 @@ public class EntityFactionHelper {
 		if (attacker instanceof NPCEntity) {
 		}
 
-		Optional attackerTarget = getEntityAttackTarget(attacker);
-		Predicate isNotAttackerTarget = e -> !attackerTarget.filter(Predicates.equalTo(e)).isPresent();
-		Predicate shouldNotHitNpc = isNotAttackerTarget.and(e -> attackerFaction.isGoodRelation(getFaction((Entity) e)));
-		Predicate shouldNotHitPlayer = isNotAttackerTarget.and(e -> (e instanceof PlayerEntity && LOTRLevelData.getSidedData((PlayerEntity) e).getAlignmentData().hasAlignment(attackerFaction, AlignmentPredicates.POSITIVE)));
+		Optional<LivingEntity> attackerTarget = getEntityAttackTarget(attacker);
+		Predicate<Entity> isNotAttackerTarget = e -> !attackerTarget.filter(Predicates.equalTo(e)).isPresent();
+		Predicate<Entity> shouldNotHitNpc = isNotAttackerTarget.and(e -> attackerFaction.isGoodRelation(getFaction((Entity) e)));
+		Predicate<Entity> shouldNotHitPlayer = isNotAttackerTarget.and(e -> (e instanceof PlayerEntity && LOTRLevelData.getSidedData((PlayerEntity) e).getAlignmentData().hasAlignment(attackerFaction, AlignmentPredicates.POSITIVE)));
 		if (isNotAttackerTarget.test(target)) {
 			if (shouldNotHitNpc.test(target) || isListNonemptyAndAllMatch(target.getPassengers(), shouldNotHitNpc)) {
 				return false;
@@ -69,7 +69,7 @@ public class EntityFactionHelper {
 		return false;
 	}
 
-	private static Optional getEntityAttackTarget(LivingEntity entity) {
+	private static Optional<LivingEntity> getEntityAttackTarget(LivingEntity entity) {
 		return entity instanceof MobEntity ? LOTRMod.PROXY.getSidedAttackTarget((MobEntity) entity) : Optional.empty();
 	}
 
@@ -85,7 +85,7 @@ public class EntityFactionHelper {
 		return entity instanceof NPCEntity && ((NPCEntity) entity).isCivilianNPC();
 	}
 
-	private static boolean isListNonemptyAndAllMatch(List list, Predicate predicate) {
+	private static <T> boolean isListNonemptyAndAllMatch(List<T> list, Predicate<T> predicate) {
 		return !list.isEmpty() && list.stream().allMatch(predicate);
 	}
 }
