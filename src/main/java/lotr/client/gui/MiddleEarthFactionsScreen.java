@@ -51,15 +51,16 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class MiddleEarthFactionsScreen extends MiddleEarthMenuScreen {
 	public static final ResourceLocation FACTIONS_TEXTURE = new ResourceLocation("lotr", "textures/gui/factions.png");
 	public static final ResourceLocation FACTIONS_TEXTURE_FULL = new ResourceLocation("lotr", "textures/gui/factions_full.png");
-	private static RegistryKey currentDimension;
-	private static RegistryKey prevDimension;
+	private static RegistryKey<World> currentDimension;
+	private static RegistryKey<World> prevDimension;
 	private static FactionRegion currentRegion;
 	private static FactionRegion prevRegion;
-	private static List currentFactionList;
+	private static List<Faction> currentFactionList;
 	private static MiddleEarthFactionsScreen.Page currentPage;
 	static {
 		currentPage = MiddleEarthFactionsScreen.Page.OVERVIEW;
@@ -106,7 +107,7 @@ public class MiddleEarthFactionsScreen extends MiddleEarthMenuScreen {
 	private List currentAlliesEnemies;
 	private boolean isOtherPlayer;
 	private String otherPlayerName;
-	private Map otherPlayerAlignmentMap;
+	private Map<Faction, Float> otherPlayerAlignmentMap;
 	private boolean isPledging;
 
 	private boolean isUnpledging;
@@ -153,7 +154,7 @@ public class MiddleEarthFactionsScreen extends MiddleEarthMenuScreen {
 		}
 
 		buttonRegions = this.addButton(new RedBookButton(guiLeft + xSize / 2 - 60, guiTop + scrollBarY + 20, 120, 20, StringTextComponent.EMPTY, button -> {
-			List regionList = currentLoadedFactions.getRegionsForDimension(currentDimension);
+			List<FactionRegion> regionList = currentLoadedFactions.getRegionsForDimension(currentDimension);
 			if (!regionList.isEmpty()) {
 				int i = regionList.indexOf(currentRegion);
 				++i;
@@ -322,10 +323,10 @@ public class MiddleEarthFactionsScreen extends MiddleEarthMenuScreen {
 		if (currentPage != MiddleEarthFactionsScreen.Page.GOOD_RELATIONS && currentPage != MiddleEarthFactionsScreen.Page.BAD_RELATIONS && currentPage != MiddleEarthFactionsScreen.Page.RANKS) {
 			scrollPaneAlliesEnemies.hasScrollBar = false;
 		} else {
-			List mortals;
-			List enemies;
+			List<Faction> mortals;
+			List<Faction> enemies;
 			if (currentPage == MiddleEarthFactionsScreen.Page.GOOD_RELATIONS) {
-				currentAlliesEnemies = new ArrayList();
+				currentAlliesEnemies = new ArrayList<>();
 				mortals = currentFaction.getOthersOfRelation(FactionRelation.ALLY);
 				if (!mortals.isEmpty()) {
 					currentAlliesEnemies.add(FactionRelation.ALLY);

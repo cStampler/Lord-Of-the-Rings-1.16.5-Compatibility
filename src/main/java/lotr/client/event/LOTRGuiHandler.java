@@ -29,8 +29,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class LOTRGuiHandler {
-	public static final Map<Class<? extends ContainerScreen>, PouchRestockButtonPositioner> pouchRestockPositionerByScreen = new HashMap<>();
-	public static final Set<Class<? extends ContainerScreen>> pouchRestockExclusionScreens = new HashSet<>();
+	public static final Map<Class<? extends ContainerScreen<?>>, PouchRestockButtonPositioner> pouchRestockPositionerByScreen = new HashMap<>();
+	public static final Set<Class<? extends ContainerScreen<?>>> pouchRestockExclusionScreens = new HashSet<>();
 	public static final LOTRGuiHandler.PouchRestockButtonPositioner DEFAULT_ABOVE_TOP_RIGHT_SLOT = (topLeftPlayerSlot, topRightPlayerSlot) -> Pair.of(topRightPlayerSlot.x + 7, topRightPlayerSlot.y - 14);
 	public static final LOTRGuiHandler.PouchRestockButtonPositioner RIGHT_FROM_TOP_RIGHT_SLOT = (topLeftPlayerSlot, topRightPlayerSlot) -> Pair.of(topRightPlayerSlot.x + 21, topRightPlayerSlot.y - 1);
 	public static final LOTRGuiHandler.PouchRestockButtonPositioner ABOVE_TOP_LEFT_SLOT = (topLeftPlayerSlot, topRightPlayerSlot) -> Pair.of(topLeftPlayerSlot.x - 1, topLeftPlayerSlot.y - 14);
@@ -50,7 +50,7 @@ public class LOTRGuiHandler {
 
 	private PouchRestockButton constructPouchRestockButton(Screen gui) {
 		if (gui instanceof ContainerScreen && !pouchRestockExclusionScreens.contains(gui.getClass())) {
-			ContainerScreen containerScreen = (ContainerScreen) gui;
+			ContainerScreen<?> containerScreen = (ContainerScreen<?>) gui;
 			LOTRGuiHandler.PouchRestockButtonPositioner positioner = (LOTRGuiHandler.PouchRestockButtonPositioner) pouchRestockPositionerByScreen.getOrDefault(gui.getClass(), DEFAULT_ABOVE_TOP_RIGHT_SLOT);
 			Optional<Pair<Integer, Integer>> optButtonCoords = PouchRestockButton.getRestockButtonPosition(MC, containerScreen, positioner);
 			if (optButtonCoords.isPresent()) {

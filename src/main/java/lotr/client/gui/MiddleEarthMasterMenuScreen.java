@@ -18,7 +18,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class MiddleEarthMasterMenuScreen extends BasicIngameScreen {
 	public static final ResourceLocation MENU_ICONS = new ResourceLocation("lotr", "textures/gui/menu_icons.png");
-	public static Class lastMenuScreen = null;
+	public static Class<? extends MiddleEarthMenuScreen> lastMenuScreen = null;
 
 	public MiddleEarthMasterMenuScreen() {
 		super(new StringTextComponent("MENU"));
@@ -34,8 +34,8 @@ public class MiddleEarthMasterMenuScreen extends BasicIngameScreen {
 		int buttonSize = 32;
 		this.addButton(new MiddleEarthMenuButton(0, 0, MiddleEarthMapScreen.class, new TranslationTextComponent("gui.lotr.menu.map"), 3, 77));
 		this.addButton(new MiddleEarthMenuButton(0, 0, MiddleEarthFactionsScreen.class, new TranslationTextComponent("gui.lotr.menu.factions"), 4, 70));
-		this.addButton(new MiddleEarthMenuButton(0, 0, (Class) null, new StringTextComponent("?"), 0, -1));
-		List menuButtonsToArrange = new ArrayList();
+		this.addButton(new MiddleEarthMenuButton(0, 0, null, new StringTextComponent("?"), 0, -1));
+		List<MiddleEarthMenuButton> menuButtonsToArrange = new ArrayList<>();
 		for (Widget widget : buttons) {
 			if (widget instanceof MiddleEarthMenuButton) {
 				MiddleEarthMenuButton menuButton = (MiddleEarthMenuButton) widget;

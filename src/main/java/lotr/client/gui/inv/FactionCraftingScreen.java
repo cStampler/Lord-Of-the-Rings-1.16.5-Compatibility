@@ -16,7 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class FactionCraftingScreen extends ContainerScreen {
+public class FactionCraftingScreen extends ContainerScreen<FactionCraftingContainer> {
 	private static final ResourceLocation CRAFTING_GUI_TEXTURES = new ResourceLocation("textures/gui/container/crafting_table.png");
 	private static final ResourceLocation FACTION_CRAFTING_GUI_TEXTURES = new ResourceLocation("lotr", "textures/gui/faction_crafting_table.png");
 	private static final ITextComponent STANDARD_CRAFTING_TITLE = new TranslationTextComponent("container.crafting");
