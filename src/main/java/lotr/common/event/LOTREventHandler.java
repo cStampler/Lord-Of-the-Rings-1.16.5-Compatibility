@@ -314,7 +314,7 @@ public class LOTREventHandler {
 
 		if (!player.abilities.instabuild && VesselOperations.isItemEmptyVessel(heldItem) && IEmptyVesselItem.canMilk(target)) {
 			VesselType vesselType = ((IEmptyVesselItem) heldItem.getItem()).getVesselType();
-			ItemStack milkDrink = new ItemStack((IItemProvider) LOTRItems.MILK_DRINK.get());
+			ItemStack milkDrink = new ItemStack(LOTRItems.MILK_DRINK.get());
 			VesselDrinkItem.setVessel(milkDrink, vesselType);
 			player.playSound(SoundEvents.COW_MILK, 1.0F, 1.0F);
 			heldItem.shrink(1);

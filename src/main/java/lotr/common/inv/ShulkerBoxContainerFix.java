@@ -11,7 +11,7 @@ import net.minecraft.inventory.container.Slot;
 
 public class ShulkerBoxContainerFix {
 	public static void fixContainerSlots(ShulkerBoxContainer container, PlayerEntity player) {
-		Map replacedSlots = new HashMap();
+		Map<Integer, Slot> replacedSlots = new HashMap<>();
 
 		for (int i = 0; i < container.slots.size(); ++i) {
 			Slot slot = container.slots.get(i);

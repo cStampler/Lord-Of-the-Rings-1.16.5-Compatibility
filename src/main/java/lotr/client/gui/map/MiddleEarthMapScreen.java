@@ -296,7 +296,7 @@ public class MiddleEarthMapScreen extends MiddleEarthMenuScreen {
    }
 
    private List<MapMarker> getVisibleMarkers() {
-      return !showMarkers() ? ImmutableList.of() : (List<MapMarker>)getOptClientPlayerData().map(pd -> pd.getMapMarkerData().getMarkers()).orElse(ImmutableList.of());
+      return !showMarkers() ? ImmutableList.of() : getOptClientPlayerData().map(pd -> pd.getMapMarkerData().getMarkers()).orElse(ImmutableList.of());
    }
 
    private List<Waypoint> getVisibleWaypoints() {

@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.world.World;
 
 public class MordorWargEntity extends WargEntity {
-	public MordorWargEntity(EntityType type, World w) {
+	public MordorWargEntity(EntityType<? extends MordorWargEntity> type, World w) {
 		super(type, w);
 	}
 
@@ -16,6 +16,6 @@ public class MordorWargEntity extends WargEntity {
 
 	@Override
 	protected NPCEntity createWargRider() {
-		return random.nextBoolean() ? (NPCEntity) ((EntityType) LOTREntities.MORDOR_ORC_ARCHER.get()).create(level) : (NPCEntity) ((EntityType) LOTREntities.MORDOR_ORC.get()).create(level);
+		return random.nextBoolean() ? (NPCEntity) (LOTREntities.MORDOR_ORC_ARCHER.get()).create(level) : (NPCEntity) (LOTREntities.MORDOR_ORC.get()).create(level);
 	}
 }

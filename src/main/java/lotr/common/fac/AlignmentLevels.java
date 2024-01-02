@@ -22,7 +22,7 @@ public class AlignmentLevels {
 	}
 
 	public static void notifyAlignmentNotHighEnough(ServerPlayerEntity player, float alignmentRequired, FactionPointer facPointer) {
-		Optional optFaction = facPointer.resolveFaction(player.level);
+		Optional<Faction> optFaction = facPointer.resolveFaction(player.level);
 		if (optFaction.isPresent()) {
 			notifyAlignmentNotHighEnough(player, alignmentRequired, (Faction) optFaction.get());
 		} else {
@@ -31,7 +31,7 @@ public class AlignmentLevels {
 
 	}
 
-	public static void notifyAlignmentNotHighEnough(ServerPlayerEntity player, float alignmentRequired, List factions) {
+	public static void notifyAlignmentNotHighEnough(ServerPlayerEntity player, float alignmentRequired, List<Faction> factions) {
 		SPacketNotifyAlignRequirement packet = new SPacketNotifyAlignRequirement(factions, alignmentRequired);
 		LOTRPacketHandler.sendTo(packet, player);
 	}

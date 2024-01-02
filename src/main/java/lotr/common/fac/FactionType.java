@@ -8,8 +8,8 @@ import net.minecraft.util.ResourceLocation;
 public enum FactionType {
 	FREE_PEOPLE("free_people"), ELF("elf"), MAN("man"), DWARF("dwarf"), ORC("orc"), TROLL("troll"), TREE("tree");
 
-	private static final Map NAME_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), type -> ((FactionType) type).namespacedID);
-	private static final Map ID_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), type -> ((FactionType) type).networkID);
+	private static final Map<ResourceLocation, FactionType> NAME_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), type -> ((FactionType) type).namespacedID);
+	private static final Map<Integer, FactionType> ID_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), type -> ((FactionType) type).networkID);
 	public final ResourceLocation namespacedID;
 	public final int networkID;
 

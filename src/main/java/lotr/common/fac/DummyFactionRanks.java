@@ -10,7 +10,7 @@ public class DummyFactionRanks {
 		return new FactionRank(faction, name, id, true, dummyAlign, false);
 	}
 
-	public static int registerCommonRanks(Faction faction, List ranks, int nextRankId) {
+	public static int registerCommonRanks(Faction faction, List<FactionRank> ranks, int nextRankId) {
 		ranks.add(createDummyRank(faction, "neutral", nextRankId, 0.0F));
 		nextRankId++;
 		ranks.add(createDummyRank(faction, "enemy", nextRankId, Float.MIN_VALUE));

@@ -1,7 +1,6 @@
 package lotr.client.gui.map;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,10 +12,11 @@ import lotr.common.world.map.Waypoint;
 import net.minecraft.util.IReorderingProcessor;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.StringTextComponent;
 
 public class WaypointTooltipRenderer extends MapTooltipRenderer<Waypoint> {
-	private List sections = new ArrayList();
+	private List<TooltipSection> sections = new ArrayList<>();
 
 	private int calculateSectionsTotalHeight() {
 		return (Integer) sections.stream().collect(Collectors.summingInt((TooltipSection section) -> section.height));
@@ -105,8 +105,6 @@ public class WaypointTooltipRenderer extends MapTooltipRenderer<Waypoint> {
 			mapScreen.drawCenteredStringNoShadow(matStack, font, name, midX, y + border, getTextColor(highlight, 1.0F));
 		}));
 		int rectHeight = calculateSectionsTotalHeight();
-		int ownershipTextHeight;
-		int expandedRectHeight;
 		if (selected) {
 			int coordsAndTravelsHeight = fontHeight + border;
 			if (numTravelsText != null) {
@@ -144,47 +142,44 @@ public class WaypointTooltipRenderer extends MapTooltipRenderer<Waypoint> {
 
 				}));
 			}
-
-			if (loreText != null) {
-				List ownershipLines = font.split(loreText, (int) (innerRectWidthCompletelyExpanded * loreScaleRelInv));
-				ownershipTextHeight = ownershipLines.size() * loreFontHeight;
-				sections.add(new WaypointTooltipRenderer.TooltipSection(ownershipTextHeight + border * 2, (midX, y, highlight) -> {
-					if (textAlpha > 0.0F) {
-						y += border;
-						matStack.pushPose();
-						matStack.scale(loreScaleRel, loreScaleRel, 1.0F);
-
-						for (Iterator var11 = ownershipLines.iterator(); var11.hasNext(); y += loreFontHeight) {
-							IReorderingProcessor line = (IReorderingProcessor) var11.next();
-							mapScreen.drawCenteredStringNoShadow(matStack, font, line, (int) (midX * loreScaleRelInv), (int) (y * loreScaleRelInv), getTextColor(highlight, textAlpha));
-						}
-
-						matStack.popPose();
-					}
-
-				}));
-			}
-
-			if (ownershipText != null) {
-				List ownershipLines = font.split(ownershipText, (int) (innerRectWidthCompletelyExpanded * loreScaleRelInv));
-				ownershipTextHeight = ownershipLines.size() * loreFontHeight;
-				sections.add(new WaypointTooltipRenderer.TooltipSection(ownershipTextHeight + border, (midX, y, highlight) -> {
-					if (textAlpha > 0.0F) {
-						matStack.pushPose();
-						matStack.scale(loreScaleRel, loreScaleRel, 1.0F);
-
-						for (Iterator var10 = ownershipLines.iterator(); var10.hasNext(); y += loreFontHeight) {
-							IReorderingProcessor line = (IReorderingProcessor) var10.next();
-							mapScreen.drawCenteredStringNoShadow(matStack, font, line, (int) (midX * loreScaleRelInv), (int) (y * loreScaleRelInv), getTextColor(highlight, textAlpha));
-						}
-
-						matStack.popPose();
-					}
-
-				}));
-			}
-
-			expandedRectHeight = calculateSectionsTotalHeight();
+			if (distanceText != null)
+		        this.sections.add(new TooltipSection(fontHeight + border, (midX, y, highlight) -> {
+		                if (textAlpha > 0.0F)
+		                  this.mapScreen.drawCenteredStringNoShadow(matStack, this.font, distanceText, midX, y, getTextColor(highlight, textAlpha)); 
+		              })); 
+		      int stableRectWidth = innerRectWidthCompletelyExpanded;
+		      if (loreText != null) {
+		        List<IReorderingProcessor> loreLines = this.font.split((ITextProperties)loreText, (int)(stableRectWidth * loreScaleRelInv));
+		        int loreTextHeight = loreLines.size() * loreFontHeight;
+		        this.sections.add(new TooltipSection(loreTextHeight + border * 2, (midX, y, highlight) -> {
+		                if (textAlpha > 0.0F) {
+		                  y += border;
+		                  matStack.pushPose();
+		                  matStack.scale(loreScaleRel, loreScaleRel, 1.0F);
+		                  for (IReorderingProcessor line : loreLines) {
+		                    this.mapScreen.drawCenteredStringNoShadow(matStack, this.font, line, (int)(midX * loreScaleRelInv), (int)(y * loreScaleRelInv), getTextColor(highlight, textAlpha));
+		                    y += loreFontHeight;
+		                  } 
+		                  matStack.popPose();
+		                } 
+		              }));
+		      } 
+		      if (ownershipText != null) {
+		        List<IReorderingProcessor> ownershipLines = this.font.split((ITextProperties)ownershipText, (int)(stableRectWidth * loreScaleRelInv));
+		        int ownershipTextHeight = ownershipLines.size() * loreFontHeight;
+		        this.sections.add(new TooltipSection(ownershipTextHeight + border, (midX, y, highlight) -> {
+		                if (textAlpha > 0.0F) {
+		                  matStack.pushPose();
+		                  matStack.scale(loreScaleRel, loreScaleRel, 1.0F);
+		                  for (IReorderingProcessor line : ownershipLines) {
+		                    this.mapScreen.drawCenteredStringNoShadow(matStack, this.font, line, (int)(midX * loreScaleRelInv), (int)(y * loreScaleRelInv), getTextColor(highlight, textAlpha));
+		                    y += loreFontHeight;
+		                  } 
+		                  matStack.popPose();
+		                } 
+		              }));
+		      } 
+		    int expandedRectHeight = calculateSectionsTotalHeight();
 			rectHeight = (int) MathHelper.lerp(expandProgress, rectHeight, expandedRectHeight);
 		}
 
@@ -197,31 +192,25 @@ public class WaypointTooltipRenderer extends MapTooltipRenderer<Waypoint> {
 		matStack.pushPose();
 		matStack.translate(0.0D, 0.0D, 300.0D);
 		mapScreen.drawFancyRect(matStack, rectX, rectY, rectX + rectWidth, rectY + rectHeight);
-		expandedRectHeight = rectX + rectWidth / 2;
-		ownershipTextHeight = rectY;
-		WaypointTooltipRenderer.TooltipSection highlightedSection = null;
-		Iterator var34;
-		WaypointTooltipRenderer.TooltipSection section;
-		if (mouseWithinTooltip) {
-			for (var34 = sections.iterator(); var34.hasNext(); ownershipTextHeight += section.height) {
-				section = (WaypointTooltipRenderer.TooltipSection) var34.next();
-				if (mouseY >= ownershipTextHeight && mouseY < ownershipTextHeight + section.height) {
-					highlightedSection = section;
-					break;
-				}
-			}
-		}
+		int midX = rectX + rectWidth / 2;
+		int sectionY = rectY;
+		TooltipSection highlightedSection = null;
+	    if (mouseWithinTooltip)
+	      for (TooltipSection section : this.sections) {
+	        if (mouseY >= sectionY && mouseY < sectionY + section.height) {
+	          highlightedSection = section;
+	          break;
+	        } 
+	        sectionY += section.height;
+	      }
 
-		if (highlightedSection == null && !sections.isEmpty()) {
-			highlightedSection = (WaypointTooltipRenderer.TooltipSection) sections.get(0);
-		}
-
-		ownershipTextHeight = rectY;
-
-		for (var34 = sections.iterator(); var34.hasNext(); ownershipTextHeight += section.height) {
-			section = (WaypointTooltipRenderer.TooltipSection) var34.next();
-			section.renderer.render(expandedRectHeight, ownershipTextHeight, section == highlightedSection);
-		}
+	    if (highlightedSection == null && !this.sections.isEmpty())
+	        highlightedSection = this.sections.get(0); 
+	    sectionY = rectY;
+	      for (TooltipSection section : this.sections) {
+	        section.renderer.render(midX, sectionY, (section == highlightedSection));
+	        sectionY += section.height;
+	      }
 
 		matStack.popPose();
 	}

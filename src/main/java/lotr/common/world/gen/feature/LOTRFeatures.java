@@ -18,7 +18,9 @@ import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.BlockStateProvidingFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraftforge.common.Tags.Blocks;
@@ -28,8 +30,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRFeatures {
-	public static final DeferredRegister FEATURES;
-	public static final DeferredRegister PLACEMENTS;
+	public static final DeferredRegister<Feature<?>> FEATURES;
+	public static final DeferredRegister<Placement<?>> PLACEMENTS;
 	public static final WeightedRandomFeature WEIGHTED_RANDOM;
 	public static final MordorMossFeature MORDOR_MOSS;
 	public static final BoulderFeature BOULDER;
@@ -82,7 +84,7 @@ public class LOTRFeatures {
 		return Block.updateFromNeighbourShapes(state, world, pos);
 	}
 
-	public static final WeightedRandomFeature getWeightedRandom() {
+	public static final <FC extends IFeatureConfig> WeightedRandomFeature<FC>  getWeightedRandom() {
 		return WEIGHTED_RANDOM;
 	}
 
@@ -110,13 +112,12 @@ public class LOTRFeatures {
 		return block == net.minecraft.block.Blocks.STONE && recursion <= 1 && isSurfaceBlock(world, pos.below(), recursion + 1);
 	}
 
-	private static Feature preRegFeature(String name, Feature feature) {
-		return (Feature) RegistryOrderHelper.preRegObject(FEATURES, name, feature);
-	}
-
-	private static Placement preRegPlacement(String name, Placement placement) {
-		return (Placement) RegistryOrderHelper.preRegObject(PLACEMENTS, name, placement);
-	}
+	private static <FC extends IFeatureConfig, F extends Feature<FC>> F preRegFeature(String name, F feature) {
+	    return (F)RegistryOrderHelper.preRegObject(FEATURES, name, feature);
+	  }
+	private static <PC extends IPlacementConfig, P extends Placement<PC>> P preRegPlacement(String name, P placement) {
+	    return (P)RegistryOrderHelper.preRegObject(PLACEMENTS, name, placement);
+	  }
 
 	public static void register() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

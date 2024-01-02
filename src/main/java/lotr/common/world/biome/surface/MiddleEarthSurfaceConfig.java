@@ -22,7 +22,21 @@ import net.minecraft.world.gen.PerlinNoiseGenerator;
 import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 
 public class MiddleEarthSurfaceConfig implements ISurfaceBuilderConfig {
-	public static final Codec<MiddleEarthSurfaceConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(BlockState.CODEC.fieldOf("top_material").forGetter(config -> config.topMaterial), BlockState.CODEC.fieldOf("under_material").forGetter(config -> config.fillerMaterial), Codec.DOUBLE.fieldOf("under_depth").orElse(5.0D).forGetter(config -> config.fillerDepth), BlockState.CODEC.fieldOf("underwater_material").forGetter(config -> config.underwaterMaterial), MiddleEarthSurfaceConfig.SubSoilLayer.SUB_SOIL_LAYER_CODEC.listOf().fieldOf("sub_soil_layers").forGetter(config -> ((MiddleEarthSurfaceConfig) config).subSoilLayers), Codec.BOOL.fieldOf("rocky").orElse(true).forGetter(config -> config.rocky), Codec.BOOL.fieldOf("podzol").orElse(true).forGetter(config -> config.podzol), Codec.FLOAT.fieldOf("tree_density_for_podzol").orElse(0.0F).forGetter(config -> config.treeDensityForPodzol), Codec.INT.fieldOf("max_podzol_height").orElse(Integer.MAX_VALUE).forGetter(config -> config.maxPodzolHeight), Codec.BOOL.fieldOf("marsh").orElse(false).forGetter(config -> config.marsh), SurfaceNoiseMixer.CODEC.fieldOf("surface_noise_mixer").orElse(SurfaceNoiseMixer.NONE).forGetter(config -> config.surfaceNoiseMixer), Codec.BOOL.fieldOf("surface_noise_paths").orElse(false).forGetter(config -> config.hasSurfaceNoisePaths), UnderwaterNoiseMixer.CODEC.fieldOf("underwater_noise_mixer").orElse(UnderwaterNoiseMixer.NONE).forGetter(config -> ((MiddleEarthSurfaceConfig) config).underwaterNoiseMixer), MountainTerrainProvider.CODEC.fieldOf("mountain_terrain_provider").orElse(MountainTerrainProvider.NONE).forGetter(config -> config.mountainTerrainProvider)).apply(instance, (h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14) -> new MiddleEarthSurfaceConfig((BlockState) h1, (BlockState) h2, (double) h3, (BlockState) h4, (List) h5, (boolean) h6, (boolean) h7, (float) h8, (int) h9, (boolean) h10, (SurfaceNoiseMixer) h11, (boolean) h12, (UnderwaterNoiseMixer) h13, (MountainTerrainProvider) h14)));
+	public static final Codec<MiddleEarthSurfaceConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(BlockState.CODEC.fieldOf("top_material").forGetter(prop -> prop.topMaterial), 
+    		BlockState.CODEC.fieldOf("under_material").forGetter(prop -> prop.fillerMaterial), 
+    		Codec.DOUBLE.fieldOf("under_depth").orElse(Double.valueOf(5.0D)).forGetter(prop -> prop.fillerDepth), 
+    		BlockState.CODEC.fieldOf("underwater_material").forGetter(prop -> prop.underwaterMaterial), 
+    		SubSoilLayer.SUB_SOIL_LAYER_CODEC.listOf().fieldOf("sub_soil_layers").forGetter(prop -> prop.subSoilLayers), 
+    		Codec.BOOL.fieldOf("rocky").orElse(Boolean.valueOf(true)).forGetter(prop -> prop.rocky), 
+    		Codec.BOOL.fieldOf("podzol").orElse(Boolean.valueOf(true)).forGetter(prop -> prop.podzol), 
+    		Codec.FLOAT.fieldOf("tree_density_for_podzol").orElse(Float.valueOf(0.0F)).forGetter(prop -> prop.treeDensityForPodzol), 
+    		Codec.INT.fieldOf("max_podzol_height").orElse(Integer.valueOf(2147483647)).forGetter(prop -> prop.maxPodzolHeight), 
+    		Codec.BOOL.fieldOf("marsh").orElse(Boolean.valueOf(false)).forGetter(prop -> prop.marsh), 
+    		SurfaceNoiseMixer.CODEC.fieldOf("surface_noise_mixer").orElse(SurfaceNoiseMixer.NONE).forGetter(prop -> prop.surfaceNoiseMixer), 
+    		Codec.BOOL.fieldOf("surface_noise_paths").orElse(Boolean.valueOf(false)).forGetter(prop -> prop.hasSurfaceNoisePaths), 
+    		UnderwaterNoiseMixer.CODEC.fieldOf("underwater_noise_mixer").orElse(UnderwaterNoiseMixer.NONE).forGetter(prop -> prop.underwaterNoiseMixer), 
+    		MountainTerrainProvider.CODEC.fieldOf("mountain_terrain_provider").orElse(MountainTerrainProvider.NONE).forGetter(prop -> prop.mountainTerrainProvider))
+    		.apply(instance, MiddleEarthSurfaceConfig::new));
 	protected static final PerlinNoiseGenerator MARSH_NOISE = new PerlinNoiseGenerator(new SharedSeedRandom(444L), ImmutableList.of(0));
 	private static final PerlinNoiseGenerator noiseGen1 = LOTRBiomeBase.makeSingleLayerPerlinNoise(1954L);
 	private static final PerlinNoiseGenerator noiseGen2 = LOTRBiomeBase.makeSingleLayerPerlinNoise(10420914965337148L);
@@ -32,7 +46,7 @@ public class MiddleEarthSurfaceConfig implements ISurfaceBuilderConfig {
 	private BlockState fillerMaterial;
 	private double fillerDepth;
 	private BlockState underwaterMaterial;
-	private List subSoilLayers;
+	private List<SubSoilLayer> subSoilLayers;
 	private boolean rocky;
 	private boolean podzol;
 	private float treeDensityForPodzol;
@@ -44,12 +58,12 @@ public class MiddleEarthSurfaceConfig implements ISurfaceBuilderConfig {
 	private MountainTerrainProvider mountainTerrainProvider;
 
 	public MiddleEarthSurfaceConfig(BlockState top, BlockState filler, BlockState underwater) {
-		this(top, filler, 5.0D, underwater, new ArrayList(), true, true, 0.0F, Integer.MAX_VALUE, false, SurfaceNoiseMixer.NONE, false, UnderwaterNoiseMixer.NONE, MountainTerrainProvider.NONE);
+		this(top, filler, 5.0D, underwater, new ArrayList<>(), true, true, 0.0F, Integer.MAX_VALUE, false, SurfaceNoiseMixer.NONE, false, UnderwaterNoiseMixer.NONE, MountainTerrainProvider.NONE);
 	}
 
-	public MiddleEarthSurfaceConfig(BlockState top, BlockState filler, double fillerDepth, BlockState underwater, List subSoilLayers, boolean rocky, boolean podzol, float treeDensityForPodzol, int maxPodzolHeight, boolean marsh, SurfaceNoiseMixer surfaceNoiseMixer, boolean hasSurfaceNoisePaths, UnderwaterNoiseMixer underwaterNoiseMixer, MountainTerrainProvider mountainTerrainProvider) {
+	public MiddleEarthSurfaceConfig(BlockState top, BlockState filler, double fillerDepth, BlockState underwater, List<SubSoilLayer> subSoilLayers, boolean rocky, boolean podzol, float treeDensityForPodzol, int maxPodzolHeight, boolean marsh, SurfaceNoiseMixer surfaceNoiseMixer, boolean hasSurfaceNoisePaths, UnderwaterNoiseMixer underwaterNoiseMixer, MountainTerrainProvider mountainTerrainProvider) {
 		this.fillerDepth = 5.0D;
-		this.subSoilLayers = new ArrayList();
+		this.subSoilLayers = new ArrayList<>();
 		this.rocky = true;
 		this.podzol = true;
 		this.treeDensityForPodzol = 0.0F;
@@ -95,7 +109,7 @@ public class MiddleEarthSurfaceConfig implements ISurfaceBuilderConfig {
 		return mountainTerrainProvider.getReplacement(x, z, y, in, stone, top, stoneNoiseDepth);
 	}
 
-	public Iterator getSubSoilLayers() {
+	public Iterator<SubSoilLayer> getSubSoilLayers() {
 		return subSoilLayers.iterator();
 	}
 
@@ -273,7 +287,7 @@ public class MiddleEarthSurfaceConfig implements ISurfaceBuilderConfig {
 	}
 
 	public static class SubSoilLayer {
-		public static final Codec SUB_SOIL_LAYER_CODEC = RecordCodecBuilder.create(instance -> instance.group(BlockState.CODEC.fieldOf("material").forGetter(config -> ((SubSoilLayer) config).material), Codec.INT.fieldOf("min_depth").orElse(0).forGetter(config -> ((SubSoilLayer) config).minDepth), Codec.INT.fieldOf("max_depth").orElse(0).forGetter(config -> ((SubSoilLayer) config).maxDepth)).apply(instance, MiddleEarthSurfaceConfig.SubSoilLayer::new));
+		public static final Codec<SubSoilLayer> SUB_SOIL_LAYER_CODEC = RecordCodecBuilder.create(instance -> instance.group(BlockState.CODEC.fieldOf("material").forGetter(config -> ((SubSoilLayer) config).material), Codec.INT.fieldOf("min_depth").orElse(0).forGetter(config -> ((SubSoilLayer) config).minDepth), Codec.INT.fieldOf("max_depth").orElse(0).forGetter(config -> ((SubSoilLayer) config).maxDepth)).apply(instance, MiddleEarthSurfaceConfig.SubSoilLayer::new));
 		private final BlockState material;
 		private final int minDepth;
 		private final int maxDepth;

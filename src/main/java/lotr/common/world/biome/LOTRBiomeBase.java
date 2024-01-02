@@ -30,6 +30,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Builder;
 import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.biome.BiomeAmbience;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.MobSpawnInfo.Spawners;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.PerlinNoiseGenerator;
@@ -49,7 +50,7 @@ public abstract class LOTRBiomeBase implements LOTRBiomeWrapper {
 	protected LOTRBiomeBase.CustomBiomeColors biomeColors;
 	private float treeDensityForPodzol;
 	private int maxPodzolHeight;
-	private WeightedRandomFeatureConfig grassBonemealGenerator;
+	private WeightedRandomFeatureConfig<?> grassBonemealGenerator;
 
 	protected LOTRBiomeBase(Builder builder, boolean major) {
 		this(builder, 329011, major);
@@ -98,7 +99,7 @@ public abstract class LOTRBiomeBase implements LOTRBiomeWrapper {
 	}
 
 	protected void addCaracals(net.minecraft.world.biome.MobSpawnInfo.Builder builder, int mul) {
-		builder.addSpawn(EntityClassification.CREATURE, new Spawners((EntityType) LOTREntities.CARACAL.get(), 12 * mul, 1, 4));
+		builder.addSpawn(EntityClassification.CREATURE, new Spawners(LOTREntities.CARACAL.get(), 12 * mul, 1, 4));
 	}
 
 	protected void addCarvers(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
@@ -266,7 +267,7 @@ public abstract class LOTRBiomeBase implements LOTRBiomeWrapper {
 	@Override
 	public BlockState getGrassForBonemeal(Random rand, BlockPos pos) {
 		if (grassBonemealGenerator != null) {
-			ConfiguredFeature feature = grassBonemealGenerator.getRandomFeature(rand);
+			ConfiguredFeature<?,?> feature = grassBonemealGenerator.getRandomFeature(rand);
 			if (feature.config instanceof BlockClusterFeatureConfig) {
 				return ((BlockClusterFeatureConfig) feature.config).stateProvider.getState(rand, pos);
 			}
@@ -297,7 +298,7 @@ public abstract class LOTRBiomeBase implements LOTRBiomeWrapper {
 	}
 
 	@Override
-	public List getSpawnsAtLocation(EntityClassification creatureType, BlockPos pos) {
+	public List<MobSpawnInfo.Spawners> getSpawnsAtLocation(EntityClassification creatureType, BlockPos pos) {
 		return actualBiome.getMobSettings().getMobs(creatureType);
 	}
 
@@ -374,7 +375,7 @@ public abstract class LOTRBiomeBase implements LOTRBiomeWrapper {
 		return this;
 	}
 
-	public void setGrassBonemealGenerator(WeightedRandomFeatureConfig config) {
+	public void setGrassBonemealGenerator(WeightedRandomFeatureConfig<?> config) {
 		grassBonemealGenerator = config;
 	}
 

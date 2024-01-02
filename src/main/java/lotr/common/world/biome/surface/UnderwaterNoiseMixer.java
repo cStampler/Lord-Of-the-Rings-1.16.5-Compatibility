@@ -28,8 +28,8 @@ public enum UnderwaterNoiseMixer implements IStringSerializable {
 		return sandy ? Blocks.SAND.defaultBlockState() : Blocks.GRAVEL.defaultBlockState();
 	});
 
-	public static final Codec CODEC = IStringSerializable.fromEnum(UnderwaterNoiseMixer::values, UnderwaterNoiseMixer::forName);
-	private static final Map NAME_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), hummel -> ((UnderwaterNoiseMixer) hummel).getSerializedName());
+	public static final Codec<UnderwaterNoiseMixer> CODEC = IStringSerializable.fromEnum(UnderwaterNoiseMixer::values, UnderwaterNoiseMixer::forName);
+	private static final Map<String, UnderwaterNoiseMixer> NAME_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), hummel -> ((UnderwaterNoiseMixer) hummel).getSerializedName());
 	private final String name;
 	private final UnderwaterNoiseMixer.UnderwaterBlockReplacer underwaterBlockReplacer;
 

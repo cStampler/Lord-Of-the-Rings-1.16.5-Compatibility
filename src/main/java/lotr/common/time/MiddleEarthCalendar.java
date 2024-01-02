@@ -5,7 +5,7 @@ import java.util.Map;
 
 import net.minecraft.util.text.ITextComponent;
 
-public abstract class MiddleEarthCalendar {
+public abstract class MiddleEarthCalendar<D extends MiddleEarthCalendar.AbstractDate> {
 	public static final int SECOND_AGE_LENGTH = 3441;
 	public static final int THIRD_AGE_LENGTH = 3021;
 	public static final int SHIRE_RECKONING_OFFSET_FROM_THIRD_AGE = -1600;
@@ -16,11 +16,11 @@ public abstract class MiddleEarthCalendar {
 		currentDay = 0;
 	}
 
-	private Map cachedDates = new HashMap();
+	private Map<Integer, D> cachedDates = new HashMap<>();
 
-	protected abstract MiddleEarthCalendar.AbstractDate computeDateForCache(int var1);
+	protected abstract D computeDateForCache(int var1);
 
-	public final MiddleEarthCalendar.AbstractDate getCurrentDate() {
+	public final D getCurrentDate() {
 		return getDate(currentDay);
 	}
 
@@ -32,8 +32,8 @@ public abstract class MiddleEarthCalendar {
 		return getCurrentDate().getDateAndYearName(true);
 	}
 
-	public final MiddleEarthCalendar.AbstractDate getDate(int day) {
-		MiddleEarthCalendar.AbstractDate date = (MiddleEarthCalendar.AbstractDate) cachedDates.get(day);
+	public final D getDate(int day) {
+		D date = cachedDates.get(day);
 		if (date == null) {
 			date = computeDateForCache(day);
 			cachedDates.put(day, date);

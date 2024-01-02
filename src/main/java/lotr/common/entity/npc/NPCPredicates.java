@@ -10,30 +10,31 @@ import lotr.common.fac.EntityFactionHelper;
 import lotr.common.fac.Faction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class NPCPredicates {
-	public static Predicate selectAngerableByKill(Faction killedFaction, LivingEntity killerResponsible) {
+	public static Predicate<MobEntity> selectAngerableByKill(Faction killedFaction, LivingEntity killerResponsible) {
 		return entity -> (((LivingEntity) entity).isAlive() && EntityFactionHelper.getFaction((Entity) entity).isGoodRelation(killedFaction));
 	}
 
-	public static Predicate selectByFaction(Faction fac) {
+	public static Predicate<LivingEntity> selectByFaction(Faction fac) {
 		return entity -> (((LivingEntity) entity).isAlive() && EntityFactionHelper.getFaction((Entity) entity) == fac);
 	}
 
-	public static Predicate selectFoes(NPCEntity theEntity) {
+	public static Predicate<LivingEntity> selectFoes(NPCEntity theEntity) {
 		return selectPlayersOrOthers(theEntity, AlignmentPredicates.NEGATIVE, (hummel, hummel2) -> ((Faction) hummel).isBadRelation((Faction) hummel2)).or(e -> (e == theEntity.getTarget()));
 	}
 
-	public static Predicate selectForLocalAreaOfInfluence(Faction fac) {
+	public static Predicate<LivingEntity> selectForLocalAreaOfInfluence(Faction fac) {
 		return selectByFaction(fac).and(entity -> (entity instanceof NPCEntity ? ((NPCEntity) entity).generatesLocalAreaOfInfluence() : true));
 	}
 
-	public static Predicate selectFriends(NPCEntity theEntity) {
+	public static Predicate<LivingEntity> selectFriends(NPCEntity theEntity) {
 		return selectPlayersOrOthers(theEntity, AlignmentPredicates.POSITIVE, (hummel, hummel2) -> ((Faction) hummel).isGoodRelation((Faction) hummel2)).and(e -> (e != theEntity.getTarget()));
 	}
 
-	private static Predicate selectPlayersOrOthers(NPCEntity theEntity, AlignmentPredicate playerTest, BiPredicate npcFactionTest) {
+	private static Predicate<LivingEntity> selectPlayersOrOthers(NPCEntity theEntity, AlignmentPredicate playerTest, BiPredicate<Faction, Faction> npcFactionTest) {
 		Faction entityFaction = EntityFactionHelper.getFaction(theEntity);
 		return otherEntity -> {
 			if (otherEntity == theEntity || !((LivingEntity) otherEntity).isAlive()) {

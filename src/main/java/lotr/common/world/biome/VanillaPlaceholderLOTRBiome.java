@@ -12,6 +12,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Category;
 import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.biome.MobSpawnInfo;
 
 public class VanillaPlaceholderLOTRBiome implements LOTRBiomeWrapper {
 	private final ResourceLocation biomeName;
@@ -48,7 +49,7 @@ public class VanillaPlaceholderLOTRBiome implements LOTRBiomeWrapper {
 	}
 
 	@Override
-	public List getSpawnsAtLocation(EntityClassification creatureType, BlockPos pos) {
+	public List<MobSpawnInfo.Spawners> getSpawnsAtLocation(EntityClassification creatureType, BlockPos pos) {
 		return biome.getMobSettings().getMobs(creatureType);
 	}
 

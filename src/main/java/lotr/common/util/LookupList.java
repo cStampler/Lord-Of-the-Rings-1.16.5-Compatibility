@@ -7,37 +7,37 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class LookupList extends AbstractList {
-	private final List list = new ArrayList();
-	private final Map lookup = new HashMap();
-	private final Function keyExtractor;
+public class LookupList<T, K> extends AbstractList<T> {
+	private final List<T> list = new ArrayList<>();
+	private final Map<K, T> lookup = new HashMap<>();
+	private final Function<T, K> keyExtractor;
 
-	public LookupList(Function keyExtractor) {
+	public LookupList(Function<T, K> keyExtractor) {
 		this.keyExtractor = keyExtractor;
 	}
 
 	@Override
-	public void add(int index, Object element) {
+	public void add(int index, T element) {
 		list.add(index, element);
 		lookup.put(keyExtractor.apply(element), element);
 	}
 
 	@Override
-	public Object get(int index) {
+	public T get(int index) {
 		return list.get(index);
 	}
 
-	public boolean hasKey(Object key) {
+	public boolean hasKey(K key) {
 		return lookup.containsKey(key);
 	}
 
-	public Object lookup(Object key) {
+	public T lookup(K key) {
 		return lookup.get(key);
 	}
 
 	@Override
-	public Object remove(int index) {
-		Object removed = list.remove(index);
+	public T remove(int index) {
+		T removed = list.remove(index);
 		if (removed != null) {
 			lookup.remove(keyExtractor.apply(removed));
 		}
@@ -46,7 +46,7 @@ public class LookupList extends AbstractList {
 	}
 
 	@Override
-	public Object set(int index, Object element) {
+	public T set(int index, T element) {
 		list.set(index, element);
 		lookup.put(keyExtractor.apply(element), element);
 		return element;

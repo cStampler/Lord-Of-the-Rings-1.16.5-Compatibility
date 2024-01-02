@@ -11,9 +11,10 @@ import lotr.common.command.PledgeCommand;
 import lotr.common.command.WaypointCooldownCommand;
 import lotr.common.command.WaypointRegionsCommand;
 import lotr.common.command.WeatherCommandFixedForDimensions;
+import net.minecraft.command.CommandSource;
 
 public class LOTRCommands {
-	public static void registerCommands(CommandDispatcher dispatcher) {
+	public static void registerCommands(CommandDispatcher<CommandSource> dispatcher) {
 		LOTRTimeCommand.register(dispatcher);
 		WeatherCommandFixedForDimensions.register(dispatcher);
 		WaypointRegionsCommand.register(dispatcher);

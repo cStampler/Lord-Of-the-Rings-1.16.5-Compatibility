@@ -8,11 +8,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.gen.carver.CanyonWorldCarver;
+import net.minecraft.world.gen.feature.ProbabilityConfig;
 
 public class MiddleEarthCanyonCarver extends CanyonWorldCarver {
-	private Set landOnlyCarvables;
+	private Set<Block> landOnlyCarvables;
 
-	public MiddleEarthCanyonCarver(Codec codec) {
+	public MiddleEarthCanyonCarver(Codec<ProbabilityConfig> codec) {
 		super(codec);
 		replaceableBlocks = LOTRWorldCarvers.listCarvableBlocks();
 		landOnlyCarvables = LOTRWorldCarvers.listLandOnlyCarvableBlocks();

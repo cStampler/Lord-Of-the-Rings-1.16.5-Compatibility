@@ -11,10 +11,10 @@ import net.minecraftforge.common.util.NonNullSupplier;
 public class PreRegisteredLOTRBiome {
 	private final String name;
 	private final ResourceLocation fullRegistryName;
-	private final LazyOptional biomeWrapper;
+	private final LazyOptional<LOTRBiomeBase> biomeWrapper;
 	private boolean initialisedWrapper;
 
-	public PreRegisteredLOTRBiome(String name, NonNullSupplier biomeWrapperSupplier) {
+	public PreRegisteredLOTRBiome(String name, NonNullSupplier<LOTRBiomeBase> biomeWrapperSupplier) {
 		this.name = name;
 		fullRegistryName = new ResourceLocation("lotr", name);
 		biomeWrapper = LazyOptional.of(biomeWrapperSupplier);
@@ -58,11 +58,11 @@ public class PreRegisteredLOTRBiome {
 		return getOrCreateBiomeWrapper().setBiomeName(biomeName);
 	}
 
-	public Supplier supplyBiomeInitialiser() {
+	public Supplier<Biome> supplyBiomeInitialiser() {
 		return () -> getInitialisedBiomeWrapper().initialiseActualBiome();
 	}
 
-	public Supplier supplyInitialisedBiome() {
+	public Supplier<Biome> supplyInitialisedBiome() {
 		return this::getInitialisedBiome;
 	}
 }

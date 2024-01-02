@@ -14,14 +14,17 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.Mutable;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.carver.CaveWorldCarver;
+import net.minecraft.world.gen.feature.ProbabilityConfig;
 
 public class MiddleEarthCaveCarver extends CaveWorldCarver {
-	private Set landOnlyCarvables;
+	private Set<Block> landOnlyCarvables;
 
-	public MiddleEarthCaveCarver(Codec codec, int height) {
+	public MiddleEarthCaveCarver(Codec<ProbabilityConfig> codec, int height) {
 		super(codec, height);
 		replaceableBlocks = LOTRWorldCarvers.listCarvableBlocks();
 		landOnlyCarvables = LOTRWorldCarvers.listLandOnlyCarvableBlocks();
@@ -34,7 +37,7 @@ public class MiddleEarthCaveCarver extends CaveWorldCarver {
 	}
 
 	@Override
-	protected boolean carveBlock(IChunk chunk, Function biomeGetter, BitSet carvingMask, Random rand, Mutable movingPos, Mutable movingPosAbove, Mutable movingPosBelow, int seaLevel, int chunkX, int chunkZ, int x, int z, int xInChunk, int y, int zInChunk, MutableBoolean isSurface) {
+	protected boolean carveBlock(IChunk chunk, Function<BlockPos, Biome> biomeGetter, BitSet carvingMask, Random rand, Mutable movingPos, Mutable movingPosAbove, Mutable movingPosBelow, int seaLevel, int chunkX, int chunkZ, int x, int z, int xInChunk, int y, int zInChunk, MutableBoolean isSurface) {
 		boolean flag = super.carveBlock(chunk, biomeGetter, carvingMask, rand, movingPos, movingPosAbove, movingPosBelow, seaLevel, chunkX, chunkZ, x, z, xInChunk, y, zInChunk, isSurface);
 		if (flag) {
 			changeOtherBlocksAboveAndBelow(chunk, movingPos, movingPosAbove, movingPosBelow);

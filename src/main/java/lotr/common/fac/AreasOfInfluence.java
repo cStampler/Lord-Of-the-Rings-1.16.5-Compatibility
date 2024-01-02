@@ -1,7 +1,6 @@
 package lotr.common.fac;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;
@@ -28,10 +27,10 @@ public class AreasOfInfluence {
 	private final MapSettings mapSettings;
 	private final Faction theFaction;
 	private final boolean isolationist;
-	private final List areas;
+	private final List<AreaOfInfluence> areas;
 	private AreaBorders calculatedAreaBorders = null;
 
-	public AreasOfInfluence(MapSettings map, Faction theFaction, boolean isolationist, List areas) {
+	public AreasOfInfluence(MapSettings map, Faction theFaction, boolean isolationist, List<AreaOfInfluence> areas) {
 		mapSettings = map;
 		this.theFaction = theFaction;
 		this.isolationist = isolationist;
@@ -39,71 +38,55 @@ public class AreasOfInfluence {
 	}
 
 	public AreaBorders calculateAreaOfInfluenceBordersIncludingReduced() {
-		if (calculatedAreaBorders == null) {
-			double xMin = 0.0D;
-			double xMax = 0.0D;
-			double zMin = 0.0D;
-			double zMax = 0.0D;
-			boolean first = true;
-			Iterator var10 = areas.iterator();
-
-			while (var10.hasNext()) {
-				AreaOfInfluence area = (AreaOfInfluence) var10.next();
-				double cxMin = area.getWorldX() - area.getWorldRadius();
-				double cxMax = area.getWorldX() + area.getWorldRadius();
-				double czMin = area.getWorldZ() - area.getWorldRadius();
-				double czMax = area.getWorldZ() + area.getWorldRadius();
-				if (first) {
-					xMin = cxMin;
-					xMax = cxMax;
-					zMin = czMin;
-					zMax = czMax;
-					first = false;
-				} else {
-					xMin = Math.min(xMin, cxMin);
-					xMax = Math.max(xMax, cxMax);
-					zMin = Math.min(zMin, czMin);
-					zMax = Math.max(zMax, czMax);
-				}
-			}
-
-			int reducedWorldRange = mapSettings.mapToWorldDistance(getReducedInfluenceRange());
-			xMin -= reducedWorldRange;
-			xMax += reducedWorldRange;
-			zMin -= reducedWorldRange;
-			zMax += reducedWorldRange;
-			calculatedAreaBorders = new AreaBorders(xMin, xMax, zMin, zMax);
-		}
-
-		return calculatedAreaBorders;
+		if (this.calculatedAreaBorders == null) {
+		      double xMin = 0.0D;
+		      double xMax = 0.0D;
+		      double zMin = 0.0D;
+		      double zMax = 0.0D;
+		      boolean first = true;
+		      for (AreaOfInfluence area : this.areas) {
+		        double cxMin = area.getWorldX() - area.getWorldRadius();
+		        double cxMax = area.getWorldX() + area.getWorldRadius();
+		        double czMin = area.getWorldZ() - area.getWorldRadius();
+		        double czMax = area.getWorldZ() + area.getWorldRadius();
+		        if (first) {
+		          xMin = cxMin;
+		          xMax = cxMax;
+		          zMin = czMin;
+		          zMax = czMax;
+		          first = false;
+		          continue;
+		        } 
+		        xMin = Math.min(xMin, cxMin);
+		        xMax = Math.max(xMax, cxMax);
+		        zMin = Math.min(zMin, czMin);
+		        zMax = Math.max(zMax, czMax);
+		      } 
+		      int reducedWorldRange = this.mapSettings.mapToWorldDistance(getReducedInfluenceRange());
+		      xMin -= reducedWorldRange;
+		      xMax += reducedWorldRange;
+		      zMin -= reducedWorldRange;
+		      zMax += reducedWorldRange;
+		      this.calculatedAreaBorders = new AreaBorders(xMin, xMax, zMin, zMax);
+		    } 
+		    return this.calculatedAreaBorders;
 	}
 
 	public double distanceToNearestAreaInRange(World world, double x, double y, double z, int mapRange) {
 		double closestDist = -1.0D;
-		if (!isFactionDimension(world)) {
-			return closestDist;
-		}
-		int coordRange = mapSettings.mapToWorldDistance(mapRange);
-		Iterator var12 = areas.iterator();
-
-		while (true) {
-			double dToEdge;
-			do {
-				do {
-					if (!var12.hasNext()) {
-						return closestDist;
-					}
-
-					AreaOfInfluence area = (AreaOfInfluence) var12.next();
-					double dx = x - area.getWorldX();
-					double dz = z - area.getWorldZ();
-					double dSq = dx * dx + dz * dz;
-					dToEdge = Math.sqrt(dSq) - area.getWorldRadius();
-				} while (dToEdge > coordRange);
-			} while (closestDist >= 0.0D && dToEdge >= closestDist);
-
-			closestDist = dToEdge;
-		}
+	    if (isFactionDimension(world)) {
+	      int coordRange = this.mapSettings.mapToWorldDistance(mapRange);
+	      for (AreaOfInfluence area : this.areas) {
+	        double dx = x - area.getWorldX();
+	        double dz = z - area.getWorldZ();
+	        double dSq = dx * dx + dz * dz;
+	        double dToEdge = Math.sqrt(dSq) - area.getWorldRadius();
+	        if (dToEdge <= coordRange)
+	          if (closestDist < 0.0D || dToEdge < closestDist)
+	            closestDist = dToEdge;  
+	      } 
+	    } 
+	    return closestDist;
 	}
 
 	public float getAlignmentMultiplier(PlayerEntity player) {
@@ -124,7 +107,7 @@ public class AreasOfInfluence {
 		return 0.0F;
 	}
 
-	public List getAreas() {
+	public List<AreaOfInfluence> getAreas() {
 		return areas;
 	}
 
@@ -146,7 +129,7 @@ public class AreasOfInfluence {
 		}
 		if (theFaction.isPlayableAlignmentFaction()) {
 			AxisAlignedBB aabb = AxisAlignedBB.unitCubeFromLowerCorner(new Vector3d(x, y, z)).inflate(24.0D);
-			List nearbyNPCs = world.getLoadedEntitiesOfClass(LivingEntity.class, aabb, NPCPredicates.selectForLocalAreaOfInfluence(theFaction));
+			List<LivingEntity> nearbyNPCs = world.getLoadedEntitiesOfClass(LivingEntity.class, aabb, NPCPredicates.selectForLocalAreaOfInfluence(theFaction));
 			if (!nearbyNPCs.isEmpty()) {
 				return true;
 			}
@@ -190,8 +173,8 @@ public class AreasOfInfluence {
 		if (!theFaction.isSameDimension(other)) {
 			return false;
 		}
-		List otherAreas = other.getAreasOfInfluence().getAreas();
-		return areas.stream().anyMatch(area -> otherAreas.stream().anyMatch(otherArea -> ((AreaOfInfluence) area).intersectsWith((AreaOfInfluence) otherArea, extraMapRadius)));
+		List<AreaOfInfluence> otherAreas = other.getAreasOfInfluence().getAreas();
+		return areas.stream().anyMatch(area -> otherAreas.stream().anyMatch(otherArea -> area.intersectsWith(otherArea, extraMapRadius)));
 	}
 
 	public void write(PacketBuffer buf) {
@@ -217,7 +200,7 @@ public class AreasOfInfluence {
 	public static AreasOfInfluence read(Faction theFaction, JsonObject json, MapSettings mapSettings) {
 		boolean isolationist = json.get("isolationist").getAsBoolean();
 		JsonArray areasArray = json.get("areas").getAsJsonArray();
-		List areas = new ArrayList();
+		List<AreaOfInfluence> areas = new ArrayList<>();
 		for (JsonElement areaElement : areasArray) {
 			AreaOfInfluence area = AreaOfInfluence.read(mapSettings, theFaction.getName(), areaElement.getAsJsonObject());
 			if (area != null) {
@@ -230,7 +213,7 @@ public class AreasOfInfluence {
 
 	public static AreasOfInfluence read(Faction theFaction, PacketBuffer buf, MapSettings mapSettings) {
 		boolean isolationist = buf.readBoolean();
-		List areas = new ArrayList();
+		List<AreaOfInfluence> areas = new ArrayList<>();
 		int numAreasOfInfluence = buf.readVarInt();
 
 		for (int i = 0; i < numAreasOfInfluence; ++i) {

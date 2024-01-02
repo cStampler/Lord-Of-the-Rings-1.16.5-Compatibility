@@ -1,29 +1,25 @@
 package lotr.common.recipe;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.util.ResourceLocation;
 
-public class MultiTableType implements FactionBasedRecipeType {
+public class MultiTableType implements FactionBasedRecipeType<ICraftingRecipe> {
 	private static final Random rand = new Random();
 	public final ResourceLocation recipeTypeName;
-	private final List tableTypes;
+	private final List<FactionTableType> tableTypes;
 	private FactionTableType randTableType;
 	private long lastRandomTime;
 
-	public MultiTableType(ResourceLocation name, List types) {
+	public MultiTableType(ResourceLocation name, List<FactionTableType> types) {
 		recipeTypeName = name;
-		tableTypes = new ArrayList(types);
-		Iterator var3 = types.iterator();
-
-		while (var3.hasNext()) {
-			FactionTableType facType = (FactionTableType) var3.next();
-			facType.registerMultiTableType(this);
-		}
+		tableTypes = new ArrayList<>(types);
+		for (FactionTableType facType : types)
+		      facType.registerMultiTableType(this); 
 
 	}
 

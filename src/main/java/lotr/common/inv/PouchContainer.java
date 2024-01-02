@@ -8,7 +8,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
@@ -24,7 +23,7 @@ public class PouchContainer extends Container implements OpenPouchContainer {
 	private final PouchInventory pouchInventory;
 
 	public PouchContainer(int windowID, PlayerInventory playerInv, PacketBuffer extraData) {
-		super((ContainerType) LOTRContainers.POUCH.get(), windowID);
+		super(LOTRContainers.POUCH.get(), windowID);
 		this.playerInv = playerInv;
 		World world = playerInv.player.level;
 		playerInvSlot = extraData.readVarInt();

@@ -28,7 +28,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
 public class HobbitEntity extends AbstractMannishEntity {
-	public HobbitEntity(EntityType type, World w) {
+	public HobbitEntity(EntityType<? extends HobbitEntity> type, World w) {
 		super(type, w);
 	}
 

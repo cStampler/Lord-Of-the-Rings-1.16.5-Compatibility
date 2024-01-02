@@ -2,6 +2,7 @@ package lotr.common.inv;
 
 import java.util.Optional;
 
+import lotr.common.fac.Faction;
 import net.minecraft.inventory.CraftingInventory;
 
 public class FactionCraftingInventory extends CraftingInventory {
@@ -12,7 +13,7 @@ public class FactionCraftingInventory extends CraftingInventory {
 		factionCraftingContainer = container;
 	}
 
-	public Optional getPouchColoringFaction() {
+	public Optional<Faction> getPouchColoringFaction() {
 		return !factionCraftingContainer.isStandardCraftingActive() ? Optional.of(factionCraftingContainer.getFaction()) : Optional.empty();
 	}
 }

@@ -24,7 +24,7 @@ public class PouchInventory extends Inventory {
 		enableWriting = true;
 	}
 
-	public void fillPouchFromList(List contents) {
+	public void fillPouchFromList(List<ItemStack> contents) {
 		if (contents.size() > getContainerSize()) {
 			throw new IllegalArgumentException("Too many items (" + contents.size() + ") for a pouch of size " + getContainerSize());
 		}
@@ -53,7 +53,7 @@ public class PouchInventory extends Inventory {
 
 	private void loadPouchContents() {
 		CompoundNBT pouchNBT = PouchItem.getOrCreatePouchRootNBT(pouch);
-		NonNullList temp = NonNullList.withSize(getContainerSize(), ItemStack.EMPTY);
+		NonNullList<ItemStack> temp = NonNullList.withSize(getContainerSize(), ItemStack.EMPTY);
 		ItemStackHelper.loadAllItems(pouchNBT, temp);
 
 		for (int i = 0; i < getContainerSize(); ++i) {
@@ -67,7 +67,7 @@ public class PouchInventory extends Inventory {
 	}
 
 	private void savePouchContents() {
-		NonNullList temp = NonNullList.withSize(getContainerSize(), ItemStack.EMPTY);
+		NonNullList<ItemStack> temp = NonNullList.withSize(getContainerSize(), ItemStack.EMPTY);
 
 		for (int i = 0; i < getContainerSize(); ++i) {
 			temp.set(i, getItem(i));

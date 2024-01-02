@@ -5,17 +5,19 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import lotr.common.LOTRLog;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 
-public class FactionTableType implements FactionBasedRecipeType {
+public class FactionTableType implements FactionBasedRecipeType<ICraftingRecipe> {
 	public final ResourceLocation recipeTypeName;
-	private final Supplier blockIconSupplier;
-	private final List associatedMultiTableTypes = new ArrayList();
+	private final Supplier<Block> blockIconSupplier;
+	private final List<MultiTableType> associatedMultiTableTypes = new ArrayList<>();
 	public final String recipeID;
 
-	public FactionTableType(ResourceLocation name, Supplier blockSup) {
+	public FactionTableType(ResourceLocation name, Supplier<Block> blockSup) {
 		recipeTypeName = name;
 		recipeID = recipeTypeName.toString();
 		blockIconSupplier = blockSup;
@@ -30,8 +32,8 @@ public class FactionTableType implements FactionBasedRecipeType {
 		return getFactionTableIcon();
 	}
 
-	public List getMultiTableTypes() {
-		return new ArrayList(associatedMultiTableTypes);
+	public List<MultiTableType> getMultiTableTypes() {
+		return new ArrayList<MultiTableType>(associatedMultiTableTypes);
 	}
 
 	protected void registerMultiTableType(MultiTableType t) {

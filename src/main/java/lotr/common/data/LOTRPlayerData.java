@@ -1,7 +1,6 @@
 package lotr.common.data;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -28,8 +27,8 @@ import net.minecraftforge.fml.server.ServerLifecycleHooks;
 public class LOTRPlayerData {
 	private final LOTRLevelData levelData;
 	private final UUID playerUUID;
-	private final List modules = new ArrayList();
-	private final BiMap modulesByName = HashBiMap.create();
+	private final List<PlayerDataModule> modules = new ArrayList<>();
+	private final BiMap<String, PlayerDataModule> modulesByName = HashBiMap.create();
 	private final FastTravelDataModule fastTravelData;
 	private final MapMarkerDataModule mapMarkerData;
 	private final AlignmentDataModule alignmentData;
@@ -43,26 +42,26 @@ public class LOTRPlayerData {
 	public LOTRPlayerData(LOTRLevelData level, UUID player) {
 		levelData = level;
 		playerUUID = player;
-		fastTravelData = (FastTravelDataModule) addModule("FastTravel", hummel -> new FastTravelDataModule((LOTRPlayerData) hummel));
-		mapMarkerData = (MapMarkerDataModule) addModule("MapMarkers", hummel -> new MapMarkerDataModule((LOTRPlayerData) hummel));
-		alignmentData = (AlignmentDataModule) addModule("Alignment", hummel -> new AlignmentDataModule((LOTRPlayerData) hummel));
-		factionStatsData = (FactionStatsDataModule) addModule("FactionStats", hummel -> new FactionStatsDataModule((LOTRPlayerData) hummel));
-		messageData = (MessageDataModule) addModule("Messages", hummel -> new MessageDataModule((LOTRPlayerData) hummel));
-		fogData = (FogDataModule) addModule("Fog", hummel -> new FogDataModule((LOTRPlayerData) hummel));
-		miscData = (MiscDataModule) addModule("Misc", hummel -> new MiscDataModule((LOTRPlayerData) hummel));
+		fastTravelData = addModule("FastTravel", hummel -> new FastTravelDataModule(hummel));
+		mapMarkerData = addModule("MapMarkers", hummel -> new MapMarkerDataModule(hummel));
+		alignmentData = addModule("Alignment", hummel -> new AlignmentDataModule(hummel));
+		factionStatsData = addModule("FactionStats", hummel -> new FactionStatsDataModule(hummel));
+		messageData = addModule("Messages", hummel -> new MessageDataModule(hummel));
+		fogData = addModule("Fog", hummel -> new FogDataModule(hummel));
+		miscData = addModule("Misc", hummel -> new MiscDataModule(hummel));
 	}
 
-	private PlayerDataModule addModule(String code, Function moduleConstructor) {
-		PlayerDataModule module = (PlayerDataModule) moduleConstructor.apply(this);
+	private <M extends PlayerDataModule> M addModule(String code, Function<LOTRPlayerData, M> moduleConstructor) {
+		M module = moduleConstructor.apply(this);
 		modules.add(module);
 		modulesByName.put(code, module);
-		return module;
+		return (M)module;
 	}
 
-	public boolean executeIfPlayerExistsServerside(Consumer action) {
+	public boolean executeIfPlayerExistsServerside(Consumer<ServerPlayerEntity> action) {
 		PlayerEntity player = findPlayer();
 		if (player instanceof ServerPlayerEntity) {
-			action.accept(player);
+			action.accept((ServerPlayerEntity)player);
 			return true;
 		}
 		return false;
@@ -129,37 +128,28 @@ public class LOTRPlayerData {
 	}
 
 	public void handleLoginAndSendLoginData(ServerPlayerEntity player) {
-		Iterator var2 = modules.iterator();
-
-		while (var2.hasNext()) {
-			PlayerDataModule module = (PlayerDataModule) var2.next();
-			module.handleLogin(player);
-			PacketBuffer buf = new PacketBuffer(Unpooled.buffer());
-			module.sendLoginData(buf);
-			if (buf.writerIndex() > 0) {
-				String moduleCode = getModuleCode(module);
-				SPacketLoginPlayerDataModule packet = new SPacketLoginPlayerDataModule(moduleCode, buf);
-				LOTRPacketHandler.sendTo(packet, player);
-			}
-		}
-
-	}
+	    for (PlayerDataModule module : this.modules) {
+	      module.handleLogin(player);
+	      PacketBuffer buf = new PacketBuffer(Unpooled.buffer());
+	      module.sendLoginData(buf);
+	      if (buf.writerIndex() > 0) {
+	        String moduleCode = getModuleCode(module);
+	        SPacketLoginPlayerDataModule packet = new SPacketLoginPlayerDataModule(moduleCode, buf);
+	        LOTRPacketHandler.sendTo(packet, player);
+	      } 
+	    } 
+	  }
 
 	public void load(CompoundNBT playerNBT) {
-		Iterator var2 = modules.iterator();
-
-		while (var2.hasNext()) {
-			PlayerDataModule module = (PlayerDataModule) var2.next();
-
-			try {
-				module.load(playerNBT);
-			} catch (Exception var5) {
-				LOTRLog.error("Error loading player data module %s for player %s", getModuleCode(module), playerUUID.toString());
-				var5.printStackTrace();
-			}
-		}
-
-	}
+	    for (PlayerDataModule module : this.modules) {
+	      try {
+	        module.load(playerNBT);
+	      } catch (Exception e) {
+	        LOTRLog.error("Error loading player data module %s for player %s", new Object[] { getModuleCode(module), this.playerUUID.toString() });
+	        e.printStackTrace();
+	      } 
+	    } 
+	  }
 
 	protected void logPlayerError(String msg, Object... args) {
 		LOTRLog.error("playerdata %s: %s", playerUUID.toString(), String.format(msg, args));
@@ -191,21 +181,16 @@ public class LOTRPlayerData {
 	}
 
 	public void save(CompoundNBT playerNBT) {
-		Iterator var2 = modules.iterator();
-
-		while (var2.hasNext()) {
-			PlayerDataModule module = (PlayerDataModule) var2.next();
-
-			try {
-				module.save(playerNBT);
-			} catch (Exception var5) {
-				LOTRLog.error("Error saving player data module %s for player %s", getModuleCode(module), playerUUID.toString());
-				var5.printStackTrace();
-			}
-		}
-
-		needsSave = false;
-	}
+	    for (PlayerDataModule module : this.modules) {
+	      try {
+	        module.save(playerNBT);
+	      } catch (Exception e) {
+	        LOTRLog.error("Error saving player data module %s for player %s", new Object[] { getModuleCode(module), this.playerUUID.toString() });
+	        e.printStackTrace();
+	      } 
+	    } 
+	    this.needsSave = false;
+	  }
 
 	public void sendPacketToClient(Object packet) {
 		boolean executed = executeIfPlayerExistsServerside(player -> {

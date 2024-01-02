@@ -11,15 +11,14 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 
-public class WeightedRandomFeature extends Feature {
-	public WeightedRandomFeature(Codec codec) {
+public class WeightedRandomFeature<FC extends IFeatureConfig> extends Feature<WeightedRandomFeatureConfig<FC>> {
+	public WeightedRandomFeature(Codec<WeightedRandomFeatureConfig<FC>> codec) {
 		super(codec);
 	}
 
 	@Override
-	public boolean place(ISeedReader world, ChunkGenerator generator, Random rand, BlockPos pos, IFeatureConfig confi) {
-		WeightedRandomFeatureConfig config = (WeightedRandomFeatureConfig) confi;
-		ConfiguredFeature selectedFeature = config.getRandomFeature(rand);
-		return selectedFeature.place(world, generator, rand, pos);
+	public boolean place(ISeedReader world, ChunkGenerator generator, Random rand, BlockPos pos, WeightedRandomFeatureConfig<FC> config) {
+		ConfiguredFeature<FC, ?> selectedFeature = config.getRandomFeature(rand);
+	    return selectedFeature.place(world, generator, rand, pos);
 	}
 }
