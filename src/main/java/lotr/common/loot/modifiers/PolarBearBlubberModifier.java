@@ -1,6 +1,5 @@
 package lotr.common.loot.modifiers;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -17,6 +16,7 @@ import com.google.gson.JsonObject;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.PolarBearEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.loot.ILootGenerator;
 import net.minecraft.loot.LootContext;
 import net.minecraft.loot.LootEntry;
@@ -28,7 +28,6 @@ import net.minecraft.loot.functions.ILootFunction;
 import net.minecraft.loot.functions.LootFunctionManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
-import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 
 public class PolarBearBlubberModifier extends LootModifier {
@@ -41,28 +40,28 @@ public class PolarBearBlubberModifier extends LootModifier {
 
 	@Override
 	@Nonnull
-	public List doApply(List generatedLoot, LootContext context) {
+	public List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
 		Entity entity = context.getParamOrNull(LootParameters.THIS_ENTITY);
 		if (entity instanceof PolarBearEntity) {
-			Consumer stacksOut = stack -> {
+			Consumer<ItemStack> stacksOut = stack -> {
 				generatedLoot.add(stack);
 			};
 			stacksOut = LootTable.createStackSplitter(stacksOut);
-			Consumer consumer = ILootFunction.decorate(LootFunctionManager.IDENTITY, stacksOut, context);
+			Consumer<ItemStack> consumer = ILootFunction.decorate(LootFunctionManager.IDENTITY, stacksOut, context);
 			generateExtraLootEntry(consumer, context);
 		}
 
 		return generatedLoot;
 	}
 
-	private void generateExtraLootEntry(Consumer consumer, LootContext context) {
+	private void generateExtraLootEntry(Consumer<ItemStack> consumer, LootContext context) {
 		Random random = context.getRandom();
-		List lootGens = Lists.newArrayList();
+		List<ILootGenerator> lootGens = Lists.newArrayList();
 		MutableInt totalWeight = new MutableInt();
-		UnmodifiableIterator var6 = ImmutableList.of(extraEntry).iterator();
+		UnmodifiableIterator<LootEntry> var6 = ImmutableList.of(extraEntry).iterator();
 
 		while (var6.hasNext()) {
-			LootEntry lootentry = (LootEntry) var6.next();
+			LootEntry lootentry = var6.next();
 			lootentry.expand(context, gen -> {
 				int weight = gen.getWeight(context.getLuck());
 				if (weight > 0) {
@@ -76,13 +75,10 @@ public class PolarBearBlubberModifier extends LootModifier {
 		int numLootGens = lootGens.size();
 		if (totalWeight.intValue() != 0 && numLootGens != 0) {
 			if (numLootGens == 1) {
-				((ILootGenerator) lootGens.get(0)).createItemStack(consumer, context);
+				lootGens.get(0).createItemStack(consumer, context);
 			} else {
 				int weight = random.nextInt(totalWeight.intValue());
-				Iterator var8 = lootGens.iterator();
-
-				while (var8.hasNext()) {
-					ILootGenerator ilootgenerator = (ILootGenerator) var8.next();
+				for (ILootGenerator ilootgenerator : lootGens) {
 					weight -= ilootgenerator.getWeight(context.getLuck());
 					if (weight < 0) {
 						ilootgenerator.createItemStack(consumer, context);
@@ -94,7 +90,7 @@ public class PolarBearBlubberModifier extends LootModifier {
 
 	}
 
-	public static class Serializer extends GlobalLootModifierSerializer {
+	public static class Serializer extends GlobalLootModifierSerializer<PolarBearBlubberModifier> {
 		private static final Gson GSON_WITH_LOOT_ENTRY_ADAPTER = LootSerializers.createFunctionSerializer().create();
 
 		@Override
@@ -104,9 +100,9 @@ public class PolarBearBlubberModifier extends LootModifier {
 		}
 
 		@Override
-		public JsonObject write(IGlobalLootModifier instance) {
-			JsonObject obj = makeConditions(((PolarBearBlubberModifier) instance).conditions);
-			obj.add("extra_entry", GSON_WITH_LOOT_ENTRY_ADAPTER.toJsonTree(((PolarBearBlubberModifier) instance).extraEntry));
+		public JsonObject write(PolarBearBlubberModifier instance) {
+			JsonObject obj = makeConditions(instance.conditions);
+			obj.add("extra_entry", GSON_WITH_LOOT_ENTRY_ADAPTER.toJsonTree(instance.extraEntry));
 			return obj;
 		}
 	}

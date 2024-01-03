@@ -6,7 +6,7 @@ import java.util.List;
 import net.minecraft.world.World;
 
 public interface PostServerLoadedValidator {
-	List validators = new ArrayList();
+	List<PostServerLoadedValidator> validators = new ArrayList<>();
 
 	void performPostServerLoadValidation(World var1);
 }

@@ -22,13 +22,13 @@ public class FoodAlignmentHelper {
 		EVIL_CREATURE_FACTION_TYPES = new FactionType[] { FactionType.ORC, FactionType.TROLL };
 	}
 
-	private static List getFactionsOfTypes(World world, FactionType... alignedTypes) {
+	private static List<Faction> getFactionsOfTypes(World world, FactionType... alignedTypes) {
 		FactionSettings facSettings = FactionSettingsManager.sidedInstance(world).getCurrentLoadedFactions();
 		return facSettings != null ? facSettings.getFactionsOfTypes(alignedTypes) : Collections.emptyList();
 	}
 
 	public static float getHighestAlignmentProportion(LivingEntity entity, float fullAlignment, FactionType... alignedTypes) {
-		List factions = getFactionsOfTypes(entity.level, alignedTypes);
+		List<Faction> factions = getFactionsOfTypes(entity.level, alignedTypes);
 		if (entity instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) entity;
 			float highestAlign = LOTRLevelData.getSidedData(player).getAlignmentData().getHighestAlignmentAmong(factions);
@@ -39,7 +39,7 @@ public class FoodAlignmentHelper {
 	}
 
 	public static boolean hasAnyPositiveAlignment(LivingEntity entity, FactionType... alignedTypes) {
-		List factions = getFactionsOfTypes(entity.level, alignedTypes);
+		List<Faction> factions = getFactionsOfTypes(entity.level, alignedTypes);
 		if (entity instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) entity;
 			return LOTRLevelData.getSidedData(player).getAlignmentData().hasAlignmentWithAny(factions, AlignmentPredicates.POSITIVE);
@@ -47,12 +47,12 @@ public class FoodAlignmentHelper {
 		return isNonPlayerEntityAlignedToAny(entity, factions);
 	}
 
-	private static boolean isNonPlayerEntityAlignedToAny(LivingEntity entity, List factions) {
+	private static boolean isNonPlayerEntityAlignedToAny(LivingEntity entity, List<Faction> factions) {
 		return factions.contains(EntityFactionHelper.getFaction(entity));
 	}
 
 	public static boolean isPledgedOrEntityAlignedToAny(LivingEntity entity, FactionType[] alignedTypes) {
-		List factions = getFactionsOfTypes(entity.level, alignedTypes);
+		List<Faction> factions = getFactionsOfTypes(entity.level, alignedTypes);
 		if (!(entity instanceof PlayerEntity)) {
 			return isNonPlayerEntityAlignedToAny(entity, factions);
 		}

@@ -37,11 +37,11 @@ public class VesselDrink extends LootFunction {
 		return stack;
 	}
 
-	public static Builder vesselDrinkBuilder() {
+	public static Builder<?> vesselDrinkBuilder() {
 		return simpleBuilder(VesselDrink::new);
 	}
 
-	public static class Serializer extends net.minecraft.loot.LootFunction.Serializer {
+	public static class Serializer extends net.minecraft.loot.LootFunction.Serializer<VesselDrink> {
 		@Override
 		public VesselDrink deserialize(JsonObject object, JsonDeserializationContext context, ILootCondition[] conditions) {
 			return new VesselDrink(conditions);

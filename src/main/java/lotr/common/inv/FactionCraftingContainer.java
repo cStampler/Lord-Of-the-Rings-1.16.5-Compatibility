@@ -1,6 +1,5 @@
 package lotr.common.inv;
 
-import java.util.Iterator;
 import java.util.Optional;
 
 import lotr.common.fac.Faction;
@@ -17,7 +16,6 @@ import net.minecraft.inventory.CraftResultInventory;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.ICraftingRecipe;
@@ -37,7 +35,7 @@ public class FactionCraftingContainer extends Container {
 	private boolean standardCraftingTableRecipes;
 
 	public FactionCraftingContainer(int windowID, PlayerInventory inv, PacketBuffer extraData) {
-		super((ContainerType) LOTRContainers.FACTION_CRAFTING.get(), windowID);
+		super(LOTRContainers.FACTION_CRAFTING.get(), windowID);
 		worldPos = IWorldPosCallable.NULL;
 		craftingPlayer = inv.player;
 		if (extraData == null) {
@@ -66,32 +64,25 @@ public class FactionCraftingContainer extends Container {
 		return slotIn.container != craftResult && super.canTakeItemForPickAll(stack, slotIn);
 	}
 
-	private Optional findMatchingFactionOrMulti(World world, CraftingInventory inv) {
+	private Optional<ICraftingRecipe> findMatchingFactionOrMulti(World world, CraftingInventory inv) {
 		FactionTableType tableType = getRecipeType();
-		Optional recipe = findMatchingRecipeOfType(world, inv, tableType);
+		Optional<ICraftingRecipe> recipe = findMatchingRecipeOfType(world, inv, tableType);
 		if (recipe.isPresent()) {
 			return recipe;
 		}
-		Iterator var6 = tableType.getMultiTableTypes().iterator();
-
-		Optional multiRecipe;
-		do {
-			if (!var6.hasNext()) {
-				return Optional.empty();
-			}
-
-			MultiTableType multiType = (MultiTableType) var6.next();
-			multiRecipe = findMatchingRecipeOfType(world, inv, multiType);
-		} while (!multiRecipe.isPresent());
-
-		return multiRecipe;
+		for (MultiTableType multiType : tableType.getMultiTableTypes()) {
+		      Optional<ICraftingRecipe> multiRecipe = findMatchingRecipeOfType(world, inv, multiType);
+		      if (multiRecipe.isPresent())
+		        return multiRecipe; 
+		} 
+		return Optional.empty();
 	}
 
-	public Optional findMatchingRecipeOfAppropriateType(World world, PlayerEntity player, CraftingInventory inv) {
+	public Optional<ICraftingRecipe> findMatchingRecipeOfAppropriateType(World world, PlayerEntity player, CraftingInventory inv) {
 		return standardCraftingTableRecipes ? findMatchingRecipeOfType(world, inv, IRecipeType.CRAFTING) : findMatchingFactionOrMulti(world, inv);
 	}
 
-	private Optional findMatchingRecipeOfType(World world, CraftingInventory inv, IRecipeType type) {
+	private Optional<ICraftingRecipe> findMatchingRecipeOfType(World world, CraftingInventory inv, IRecipeType<ICraftingRecipe> type) {
 		return world.getRecipeManager().getRecipeFor(type, inv, world);
 	}
 
@@ -197,7 +188,7 @@ public class FactionCraftingContainer extends Container {
 	protected void tryMatchRecipe(int windowID, World world, PlayerEntity player, CraftingInventory inv, CraftResultInventory resultInv) {
 		if (!world.isClientSide) {
 			ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
-			Optional optRecipe = findMatchingRecipeOfAppropriateType(world, serverPlayer, inv);
+			Optional<ICraftingRecipe> optRecipe = findMatchingRecipeOfAppropriateType(world, serverPlayer, inv);
 			ItemStack result = ItemStack.EMPTY;
 			if (optRecipe.isPresent()) {
 				ICraftingRecipe recipe = (ICraftingRecipe) optRecipe.get();

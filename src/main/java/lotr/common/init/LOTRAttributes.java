@@ -1,5 +1,6 @@
 package lotr.common.init;
 
+import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -8,10 +9,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRAttributes {
-	public static final DeferredRegister ATTRIBUTES;
-	public static final RegistryObject NPC_RANGED_INACCURACY;
-	public static final RegistryObject NPC_MOUNT_ATTACK_SPEED;
-	public static final RegistryObject NPC_CONVERSATION_RANGE;
+	public static final DeferredRegister<Attribute> ATTRIBUTES;
+	public static final RegistryObject<Attribute> NPC_RANGED_INACCURACY;
+	public static final RegistryObject<Attribute> NPC_MOUNT_ATTACK_SPEED;
+	public static final RegistryObject<Attribute> NPC_CONVERSATION_RANGE;
 
 	static {
 		ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, "lotr");
@@ -25,7 +26,7 @@ public class LOTRAttributes {
 		ATTRIBUTES.register(bus);
 	}
 
-	private static final RegistryObject regRangedAttribute(String name, double defaultValue, double min, double max) {
+	private static final RegistryObject<Attribute> regRangedAttribute(String name, double defaultValue, double min, double max) {
 		return ATTRIBUTES.register(name, () -> new RangedAttribute(String.format("attribute.name.%s.%s", "lotr", name), defaultValue, min, max));
 	}
 }

@@ -2,9 +2,10 @@ package lotr.client.render.entity.model;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
+import lotr.common.entity.npc.ElfEntity;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
-public class ElfModel extends LOTRBipedModel {
+public class ElfModel<E extends ElfEntity> extends LOTRBipedModel<E> {
 	private final ModelRenderer earRight;
 	private final ModelRenderer earLeft;
 

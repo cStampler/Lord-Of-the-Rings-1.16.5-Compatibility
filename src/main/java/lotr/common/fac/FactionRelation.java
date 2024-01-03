@@ -9,8 +9,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 public enum FactionRelation {
 	ALLY("ally"), FRIEND("friend"), NEUTRAL("neutral"), ENEMY("enemy"), MORTAL_ENEMY("mortal_enemy");
 
-	private static final Map NAME_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), relation -> ((FactionRelation) relation).codeName);
-	private static final Map ID_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), relation -> ((FactionRelation) relation).networkID);
+	private static final Map<String, FactionRelation> NAME_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), relation -> ((FactionRelation) relation).codeName);
+	private static final Map<Integer, FactionRelation> ID_LOOKUP = LOTRUtil.createKeyedEnumMap(values(), relation -> ((FactionRelation) relation).networkID);
 	public final String codeName;
 	public final int networkID;
 

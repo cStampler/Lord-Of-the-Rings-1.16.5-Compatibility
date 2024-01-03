@@ -105,7 +105,7 @@ public class MiddleEarthMapScreen extends MiddleEarthMenuScreen {
    private int viewportXMax;
    private int viewportYMin;
    private int viewportYMax;
-   private List mapWidgets = new ArrayList();
+   private List<MapWidget> mapWidgets = new ArrayList<>();
    private MapWidget widgetZoomIn;
    private MapWidget widgetZoomOut;
    private MapWidget widgetRecentre;
@@ -234,29 +234,26 @@ public class MiddleEarthMapScreen extends MiddleEarthMenuScreen {
    private void determineMouseOverObject(int mouseX, int mouseY, float tick) {
       mouseOverObject = null;
       double distanceMouseOverObject = Double.MAX_VALUE;
-      List visibleObjects = new ArrayList(getVisibleWaypoints());
+      List<SelectableMapObject> visibleObjects = new ArrayList<>(getVisibleWaypoints());
       visibleObjects.addAll(getVisibleMarkers());
-      Iterator var7 = visibleObjects.iterator();
-
-      while (var7.hasNext()) {
-         SelectableMapObject object = (SelectableMapObject) var7.next();
-         double[] pos = transformWorldCoords(object.getWorldX(), object.getWorldZ(), tick);
-         double x = pos[0];
-         double y = pos[1];
-         if (object != selectedObject) {
-            int halfW = object.getMapIconWidth() / 2;
-            if (x >= viewportXMin - halfW && x <= viewportXMax + halfW && y >= viewportYMin - halfW && y <= viewportYMax + halfW) {
-               double dx = x - mouseX;
-               double dy = y - mouseY;
-               double distToObject = Math.sqrt(dx * dx + dy * dy);
-               if (distToObject <= 5.0D && distToObject <= distanceMouseOverObject) {
-                  mouseOverObject = object;
-                  distanceMouseOverObject = distToObject;
-               }
-            }
-         }
+      for (SelectableMapObject object : visibleObjects) {
+          double[] pos = transformWorldCoords(object.getWorldX(), object.getWorldZ(), tick);
+          double x = pos[0];
+          double y = pos[1];
+          if (object != this.selectedObject) {
+        	  int halfW = object.getMapIconWidth() / 2;
+        	  if (x >= (this.viewportXMin - halfW) && x <= (this.viewportXMax + halfW) && y >= (this.viewportYMin - halfW) && y <= (this.viewportYMax + halfW)) {
+        		  double dx = x - mouseX;
+        		  double dy = y - mouseY;
+        		  double distToObject = Math.sqrt(dx * dx + dy * dy);
+        		  if (distToObject <= 5.0D)
+        			  if (distToObject <= distanceMouseOverObject) {
+        				  this.mouseOverObject = object;
+        				  distanceMouseOverObject = distToObject;
+        			} 
+        	 } 
+          }
       }
-
    }
 
    public void drawFancyRect(MatrixStack matStack, int x1, int y1, int x2, int y2) {
@@ -298,8 +295,8 @@ public class MiddleEarthMapScreen extends MiddleEarthMenuScreen {
       return loadedMapSettings.worldToMapZ_frac(minecraft.player.getZ());
    }
 
-   private List getVisibleMarkers() {
-      return !showMarkers() ? ImmutableList.of() : (List) getOptClientPlayerData().map(pd -> pd.getMapMarkerData().getMarkers()).orElse(ImmutableList.of());
+   private List<MapMarker> getVisibleMarkers() {
+      return !showMarkers() ? ImmutableList.of() : getOptClientPlayerData().map(pd -> pd.getMapMarkerData().getMarkers()).orElse(ImmutableList.of());
    }
 
    private List<Waypoint> getVisibleWaypoints() {

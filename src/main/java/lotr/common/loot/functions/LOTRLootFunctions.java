@@ -2,6 +2,7 @@ package lotr.common.loot.functions;
 
 import net.minecraft.loot.ILootSerializer;
 import net.minecraft.loot.LootFunctionType;
+import net.minecraft.loot.functions.ILootFunction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -16,7 +17,7 @@ public class LOTRLootFunctions {
 		SET_POUCH_COLOR_FROM_ENTITY_FACTION = registerFunction("set_pouch_color_from_entity_faction", new SetPouchColorFromEntityFaction.Serializer());
 	}
 
-	private static LootFunctionType registerFunction(String name, ILootSerializer serializer) {
+	private static LootFunctionType registerFunction(String name, ILootSerializer<? extends ILootFunction> serializer) {
 		return Registry.register(Registry.LOOT_FUNCTION_TYPE, new ResourceLocation("lotr", name), new LootFunctionType(serializer));
 	}
 }

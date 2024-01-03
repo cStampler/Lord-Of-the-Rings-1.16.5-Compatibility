@@ -18,22 +18,21 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.PerlinNoiseGenerator;
 import net.minecraft.world.gen.surfacebuilders.FrozenOceanSurfaceBuilder;
-import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-public class MiddleEarthSurfaceBuilder extends SurfaceBuilder {
+public class MiddleEarthSurfaceBuilder extends SurfaceBuilder<MiddleEarthSurfaceConfig> {
 	private final FrozenOceanSurfaceBuilder frozenOcean;
 	private final PerlinNoiseGenerator icebergBorderNoise;
 
-	public MiddleEarthSurfaceBuilder(Codec codec) {
+	public MiddleEarthSurfaceBuilder(Codec<MiddleEarthSurfaceConfig> codec) {
 		super(codec);
 		frozenOcean = new FrozenOceanSurfaceBuilder(SurfaceBuilderConfig.CODEC);
 		icebergBorderNoise = LOTRBiomeBase.makeSingleLayerPerlinNoise(5231241491057810726L);
 	}
 
 	@Override
-	public void apply(Random rand, IChunk chunk, Biome biome, int x, int z, int startHeight, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, ISurfaceBuilderConfig configg) {
+	public void apply(Random rand, IChunk chunk, Biome biome, int x, int z, int startHeight, double noise, BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, MiddleEarthSurfaceConfig configg) {
 		MiddleEarthSurfaceConfig config = (MiddleEarthSurfaceConfig) configg;
 		if (isFrozenIcebergTerrain(chunk, biome, x, z)) {
 			frozenOcean.apply(rand, chunk, biome, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed, SurfaceBuilder.CONFIG_GRASS);
@@ -130,7 +129,7 @@ public class MiddleEarthSurfaceBuilder extends SurfaceBuilder {
 
 			BlockState topToUse = top;
 			BlockState fillerToUse = filler;
-			Iterator subSoilLayers = config.getSubSoilLayers();
+			Iterator<MiddleEarthSurfaceConfig.SubSoilLayer> subSoilLayers = config.getSubSoilLayers();
 
 			for (y = startHeight; y >= 0; --y) {
 				movingPos.set(chunkX, y, chunkZ);

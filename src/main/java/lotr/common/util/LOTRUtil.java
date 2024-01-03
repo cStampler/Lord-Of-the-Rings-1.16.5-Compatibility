@@ -35,12 +35,12 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.Heightmap.Type;
 
 public class LOTRUtil {
-	public static int calculatePlayersUsingSingleContainer(World world, int x, int y, int z, Class containerClass, Predicate tester) {
+	public static <C extends Container> int calculatePlayersUsingSingleContainer(World world, int x, int y, int z, Class<C> containerClass, Predicate<C> tester) {
 		int count = 0;
 		AxisAlignedBB checkBox = new AxisAlignedBB(x - 5.0F, y - 5.0F, z - 5.0F, x + 1 + 5.0F, y + 1 + 5.0F, z + 1 + 5.0F);
 		for (PlayerEntity player : world.getEntitiesOfClass(PlayerEntity.class, checkBox)) {
 			Container container = player.containerMenu;
-			if (container != null && containerClass.isInstance(container) && tester.test(container)) {
+			if (container != null && containerClass.isInstance(container) && tester.test((C) container)) {
 				++count;
 			}
 		}
@@ -83,11 +83,11 @@ public class LOTRUtil {
 
 	}
 
-	public static Map createKeyedEnumMap(Enum[] values, Function keyGetter) {
-		return (Map) Arrays.stream(values).collect(Collectors.toMap(keyGetter, type -> type));
-	}
+	public static <E extends Enum<E>, T> Map<T, E> createKeyedEnumMap(E[] values, Function<E, T> keyGetter) {
+	    return (Map<T, E>)Arrays.<E>stream(values).collect(Collectors.toMap(keyGetter, type -> type));
+	  }
 
-	public static ItemStack findHeldOrInventoryItem(PlayerEntity player, Predicate test) {
+	public static ItemStack findHeldOrInventoryItem(PlayerEntity player, Predicate<ItemStack> test) {
 		ItemStack offhandItem = player.getItemInHand(Hand.OFF_HAND);
 		if (test.test(offhandItem)) {
 			return offhandItem;

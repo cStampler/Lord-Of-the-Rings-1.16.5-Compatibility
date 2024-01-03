@@ -12,10 +12,10 @@ import net.minecraft.util.ResourceLocation;
 
 public class DataDirectorySettings {
 	public static final String SETTINGS_FILENAME = "_settings.json";
-	private final Set removeNamespaces;
-	private final Set removeResources;
+	private final Set<String> removeNamespaces;
+	private final Set<ResourceLocation> removeResources;
 
-	private DataDirectorySettings(Set removeNamespaces, Set removeResources) {
+	private DataDirectorySettings(Set<String> removeNamespaces, Set<ResourceLocation> removeResources) {
 		this.removeNamespaces = removeNamespaces;
 		this.removeResources = removeResources;
 		validate();
@@ -43,13 +43,13 @@ public class DataDirectorySettings {
 	}
 
 	public static DataDirectorySettings read(ResourceLocation resourceName, JsonObject json) {
-		Set removeNamespaces = new HashSet();
+		Set<String> removeNamespaces = new HashSet<>();
 		JsonArray removeNamespacesArray = json.get("remove_namespaces").getAsJsonArray();
 		for (JsonElement namespace : removeNamespacesArray) {
 			removeNamespaces.add(namespace.getAsString());
 		}
 
-		Set removeResources = new HashSet();
+		Set<ResourceLocation> removeResources = new HashSet<>();
 		JsonArray removeResourcesArray = json.get("remove_singles").getAsJsonArray();
 		for (JsonElement resource : removeResourcesArray) {
 			removeResources.add(new ResourceLocation(resource.getAsString()));

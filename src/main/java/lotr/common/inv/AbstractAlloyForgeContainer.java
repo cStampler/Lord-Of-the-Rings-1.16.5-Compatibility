@@ -18,11 +18,11 @@ public abstract class AbstractAlloyForgeContainer extends Container {
 	protected final World world;
 	private final int forgeSlots;
 
-	public AbstractAlloyForgeContainer(ContainerType type, int id, PlayerInventory playerInv, AbstractAlloyForgeTileEntity forge) {
+	public AbstractAlloyForgeContainer(ContainerType<?> type, int id, PlayerInventory playerInv, AbstractAlloyForgeTileEntity forge) {
 		this(type, id, playerInv, forge, new IntArray(4));
 	}
 
-	public AbstractAlloyForgeContainer(ContainerType type, int id, PlayerInventory playerInv, AbstractAlloyForgeTileEntity forge, IIntArray data) {
+	public AbstractAlloyForgeContainer(ContainerType<?> type, int id, PlayerInventory playerInv, AbstractAlloyForgeTileEntity forge, IIntArray data) {
 		super(type, id);
 
 		checkContainerSize(forge, 13);

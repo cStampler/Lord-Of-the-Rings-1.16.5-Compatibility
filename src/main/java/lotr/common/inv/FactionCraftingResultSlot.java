@@ -30,14 +30,14 @@ public class FactionCraftingResultSlot extends CraftingResultSlot {
 		tableContainer = table;
 	}
 
-	private IRecipeType determineRecipeType(PlayerEntity player) {
-		Optional optRecipe = tableContainer.findMatchingRecipeOfAppropriateType(slotPlayer.level, slotPlayer, craftMatrix);
+	private IRecipeType<ICraftingRecipe> determineRecipeType(PlayerEntity player) {
+		Optional<ICraftingRecipe> optRecipe = tableContainer.findMatchingRecipeOfAppropriateType(slotPlayer.level, slotPlayer, craftMatrix);
 		if (optRecipe.isPresent()) {
-			ICraftingRecipe recipe = (ICraftingRecipe) optRecipe.get();
+			ICraftingRecipe recipe = optRecipe.get();
 			World world = player.level;
 			boolean canUseRecipe = world.isClientSide ? true : resultInventory.setRecipeUsed(world, (ServerPlayerEntity) player, recipe);
 			if (canUseRecipe) {
-				return ((ICraftingRecipe) optRecipe.get()).getType();
+				return (IRecipeType<ICraftingRecipe>) optRecipe.get().getType();
 			}
 		}
 
@@ -49,8 +49,8 @@ public class FactionCraftingResultSlot extends CraftingResultSlot {
 	public ItemStack onTake(PlayerEntity player, ItemStack stack) {
 		checkTakeAchievements(stack);
 		ForgeHooks.setCraftingPlayer(player);
-		IRecipeType recipeType = determineRecipeType(player);
-		NonNullList nonnulllist = player.level.getRecipeManager().getRemainingItemsFor(recipeType, craftMatrix, player.level);
+		IRecipeType<ICraftingRecipe> recipeType = determineRecipeType(player);
+		NonNullList<ItemStack> nonnulllist = player.level.getRecipeManager().getRemainingItemsFor(recipeType, craftMatrix, player.level);
 		ForgeHooks.setCraftingPlayer((PlayerEntity) null);
 
 		for (int i = 0; i < nonnulllist.size(); ++i) {

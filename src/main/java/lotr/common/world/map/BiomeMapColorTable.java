@@ -21,8 +21,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 
-public class BiomeMapColorTable extends CombinableMappingsResource {
-	public BiomeMapColorTable(Map colors, int loadOrder, int numCombinedFrom) {
+public class BiomeMapColorTable extends CombinableMappingsResource<Integer, ResourceLocation> {
+	public BiomeMapColorTable(Map<Integer, ResourceLocation> colors, int loadOrder, int numCombinedFrom) {
 		super(colors, loadOrder, numCombinedFrom);
 	}
 
@@ -48,8 +48,8 @@ public class BiomeMapColorTable extends CombinableMappingsResource {
 		buf.writeVarInt(getNumCombinedFrom());
 	}
 
-	public static BiomeMapColorTable combine(List colorTables) {
-		return (BiomeMapColorTable) combine(colorTables, BiomeMapColorTable::new);
+	public static BiomeMapColorTable combine(List<BiomeMapColorTable> colorTables) {
+		return combine(colorTables, BiomeMapColorTable::new);
 	}
 
 	public static BiomeMapColorTable read(PacketBuffer buf) {

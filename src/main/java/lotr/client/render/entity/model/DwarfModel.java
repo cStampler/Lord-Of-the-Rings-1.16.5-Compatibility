@@ -2,9 +2,10 @@ package lotr.client.render.entity.model;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
+import lotr.common.entity.npc.DwarfEntity;
 import net.minecraft.util.HandSide;
 
-public class DwarfModel extends LOTRBipedModel {
+public class DwarfModel<E extends DwarfEntity> extends LOTRBipedModel<E> {
 	public DwarfModel(boolean smallArms) {
 		this(0.0F, false, smallArms);
 	}

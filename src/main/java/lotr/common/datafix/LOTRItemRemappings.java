@@ -1,8 +1,6 @@
 package lotr.common.datafix;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -18,73 +16,75 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.RegistryEvent.MissingMappings;
 import net.minecraftforge.event.RegistryEvent.MissingMappings.Mapping;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 public class LOTRItemRemappings {
-	private static final Map BLOCK_REMAPS = new HashMap();
-	private static final Map ITEM_REMAPS = new HashMap();
-	private static final Map BIOME_REMAPS = new HashMap();
-	private static final Map SOUND_REMAPS = new HashMap();
+	private static final Map<ResourceLocation, Block> BLOCK_REMAPS = new HashMap<>();
+	private static final Map<ResourceLocation, Item> ITEM_REMAPS = new HashMap<>();
+	private static final Map<ResourceLocation, Biome> BIOME_REMAPS = new HashMap<>();
+	private static final Map<ResourceLocation, SoundEvent> SOUND_REMAPS = new HashMap<>();
 	private static boolean init = false;
 
-	private static void addBiomeRemap(String oldName, Supplier newBiome) {
+	private static void addBiomeRemap(String oldName, Supplier<? extends Biome> newBiome) {
 		BIOME_REMAPS.put(new ResourceLocation("lotr", oldName), newBiome.get());
 	}
 
-	private static void addBlockRemap(String oldName, Supplier newBlock) {
+	private static void addBlockRemap(String oldName, Supplier<? extends Block> newBlock) {
 		BLOCK_REMAPS.put(new ResourceLocation("lotr", oldName), newBlock.get());
 	}
 
-	private static void addBlockRemap(String oldName, Supplier newBlock, Supplier newItem) {
+	private static void addBlockRemap(String oldName, Supplier<? extends Block> newBlock, Supplier<? extends Item> newItem) {
 		addBlockRemap(oldName, newBlock);
 		addItemRemap(oldName, newItem);
 	}
 
-	private static void addItemRemap(String oldName, Supplier newItem) {
+	private static void addItemRemap(String oldName, Supplier<? extends Item> newItem) {
 		ITEM_REMAPS.put(new ResourceLocation("lotr", oldName), newItem.get());
 	}
 
-	private static void addSoundRemap(String oldName, Supplier newSound) {
+	private static void addSoundRemap(String oldName, Supplier<? extends SoundEvent> newSound) {
 		SOUND_REMAPS.put(new ResourceLocation("lotr", oldName), newSound.get());
 	}
 
-	public static void handle(MissingMappings event) {
-		List mappings = event.getAllMappings();
-		Iterator var2 = mappings.iterator();
-
-		while (var2.hasNext()) {
-			Mapping mapping = (Mapping) var2.next();
-			ResourceLocation itemName = mapping.key;
-			if ("lotr".equals(itemName.getNamespace())) {
-				if (!init) {
-					init();
-				}
-
-				if (event.getRegistry().getRegistrySuperType() == Block.class) {
-					if (BLOCK_REMAPS.containsKey(itemName)) {
-						Block block = (Block) BLOCK_REMAPS.get(itemName);
-						mapping.remap(block);
-						LOTRLog.info("Remapped old block id %s to new id %s", itemName, block.getRegistryName());
-					}
-				} else if (event.getRegistry().getRegistrySuperType() == Item.class) {
-					if (ITEM_REMAPS.containsKey(itemName)) {
-						Item item = (Item) ITEM_REMAPS.get(itemName);
-						mapping.remap(item);
-						LOTRLog.info("Remapped old item id %s to new id %s", itemName, item.getRegistryName());
-					}
-				} else if (event.getRegistry().getRegistrySuperType() == Biome.class) {
-					if (BIOME_REMAPS.containsKey(itemName)) {
-						Biome biome = (Biome) BIOME_REMAPS.get(itemName);
-						mapping.remap(biome);
-						LOTRLog.info("Remapped old biome id %s to new id %s", itemName, biome.getRegistryName());
-					}
-				} else if (event.getRegistry().getRegistrySuperType() == SoundEvent.class && SOUND_REMAPS.containsKey(itemName)) {
-					SoundEvent sound = (SoundEvent) SOUND_REMAPS.get(itemName);
-					mapping.remap(sound);
-					LOTRLog.info("Remapped old sound id %s to new id %s", itemName, sound.getRegistryName());
-				}
-			}
-		}
-
+	@SuppressWarnings("unchecked")
+	public static <T extends IForgeRegistryEntry<T>> void handle(MissingMappings<T> event) {
+	    for (Mapping<T> mapping : event.getAllMappings()) {
+	      ResourceLocation itemName = mapping.key;
+	      if (itemName.getNamespace().equals("lotr")) {
+	        if (!init)
+	          init(); 
+	        if (event.getRegistry().getRegistrySuperType() == Block.class) {
+	          if (BLOCK_REMAPS.containsKey(itemName)) {
+	            Block block = BLOCK_REMAPS.get(itemName);
+	            mapping.remap((T)block);
+	            LOTRLog.info("Remapped old block id %s to new id %s", new Object[] { itemName, block.getRegistryName() });
+	          } 
+	          continue;
+	        } 
+	        if (event.getRegistry().getRegistrySuperType() == Item.class) {
+	          if (ITEM_REMAPS.containsKey(itemName)) {
+	            Item item = ITEM_REMAPS.get(itemName);
+	            mapping.remap((T)item);
+	            LOTRLog.info("Remapped old item id %s to new id %s", new Object[] { itemName, item.getRegistryName() });
+	          } 
+	          continue;
+	        } 
+	        if (event.getRegistry().getRegistrySuperType() == Biome.class) {
+	          if (BIOME_REMAPS.containsKey(itemName)) {
+	            Biome biome = BIOME_REMAPS.get(itemName);
+	            mapping.remap((T)biome);
+	            LOTRLog.info("Remapped old biome id %s to new id %s", new Object[] { itemName, biome.getRegistryName() });
+	          } 
+	          continue;
+	        } 
+	        if (event.getRegistry().getRegistrySuperType() == SoundEvent.class)
+	          if (SOUND_REMAPS.containsKey(itemName)) {
+	            SoundEvent sound = SOUND_REMAPS.get(itemName);
+	            mapping.remap((T)sound);
+	            LOTRLog.info("Remapped old sound id %s to new id %s", new Object[] { itemName, sound.getRegistryName() });
+	          }  
+	      } 
+	    }
 	}
 
 	private static void init() {

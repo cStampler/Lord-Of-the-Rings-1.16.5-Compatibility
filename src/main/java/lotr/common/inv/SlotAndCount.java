@@ -42,7 +42,7 @@ public class SlotAndCount implements Comparable {
 	}
 
 	public static int[] sortSlotsByCount(IInventory inv, int[] slotIndices) {
-		List slotsWithStackSize = new ArrayList();
+		List<SlotAndCount> slotsWithStackSize = new ArrayList<>();
 		int[] sortedSlots = slotIndices;
 		int i = slotIndices.length;
 

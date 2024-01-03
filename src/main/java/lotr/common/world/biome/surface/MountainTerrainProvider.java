@@ -1,7 +1,6 @@
 package lotr.common.world.biome.surface;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,25 +16,18 @@ import net.minecraftforge.fml.RegistryObject;
 public final class MountainTerrainProvider {
 	public static MountainLayer[] sus = {};
 	public static final MountainTerrainProvider NONE = createMountainTerrain(sus);
-	public static final Codec<MountainTerrainProvider> CODEC = RecordCodecBuilder.create(instance -> instance.group(MountainTerrainProvider.MountainLayer.CODEC.listOf().fieldOf("layers").forGetter(mixer -> ((MountainTerrainProvider) mixer).layers)).apply(instance, h1 -> new MountainTerrainProvider((List) h1)));
+	public static final Codec<MountainTerrainProvider> CODEC = RecordCodecBuilder.create(instance -> instance.group(MountainTerrainProvider.MountainLayer.CODEC.listOf().fieldOf("layers").forGetter(mixer -> ((MountainTerrainProvider) mixer).layers)).apply(instance, h1 -> new MountainTerrainProvider(h1)));
 	private final List<MountainLayer> layers;
 	private MountainTerrainProvider(List<MountainLayer> layers) { // Specify the type for the List parameter
 		this.layers = layers;
 	}
 
 	public BlockState getReplacement(int x, int z, int y, BlockState in, BlockState stone, boolean top, int stoneNoiseDepth) {
-		Iterator var8 = layers.iterator();
-
-		MountainTerrainProvider.MountainLayer layer;
-		do {
-			if (!var8.hasNext()) {
-				return in;
-			}
-
-			layer = (MountainTerrainProvider.MountainLayer) var8.next();
-		} while (!layer.passes(y, in, stone, top, stoneNoiseDepth));
-
-		return layer.getState(stone);
+		for (MountainLayer layer : this.layers) {
+		      if (layer.passes(y, in, stone, top, stoneNoiseDepth))
+		        return layer.getState(stone); 
+		    } 
+		    return in;
 	}
 
 	public static MountainTerrainProvider createMountainTerrain(MountainTerrainProvider.MountainLayer... layers) {
@@ -162,7 +154,7 @@ public final class MountainTerrainProvider {
 				return this;
 			}
 
-			public MountainTerrainProvider.MountainLayer.MountainLayerBuilder state(RegistryObject blockSup) {
+			public MountainTerrainProvider.MountainLayer.MountainLayerBuilder state(RegistryObject<Block> blockSup) {
 				return this.state((Block) blockSup.get());
 			}
 

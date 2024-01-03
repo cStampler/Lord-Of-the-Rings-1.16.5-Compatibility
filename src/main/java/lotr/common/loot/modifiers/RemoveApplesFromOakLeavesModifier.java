@@ -1,7 +1,6 @@
 package lotr.common.loot.modifiers;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Nonnull;
@@ -18,32 +17,31 @@ import net.minecraft.loot.LootParameters;
 import net.minecraft.loot.conditions.ILootCondition;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
-import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 
 public class RemoveApplesFromOakLeavesModifier extends LootModifier {
-	private final List blockNames;
+	private final List<ResourceLocation> blockNames;
 
-	public RemoveApplesFromOakLeavesModifier(ILootCondition[] conds, List names) {
+	public RemoveApplesFromOakLeavesModifier(ILootCondition[] conds, List<ResourceLocation> names) {
 		super(conds);
 		blockNames = names;
 	}
 
 	@Override
 	@Nonnull
-	public List doApply(List generatedLoot, LootContext context) {
+	public List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
 		BlockState state = context.getParamOrNull(LootParameters.BLOCK_STATE);
 		if (state != null && blockNames.contains(state.getBlock().getRegistryName())) {
-			generatedLoot.removeIf(item -> (((ItemStack) item).getItem() == Items.APPLE));
+			generatedLoot.removeIf(item -> (item.getItem() == Items.APPLE));
 		}
 
 		return generatedLoot;
 	}
 
-	public static class Serializer extends GlobalLootModifierSerializer {
+	public static class Serializer extends GlobalLootModifierSerializer<RemoveApplesFromOakLeavesModifier> {
 		@Override
 		public RemoveApplesFromOakLeavesModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditions) {
-			List blockNames = new ArrayList();
+			List<ResourceLocation> blockNames = new ArrayList<>();
 			JsonArray list = object.get("target_blocks").getAsJsonArray();
 			for (JsonElement elem : list) {
 				String s = elem.getAsString();
@@ -55,17 +53,12 @@ public class RemoveApplesFromOakLeavesModifier extends LootModifier {
 		}
 
 		@Override
-		public JsonObject write(IGlobalLootModifier instance) {
-			JsonObject obj = makeConditions(((RemoveApplesFromOakLeavesModifier) instance).conditions);
+		public JsonObject write(RemoveApplesFromOakLeavesModifier instance) {
+			JsonObject obj = makeConditions(instance.conditions);
 			JsonArray list = new JsonArray();
-			Iterator var4 = ((RemoveApplesFromOakLeavesModifier) instance).blockNames.iterator();
-
-			while (var4.hasNext()) {
-				ResourceLocation blockName = (ResourceLocation) var4.next();
-				list.add(blockName.toString());
-			}
-
-			obj.add("target_blocks", list);
+			for (ResourceLocation blockName : instance.blockNames)
+				list.add(blockName.toString()); 
+			obj.add("target_blocks", (JsonElement)list);
 			return obj;
 		}
 	}

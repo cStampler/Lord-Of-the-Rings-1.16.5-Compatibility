@@ -1,8 +1,9 @@
 package lotr.client.render.entity.model;
 
+import lotr.common.entity.npc.OrcEntity;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
-public class OrcModel extends LOTRBipedModel {
+public class OrcModel<E extends OrcEntity> extends LOTRBipedModel<E> {
 	private ModelRenderer nose;
 	private ModelRenderer earRight;
 	private ModelRenderer earLeft;

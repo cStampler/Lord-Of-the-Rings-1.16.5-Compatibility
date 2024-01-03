@@ -3,11 +3,11 @@ package lotr.client.render.entity.model;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
+import lotr.common.entity.projectile.SmokeRingEntity;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 
-public class SmokeShipModel extends EntityModel {
+public class SmokeShipModel extends EntityModel<SmokeRingEntity> {
 	private ModelRenderer hull = new ModelRenderer(this);
 	private ModelRenderer deck;
 	private ModelRenderer mast1;
@@ -66,6 +66,6 @@ public class SmokeShipModel extends EntityModel {
 	}
 
 	@Override
-	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(SmokeRingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
 }

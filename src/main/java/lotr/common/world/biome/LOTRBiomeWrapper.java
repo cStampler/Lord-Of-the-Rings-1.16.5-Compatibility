@@ -14,6 +14,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.Biome.RainType;
 
 public interface LOTRBiomeWrapper {
@@ -67,7 +68,7 @@ public interface LOTRBiomeWrapper {
 
 	LOTRBiomeBase getShore();
 
-	List getSpawnsAtLocation(EntityClassification var1, BlockPos var2);
+	List<MobSpawnInfo.Spawners> getSpawnsAtLocation(EntityClassification var1, BlockPos var2);
 
 	default float getStrengthOfAddedDepthNoise() {
 		return 1.0F;

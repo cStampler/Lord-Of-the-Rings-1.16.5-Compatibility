@@ -10,7 +10,6 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +26,7 @@ public class KegContainer extends Container {
 	private final Slot brewResultSlot;
 
 	public KegContainer(int id, PlayerInventory playerInv, IInventory keg, IIntArray data) {
-		super((ContainerType) LOTRContainers.KEG.get(), id);
+		super(LOTRContainers.KEG.get(), id);
 		checkContainerSize(keg, 10);
 		checkContainerDataCount(data, 3);
 		theKeg = keg;

@@ -10,18 +10,17 @@ import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.client.renderer.model.ItemCameraTransforms.TransformType;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class CaracalHeldItemLayer extends LayerRenderer {
-	public CaracalHeldItemLayer(IEntityRenderer renderer) {
+public class CaracalHeldItemLayer extends LayerRenderer<CaracalEntity, CaracalModel<CaracalEntity>> {
+	public CaracalHeldItemLayer(IEntityRenderer<CaracalEntity, CaracalModel<CaracalEntity>> renderer) {
 		super(renderer);
 	}
 
 	@Override
-	public void render(MatrixStack matStack, IRenderTypeBuffer buf, int packedLight, Entity caracal, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void render(MatrixStack matStack, IRenderTypeBuffer buf, int packedLight, CaracalEntity caracal, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 		boolean child = ((CaracalEntity) caracal).isBaby();
 		matStack.pushPose();
 		if (child) {
@@ -29,7 +28,7 @@ public class CaracalHeldItemLayer extends LayerRenderer {
 			matStack.translate(0.0D, 0.5D, 0.209375D);
 		}
 
-		ModelRenderer head = ((CaracalModel) getParentModel()).getHead();
+		ModelRenderer head = getParentModel().getHead();
 		matStack.translate(head.x / 16.0F, head.y / 16.0F, head.z / 16.0F);
 		matStack.mulPose(Vector3f.YP.rotationDegrees(netHeadYaw));
 		matStack.mulPose(Vector3f.XP.rotationDegrees(headPitch));

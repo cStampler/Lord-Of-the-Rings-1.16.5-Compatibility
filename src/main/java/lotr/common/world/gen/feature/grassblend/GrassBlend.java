@@ -8,17 +8,19 @@ import java.util.function.Supplier;
 import lotr.common.world.gen.feature.WeightedFeature;
 import lotr.common.world.gen.feature.WeightedRandomFeatureConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
 public abstract class GrassBlend {
-	private final List entries;
-	private WeightedRandomFeatureConfig bakedFeatureConfig;
+	private final List<Entry> entries;
+	private WeightedRandomFeatureConfig<IFeatureConfig> bakedFeatureConfig;
 
-	public GrassBlend(List entries) {
+	public GrassBlend(List<Entry> entries) {
 		this.entries = entries;
 	}
 
-	public WeightedRandomFeatureConfig getFeatureConfig() {
+	public WeightedRandomFeatureConfig<IFeatureConfig> getFeatureConfig() {
 		if (bakedFeatureConfig == null) {
 			bakedFeatureConfig = toFeatureConfig(entries);
 		}
@@ -26,31 +28,31 @@ public abstract class GrassBlend {
 		return bakedFeatureConfig;
 	}
 
-	protected static GrassBlend of(Function constructor, Object... weightedConfigs) {
-		List entries = new ArrayList();
+	@SuppressWarnings("unchecked")
+	protected static <T extends GrassBlend> T of(Function<List<Entry>, T> constructor, Object... weightedConfigs) {
+		List<Entry> entries = new ArrayList<>();
 
 		for (int i = 0; i < weightedConfigs.length; i += 2) {
-			Supplier config = (Supplier) weightedConfigs[i];
+			Supplier<BlockClusterFeatureConfig> config = (Supplier<BlockClusterFeatureConfig>) weightedConfigs[i];
 			int weight = (Integer) weightedConfigs[i + 1];
 			entries.add(new GrassBlend.Entry(config, weight));
 		}
 
-		return (GrassBlend) constructor.apply(entries);
+		return constructor.apply(entries);
 	}
 
-	private static WeightedRandomFeatureConfig toFeatureConfig(List entries) {
-		List weightedGrassTypes = new ArrayList();
-		entries.forEach(entry -> {
-			weightedGrassTypes.add(WeightedFeature.make(Feature.RANDOM_PATCH.configured((BlockClusterFeatureConfig) ((Entry) entry).config.get()), ((Entry) entry).weight));
-		});
-		return new WeightedRandomFeatureConfig(weightedGrassTypes);
-	}
+	@SuppressWarnings("unchecked")
+	private static WeightedRandomFeatureConfig<IFeatureConfig> toFeatureConfig(List<Entry> entries) {
+	    List<WeightedFeature<IFeatureConfig>> weightedGrassTypes = new ArrayList<>();
+	    entries.forEach(entry -> weightedGrassTypes.add(WeightedFeature.make((Supplier<ConfiguredFeature<?, ?>>) Feature.RANDOM_PATCH.configured(entry.config.get()), entry.weight)));
+	    return new WeightedRandomFeatureConfig<IFeatureConfig>(weightedGrassTypes);
+	  }
 
 	public static class Entry {
-		private final Supplier config;
+		private final Supplier<BlockClusterFeatureConfig> config;
 		private final int weight;
 
-		public Entry(Supplier config, int weight) {
+		public Entry(Supplier<BlockClusterFeatureConfig> config, int weight) {
 			this.config = config;
 			this.weight = weight;
 		}

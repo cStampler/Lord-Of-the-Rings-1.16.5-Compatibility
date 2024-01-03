@@ -105,11 +105,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class LOTRBiomes {
-	public static final DeferredRegister BIOMES;
-	public static final DeferredRegister SURFACE_BUILDERS;
-	private static final List PRE_REGISTRY;
-	private static final List BIOME_WRAPPER_OBJECTS;
-	private static final Map BIOME_WRAPPER_OBJECTS_BY_NAME;
+	public static final DeferredRegister<Biome> BIOMES;
+	public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDERS;
+	private static final List<PreRegisteredLOTRBiome> PRE_REGISTRY;
+	private static final List<LOTRBiomeBase> BIOME_WRAPPER_OBJECTS;
+	private static final Map<ResourceLocation, LOTRBiomeBase> BIOME_WRAPPER_OBJECTS_BY_NAME;
 	public static final PreRegisteredLOTRBiome SHIRE;
 	public static final PreRegisteredLOTRBiome MORDOR;
 	public static final PreRegisteredLOTRBiome ANORIEN;
@@ -228,14 +228,14 @@ public class LOTRBiomes {
 	public static final PreRegisteredLOTRBiome UMBAR_HILLS;
 	public static final PreRegisteredLOTRBiome FIELD_OF_CORMALLEN;
 	public static final PreRegisteredLOTRBiome HILLS_OF_EVENDIM;
-	public static final SurfaceBuilder MIDDLE_EARTH_SURFACE;
+	public static final SurfaceBuilder<MiddleEarthSurfaceConfig> MIDDLE_EARTH_SURFACE;
 
 	static {
 		BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, "lotr");
 		SURFACE_BUILDERS = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, "lotr");
-		PRE_REGISTRY = new ArrayList();
-		BIOME_WRAPPER_OBJECTS = new ArrayList();
-		BIOME_WRAPPER_OBJECTS_BY_NAME = new HashMap();
+		PRE_REGISTRY = new ArrayList<>();
+		BIOME_WRAPPER_OBJECTS = new ArrayList<>();
+		BIOME_WRAPPER_OBJECTS_BY_NAME = new HashMap<>();
 		SHIRE = prepare("shire", () -> new ShireBiome(true));
 		MORDOR = prepare("mordor", () -> new MordorBiome(true));
 		ANORIEN = prepare("anorien", () -> new AnorienBiome(true));
@@ -387,11 +387,11 @@ public class LOTRBiomes {
 	}
 
 	public static int getBiomeIDByRegistryName(ResourceLocation biomeName, IWorld world) {
-		MutableRegistry reg = getBiomeRegistry(world);
+		MutableRegistry<Biome> reg = getBiomeRegistry(world);
 		return reg.getId(reg.get(biomeName));
 	}
 
-	private static MutableRegistry getBiomeRegistry(IWorld world) {
+	private static MutableRegistry<Biome> getBiomeRegistry(IWorld world) {
 		return world.registryAccess().registryOrThrow(Registry.BIOME_REGISTRY);
 	}
 
@@ -413,23 +413,22 @@ public class LOTRBiomes {
 		return BIOME_WRAPPER_OBJECTS_BY_NAME.containsKey(biomeName);
 	}
 
-	public static List listAllBiomesForProvider(Registry lookupRegistry) {
-		return (List) BIOME_WRAPPER_OBJECTS.stream().map(wrapper -> ((Biome) lookupRegistry.get(RegistryKey.create(Registry.BIOME_REGISTRY, ((LOTRBiomeWrapper) wrapper).getBiomeRegistryName())))).collect(Collectors.toList());
+	public static List<Biome> listAllBiomesForProvider(Registry<Biome> lookupRegistry) {
+		return BIOME_WRAPPER_OBJECTS.stream().map(wrapper -> ((Biome) lookupRegistry.get(RegistryKey.create(Registry.BIOME_REGISTRY, ((LOTRBiomeWrapper) wrapper).getBiomeRegistryName())))).collect(Collectors.toList());
 	}
 
-	public static List listBiomeNamesForClassicGen() {
-		new ArrayList();
-		return (List) BIOME_WRAPPER_OBJECTS.stream().filter(hummel -> ((LOTRBiomeBase) hummel).isMajorBiome()).map(hummel -> ((LOTRBiomeBase) hummel).getBiomeRegistryName()).collect(Collectors.toList());
+	public static List<ResourceLocation> listBiomeNamesForClassicGen() {
+		return BIOME_WRAPPER_OBJECTS.stream().filter(hummel -> ((LOTRBiomeBase) hummel).isMajorBiome()).map(hummel -> ((LOTRBiomeBase) hummel).getBiomeRegistryName()).collect(Collectors.toList());
 	}
 
-	private static PreRegisteredLOTRBiome prepare(String name, NonNullSupplier wrapperSupplier) {
+	private static PreRegisteredLOTRBiome prepare(String name, NonNullSupplier<LOTRBiomeBase> wrapperSupplier) {
 		PreRegisteredLOTRBiome preparedBiome = new PreRegisteredLOTRBiome(name, wrapperSupplier);
 		PRE_REGISTRY.add(preparedBiome);
 		return preparedBiome;
 	}
 
-	private static SurfaceBuilder preRegSurfaceBuilder(String name, SurfaceBuilder surfaceBuilder) {
-		return (SurfaceBuilder) RegistryOrderHelper.preRegObject(SURFACE_BUILDERS, name, surfaceBuilder);
+	private static <SC extends net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig, S extends SurfaceBuilder<SC>> S preRegSurfaceBuilder(String name, S surfaceBuilder) {
+	    return RegistryOrderHelper.<S>preRegObject(SURFACE_BUILDERS, name, surfaceBuilder);
 	}
 
 	public static void register() {

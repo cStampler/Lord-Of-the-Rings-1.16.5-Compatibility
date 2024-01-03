@@ -24,6 +24,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.Biome.Builder;
 import net.minecraft.world.biome.Biome.Category;
 import net.minecraft.world.biome.Biome.RainType;
@@ -147,7 +148,7 @@ public class SeaBiome extends LOTRBiomeBase {
 	}
 
 	@Override
-	public List getSpawnsAtLocation(EntityClassification creatureType, BlockPos pos) {
+	public List<MobSpawnInfo.Spawners> getSpawnsAtLocation(EntityClassification creatureType, BlockPos pos) {
 		if (creatureType != EntityClassification.WATER_CREATURE && creatureType != EntityClassification.WATER_AMBIENT) {
 			return super.getSpawnsAtLocation(creatureType, pos);
 		}

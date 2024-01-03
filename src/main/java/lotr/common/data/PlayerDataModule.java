@@ -32,7 +32,7 @@ public abstract class PlayerDataModule {
 		return MapSettingsManager.sidedInstance(getLevelData().getLogicalSide()).getCurrentLoadedMap();
 	}
 
-	protected final void executeIfPlayerExistsServerside(Consumer action) {
+	protected final void executeIfPlayerExistsServerside(Consumer<ServerPlayerEntity> action) {
 		playerData.executeIfPlayerExistsServerside(action);
 	}
 

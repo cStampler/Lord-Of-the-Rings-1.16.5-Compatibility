@@ -199,16 +199,17 @@ public final class SurfaceNoiseMixer {
 			}
 
 			public SurfaceNoiseMixer.Condition.ConditionBuilder state(BlockState state) {
-				weightedStates = new WeightedList().add(state, 1);
+				weightedStates = new WeightedList<BlockState>().add(state, 1);
 				return this;
 			}
 
-			public SurfaceNoiseMixer.Condition.ConditionBuilder state(RegistryObject blockSup) {
-				return this.state((Block) blockSup.get());
+			public SurfaceNoiseMixer.Condition.ConditionBuilder state(RegistryObject<Block> blockSup) {
+				return this.state(blockSup.get());
 			}
 
+			@SuppressWarnings("rawtypes")
 			public SurfaceNoiseMixer.Condition.ConditionBuilder states(Object... entries) {
-				weightedStates = new WeightedList();
+				weightedStates = new WeightedList<BlockState>();
 
 				for (int i = 0; i < entries.length; i += 2) {
 					Object obj1 = entries[i];

@@ -1,6 +1,8 @@
 package lotr.client.render.entity.model;
 
-public class ManModel extends LOTRBipedModel {
+import lotr.common.entity.npc.AbstractMannishEntity;
+
+public class ManModel<E extends AbstractMannishEntity> extends LOTRBipedModel<E> {
 	public ManModel(boolean smallArms) {
 		this(0.0F, false, smallArms);
 	}

@@ -11,8 +11,8 @@ import lotr.common.data.DataUtil;
 import net.minecraft.network.PacketBuffer;
 
 public class AlignmentBonusMap extends HashMap<Faction, Float>{
-	public Set getChangedFactions() {
-		return (Set) keySet().stream().filter(f -> ((Float) get(f) != 0.0F)).collect(Collectors.toSet());
+	public Set<Faction> getChangedFactions() {
+		return keySet().stream().filter(f -> ((Float) get(f) != 0.0F)).collect(Collectors.toSet());
 	}
 
 	public void write(PacketBuffer buf) {

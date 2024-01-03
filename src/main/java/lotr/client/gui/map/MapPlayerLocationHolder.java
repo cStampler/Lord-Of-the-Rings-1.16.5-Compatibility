@@ -1,7 +1,6 @@
 package lotr.client.gui.map;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -13,31 +12,27 @@ import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
 
 public class MapPlayerLocationHolder {
-	private static final Map locations = new HashMap();
+	private static final Map<UUID, MapPlayerLocation> locations = new HashMap<>();
 
 	public static void clearPlayerLocations() {
 		locations.clear();
 	}
 
-	public static Map getPlayerLocations() {
+	public static Map<UUID, MapPlayerLocation> getPlayerLocations() {
 		return locations;
 	}
 
-	public static void refreshPlayerLocations(List newPlayerLocations) {
+	public static void refreshPlayerLocations(List<MapPlayerLocation> newPlayerLocations) {
 		clearPlayerLocations();
-		ClientPlayNetHandler nph = Minecraft.getInstance().getConnection();
-		Iterator var2 = newPlayerLocations.iterator();
-
-		while (var2.hasNext()) {
-			MapPlayerLocation loc = (MapPlayerLocation) var2.next();
-			UUID playerID = loc.profile.getId();
-			if (playerID != null) {
-				NetworkPlayerInfo player = nph.getPlayerInfo(playerID);
-				locations.put(playerID, loc.withFullProfile(player.getProfile()));
-			} else {
-				LOTRLog.warn("Received map player location from server with null UUID");
-			}
-		}
-
+	    ClientPlayNetHandler nph = Minecraft.getInstance().getConnection();
+	    for (MapPlayerLocation loc : newPlayerLocations) {
+	    	UUID playerID = loc.profile.getId();
+	    	if (playerID != null) {
+	    		NetworkPlayerInfo player = nph.getPlayerInfo(playerID);
+	    		locations.put(playerID, loc.withFullProfile(player.getProfile()));
+	    		continue;
+	    	} 
+	    	LOTRLog.warn("Received map player location from server with null UUID");
+	    }
 	}
 }

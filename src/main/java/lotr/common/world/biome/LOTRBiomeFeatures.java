@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.OptionalInt;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.ImmutableList;
@@ -73,6 +74,7 @@ import net.minecraft.block.IWaterLoggable;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.gen.GenerationStage.Carving;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.Heightmap.Type;
@@ -96,6 +98,7 @@ import net.minecraft.world.gen.feature.Features;
 import net.minecraft.world.gen.feature.Features.Placements;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.LiquidsConfig;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig.FillerBlockType;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
@@ -391,7 +394,7 @@ public class LOTRBiomeFeatures {
 	private static BlockClusterFeatureConfig SUGAR_CANE_CONFIG;
 	private static BlockState REEDS;
 	private static BlockState DRIED_REEDS;
-	private static Function REEDS_CONFIG_FOR_DRIED_CHANCE;
+	private static Function<Float, ReedsFeatureConfig> REEDS_CONFIG_FOR_DRIED_CHANCE;
 	private static BlockState PAPYRUS;
 	private static ReedsFeatureConfig PAPYRUS_CONFIG;
 	private static BlockState RUSHES;
@@ -423,67 +426,67 @@ public class LOTRBiomeFeatures {
 	public static LiquidsConfig WATER_SPRING_CONFIG;
 	public static LiquidsConfig LAVA_SPRING_CONFIG;
 
-	public static ConfiguredFeature acacia() {
+	public static ConfiguredFeature<?, ?> acacia() {
 		return Features.ACACIA;
 	}
 
-	public static void addAndesite(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
+	public static void addAndesite(BiomeGenerationSettings.Builder builder) {
 		addStoneVariety(builder, ANDESITE, 10, 80);
 	}
 
-	public static void addAthelasChance(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
+	public static void addAthelasChance(BiomeGenerationSettings.Builder builder) {
 		addAthelasChance(builder, 30);
 	}
 
-	public static void addAthelasChance(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int chance) {
+	public static void addAthelasChance(BiomeGenerationSettings.Builder builder, int chance) {
 		builder.addFeature(Decoration.VEGETAL_DECORATION, Feature.FLOWER.configured(ATHELAS_CONFIG).decorated(placeHeightmapDoubleChance(chance)));
 	}
 
-	public static void addBlueIcePatches(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
-		ConfiguredFeature blueIce = Feature.BLUE_ICE.configured(IFeatureConfig.NONE);
+	public static void addBlueIcePatches(BiomeGenerationSettings.Builder builder) {
+		ConfiguredFeature<?, ?> blueIce = Feature.BLUE_ICE.configured(IFeatureConfig.NONE);
 		int blueIceFreq = 19;
-		ConfiguredPlacement blueIcePlacement = (ConfiguredPlacement) ((ConfiguredPlacement) Placement.RANGE.configured(new TopSolidRangeConfig(30, 32, 64)).squared()).countRandom(blueIceFreq);
+		ConfiguredPlacement<?> blueIcePlacement = (Placement.RANGE.configured(new TopSolidRangeConfig(30, 32, 64)).squared()).countRandom(blueIceFreq);
 		addLatitudeBased(builder, Decoration.SURFACE_STRUCTURES, blueIce, blueIcePlacement, LatitudeBasedFeatureConfig.LatitudeConfiguration.of(LatitudeBasedFeatureConfig.LatitudeValuesType.ICE));
 	}
 
-	public static void addBlueRockPatches(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, BLUE_ROCK, 61)).range(96)).squared()).count(6));
+	public static void addBlueRockPatches(BiomeGenerationSettings.Builder builder) {
+		builder.addFeature(Decoration.UNDERGROUND_ORES, ((Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, BLUE_ROCK, 61)).range(96)).squared()).count(6));
 	}
 
-	public static void addBorealFlowers(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int freq, Object... extraFlowers) {
+	public static void addBorealFlowers(BiomeGenerationSettings.Builder builder, int freq, Object... extraFlowers) {
 		Object[] borealFlowers = { Blocks.POPPY, 10, Blocks.DANDELION, 20, Blocks.BLUE_ORCHID, 10, LOTRBlocks.BLUEBELL.get(), 5 };
 		addFlowers(builder, freq, LOTRUtil.combineVarargs(borealFlowers, extraFlowers));
 	}
 
-	public static void addBoulders(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, BlockState block, int minWidth, int maxWidth, int chanceInChunk, int genAmount) {
+	public static void addBoulders(BiomeGenerationSettings.Builder builder, BlockState block, int minWidth, int maxWidth, int chanceInChunk, int genAmount) {
 		int heightCheck = 3;
 		addBoulders(builder, block, minWidth, maxWidth, chanceInChunk, genAmount, heightCheck);
 	}
 
-	public static void addBoulders(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, BlockState block, int minWidth, int maxWidth, int chanceInChunk, int genAmount, int heightCheck) {
+	public static void addBoulders(BiomeGenerationSettings.Builder builder, BlockState block, int minWidth, int maxWidth, int chanceInChunk, int genAmount, int heightCheck) {
 		BlockStateProvider blockProv = new SimpleBlockStateProvider(block);
 		BoulderFeatureConfig config = new BoulderFeatureConfig(blockProv, minWidth, maxWidth, heightCheck);
 		int baseCount = 0;
 		float increaseChance = 1.0F / chanceInChunk;
-		ConfiguredPlacement placement = ((ConfiguredPlacement) Placement.HEIGHTMAP.configured(NoPlacementConfig.INSTANCE).squared()).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(baseCount, increaseChance, genAmount)));
+		ConfiguredPlacement<?> placement = (Placement.HEIGHTMAP.configured(NoPlacementConfig.INSTANCE).squared()).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(baseCount, increaseChance, genAmount)));
 		builder.addFeature(Decoration.LOCAL_MODIFICATIONS, LOTRFeatures.BOULDER.configured(config).decorated(placement));
 	}
 
-	public static void addCactiAtSurfaceChance(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int chance) {
+	public static void addCactiAtSurfaceChance(BiomeGenerationSettings.Builder builder, int chance) {
 		builder.addFeature(Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.configured(CACTUS_CONFIG).decorated(placeHeightmapChance(chance)));
 	}
 
-	public static void addCactiFreq(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int freq) {
+	public static void addCactiFreq(BiomeGenerationSettings.Builder builder, int freq) {
 		builder.addFeature(Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.configured(CACTUS_CONFIG).decorated(placeHeightmapFreq(freq)));
 	}
 
-	public static void addCarvers(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
+	public static void addCarvers(BiomeGenerationSettings.Builder builder) {
 		float caveChance = 0.14285715F;
 		float canyonChance = 0.02F;
 		addCarvers(builder, caveChance, canyonChance);
 	}
 
-	public static void addCarvers(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, float caveChance, float canyonChance) {
+	public static void addCarvers(BiomeGenerationSettings.Builder builder, float caveChance, float canyonChance) {
 		builder.addCarver(Carving.AIR, LOTRWorldCarvers.CAVE.configured(new ProbabilityConfig(caveChance)));
 		builder.addCarver(Carving.AIR, LOTRWorldCarvers.CANYON.configured(new ProbabilityConfig(canyonChance)));
 	}
@@ -513,13 +516,13 @@ public class LOTRBiomeFeatures {
 	}
 
 	public static void addCoral(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
-		ConfiguredFeature coralTree = Feature.CORAL_TREE.configured(IFeatureConfig.NONE);
-		ConfiguredFeature coralClaw = Feature.CORAL_CLAW.configured(IFeatureConfig.NONE);
-		ConfiguredFeature coralShroom = Feature.CORAL_MUSHROOM.configured(IFeatureConfig.NONE);
-		ConfiguredFeature coralRandomiser = Feature.SIMPLE_RANDOM_SELECTOR.configured(new SingleRandomFeature(ImmutableList.of(() -> coralTree, () -> coralClaw, () -> coralShroom)));
+		ConfiguredFeature<?, ?> coralTree = Feature.CORAL_TREE.configured(IFeatureConfig.NONE);
+		ConfiguredFeature<?, ?> coralClaw = Feature.CORAL_CLAW.configured(IFeatureConfig.NONE);
+		ConfiguredFeature<?, ?> coralShroom = Feature.CORAL_MUSHROOM.configured(IFeatureConfig.NONE);
+		ConfiguredFeature<?, ?> coralRandomiser = Feature.SIMPLE_RANDOM_SELECTOR.configured(new SingleRandomFeature(ImmutableList.of(() -> coralTree, () -> coralClaw, () -> coralShroom)));
 		int noiseToCount = 10;
 		double noiseFactor = 400.0D;
-		ConfiguredPlacement placement = ((ConfiguredPlacement) Placement.TOP_SOLID_HEIGHTMAP.configured(IPlacementConfig.NONE).squared()).decorated(Placement.COUNT_NOISE_BIASED.configured(new TopSolidWithNoiseConfig(noiseToCount, noiseFactor, 0.0D)));
+		ConfiguredPlacement<?> placement = (Placement.TOP_SOLID_HEIGHTMAP.configured(IPlacementConfig.NONE).squared()).decorated(Placement.COUNT_NOISE_BIASED.configured(new TopSolidWithNoiseConfig(noiseToCount, noiseFactor, 0.0D)));
 		addLatitudeBased(builder, Decoration.VEGETAL_DECORATION, coralRandomiser, placement, LatitudeBasedFeatureConfig.LatitudeConfiguration.of(LatitudeBasedFeatureConfig.LatitudeValuesType.CORAL));
 	}
 
@@ -530,7 +533,7 @@ public class LOTRBiomeFeatures {
 	public static void addCraftingMonument(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int relativeChance, BlockState table, BlockStateProvider baseProvider, BlockStateProvider postProvider, BlockStateProvider torchProvider) {
 		CraftingMonumentFeatureConfig config = new CraftingMonumentFeatureConfig(table, baseProvider, postProvider, torchProvider);
 		int chance = 512 * relativeChance;
-		ConfiguredPlacement placement = placeHeightmapChance(chance);
+		ConfiguredPlacement<?> placement = placeHeightmapChance(chance);
 		builder.addFeature(Decoration.SURFACE_STRUCTURES, LOTRFeatures.CRAFTING_MONUMENT.configured(config).decorated(placement));
 	}
 
@@ -561,13 +564,13 @@ public class LOTRBiomeFeatures {
 	}
 
 	public static void addDirtGravel(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, DIRT, 33)).range(256)).squared()).count(10));
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GRAVEL, 33)).range(256)).squared()).count(8));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, ((Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, DIRT, 33)).range(256)).squared()).count(10));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, ((Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GRAVEL, 33)).range(256)).squared()).count(8));
 	}
 
 	public static void addDoubleFlowers(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int freq, Object... weightedFlowers) {
 		try {
-			List weightedDoubleFlowerFeatures = new ArrayList();
+			List<WeightedFeature<?>> weightedDoubleFlowerFeatures = new ArrayList<>();
 
 			for (int i = 0; i < weightedFlowers.length; i += 2) {
 				Object obj1 = weightedFlowers[i];
@@ -584,11 +587,11 @@ public class LOTRBiomeFeatures {
 					flowerConfigBuilder.canReplace();
 				}
 
-				weightedDoubleFlowerFeatures.add(WeightedFeature.make(Feature.RANDOM_PATCH.configured(flowerConfigBuilder.build()), weight));
+				weightedDoubleFlowerFeatures.add(WeightedFeature.make((Supplier<ConfiguredFeature<?, ?>>) Feature.RANDOM_PATCH.configured(flowerConfigBuilder.build()), weight));
 			}
 
-			ConfiguredFeature doubleFlowerFeature = LOTRFeatures.WEIGHTED_RANDOM.configured(new WeightedRandomFeatureConfig(weightedDoubleFlowerFeatures));
-			builder.addFeature(Decoration.VEGETAL_DECORATION, (ConfiguredFeature) doubleFlowerFeature.decorated(placeFlowers()).count(freq));
+			ConfiguredFeature<?,?> doubleFlowerFeature = LOTRFeatures.WEIGHTED_RANDOM.configured(new WeightedRandomFeatureConfig(weightedDoubleFlowerFeatures));
+			builder.addFeature(Decoration.VEGETAL_DECORATION, doubleFlowerFeature.decorated(placeFlowers()).count(freq));
 		} catch (ArrayIndexOutOfBoundsException | ClassCastException var9) {
 			throw new IllegalArgumentException("Error adding biome double flowers! A list of (blockstate1, weight1), (blockstate2, weight2)... is required", var9);
 		}
@@ -600,7 +603,7 @@ public class LOTRBiomeFeatures {
 	}
 
 	public static void addDriftwood(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int chance) {
-		ConfiguredPlacement logPlacement = placeTopSolidChance(chance);
+		ConfiguredPlacement<?> logPlacement = placeTopSolidChance(chance);
 		builder.addFeature(Decoration.VEGETAL_DECORATION, LOTRFeatures.FALLEN_LOG.configured(new FallenLogFeatureConfig(true, true)).decorated(logPlacement));
 	}
 
@@ -620,24 +623,24 @@ public class LOTRBiomeFeatures {
 	public static void addEdhelvirOre(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
 		int oreFreq = 4;
 		int crystalFreq = 2;
-		ConfiguredPlacement orePlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
-		ConfiguredPlacement crystalPlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
+		ConfiguredPlacement<?> orePlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
+		ConfiguredPlacement<?> crystalPlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
 		OreFeatureConfig oreConfig = new OreFeatureConfig(FillerBlockType.NATURAL_STONE, EDHELVIR_ORE, 7);
 		CrystalFeatureConfig crystalConfig = new CrystalFeatureConfig(new SimpleBlockStateProvider(EDHELVIR_CRYSTAL), 64, 6, 4, 6);
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(oreConfig).decorated(orePlacement).squared()).count(oreFreq));
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) LOTRFeatures.CRYSTALS.configured(crystalConfig).decorated(crystalPlacement).squared()).count(crystalFreq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, (Feature.ORE.configured(oreConfig).decorated(orePlacement).squared()).count(oreFreq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature)((ConfiguredFeature)LOTRFeatures.CRYSTALS.configured(crystalConfig).decorated(crystalPlacement).squared()).count(crystalFreq));
 	}
 
 	public static void addExtraCoal(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int size, int freq, int height) {
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, COAL_ORE, size + 1)).range(height)).squared()).count(freq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, ((Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, COAL_ORE, size + 1)).range(height)).squared()).count(freq));
 	}
 
 	public static void addExtraGold(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int size, int freq, int height) {
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GOLD_ORE, size + 1)).range(height)).squared()).count(freq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, ((Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GOLD_ORE, size + 1)).range(height)).squared()).count(freq));
 	}
 
 	public static void addExtraIron(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int size, int freq, int height) {
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, COAL_ORE, size + 1)).range(height)).squared()).count(freq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, ((Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, COAL_ORE, size + 1)).range(height)).squared()).count(freq));
 	}
 
 	public static void addExtraMordorGulduril(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
@@ -720,38 +723,38 @@ public class LOTRBiomeFeatures {
 	}
 
 	public static void addFreezeTopLayer(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
-		Feature freezeTopLayer = SnowRealMagicCompatibility.getFreezeTopLayerFeature();
+		Feature<NoFeatureConfig> freezeTopLayer = SnowRealMagicCompatibility.getFreezeTopLayerFeature();
 		builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, freezeTopLayer.configured(IFeatureConfig.NONE).decorated(Placement.NOPE.configured(IPlacementConfig.NONE)));
 	}
 
-	public static void addGlowstoneOre(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
+	public static void addGlowstoneOre(BiomeGenerationSettings.Builder builder) {
 		int oreFreq = 6;
 		int crystalFreq = 2;
-		ConfiguredPlacement orePlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
-		ConfiguredPlacement crystalPlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
+		ConfiguredPlacement<?> orePlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
+		ConfiguredPlacement<?> crystalPlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 48));
 		OreFeatureConfig oreConfig = new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GLOWSTONE_ORE, 5);
 		CrystalFeatureConfig crystalConfig = new CrystalFeatureConfig(new SimpleBlockStateProvider(GLOWSTONE_CRYSTAL), 64, 6, 4, 6);
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(oreConfig).decorated(orePlacement).squared()).count(oreFreq));
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) LOTRFeatures.CRYSTALS.configured(crystalConfig).decorated(crystalPlacement).squared()).count(crystalFreq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, (Feature.ORE.configured(oreConfig).decorated(orePlacement).squared()).count(oreFreq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature)((ConfiguredFeature)LOTRFeatures.CRYSTALS.configured(crystalConfig).decorated(crystalPlacement).squared()).count(crystalFreq));
 	}
 
-	public static void addGondorRockPatches(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GONDOR_ROCK, 61)).range(80)).squared()).count(4));
+	public static void addGondorRockPatches(BiomeGenerationSettings.Builder builder) {
+		builder.addFeature(Decoration.UNDERGROUND_ORES, ((Feature.ORE.configured(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GONDOR_ROCK, 61)).range(80)).squared()).count(4));
 	}
 
-	public static void addGranite(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
+	public static void addGranite(BiomeGenerationSettings.Builder builder) {
 		addStoneVariety(builder, GRANITE, 5, 80);
 	}
 
-	public static void addGrass(LOTRBiomeBase biome, net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, int freq, SingleGrassBlend blend) {
-		WeightedRandomFeatureConfig wrGrassConfig = blend.getFeatureConfig();
+	public static void addGrass(LOTRBiomeBase biome, BiomeGenerationSettings.Builder builder, int freq, SingleGrassBlend blend) {
+		WeightedRandomFeatureConfig<IFeatureConfig> wrGrassConfig = blend.getFeatureConfig();
 		builder.addFeature(Decoration.VEGETAL_DECORATION, LOTRFeatures.getWeightedRandom().configured(wrGrassConfig).decorated(placeHeightmapDoubleFreq(freq)));
 		biome.setGrassBonemealGenerator(wrGrassConfig);
 	}
 
-	public static void addGrassPatches(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, List targets, int rMin, int rMax, int depthMin, int depthMax, int freq) {
+	public static void addGrassPatches(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, List<BlockState> targets, int rMin, int rMax, int depthMin, int depthMax, int freq) {
 		GrassPatchFeatureConfig config = new GrassPatchFeatureConfig(targets, rMin, rMax, depthMin, depthMax);
-		ConfiguredPlacement placement = placeHeightmapFreq(freq);
+		ConfiguredPlacement<?> placement = placeHeightmapFreq(freq);
 		builder.addFeature(Decoration.LOCAL_MODIFICATIONS, LOTRFeatures.GRASS_PATCH.configured(config).decorated(placement));
 	}
 
@@ -763,11 +766,11 @@ public class LOTRBiomeFeatures {
 	}
 
 	private static void addGuldurilOre(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, boolean mordor, int oreFreq, int crystalFreq, int topY) {
-		ConfiguredPlacement orePlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, topY));
-		ConfiguredPlacement crystalPlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, topY));
+		ConfiguredPlacement<?> orePlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, topY));
+		ConfiguredPlacement<?> crystalPlacement = Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, topY));
 		OreFeatureConfig oreConfig = mordor ? new OreFeatureConfig(MORDOR_ROCK_FILLER, GULDURIL_ORE_MORDOR, 9) : new OreFeatureConfig(FillerBlockType.NATURAL_STONE, GULDURIL_ORE_STONE, 9);
 		CrystalFeatureConfig crystalConfig = new CrystalFeatureConfig(new SimpleBlockStateProvider(GULDURIL_CRYSTAL), 64, 6, 4, 6);
-		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) Feature.ORE.configured(oreConfig).decorated(orePlacement).squared()).count(oreFreq));
+		builder.addFeature(Decoration.UNDERGROUND_ORES, (Feature.ORE.configured(oreConfig).decorated(orePlacement).squared()).count(oreFreq));
 		builder.addFeature(Decoration.UNDERGROUND_ORES, (ConfiguredFeature) ((ConfiguredFeature) LOTRFeatures.CRYSTALS.configured(crystalConfig).decorated(crystalPlacement).squared()).count(crystalFreq));
 	}
 
@@ -782,12 +785,12 @@ public class LOTRBiomeFeatures {
 	}
 
 	public static void addIcebergs(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
-		ConfiguredFeature iceberg = Feature.ICEBERG.configured(new BlockStateFeatureConfig(PACKED_ICE));
-		ConfiguredFeature blueIceberg = Feature.ICEBERG.configured(new BlockStateFeatureConfig(BLUE_ICE));
+		ConfiguredFeature<?,?> iceberg = Feature.ICEBERG.configured(new BlockStateFeatureConfig(PACKED_ICE));
+		ConfiguredFeature<?,?> blueIceberg = Feature.ICEBERG.configured(new BlockStateFeatureConfig(BLUE_ICE));
 		int icebergChance = 16;
 		int blueIcebergChance = 200;
-		ConfiguredPlacement icebergPlacement = Placement.ICEBERG.configured(NoPlacementConfig.INSTANCE).chance(icebergChance);
-		ConfiguredPlacement blueIcebergPlacement = Placement.ICEBERG.configured(NoPlacementConfig.INSTANCE).chance(blueIcebergChance);
+		ConfiguredPlacement<?> icebergPlacement = Placement.ICEBERG.configured(NoPlacementConfig.INSTANCE).chance(icebergChance);
+		ConfiguredPlacement<?> blueIcebergPlacement = Placement.ICEBERG.configured(NoPlacementConfig.INSTANCE).chance(blueIcebergChance);
 		addLatitudeBased(builder, Decoration.LOCAL_MODIFICATIONS, iceberg, icebergPlacement, LatitudeBasedFeatureConfig.LatitudeConfiguration.of(LatitudeBasedFeatureConfig.LatitudeValuesType.ICE));
 		addLatitudeBased(builder, Decoration.LOCAL_MODIFICATIONS, blueIceberg, blueIcebergPlacement, LatitudeBasedFeatureConfig.LatitudeConfiguration.of(LatitudeBasedFeatureConfig.LatitudeValuesType.ICE));
 	}
@@ -801,8 +804,8 @@ public class LOTRBiomeFeatures {
 		waterChance = waterChance * 2;
 		int lavaChance = 8;
 		lavaChance = lavaChance * 2;
-		builder.addFeature(Decoration.LOCAL_MODIFICATIONS, (ConfiguredFeature) ((ConfiguredFeature) Feature.LAKE.configured(new BlockStateFeatureConfig(WATER)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 62))).squared()).chance(waterChance));
-		builder.addFeature(Decoration.LOCAL_MODIFICATIONS, (ConfiguredFeature) ((ConfiguredFeature) Feature.LAKE.configured(new BlockStateFeatureConfig(LAVA)).decorated(Placement.RANGE_BIASED.configured(new TopSolidRangeConfig(8, 8, 62))).squared()).chance(lavaChance));
+		builder.addFeature(Decoration.LOCAL_MODIFICATIONS, (Feature.LAKE.configured(new BlockStateFeatureConfig(WATER)).decorated(Placement.RANGE.configured(new TopSolidRangeConfig(0, 0, 62))).squared()).chance(waterChance));
+		builder.addFeature(Decoration.LOCAL_MODIFICATIONS, (Feature.LAKE.configured(new BlockStateFeatureConfig(LAVA)).decorated(Placement.RANGE_BIASED.configured(new TopSolidRangeConfig(8, 8, 62))).squared()).chance(lavaChance));
 	}
 
 	public static void addLapisOre(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder) {
@@ -823,7 +826,7 @@ public class LOTRBiomeFeatures {
 	}
 
 	private static void addLeafBushesWithPlacement(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, ConfiguredPlacement placement, LatitudeBasedFeatureConfig.LatitudeConfiguration latConfig) {
-		ConfiguredFeature bushesFeature = LOTRFeatures.LEAF_BUSHES.configured(IFeatureConfig.NONE);
+		ConfiguredFeature<?,?> bushesFeature = LOTRFeatures.LEAF_BUSHES.configured(IFeatureConfig.NONE);
 		if (latConfig == null) {
 			builder.addFeature(Decoration.VEGETAL_DECORATION, bushesFeature.decorated(placement));
 		} else {
@@ -1070,7 +1073,7 @@ public class LOTRBiomeFeatures {
 		addSeagrass(builder, 100, 0.4F);
 	}
 
-	public static void addTerrainSharpener(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, List targets, int minHeight, int maxHeight, int freq) {
+	public static void addTerrainSharpener(net.minecraft.world.biome.BiomeGenerationSettings.Builder builder, List<BlockState> targets, int minHeight, int maxHeight, int freq) {
 		TerrainSharpenFeatureConfig config = new TerrainSharpenFeatureConfig(targets, minHeight, maxHeight);
 		ConfiguredPlacement placement = placeHeightmapFreq(freq);
 		builder.addFeature(Decoration.LOCAL_MODIFICATIONS, LOTRFeatures.TERRAIN_SHARPEN.configured(config).decorated(placement));

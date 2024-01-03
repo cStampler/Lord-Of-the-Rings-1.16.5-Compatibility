@@ -21,7 +21,7 @@ public class TechnicalFactions {
 		int color = 0;
 		MapSquare mapSquare = null;
 		boolean isPlayableAlignmentFaction = false;
-		Set types = ImmutableSet.of();
+		Set<FactionType> types = ImmutableSet.of();
 		boolean civilianKills = false;
 		Faction faction = new Faction(facSettings, res, id, name, translateName, subtitle, translateSubtitle, region, ordering, color, mapSquare, isPlayableAlignmentFaction, types, civilianKills);
 		faction.setAreasOfInfluence(AreasOfInfluence.makeEmptyAreas(mapSettings, faction));
@@ -29,7 +29,7 @@ public class TechnicalFactions {
 		return faction;
 	}
 
-	public static int registerTechnicalFactions(FactionSettings facSettings, MapSettings mapSettings, List factions, int nextFactionId) {
+	public static int registerTechnicalFactions(FactionSettings facSettings, MapSettings mapSettings, List<Faction> factions, int nextFactionId) {
 		factions.add(createTechnicalFaction(facSettings, mapSettings, FactionPointers.UNALIGNED, nextFactionId));
 		nextFactionId++;
 		factions.add(createTechnicalFaction(facSettings, mapSettings, FactionPointers.HOSTILE, nextFactionId));

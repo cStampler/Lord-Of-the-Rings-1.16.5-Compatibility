@@ -6,7 +6,6 @@ import lotr.common.init.LOTRDimensions;
 import lotr.common.init.LOTREntities;
 import lotr.common.stat.LOTRStats;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -35,7 +34,7 @@ public class GoldRingItem extends Item {
 					BlockPos abovePos = portalPos.above(3);
 					ring.remove();
 					world.explode(thrower, abovePos.getX(), abovePos.getY(), abovePos.getZ(), 3.0F, Mode.DESTROY);
-					RingPortalEntity portal = (RingPortalEntity) ((EntityType) LOTREntities.RING_PORTAL.get()).create(world);
+					RingPortalEntity portal = (RingPortalEntity) (LOTREntities.RING_PORTAL.get()).create(world);
 					portal.moveTo(abovePos, 0.0F, 0.0F);
 					world.addFreshEntity(portal);
 					if (thrower instanceof PlayerEntity) {

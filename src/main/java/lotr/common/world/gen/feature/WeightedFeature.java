@@ -1,21 +1,26 @@
 package lotr.common.world.gen.feature;
 
+import java.util.function.Supplier;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 
-public class WeightedFeature {
-	public static final Codec CODEC = RecordCodecBuilder.create(instance -> instance.group(ConfiguredFeature.DIRECT_CODEC.fieldOf("feature").forGetter(config -> ((WeightedFeature) config).feature), Codec.INT.fieldOf("weight").orElse(1).forGetter(config -> ((WeightedFeature) config).weight)).apply(instance, WeightedFeature::make));
-	public final ConfiguredFeature feature;
+public class WeightedFeature<FC extends IFeatureConfig> {
+	public static final Codec<WeightedFeature<IFeatureConfig>> CODEC= RecordCodecBuilder.create(instance -> instance.group(
+			  ConfiguredFeature.CODEC.fieldOf("feature").forGetter(property -> property.feature), 
+	  		Codec.INT.fieldOf("weight").orElse(Integer.valueOf(1)).forGetter(property -> property.weight)).apply(instance, WeightedFeature::make));
+	public final Supplier<ConfiguredFeature<?, ?>> feature;
 	public final int weight;
 
-	private WeightedFeature(ConfiguredFeature feat, int w) {
-		feature = feat;
+	private WeightedFeature(ConfiguredFeature<FC, ?> feat, int w) {
+		this.feature = () -> feat;
 		weight = w;
 	}
 
-	public static WeightedFeature make(ConfiguredFeature feature, int weight) {
-		return new WeightedFeature(feature, weight);
-	}
+	public static <FC extends IFeatureConfig> WeightedFeature<FC> make(Supplier<ConfiguredFeature<?, ?>> feature, int weight) {
+	    return new WeightedFeature(feature.get(), weight);
+	  }
 }

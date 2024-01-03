@@ -26,7 +26,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class KegScreen extends ContainerScreen {
+public class KegScreen extends ContainerScreen<KegContainer> {
 	public static final ResourceLocation KEG_SCREEN = new ResourceLocation("lotr", "textures/gui/keg/keg.png");
 	private static final ResourceLocation KEG_BREWING = new ResourceLocation("lotr", "textures/gui/keg/brewing.png");
 	private KegBrewButton brewButton;
@@ -128,7 +128,7 @@ public class KegScreen extends ContainerScreen {
 	}
 
 	private void renderBrewButtonTooltip(Button b, MatrixStack matStack, int mouseX, int mouseY) {
-		List tooltipLines = new ArrayList();
+		List<ITextComponent> tooltipLines = new ArrayList<>();
 		if (((KegContainer) menu).getKegMode() == KegTileEntity.KegMode.EMPTY) {
 			tooltipLines.add(new TranslationTextComponent("container.lotr.keg.start_brewing"));
 		} else if (((KegContainer) menu).getKegMode() == KegTileEntity.KegMode.BREWING) {

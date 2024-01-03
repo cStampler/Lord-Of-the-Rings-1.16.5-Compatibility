@@ -11,26 +11,25 @@ import lotr.common.entity.npc.NPCEntity;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EquipmentSlotType;
 
-public class NPCOutfitLayer extends LayerRenderer {
-	private final LOTRBipedModel standardArmsOutfitModel;
-	private final LOTRBipedModel smallArmsOutfitModel;
+public class NPCOutfitLayer<E extends NPCEntity, M extends LOTRBipedModel<E>> extends LayerRenderer<E, M> {
+	private final M standardArmsOutfitModel;
+	private final M smallArmsOutfitModel;
 	private final RandomTextureVariants outfitSkins;
 	private final EquipmentSlotType requiredEmptySlot;
 	private final float proportionWithOutfit;
-	private final Predicate genderCheck;
+	private final Predicate<E> genderCheck;
 
-	public NPCOutfitLayer(IEntityRenderer renderer, ArmsStyleModelProvider armsStyleModelProvider, RandomTextureVariants skins, EquipmentSlotType slot) {
+	public NPCOutfitLayer(IEntityRenderer<E, M> renderer, ArmsStyleModelProvider<E, M> armsStyleModelProvider, RandomTextureVariants skins, EquipmentSlotType slot) {
 		this(renderer, armsStyleModelProvider, skins, slot, 1.0F);
 	}
 
-	public NPCOutfitLayer(IEntityRenderer renderer, ArmsStyleModelProvider armsStyleModelProvider, RandomTextureVariants skins, EquipmentSlotType slot, float prop) {
+	public NPCOutfitLayer(IEntityRenderer<E, M> renderer, ArmsStyleModelProvider<E, M> armsStyleModelProvider, RandomTextureVariants skins, EquipmentSlotType slot, float prop) {
 		this(renderer, armsStyleModelProvider, skins, slot, prop, hummel -> NPCOutfitLayer.anyGender((NPCEntity) hummel));
 	}
 
-	public NPCOutfitLayer(IEntityRenderer renderer, ArmsStyleModelProvider armsStyleModelProvider, RandomTextureVariants skins, EquipmentSlotType slot, float prop, Predicate gender) {
+	public NPCOutfitLayer(IEntityRenderer<E, M> renderer, ArmsStyleModelProvider<E, M> armsStyleModelProvider, RandomTextureVariants skins, EquipmentSlotType slot, float prop, Predicate<E> gender) {
 		super(renderer);
 		standardArmsOutfitModel = armsStyleModelProvider.getModelForArmsStyle(false);
 		smallArmsOutfitModel = armsStyleModelProvider.getModelForArmsStyle(true);
@@ -41,10 +40,10 @@ public class NPCOutfitLayer extends LayerRenderer {
 	}
 
 	@Override
-	public void render(MatrixStack matStack, IRenderTypeBuffer buf, int packedLight, Entity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void render(MatrixStack matStack, IRenderTypeBuffer buf, int packedLight, E entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 		if (genderCheck.test(entity) && ((NPCEntity) entity).getItemBySlot(requiredEmptySlot).isEmpty() && RandomTextureVariants.nextFloat(entity) < proportionWithOutfit) {
-			LOTRBipedModel outfitModel = ((NPCEntity) entity).useSmallArmsModel() ? smallArmsOutfitModel : standardArmsOutfitModel;
-			coloredCutoutModelCopyLayerRender(getParentModel(), outfitModel, outfitSkins.getRandomSkin(entity), matStack, buf, packedLight, (NPCEntity) entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTicks, 1.0F, 1.0F, 1.0F);
+			M outfitModel = ((NPCEntity) entity).useSmallArmsModel() ? smallArmsOutfitModel : standardArmsOutfitModel;
+			coloredCutoutModelCopyLayerRender(getParentModel(), outfitModel, outfitSkins.getRandomSkin(entity), matStack, buf, packedLight, entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTicks, 1.0F, 1.0F, 1.0F);
 		}
 
 	}

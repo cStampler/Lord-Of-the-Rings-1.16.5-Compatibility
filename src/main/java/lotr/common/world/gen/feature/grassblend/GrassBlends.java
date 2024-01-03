@@ -15,19 +15,19 @@ import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig.Builder;
 
 public class GrassBlends {
-	public static final Supplier GRASS_CONFIG = () -> buildSimpleGrassConfig(Blocks.GRASS, 32);
-	public static final Supplier FERN_CONFIG = () -> buildSimpleGrassConfig(Blocks.FERN, 32);
-	public static final Supplier SHORT_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.SHORT_GRASS.get(), 32);
-	public static final Supplier WHEATGRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.WHEATGRASS.get(), 32);
-	public static final Supplier FLOWERY_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.FLOWERY_GRASS.get(), 32);
-	public static final Supplier PURPLE_MOOR_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.PURPLE_MOOR_GRASS.get(), 100);
-	public static final Supplier RED_MOOR_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.RED_MOOR_GRASS.get(), 100);
-	public static final Supplier THISTLE_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.THISTLE.get(), 32);
-	public static final Supplier NETTLES_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.NETTLES.get(), 32);
-	public static final Supplier FERNSPROUT_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.FERNSPROUT.get(), 32);
-	public static final Supplier WILD_FLAX_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.WILD_FLAX.get(), 32);
-	public static final Supplier ARID_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.ARID_GRASS.get(), 32);
-	public static final Supplier CLOVER_CONFIG = () -> {
+	public static final Supplier<BlockClusterFeatureConfig> GRASS_CONFIG = () -> buildSimpleGrassConfig(Blocks.GRASS, 32);
+	public static final Supplier<BlockClusterFeatureConfig> FERN_CONFIG = () -> buildSimpleGrassConfig(Blocks.FERN, 32);
+	public static final Supplier<BlockClusterFeatureConfig> SHORT_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.SHORT_GRASS.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> WHEATGRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.WHEATGRASS.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> FLOWERY_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.FLOWERY_GRASS.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> PURPLE_MOOR_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.PURPLE_MOOR_GRASS.get(), 100);
+	public static final Supplier<BlockClusterFeatureConfig> RED_MOOR_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.RED_MOOR_GRASS.get(), 100);
+	public static final Supplier<BlockClusterFeatureConfig> THISTLE_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.THISTLE.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> NETTLES_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.NETTLES.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> FERNSPROUT_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.FERNSPROUT.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> WILD_FLAX_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.WILD_FLAX.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> ARID_GRASS_CONFIG = () -> buildSimpleGrassConfig((Block) LOTRBlocks.ARID_GRASS.get(), 32);
+	public static final Supplier<BlockClusterFeatureConfig> CLOVER_CONFIG = () -> {
 		BlockState clover = ((Block) LOTRBlocks.CLOVER.get()).defaultBlockState();
 		BlockState clover2 = clover.setValue(ThreeLeafCloverBlock.NUM_CLOVERS, 2);
 		BlockState clover3 = clover.setValue(ThreeLeafCloverBlock.NUM_CLOVERS, 3);
@@ -35,7 +35,7 @@ public class GrassBlends {
 		BlockState fourLeafClover = ((Block) LOTRBlocks.FOUR_LEAF_CLOVER.get()).defaultBlockState();
 		return new Builder(new WeightedBlockStateProvider().add(clover, 1250).add(clover2, 1250).add(clover3, 1250).add(clover4, 1250).add(fourLeafClover, 1), new SimpleBlockPlacer()).tries(32).build();
 	};
-	public static final Supplier SHIRE_CLOVER_CONFIG = () -> {
+	public static final Supplier<BlockClusterFeatureConfig> SHIRE_CLOVER_CONFIG = () -> {
 		BlockState clover = ((Block) LOTRBlocks.CLOVER.get()).defaultBlockState();
 		BlockState clover2 = clover.setValue(ThreeLeafCloverBlock.NUM_CLOVERS, 2);
 		BlockState clover3 = clover.setValue(ThreeLeafCloverBlock.NUM_CLOVERS, 3);
@@ -43,10 +43,10 @@ public class GrassBlends {
 		BlockState fourLeafClover = ((Block) LOTRBlocks.FOUR_LEAF_CLOVER.get()).defaultBlockState();
 		return new Builder(new WeightedBlockStateProvider().add(clover, 1250).add(clover2, 1250).add(clover3, 1250).add(clover4, 1250).add(fourLeafClover, 10), new SimpleBlockPlacer()).tries(32).build();
 	};
-	public static final Supplier DOUBLE_GRASS_CONFIG = () -> buildSimpleDoubleGrassConfig(Blocks.TALL_GRASS, 64);
-	public static final Supplier DOUBLE_FERN_CONFIG = () -> buildSimpleDoubleGrassConfig(Blocks.LARGE_FERN, 64);
-	public static final Supplier DOUBLE_WHEATGRASS_CONFIG = () -> buildSimpleDoubleGrassConfig((Block) LOTRBlocks.TALL_WHEATGRASS.get(), 64);
-	public static final Supplier DOUBLE_ARID_GRASS_CONFIG = () -> buildSimpleDoubleGrassConfig((Block) LOTRBlocks.TALL_ARID_GRASS.get(), 64);
+	public static final Supplier<BlockClusterFeatureConfig> DOUBLE_GRASS_CONFIG = () -> buildSimpleDoubleGrassConfig(Blocks.TALL_GRASS, 64);
+	public static final Supplier<BlockClusterFeatureConfig> DOUBLE_FERN_CONFIG = () -> buildSimpleDoubleGrassConfig(Blocks.LARGE_FERN, 64);
+	public static final Supplier<BlockClusterFeatureConfig> DOUBLE_WHEATGRASS_CONFIG = () -> buildSimpleDoubleGrassConfig((Block) LOTRBlocks.TALL_WHEATGRASS.get(), 64);
+	public static final Supplier<BlockClusterFeatureConfig> DOUBLE_ARID_GRASS_CONFIG = () -> buildSimpleDoubleGrassConfig((Block) LOTRBlocks.TALL_ARID_GRASS.get(), 64);
 	public static final SingleGrassBlend STANDARD;
 	public static final SingleGrassBlend SHIRE;
 	public static final SingleGrassBlend WITH_FERNS;
